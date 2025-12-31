@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-groups">
+  <title>Groups</title>
+  <xi:include href="groups-definition.ptx" />
+  <xi:include href="groups-examples.ptx" />
+  <xi:include href="groups-activity.ptx" />
+</chapter>
