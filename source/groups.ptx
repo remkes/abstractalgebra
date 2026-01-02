@@ -2,5 +2,4 @@
   <title>Groups</title>
   <xi:include href="groups-definition.ptx" />
   <xi:include href="groups-examples.ptx" />
-  <xi:include href="groups-activity.ptx" />
 </chapter>

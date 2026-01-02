@@ -1,0 +1,80 @@
+<section xml:id="section-logic">
+  <title>Introduction and Logic</title>
+    <p>
+      Abstract algebra is a fundamental discipline in pure
+      mathematics: much of the edifice of mathematics rests of the
+      fundamental constructions of groups, rings and fields. However,
+      abstract algebra itself relies on other fundamental pieces of
+      mathematics.  In this preliminary sections, I'm going to quickly
+      review these mathematical building blocks. 
+    </p>
+    <p>
+      This has the added benefit of setting the notational convention
+      for the rest of these notes. 
+    </p>
+    <p>
+      Before even starting the mathematics, let me review some
+      important notations from logic.
+      <ul>
+        <li>  
+          The symbol <sq><m>\defeq</m></sq> means that something is
+          equal by definition. Whatever is on the left is defined to
+          be whatever is on the right. 
+        </li>
+        <li>
+          The symbol <sq><m>\forall</m></sq> means <sq>for all</sq>.
+          This symbol is called the universal quantifier. 
+        </li>
+        <li>
+          The symbol <sq><m>\exists</m></sq> means <sq>there
+          exists</sq>.  This symbol is called the existential 
+          quantifier. 
+        </li>
+        <li>
+          The symbol <sq><m>\exists!</m></sq> means <sq>there
+          exists uniquely</sq>. This means that some thing exists, but
+          there is only one such thing. 
+        </li>
+        <li>
+          The symbol <sq><m>\implies</m></sq> indicates implication:
+          what is before implies what is after. 
+        </li>
+        <li>
+          The symbol <sq><m>\iff</m></sq> indicates two directional
+          implication or logical equivalence: what is before is true
+          if and only if what is after is also true. The phrase <sq>if
+          and only if</sq> is very common in this situation.
+        </li>
+        <li>
+          The symbol <sq><m>\therefore</m></sq> indicates 
+          what is after follows from the arguments or facts preceding
+          the symbol. 
+        </li>
+      </ul>
+    </p>
+    <p>
+      Also before starting even the mathematic review, I also want to
+      comment on a few tricky terms. These terms are used frequently
+      in pure mathematics and are often take for granted, but it is
+      very useful to clarify them at the very start. 
+      <ul>
+        <li>
+          Many definition in mathematics depend on choices,
+          representatives, or some other variability. A construction is
+          <term>well-defined</term> if is doesn't depend on any of
+          these choices. Basically, well-defined means that the method
+          of construction can be shown to actually work, that the
+          definition makes sense and lives up to what is claim about
+          it. 
+        </li>
+        <li>
+          Many things in mathematics are <term>indexed</term>. The
+          typical way to indicate an index is as a subscript:
+          <m>A_i</m> is some things indexed by the index <m>i</m>.
+          Usually, the index <m>i</m> comes from a set: <m>i \in
+          I</m>. This called the <term>indexing set</term>. In
+          generally, any set can be an indexing set. 
+        </li>
+      </ul>
+    </p>
+</section>

@@ -1,0 +1,496 @@
+<section xml:id="section-sets">
+    <title>Set Theory</title>
+    <p>
+      Outside of logic, set theory is the start point of modern
+      mathematics. The review here is somewhat informal. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A <term>set</term> is a collection of things, which are
+          called <term>elements</term> or <term>member</term> of the
+          set. If <m>a</m> is an element of a set <m>A</m>, the
+          notation is <m>a \in A</m>. This is read as <sq><m>a</m> is
+          a member of <m>A</m></sq>. 
+        </p>
+        <p>
+          Sets can be defined explicitly as a list of elements.
+          <me>
+            A = \{a_1, a_2, \ldots, a_n\}
+          </me>
+          Sets can also be defined by a property. 
+          <me>
+            A = \{a | a \text{ satisfies } \calP \} 
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We have notation for certain special sets.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              <m>\emptyset</m> is the empty set. It is the unique set
+              with no elements.
+            </li>
+            <li>
+              <m>\NN = \{1, 2, 3 \ldots \} </m> is the set of
+              natural numbers. In some definitions, <m>0</m> is
+              included in the natural numbers, but it will be
+              excluded in these notes.
+            </li>
+            <li>
+              <m>\ZZ = \{\ldots -2, -1, 0, 1, 2, \ldots \} </m> is
+              the set of integers. 
+            </li>
+            <li>
+              <m>\QQ = \{\frac{a}{b} | a, b in \ZZ, a \neq 0 \} </m>
+              is the set of rational numbers. (Technically, I should
+              also identity equivalent fractions, but this
+              definition will do fow now.) 
+            </li>
+            <li>
+              <m>\RR</m> is the set of real numbers. Usually, real
+              numbers are represented by infinite decimal
+              expansions. 
+            </li>
+            <li>
+              <m>\CC = \{a + b \imath | a, b \in \RR \} </m> is the
+              set of complex numbers. The number <m>i</m>, by
+              definition, has the property that <m>i^2 = -1</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Here are the basic operations and notations for sets. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              The notation <m>A =  B</m> is the equality of the
+              sets <m>A</m> and <m>B</m>. Two sets are equal if and
+              only if they have the same elements. 
+            </li>
+            <li>
+              The notation <m>A \subset B</m> means that <m>A</m> is a
+              <term>subset</term> of <m>B</m>: every element of
+              <m>A</m> is also an element of <m>B</m>. If the two sets
+              are not equal, then <m>A</m> is called a <term>proper
+              subset</term> of <m>B</m>. 
+            </li>
+            <li>
+              The notation <m>A \cap B</m> is the intersection of the
+              sets <m>A</m> and <m>B</m>: the intersection consists of
+              all elements common to both sets. 
+            </li>
+            <li>
+              The notation <m>A \cup B</m> is the union of the
+              sets <m>A</m> and <m>B</m>: the union consists of
+              all elements that below to at least one of the two sets. 
+            </li>
+            <li>
+              The notation <m>A \backslash B</m> is the difference of 
+              sets <m>A</m> and <m>B</m>: the difference consists of
+              the element of <m>A</m> which are not elements of
+              <m>B</m>. 
+            </li>
+            <li>
+              The notation <m>|A|</m> indicates the
+              <term>cardinality</term> of the set: the count of how
+              many elements there are in the set. If <m>|A| \in
+              \NN \cup \{0\}</m>, then the set is called
+              <term>finite</term>. Otherwise, the set is called
+              <term>infinite</term>.
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Now that we have sets, we can make a variety of useful
+      constructions from sets. All of these will be useful for
+      buildings the objects of abstract algebra. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>Cartesian product</term> of two sets <m>A</m> amd
+          <m>B</m> is written <m>A \times B</m>. It is the set of
+          ordered pairs:
+          <me>
+            A \times B \defeq \{(a,b) | a \in A, b \in B\}
+          </me>
+          The catesian product can be iterated to product longer
+          ordered lists. 
+          <me>
+            A \times B \times C \defeq \{(a,b,c) | a \in A, b \in B, c
+            \in C\}
+          </me>
+          The caretian product of a set with itself is writen with an
+          exponent: <m>A \times A = A^2</m>, and likewise for
+          iterations: <m>A^n</m>. The familiar notations for Euclidean
+          space, <m>\RR^2</m>, <m>\RR^3</m>, <m>\RR^n</m>, are
+          examples of this notation. 
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a set. The <term>power set</term> of <m>A</m>
+          is the set of all subset of <m>A</m>. It is written
+          <m>\calP(a)</m>. 
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          A <term>relation</term> on the sets <m>A</m> and <m>B</m> is
+          subset of <m>A \times B</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This is a very general and abstract defintion: intuitive
+      <sq>relations</sq> between sets are usually very particular
+      subsets of the cartesian product. However, having this level of
+      generalize and abstraction in the definition is very useful.
+      This will become a theme in the course: the power of taking a
+      difficult and abstract definition and understanding the property
+      of the definition on such a level. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          There are many types of relations most of which are defined
+          on the product of a set with itself. Let <m>R \subset
+          A^2</m> be a relation. 
+          <ul>
+            <li>
+              The relation is <term>reflexive</term> if, <m>\forall a
+              \in A</m>, <m>(a,a) \in R</m>.
+            </li>
+            <li>
+              The relation is <term>symmetric</term> if, <m>\forall
+              a,b \in A</m>,  <m>(a,b) \in R \implies (b,a) \in R</m>. 
+            </li>
+            <li>
+              The relation is <term>transitive</term> if, <m>\forall
+              a,b,c \in A</m>, <m>(a,b) \in R</m> and <m>(b,c) \in
+              R</m> imply that <m>(a,c) \in R</m>. 
+            </li>
+            <li>
+              The relation is <term>connected</term> if,  <m>\forall
+              a,b, \in A</m>, either <m>(a,b) \in R</m> or <m>(b,a) \in R
+              </m>. 
+            </li>
+            <li>
+              The relation is <term>anti-symmetric</term> if,
+              <m>\forall a,b,c \in A</m>,  <m>(a,b)
+              \in R</m> and <m>(b,a) \in R</m> imply that <m>a =
+              b</m>.
+            </li>
+            <li>
+              The relation is <term>asymmetric</term> if,
+              <m>\forall a,b \in A</m>, it is impossible that both
+              <m>(a,b) \in R</m> and <m>(b,a) \in R</m>.
+            </li>
+            <li>
+              The relation is <term>irreflexive</term> if,
+              <m>\forall a \in A</m>, <m>(a,a) \notin R</m>.
+            </li>
+            <li>
+              A relations which is reflexive, symmetric and transitive
+              is called an <term>equivalence relation</term>.
+            </li>
+            <li>
+              A relation which is reflexive, transitive, and
+              anti-symmetric is called a <term>partial order</term>. A
+              set with a partial order is called a
+              <term>partially-ordered set</term>. This is usually
+              shortened to <term>poset</term>. 
+            </li>
+            <li>
+              A relation which is reflexive, transitive,
+              anti-symmetric, and connected is called a <term>linear
+              order</term> or a <term>total order</term>. A set with a
+              linear order is called an <term>ordered set</term>
+            </li>
+            <li>
+              A relation which is irreflexive, transitive, and
+              asymmetric is called a <term>strict order</term>.
+            </li>
+            <li>
+              A relation which is irreflexive, transitive,
+              asymmetric, and connected is called a <term>strict linear
+              order</term> or a <term>strict total order</term>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Equivalence relations are going to be a particularly important in
+      this course. Let me give you some more information about how
+      these relations work. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a set with an equivalence relation
+          <m>\sim</m> (so that the relation between two elements is
+          written <m>a \sim b</m> instead of just <m>(a,b)</m>). Let
+          <m>a \in A</m>. The <term>equivalence class</term> of
+          <m>a</m> is the set of all element <m>b \in A</m> such that
+          <m>a \sim b</m>. It is often written <m>\bar{a}</m> or
+          <m>[a]</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      To state the important fact about equivalence relations, I need
+      one more set-theory definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a set. A <term>partition</term> of the set
+          <m>A</m> is a collection of subsets <m>A_i</m>, where <m>i
+          \in I</m> ranges over some indexing set, with the following
+          two properties. 
+          <ul>
+            <li>
+              <m>\forall A</m>, <m>\exists i \in I</m> such that <m>a
+              \in A_i</m>. That is, the subsets cover the entire set
+              <m>A</m>. 
+            </li>
+            <li>
+              <m>\forall i,j \in I</m>, if <m>i \neq j</m> then <m>A_i
+              \cap A_j = \emptyset</m>. That it, the subsets are all
+              disjoint, with no overlap. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <proposition xml:id="proposition-equivalence-relation-partition">
+      <statement>
+        <p>
+          Let <m>A</m> be a set with an equivalence relation
+          <m>\sim</m>. Then the equivalence classes form a partition
+          of <m>A</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          There are two propreties of a partition, so I need to prove
+          them both. I'll start with the first: I need to prove that
+          the equivalence classes cover the original set. Let <m>a in
+          A</m>. Then one of the equivalence classses is the class
+          <m>\bar{a}</m> and <m>a \in \bar{a}</m> since, by the
+          reflexivity of an equivalence relation, <m>a \sim a</m>.
+          That finishes the first property: every element of the set
+          is in at least one equivalence class. 
+        </p>
+        <p>
+          Then I need the second part: that the equivalence classes
+          are disjoint. Let <m>\bar{a}</m> and <m>\bar{b}</m> be two
+          equivalence classes. Assume <m>\bar{a} \neq \bar{b}</m>.
+          Then take any <m>c \in \bar{a}</m>. By definition, this means
+          <m>a \sim c</m> (and <m>c \sim a</m> by the symmetry of
+          equivalence relations). 
+        </p>
+        <p>
+          Now, for the sake of contradiction, assume that <m>c \in
+          \bar{b}</m> as well. This means that <m>b \sim c</m>. Using
+          transitivity, <m>b \sim c</m> and <m>c \sim a</m> implies <m>b
+          \sim a</m>. But this means that everything in <m>\bar{a}</m>,
+          which is related to <m>a</m>, is also related to <m>b</m>,
+          again by transitivity, and by symmetry I can revserse this
+          to say that anything related to <m>b</m> is related to
+          <m>a</m>. But this means that <m>\bar{a} = \bar{b}</m>,
+          since the equivalence classes are, by definition, all things
+          related to the representative. This is a contradiction to
+          the assumpion that <m>\bar{a} \neq \bar{b}</m>. By
+          contradiction, the assumption that <m>c \in \bar{b}</m> must
+          be false. 
+        </p>
+        <p>
+          So I have prove that any <m>c \in \bar{a}</m> cannot be in
+          <m>\bar{b}</m>. Since the interection is defined to be the
+          common elements, this implies that <m>\bar{a} \cap \bar{b} =
+          \emptyset</m>. This completes the proof. 
+        </p>
+      </proof>
+    </proposition>
+    <definition xml:id="definition-set-quotient">
+      <statement>
+        <p>
+          Let <m>A</m> be a set with an equivalence relation
+          <m>\sim</m>. The set of equivalence classes of <m>A</m> is
+          called the <term>(set) quotient)</term> of <m>A</m> under the
+          relation <m>\sim</m>. It is often written <m>A/\sim</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The most important kind of relation is surely a function. Here
+      is the formal, abstract definition. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A relation <m>R \subset A \times B</m> is called a
+          <m>function</m> from <m>A</m> to <m>B</m> if, <m>forall a
+          \in A</m>, there is exactly one <m>b \in B</m> such that
+          <m>(a,b) \in R</m>. 
+        </p>
+        <p>
+          Functions have a number of associated notation and
+          definitions. 
+          <ul>
+            <li>
+              The function is often written <m>f: A \rightarrow B</m>
+            </li>
+            <li>
+              If <m>(a,b)</m> is an element of the relation defining a
+              function, then usually this is written <m>f(a) = b</m>.
+              This can be used to defined the function: if I define
+              <m>f(a)</m> by some process, that is equivalent to saying
+              that the pair <m>(a,f(a)</m> is in the relation defining
+              the function. 
+            </li>
+              A function can also be called a <term>map</term> or 
+              <term>mapping</term>.
+            <li>
+            </li>
+              The set <m>A</m> is called the <term>domain</term> of
+              the function, and the set <m>B</m> is called the
+              <term>codomain</term> of the function.
+            <li>
+              Tet set <m>\{ b \in B | \exists (a,b) \in R\}</m> is
+              called the <term>range</term> or <term>image</term>  of
+              the function. It is often written <m>f(A)</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The most important operation on functions is composition. I'll
+      give the abstract relation-based definition here, even though
+      composition is almost always through of as doing functions in
+      sequence, one after the other. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f: A \rightarrow B</m> and <m>g: B \rightarrow C</m>
+          be function. The composition of the two function is a new
+          function<m>g \circ f: A \rightarrow C</m>. It is defined
+          this way: whenever <m>(a,b)</m> is in the relation defining
+          <m>f</m> and <m>(b,c)</m> is in the relation defining
+          <m>g</m>, then <m>(a,c)</m> is in the relation defining the
+          composition. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Next, let me define a very important function.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a set. The <term>identity function</term> on
+          the set A is written <m>\Id_A</m> and defined by the
+          property <m>\forall a \in A, \Id_A(a) = a</m>. Often when
+          the set it understood, the subscript is dropped that the
+          identity function is just written <m>\Id</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      There are a number of important properties of functions to
+      mention here. These are general set-theoretic properties. In
+      other setting, function can many properties: continuous, linear,
+      differentiable, increasing, decreasing, bounded, integrable,
+      analytic, etc. All of these propreties rely on special structure
+      on the domain and codomain; for now, I'll just give the
+      definition that only depend on the basic set theory we've done
+      so far. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f:A \rightarrow B</m> be a function.
+          <ul>
+            <li>
+              <m>f</m> is <term>surjective</term> if, <m>\forall b \in
+              B</m>, <m>\exists a \in A</m> such that <m>f(a) = b</m>.
+              In other texts, it is also said that the function is
+              <term>onto</term>. In these notes, I'll exclusively use
+              the term <sq>surjective</sq>. 
+            </li>
+            <li>
+              <m>f</m> is <term>injective</term> if, <m>\forall
+              a_1,a_2 \in A</m>, if <m>a_1 \neq a_2</m> then <m>f(a_1)
+              \neq f(a_2)</m>.  In other texts, it is also said that
+              the function is <term>one-to-one</term>. In these
+              notes, I'll exclusively use the term <sq>injective</sq>.
+            </li>
+            <li>
+              <m>f</m> is <term>bijective</term> if it is both
+              injective and surjective. A bijection function is in
+              <term>invertible</term>: that is, there exists an <term>
+              inverse function</term> <m>f^{-1}</m> such that <m>f
+              \circ f^{-1} = \Id_B</m> and <m>f^{-1} \circ f =
+              \Id_A</m>. (In general, both directions of this
+              composition need to be stated!) 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Particularly for group theory, a certain class of bijective
+      functions are very important.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a set. A bijection function <m>f: A
+          \rightarrow A</m> is called a <term>permutation</term> of
+          the set <m>A</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Bijective functions allow me to say some interesting things
+      about infinite sets. There is a great deal of mystery and
+      subtlety in the cardinality of infinite set, but I'll just
+      scratch the surface here with the definition that we need for
+      this course. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be an infinite set. If there exists a bijection
+          <m>f: A \rightarrow \NN</m>, then <m>A</m> is called
+          <term>countably infinite</term>. If not such bijection
+          exists (that is, if you can prove that it is impossible to
+          build one), then the set if called <term>uncountably
+          infinite</term>. A set is simply called
+          <term>countable</term> if it is either finite or countable
+          infinite. 
+        </p>
+      </statement>
+    </definition>
+</section>

@@ -1,7 +1,11 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"
 xml:id="chapter-preliminaries">
   <title>Preliminaries</title>
-  <xi:include href="set-theory.ptx" />
+  <xi:include href="logic.ptx" />
+  <xi:include href="sets.ptx" />
+  <xi:include href="binary-relations.ptx" />
+  <xi:include href="integers.ptx" />
+  <xi:include href="polynomials.ptx" />
   <xi:include href="linear-algebra.ptx" />
-  <xi:include href="preliminaries-activity.ptx" />
+  <xi:include href="proofs.ptx" />
 </chapter>
