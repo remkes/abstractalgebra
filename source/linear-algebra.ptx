@@ -1,6 +1,37 @@
 <section xml:id="section-linear-algebra">
-    <title>Important Definitions from Linear Algebra</title>
+  <title>Important Definitions from Linear Algebra</title>
+  <p>
+    There are some definitions and constructions from linear algebra
+    which are worth reviewing. These will be useful for the course. 
+  </p>
+  <p>
+    First, linear algebra happens in a vector space, so let me start
+    with definition. As with polynomials in the previous section,
+    where the coefficient were informally just <sq>numbers</sq> a
+    vector space relies on some <sq>scalars</sq> which are numbers.
+    I'll take the same informal treamenet here: scalars are numbers,
+    usually real or complex. What sets of numbers (or other sets!) can
+    serve as the scalar for a vector space? That is again an important
+    question in linear algebra which we will try to answer later in
+    the course. 
+  </p>
+  <definition>
+    <statement>
       <p>
-        Some stuff
+        A set <m>V</m> is a vector space if it satisfied these
+        conditions.
+        <ul>
+          <li>
+            The set <m>V</m> has a commutative binary operation
+            written as addition. That is, vectors can be added
+            together. 
+          </li>
+          <li>
+            The set <m>V</m> allows for scalar multiplication: if
+            <m>v \in v</m>
+          </li>
+        </ul>
       </p>
+    </statement>
+  </definition>
 </section>

@@ -1,6 +1,178 @@
 <section xml:id="section-polynomials">
-    <title>Important Definitions about Polynomials</title>
+  <title>Important Definitions about Polynomials</title>
+  <p>
+    Polynomials should be relatively familiar from other courses,
+    but it's still quite useful to review some definitions,
+    notations and properties. 
+  </p>
+  <definition>
+    <statement>
       <p>
-        Some stuff
+        <ul>
+          <li>
+            Often, the best way to write a general polynomial is using
+            sigma notation. Let <m>c_i</m> be numbers, with <m>c_d
+            \neq 0</m>. Then this is a polynomial:
+            <me>
+              p(x) = \sum_{i=1}^d c_i x^i
+            </me>
+            The numbers <m>c_i</m> are the <term>coefficients</term>
+            of the polynomial; the expressions <m>c_i x^i</m> are the
+            <term>terms</term> of the polynomial; and the number
+            <m>c_d</m> is the <term>leading coefficient</term> of the
+            polynomial. 
+          </li>
+          <li>
+            I said that the coefficients were <sq>numbers</sq>. In
+            general, the coefficient can come from a set <m>A</m>, but
+            not just any set. What kind of sets can be used at the
+            coefficients of polynomials? That's actually an important
+            question in abstrat algebra and we'll answer it later in
+            the course. For now, I'll be a bit informal and simply say
+            the coefficients are <sq>numbers</sq>. These will usually
+            be integers, real number or complex numbers. 
+          </li>
+          <li>
+            The <term>degree</term> of a polynomial <m>p(x)</m> is the
+            largest natural number <m>d</m> such that the polynomial
+            includes a term with <m>x^d</m>. 
+          </li>
+          <li>
+            A polynomial of degree 1 is called a <term>linear</term>
+            polynomial.  A polynomial of degree 2 is called a
+            <term>quadratic</term>.  A polynomial of degree 3 is
+            called a <term>cubic</term>.  A polynomial of degree 4
+            is called a <term>quartic</term>.  A polynomial of
+            degree 5 is called a <term>quintic</term>. These terms
+            can be continued to higher degree if you want, but up to
+            this point will do for our purposes. 
+          </li>
+          <li>
+            A number <m>\alpha</m> is a <term>root</term> of a
+            polynomial if <m>p(\alpha) = 0</m>. Equivalently,
+            <m>\alpha</m> is a root if and only if <m>(x -
+            \alpha)</m> is a factor of the polynomial. 
+          </li>
+          <li>
+            The root <m>\alpha</m> has <term>multiplicity</term>
+            <m>k</m> is <m>k</m> is the largest natural number such
+            that <m>(\alpha - x)^k</m> is a factor of the
+            polynomial. 
+          </li>
+          <li>
+            A polynomial of degree <m>d</m> is called
+            <term>monic</term> if its leading term is <m>x^d</m>,
+            i.e., the leading coefficient is <m>1</m>. 
+          </li>
+          <li>
+            If <m>A</m> is a set (of numbers, usually), then the set
+            of polynmials in the variable <m>x</m> with coefficients
+            is written <m>A[x]</m>. In particular, the set of
+            polynomials with integer coefficients is <m>\ZZ[x]</m>;
+            the set of polynomials with real coefficients is
+            <m>\RR[x]</m>; and the set of polynomials with complex
+            coefficients is <m>\CC[x]</m>. 
+          </li>
+        </ul>
       </p>
+    </statement>
+  </definition>
+  <p>
+    Like with the integers ealier, I care about the arithmetic
+    of polynomials. Again, there are some profound and important
+    results that determine this arithmetic. 
+  </p> 
+  <theorem>
+    <title>Fundamental Theorem of Calculus</title>
+    <statement>
+      <p>
+        Let <m>p(x) \in \CC[x]</m> be a polynomial of degree <m>d</m>
+        with complex coefficients. Then <m>p(x)</m> factors completely
+        into linear factors. That is, there exist complex numbers
+        <m>\alpha_i</m>, not necessarily distinct, such that this
+        equation holds. 
+        <me>
+          p(x) = (x-\alpha_1)(x-\alpha_2)(x - \alpha_3) \ldots (x -
+          \alpha_d)
+        </me>
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Factoring polynomials is a large part of many algorithms. Knowing
+    that factors always exist, at least if you are willing to use
+    complex numbers, is, as the theorem says, fundamental. (Knowing
+    the factor exist and actually calculating them, however, is
+    a very different problem.)
+  </p>
+  <theorem>
+    <title>Division Algorithm</title>
+    <statement>
+      <p>
+        The division algorihm that we stated for integers also hold
+        for polynomials. Let <m>a(x)</m> and <m>b(x)</m> be
+        polynomials with rational, real or complex
+        coefficients. Then there exist polynomials with the same set
+        of coefficients <m>q(x)</m> and <m>r(x)</m> such that two
+        conditions hold. 
+        <ul>
+          <li>
+            <m>a(x) = q(x) b(x) + r(x)</m>
+          </li>
+          <li>
+            The degree of <m>r(x)</m> is less than the degree of
+            <m>b(x)</m>. 
+          </li>
+        </ul>
+        This is like the integer division algorith with only one
+        difference: the remainder has a smaller degree (as a
+        polynomial), rather than a smaller value (as a positive
+        integer). Note that the division algorithm does not hold when
+        restricting to polynomials with only integer coefficients. 
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    As we shall see in the unit on ring theory, the division algorith
+    is as important for polynomials as it ever was for integers. 
+  </p>
+  <p>
+    I have one more definition and one more theorem for polynomials.
+    These are both useful technical tools. This definition is a bit
+    strange: I'm going to define the derivative. However, I'm just
+    going to define it directly and only for polynomials: no limits
+    or continuity needed here. Again, this is done for some useful
+    technical reasons. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>p(x)</m> be a polymial, which I can write in sigma
+        notaton. 
+        <me>
+          p(x) = \sum_{i=0}^d c_i x^i
+        </me>
+        The derivative of the polynomial is written <m>p^\prime(x)</m>
+        and defined to be this polynomial. 
+        <me>
+          p^\prime(x) = \sum_{i=1}^d i c_i x^{i-1}
+        </me>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    This is just, of course, the power rule in each term extended to
+    the entire polynomial by linearity. But I can define it this way
+    without have to rely on the machniery of calculus, so I do. One of
+    the uses of this is the following. 
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>\alpha</m> be a root of a polynomial <m>p(x)</m>. Then
+        the multiplicity of <m>\alpha</m> is at least two if and only
+        if <m>\alpha</m> is also a root of <m>p^\prime(x)</m>. 
+      </p>
+    </statement>
+  </theorem>
 </section>

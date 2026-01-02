@@ -1,79 +1,79 @@
 <section xml:id="section-binary-relations">
-    <title>Binary Relations</title>
-    <p>
-      The language of functions lets me give one of the most
-      basic definitions of the course.
-    </p>
-    <definition>
-      <statement>
-        <p>
-          Let <m>A</m> be a set. A function <m>f: A^2 \rightarrow
-          A</m> is called a <term>binary relation</term> on <m>A</m>. 
-        </p>
-      </statement>
-    </definition>
-    <p>
-      This is, again, the abstract definition. What this function is
-      doing is taking an ordered pair <m>(a,b)</m>, and from that pair
-      producing one new element <m>f((a,b))</m>. This is an operation:
-      taking two element and putting them together. This is a model
-      for many of the basic operations of mathematics: addition,
-      subtraction, multiplication and division are all binary
-      operations (on appropriate sets). For this reason, binary
-      relations are usually written like these arithmetic actions. For
-      a general binary relation, instead of <m>f((a,b))</m>, I can
-      write something like <m>a \cdot b</m>. The function gives a nice
-      general set-theoretic way to define this idea. 
-    </p>
-    <p>
-      Properties of binary relations are central to this course. Let
-      me define them for you. 
-    </p>
-    <definition>
-      <statement>
-        <p>
-          Let <m>A</m> be a set with <m>a \cdot b</m> a binary
-          relation on the set. 
-          <ul>
-            <li>
-              If, <m>\forall a,b \in A</m>, <m>a \cdot b = b \cdot
-              a</m>, the binary relation is called
-              <term>commutative</term>. 
-            </li>
-            <li>
-              If, <m>\forall a,b,c \in A</m>, <m>a \cdot (b \cdot c)
-              = (a \cdot b) \cdot c</m>, the binary relation is called
-              <term>associative</term>.
-            </li>
-            <li>
-              An element <m>e \in A</m> with the property that,
-              <m>\forall a \in A</m>, <m>e \cdot a = a \cdot e =
-              a</m>, then this element is called an
-              <term>identity</term> element for the binary operation.
-            </li>
-            <li>
-              Assume that an identity element exists. Then, for some
-              <m>a \in A</m>, an element <m>b \in A</m> that satisfies
-              <m>a \cdot b = b \cdot a = e</m> is called an inverse
-              for <m>a</m> and written <m>a^{-1}</m>. 
-            </li>
-            <li>
-              Let <m>B \subset A</m> be a subset of the set. If, for
-              all <m>a, b \in B</m>, <m>a \cdot b \in B</m>, then the
-              subset <m>B</m> is <term>closed under the binary
-              operation</term>. That is, whenever the binary relation
-              starts in the subset, it always stays in the subset. 
-            </li>
-            <li>
-              Now assume there are two binary operations, <m>\cdot</m>
-              and <m>\star</m> on the set. If, <m>\forall a,b,c \in
-              A</m>, <m>a \star ( b \cdot c) = (a \star b) \cdot (a
-              \star c)</m>, then we say that the operation
-              <m>\star</m> <term>distributes</term> over the operation
-              <m>\cdot</m>. 
-            </li>
-          </ul>
-        </p>
-      </statement>
-    </definition>
+  <title>Binary Relations</title>
+  <p>
+    The language of functions lets me give one of the most
+    basic definitions of the course.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be a set. A function <m>f: A^2 \rightarrow
+        A</m> is called a <term>binary relation</term> on <m>A</m>. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    This is, again, the abstract definition. What this function is
+    doing is taking an ordered pair <m>(a,b)</m>, and from that pair
+    producing one new element <m>f((a,b))</m>. This is an operation:
+    taking two element and putting them together. This is a model
+    for many of the basic operations of mathematics: addition,
+    subtraction, multiplication and division are all binary
+    operations (on appropriate sets). For this reason, binary
+    relations are usually written like these arithmetic actions. For
+    a general binary relation, instead of <m>f((a,b))</m>, I can
+    write something like <m>a \cdot b</m>. The function gives a nice
+    general set-theoretic way to define this idea. 
+  </p>
+  <p>
+    Properties of binary relations are central to this course. Let
+    me define them for you. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be a set with <m>a \cdot b</m> a binary
+        relation on the set. 
+        <ul>
+          <li>
+            If, <m>\forall a,b \in A</m>, <m>a \cdot b = b \cdot
+            a</m>, the binary relation is called
+            <term>commutative</term>. 
+          </li>
+          <li>
+            If, <m>\forall a,b,c \in A</m>, <m>a \cdot (b \cdot c)
+            = (a \cdot b) \cdot c</m>, the binary relation is called
+            <term>associative</term>.
+          </li>
+          <li>
+            An element <m>e \in A</m> with the property that,
+            <m>\forall a \in A</m>, <m>e \cdot a = a \cdot e =
+            a</m>, then this element is called an
+            <term>identity</term> element for the binary operation.
+          </li>
+          <li>
+            Assume that an identity element exists. Then, for some
+            <m>a \in A</m>, an element <m>b \in A</m> that satisfies
+            <m>a \cdot b = b \cdot a = e</m> is called an inverse
+            for <m>a</m> and written <m>a^{-1}</m>. 
+          </li>
+          <li>
+            Let <m>B \subset A</m> be a subset of the set. If, for
+            all <m>a, b \in B</m>, <m>a \cdot b \in B</m>, then the
+            subset <m>B</m> is <term>closed under the binary
+            operation</term>. That is, whenever the binary relation
+            starts in the subset, it always stays in the subset. 
+          </li>
+          <li>
+            Now assume there are two binary operations, <m>\cdot</m>
+            and <m>\star</m> on the set. If, <m>\forall a,b,c \in
+            A</m>, <m>a \star ( b \cdot c) = (a \star b) \cdot (a
+            \star c)</m>, then we say that the operation
+            <m>\star</m> <term>distributes</term> over the operation
+            <m>\cdot</m>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
 </section>
