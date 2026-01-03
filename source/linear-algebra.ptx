@@ -18,8 +18,8 @@
   <definition>
     <statement>
       <p>
-        A set <m>V</m> is a vector space if it satisfied these
-        conditions.
+        A set <m>V</m> is a <term>vector space</term> if it satisfied
+        these conditions.
         <ul>
           <li>
             The set <m>V</m> has a commutative binary operation
@@ -28,9 +28,194 @@
           </li>
           <li>
             The set <m>V</m> allows for scalar multiplication: if
-            <m>v \in v</m>
+            <m>v \in V</m> and <m>a</m> is a scalar, then <m>av \in
+            V</m>. 
           </li>
         </ul>
+        I am still being a little informal here: I'll talk about a
+        more formal approach to vector spaces later in the course.
+        (What are the rules for scalar multiplication and the
+        interaction with vector addition, for example?) For
+        now, this will do. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The identity for the binary operation for a vector space is
+    written <m>0</m>. This means that for any vector space, it makes
+    sense to talk about the zero-object for that vector space, and use
+    the symbol <m>0</m> for it, regardless of what the
+    <sq>vectors</sq> actually are. 
+  </p>
+  <p>
+    Once we have vectors spaces, we get a bunch of useful terminology.
+    This terminology is defined for <sq>vector</sq>, but it ends up
+    applying much more broadly in abstract algebra. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>u,v,w,u_i</m> be vectors in some vector space, and let
+        <m>a,b,c,a_i</m> be scalars. The index <m>i</m> comes from
+        some finite indexing set <m>I</m>. It is important, for
+        these definitions, that the indexing set is finite. 
+        <ul>
+          <li>
+            A <term>linear combination</term> of <m>u</m> and
+            <m>v</m> is any vector of the form <m>au + bv</m>.
+            Likewise, the linear combination of any finite set of
+            vector <m>\{u_i | i \in I\}</m> is any vector of this
+            form.
+            <me>
+              \sum_{i \in I} a_i u_i 
+            </me>
+          </li>
+          <li>
+            The <term>span</term> of a finite set of vectors is the
+            set of all linear combinations of those vectors. 
+          </li>
+          <li>
+            A set of vectors <m>\{u_i | i \in I\}</m> is called
+            <term>linearly independent</term> is the only solution
+            to the equation
+            <me>
+              \sum_{i \in I} a_i u_i = 0 
+            </me>
+            is the trivial solution where <m>\forall i \in I, a_i =
+            0</m>. A set which is not linearly independent is called
+            <term>linearly dependent</term>. 
+          </li>
+          <li>
+            A <term>linear subspace</term> of a vector space is a
+            subset of that vector space which is itself a vector
+            space using the same operations of vector addition and
+            scalar multiplication. It is true that all linear
+            subspaces can be written as spans and all spans are
+            linear subspaces. It is also true that all linear
+            subspace include <m>O</m>. 
+          </li>
+          <li>
+            A <term>spanning set</term> for a linear subspace is any
+            set of vectors such that <m>\{u_i | i \in I\}</m> such
+            that the linear subspace is equal to <m>\Span \{u_i | i
+            \in I\}</m>. 
+          </li>
+          <li>
+            A <term>basis</term> for a linear subspace is any
+            minimal spanning set (any spanning set with the minimum
+            number of vectors). It is true that the vectors in a
+            basis must be linearly independent, and it is equivalent
+            to say that a basis is a linearly independent spanning
+            set. 
+          </li>
+          <li>
+            The <term>dimension</term> of a linear subspace is the
+            number of vectors in its basis. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Like most mathematical object, vectors spaces have functions
+    between them. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>U</m> and <m>V</m> be vector spaces. A function <m>f:
+        U \rightarrow V</m> is called a <term>linear
+        transfomration</term> if it satisfies these two properties. 
+        <ul>
+          <li>
+            If <m>u_1, u_2 \in U</m>, then <m>f(u_1 + u_2) = f(u_1)
+            + f(u_2)</m>. 
+          </li>
+          <li>
+            If <m>u \in U</m> and <m>a</m> is a scalar, then
+            <m>f(au) = af(u)</m>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Most of your experience with functions between vector spaces is
+    likely between Euclidean spaces, where these functions are very
+    nicely presented an classified. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>f: \RR^m \rightarrow \RR^m</m> be a linear
+        transformation. Then <m>f</m> can be uniquely described as
+        the matrix action on vectors given by some <m>n \times m</m>
+        matrix <m>M</m>. In this way, linear transformation between
+        Euclidean spaces completely and perfectly classified by
+        matrices, so much so that often only the matrix is given to
+        identify the function. 
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    I also want to reivew some definitions for matrices. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+      <ul>
+        <li>
+          The <m>n \times m</m> matrix with all entries equal to zero
+          is called the <term>zero matrix</term> of that size. 
+        </li>
+        <li>
+          The <m>n times n</m> matrix with <m>1</m> on the diagonal
+          and all other entires zero is called the <term>identity
+          matrix</term> of that size. 
+        </li>
+        <li>
+          The <term>rowspace</term> of a matrix is the span of its
+          rows, thought of as vectors themselves. 
+        </li>
+        <li>
+          The <term>columnspace</term> of a matrix is the span of its
+          columns, thought of as vectors themselves.
+        </li>
+        <li>
+          The <term>image</term> of a matrix is the range of the
+          matrix as a function. 
+        </li>
+        <li>
+          The <term>kernel</term> of a matrix is all vectors in the
+          domain of the function which are sent to the zero vector. 
+        </li>
+        <li>
+          The <term>determinant</term> of a matrix is a number
+          associated to that matrix, written <m>\det M</m>, which
+          captures the multiplicative effect on size (area, volume,
+          etc) and orientation. 
+        </li>
+        <li>
+          An <term>orthogonal matrix</term> is a matrix which preserve
+          lengths of vectors. (There are many equivalent definitions
+          which you might remember, but this will do for now.) 
+        </li>
+        <li>
+          The operation <term>matrix multiplication</term> is a binary
+          operation on matrix. It corresponds to composition of
+          functions when the matrices are interpreted as linear
+          transformation. The identity matrix is the identity for this
+          binary operation, justifying its name. 
+        </li>
+        <li>
+          A square matrix <m>M</m> is invertible is there exists
+          another matirix <m>M^{-1}</m> such that <m>MM^{-1} =
+          M^{-1}M = \Id</m>. Equivalently, the matrix is invertible as
+          a function and <m>M^{-1}</m> is the matrix associated to the
+          inverse function. It is true that a matrix is invertible if
+          and only it its determinant is non-zero. 
+        </li>
+      </ul>
       </p>
     </statement>
   </definition>

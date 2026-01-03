@@ -1,6 +1,536 @@
 <section xml:id="section-proofs">
-    <title>Some Notes About Proofs</title>
+  <title>Some Notes About Proofs</title>
+  <introduction>
+    <p>
+      In this late review section, I want to talk a little bit about
+      proofs. This is an abstract pure mathematics course, so there
+      will be a lot of focus on proofs. Proving theorems is what
+      mathematicians do: it is our way of building the knowledge
+      edifice of mathematics. It's important. Therefore, reviewing
+      some ideas you hopefully have at least seen before is valuable
+      to do. 
+    </p>
+    <p>
+      What is a mathematical proof? It's any logical argument that
+      proceed from some mathematical assumptions to a mathematical
+      conclusion. It consists, usually, of both sentences and
+      mathematical symbols. It start with the assumptions. It builds
+      on them, often bringing in previous mathematical knowledge. It
+      proceeds step by step, working towards the conclusion. Each step
+      needs to be logically valid. Finally, it should be well written
+      and clearly presented. It needs to be persuasive and
+      understanding, which cannot happen without good writing in
+      addition to good logic. 
+    </p>
+    <p>
+      That's the general idea. In the rest of this review, I want to
+      talk about specific techniques and styles of proof. These are
+      all particular to various situation: most proofs don't
+      necessarily fit into any of these particulars. That said, having
+      some familiar structures can be very helpful in trying to write
+      proofs. I'll start with some proof techniques. 
+    </p>
+  </introduction>
+  <subsection>
+    <title>Proof by Contradiction</title>
+    <p>
+      This is a pretty common proof technique. It proceed by assuming
+      the opposite of what you want to prove. If that assumption leads
+      to a contradiction or an impossibility, then the assumption must
+      have been wrong. I can summaize this with a list of the piece of
+      the proof. 
+      <ul>
+        <li>
+          You want to prove some statement <m>S</m>. 
+        </li>
+        <li>
+          You assume that the negation, <sq>not <m>S</m></sq>, is
+          true. 
+        </li>
+        <li>
+          Based on this assumption and other pieces of known
+          mathematics, you proceed with a seris of logical steps and
+          implications. 
+        </li>
+        <li>
+          These logical steps eventually lead to something that cannot
+          be true: a contradiction, an impossibility, something that
+          is known to be false. 
+        </li>
+        <li>
+          Since the assumption led to something impossible, the
+          assumption must have been false. That is, <sq>not
+          <m>P</m></sq> is false. Therefore <m>P</m> is true. 
+        </li>
+      </ul>
+    </p>
+    <p>
+      There are two important observations about proof by
+      contradiction. First, it relies on a logical rule, which is
+      called the <term>law of the excluded middle</term>, abbreviated
+      LEM. This is rule which says that any meaningful mathematical
+      statment must either be true or false. This is a sensible
+      logical rule, and most of mathematics does operate under this
+      rule. However, it is not without contraversy. Not all systems of
+      logic allow it, and it is possible to do mathematics without
+      LEM. In this kind of mathemaics, proof by contradiction is not
+      allowed. There is also some very deep mathematical logic, which
+      we won't get into in this course, but which conclude that even
+      if you allow LEM and proof by contradiciton, eventually all
+      mathematics systems will have statements that are neither true
+      or false. This is fascinating mathematical logic, but for
+      another course, sadly. 
+    </p>
+    <p>
+      Second, proof by contradiction is <term>non-constructive</term>.
+      Often, proof by contradiction will tell you that some
+      mathematical thing exists (because its non-existence would lead
+      to a contradiction), but it doesn't tell you anything about how
+      to actually figure out what the thing is. It makes a statement,
+      but often the statements are difficult to work with. Accepting
+      non-constructive arguments is a part of learning to aclimate to
+      abstract mathematics: we can often prove some thing exists
+      without having any idea about how to calculate it or determine
+      its properties. And we live with this. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>Mathematical Induction</title>
+    <p>
+      Mathematical induction is a technique for proving statements
+      that are indexed by the natural numbers. Here is an example. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          The following statement is true for all <m>n \in \NN</m>. 
+          <me>
+            \sum_{i=1}^n i = \frac{n(n+1)}{2} 
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      This proposition is not just one statement, it is infinitely
+      many statment. It is all of these equations:
+      <md>
+        <mrow>
+          1 \amp = \amp \frac{(1)(2)}{2} \amp (n = 1)
+        </mrow>
+        <mrow>
+          1 + 2 \amp = \amp \frac{(2)(3)}{2} \amp (n = 2)
+        </mrow>
+        <mrow>
+          1 + 2 + 3 \amp = \amp \frac{(3)(4)}{2} \amp (n = 3)
+        </mrow>
+        <mrow>
+          1 + 2 + 3 + 4 \amp = \amp \frac{(4)(5)}{2} \amp (n = 4)
+        </mrow>
+        <mrow>
+          1 + 2 + 3 + 4 + 5 \amp = \amp \frac{(5)(6)}{2} \amp (n = 5)
+        </mrow>
+        <mrow>
+          \vdots \amp \amp \vdots \amp \vdots
+        </mrow>
+      </md>
+    </p>
+    <p>
+      It turns out this structure of a proposition is common enough
+      that we have developed a whole technique for proving it.
+      Mathematical induction is this technique. Here is the setup of
+      an induction proof. 
+      <ul>
+        <li>
+          Prove the base case. This is usually <n>n=1</n>, but this
+          might start with any spot; sometimes the statement is only
+          true starting at, say, <m>n=4</m>.
+        </li>
+        <li>
+          Assume that the statement is true for some arbitrary
+          <m>k</m>. This is called the induction assumption. 
+        </li>
+        <li>
+          From the induction assumption, prove that the statement is
+          true for <m>n = k+1</m>. This is the induction step.
+        </li>
+        <li>
+          Conclude that the statement is true for all <m>n \in
+          \NN</m>, at least all after the base case. 
+        </li>
+      </ul>
+    </p>
+    <p>
+      Why does this work? Well, the base case is true. Then, the
+      induction step says that every case implies the following cases.
+      So case 1 implies case 2. And then case 2 implies case 3. And
+      then case 3 implies case 4. And then case 4 implies case 5. And
+      so on, all the way through the natural numbers. In our logic, we
+      accept this as a way to prove something true for all natural
+      numbers. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>Proving Equations</title>
+    <p>
+      Many proposition in mathematics boil down to just proving an
+      equation: prove that <m>A = B</m> for some kind of mathematics
+      things <m>A</m> and <m>B</m>. Though this is a common kind of
+      proof, there is a pitfall here that is extremely common for
+      students to fall into: reduction to equality. Reduction to
+      equality is not a valid proof structure. 
+    </p>
+    <p>
+      What do I mean by reduction to equality? I mean a proof that
+      looks like this:
+      <md>
+        <mrow>
+          A \amp = \amp B
+        </mrow>
+        <mrow>
+          \text{something} \amp = \amp \text{something}
+        </mrow>
+        <mrow>
+          \vdots \amp = \amp \vdots
+        </mrow>
+        <mrow>
+          \text{something} \amp = \amp \text{something}
+        </mrow>
+        <mrow>
+          \text{same} \amp = \amp \text{same}
+        </mrow>
+      </md>
+      It's a proof that start with both sides of an equation,
+      manipulates both, and ends up with a true equality at the end. 
+    </p>
+    <p>
+      So why doesn't this work? The full logical answer is a bit
+      complicated, but let me give you a simple example.
+      <md>
+        <mrow>
+          6 \amp = \amp 7 
+        </mrow>
+        <mrow>
+          (0)5 \amp = \amp 7(0)
+        </mrow>
+        <mrow>
+          0\amp = \amp 0
+        </mrow>
+      </md>
+      If reduction to equality worked, then this would be a proof that
+      <m>6 = 7</m>, which is obviously not true. The fact that the
+      equality at the end is true does not actually mean the starting
+      equality is true. This is a nice concise example, but
+      multiplication by zero is not, in fact, the only problem with
+      this structure: the logic here is suspect for many reasons.
+      Therefore, this kind of proof is avoided. 
+    </p>
+    <p>
+      So how to you prove an equality? You start on one side and end
+      up on the other. The structure of the proof should look
+      something like this. 
+      <md>
+        <mrow>
+          A \amp = \amp \text{something}
+        </mrow>
+        <mrow>
+          \amp = \amp \text{something}
+        </mrow>
+        <mrow>
+          \amp = \amp \vdots
+        </mrow>
+        <mrow>
+          \amp = \amp \text{something}
+        </mrow>
+        <mrow>
+          \amp = \amp B 
+        </mrow>
+      </md>
+      This is a valid structure. Assuming the steps on from each
+      <sq>something</sq> to the next are valid mathematics, this is
+      reliable. There are no logical pitfalls here. (Start on the
+      right is, of course, possible as well. You could start with
+      <m>B</m> and proceed to <m>A</m> in the same way. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>A Few Miscelaneous Proof Structures</title>
+    <subsubsection>
+      <title>Proving Set Equality</title>
       <p>
-        Some stuff
+        Sometimes we need to prove that two sets are the same set:
+        <m>A = B</m> where <m>A</m> and <m>B</m> are sets. According
+        to <xref ref="definition-sets-basics"/>, two sets are equal
+        if and only if they have the same elements. Therefore, to
+        prove that two sets are equal, you have to prove that all
+        elements of <m>A</m> are elements of <m>B</m> and
+        vice-versa. 
       </p>
+      <p>
+        Formally, these statements are <m>A \subset B</m> and <m>B
+        \subset A</m>. Therefore, to prove that sets are equal, by
+        far the most common method is to separately prove these two
+        statements: that <m>A</m> is a subset of <m>B</m> and that
+        <m>B</m> is a subset of <m>A</m>. 
+      </p>
+    </subsubsection>
+    <subsubsection>
+      <title>If And Only If Proofs</title>
+      <p>
+        Many proposition in mathematics are equivalences: <m>P
+        \equiv Q</m>. In word, this is usually started that <m>P</m>
+        is true if and only if <m>Q</m> is true. We often call these
+        <sq><term>if and only proofs</term></sq>. 
+      </p>
+      <p>
+        To prove an equivelnce means proving both directions. An
+        <sq>if and only if</sq> proof will always have two separate
+        pieces. In the first piece, <m>A</m> is the assumption and
+        <m>B</m> is the conclusion: you will argue starting with
+        <m>A</m> and trying to get to <m>B</m>. In the second piece
+        of the proof, this will be reversed: you will argue starting
+        with <m>B</m> and ending with <m>A</m>. 
+      </p>
+      <p>
+        An equivalence proof is not complete without these two
+        steps. Even if the second part of the proof is the exact
+        reverse of the first (all the steps of the first from
+        <m>A</m> to <m>B</m> can be logically reverseed), such a
+        fact still needs to be clearly stated to complete the second
+        part of the proof. 
+      </p>
+    </subsubsection>
+    <subsubsection>
+      <title>Proving by Example</title>
+      <p>
+        A common mistake is proving by example. Say you are asked to
+        prove a statement of the form: all things of type <m>A</m>
+        have property <m>P</m>. You cannot prove this by giving
+        examples. The proof has to be general: the statement says
+        that <emph>all</emph> things of type <m>A</m> have to have
+        the property. Mathematics doesn't care about preponderance
+        of evidence: no amount of example will constitute a proof. 
+      </p>
+      <p>
+        That said, there are two place where proof by example is
+        entirely appropriate. First, if I negate the previous
+        statement, I get this claim: not all things of type <m>A</m>
+        have property <m>P</m>. This can be proved by example, since
+        find just one thing that fails the property means that the
+        statement is true. Whenever you have to prove that some
+        property is false, you only need one falsification (as
+        opposed to proving it is true, where all possible instances
+        have to be justified). 
+      </p>
+      <p>
+        The second place is similar: existence statements can often
+        be proved by example. Say you are trying to prove this
+        statement: there exists at least one thing of type <m>A</m>
+        with property <m>P</m>. This can be proved by example, since
+        the statement only cares about the existence of one thing.
+        You only have to find that one thing, that one example. 
+      </p>
+      <p>
+        This means that when you have something that looks like the
+        negation of a property or an existence statement, you should
+        consider if an example is sufficient. I can't given you a
+        full general rule here: this is proof, so there are always
+        subtleties, strange cases, weird ways of phrasing claims,
+        and so on. So I can't say that all existence proof or all
+        negations can be done by examples. But I can say that you
+        should thing carefully about such statement to see if an
+        example is, in fact, sufficient for proof. 
+      </p>
+    </subsubsection>
+    <subsubsection>
+      <title>Proof by Cases</title>
+      <p>
+        Many statements in mathematics apply to a number of
+        situations. Often, a proof can be split up into a number of
+        cases. Say you want to prove something about positive
+        integers, and what you are proving depends somehow on the
+        factors. You may need different arguments for prime and
+        compositive numbers. In this situation, you would break your
+        proof into cases: a case for prime numbers, with its own
+        arguments; and a case for composite numbers, with a different
+        set of arguments. 
+      </p>
+      <p>
+        This is a general idea, but a good one to keep in mind. If you
+        find an argument that sort-of work, ask yourself if it works
+        for a certain subset of the objects under consideration. Maybe
+        you can separate your proof into cases, where you idea works
+        for a certain subset and other ideas might work for other
+        subsets. 
+      </p>
+    </subsubsection>
+    <subsubsection>
+      <title>Lemmas</title>
+      <p>
+        For long proofs, the orginization of the proof can become a
+        major challenge. Longer proofs often have many layered
+        arguments which cascade into each other. Keeping track of all
+        the assumptions and arguments can easily become daunting. 
+      </p>
+      <p>
+        One way to tackle this problem is with lemmas. A
+        <term>lemma</term> is a small piece of a proof that can be
+        separated from the rest of the proof, proved on its own, and
+        then used in the proof. It is an organization structure to
+        keep track. Often a lemma is use for an important technical
+        detail of a proof particularly if that technical detail needs
+        to be used multiple times. 
+      </p>
+    </subsubsection>
+    <subsubsection>
+      <title>Bijective Functions</title>
+      <p>
+        There are many proof in mathematics where the goal is to prove
+        some function is bijective. According to <xref
+        ref="definition-functions-jective"/>, a bijective function is
+        both injective and surjective. To prove a function is
+        bijective means proving both of these. Both of these pieces
+        have common proof setups as well. Let <m>f:A \rightarrow B</m>
+        be a function.
+      </p>
+      <p>
+        To prove that <m>f</m> is injective, the standard setup is to
+        take two elements <m>a_1, a_2 \in A</m> and then assume that
+        <m>f(a_1) = f(a_2)</m>. From this assumption, you try to prove
+        that <m>a_1 = a_2</m>. If this assumption does actually lead
+        to the conclusion that <m>a_1 = a_2</m>, then the function is
+        injective. 
+      </p>
+      <p>
+        To prove that <m>f</m> is surjective, the standard setup is to
+        take an arbitrary <m>b \in B</m> and then construct (or prove
+        by some other means, often contradiciton) that there must
+        exist an <m>a in A</m> such that <m>f(a) = b</m>. Since the
+        element of <m>B</m> was chosen completely arbitrarily, this
+        prove that all of <m>B</m> is indeed in the output of the
+        function, which means that it is surjective. 
+      </p>
+    </subsubsection>
+  </subsection>
+  <subsection>
+    <title>Proof Writing</title>
+    <p>
+      Writing proof is one of the most difficult thing to learn in
+      mathematics. In addition to figuring out the logical argument,
+      you also have to figure out how to put that argument into
+      language: how to structure you sentences and paragrpahs, how to
+      describe the logic, what symbols and letters to use. All of this
+      take practice, much like ordinary writing take practice. The
+      writing of a proof can almost always be refined and improved:
+      like all good writing, proof writing requires drafts and edits
+      to produce a piece of quality writing. 
+    </p>
+    <p>
+      I'd like to make two concrete suggestions here. The first is
+      that proof require great precision in your writing. There are
+      many ways to write precisely and, again, it is a skill to
+      practice. But to be concrete, the first advice is to be very
+      careful with pronouns. Whenever you use a pronoun, make sure it
+      is clear in the the writing what you pronoun refers to. In
+      particular, <sq>this</sq> turns out to be a very dangerous word.
+      It's very common in a prove to have sentences that start in this
+      way:
+      <quote>
+        This implies that <m>\ldots</m>
+      </quote>
+      These are dangerous sentences: what does <sq>this</sq> refer to?
+      In such sentences, a small adjustment can often help a great
+      deal. Tell you read what you are actually referring to. For
+      example, depending on what you are talking about, any of these
+      would be preferable. 
+      <quote>
+        This induction argument implies that <m>\ldots</m>
+      </quote>
+      <quote>
+        The existence of this function <m>f</m> implies that <m>\ldots</m>
+      </quote>
+      <quote>
+        The argument in the previous paragraph implies that <m>\ldots</m>
+      </quote>
+    </p>
+    <p>
+      My second concrete suggestion is to be very careful with new
+      symbols. Whenever you introduce a new symbol, make sure you tell
+      your reader what the symbol is. If you want to use a new letter
+      <m>a</m> as a real number, say
+      <sq>Let <m>a</m> be a real number</sq> before you use it in an
+      equation. Do the same for any other new letter or other symbol
+      you introduce. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>Using Previously Known Material</title>
+    <p>
+      Mathematics is a structure and builds on itself. High-school
+      algebra relies on elementary school arthmetic, university
+      calculus relies on high-school algebra, and so on through all
+      the higher levels of mathematics. This is particularly true to
+      proof: almost not mathematical proofs are just proved entirely
+      from first principles. (A famous and ridiculous cases is found
+      in Principia Mathematica by Russell and Whitehead. In this
+      famous text, which tried to build all of mathematics out of a
+      pure logical foundation. This book takes several hundred pages
+      of intense and complex symbolic logic to get to basic
+      arithmetic, such as <m>1 + 1 = 2</m>.) 
+    </p>
+    <p>
+      One of the challenges of writing proof in university courses is
+      known what is considered <sq>previously known material</sq> for
+      the purpose of this proof. So, let me try to clarify. 
+      <ul>
+        <li>
+          The prerequisites for this course are Linear Algebra and, by
+          the prerequisite chain, also Calculus I. Therefore, material
+          from those courses is considered known material. 
+        </li>
+        <li>
+          There are no other prerequisites for this course. However, a
+          number of people in this course may have studied Discrete
+          Mathematics. The material from such a course might also be
+          considered known material, but I will not rely on this. 
+        </li>
+        <li>
+          The material in this whole Preliminaries chapter is also
+          known material for the rest of the course. In particular,
+          set theory, relations, order, the set definition of
+          functions: these may all be somewhat new to you. You should
+          use the definition, propositions and theorem in this
+          Preliminaries chapter as known material for the rest of the
+          course. 
+        </li>
+        <li>
+          Obviously, grade-school arthmetic and algebra are also known
+          material. This can be a bit tricky, since particularly
+          high-school curriculum varies greatly across different
+          provinces and, particularly, different countries. 
+        </li>
+        <li>
+          Other than this, all of the exercises and proof in this
+          course will be self-sufficient. You will be able to prove
+          them only using results already stated in the course. I
+          would like you do to this: my expectation for the
+          assignments in this course is that you work from the course
+          material. 
+        </li>
+        <li>
+          In particular, this means that using external resources
+          becomes tricky. If you go looking for help on the internet
+          (other texts, Youtube videos, etc), you certainly find
+          people writing and talking about all the things in this
+          course. But each of those people will have a different idea
+          of what their known material is, which will necessarily
+          affect how they talk, how they make argument, how they
+          make proofs. Working with external resources will always
+          mean figuring out not just their arguments, but what known
+          material those argument rely on and whether or now that
+          aligns with course. This is not impossible, but it can be
+          difficult. 
+        </li>
+      </ul>
+    </p>
+  </subsection>
 </section>

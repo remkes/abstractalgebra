@@ -69,7 +69,7 @@
   <p>
     Here are the basic operations and notations for sets. 
   </p>
-  <definition>
+  <definition xml:id="definition-sets-basics">
     <statement>
       <p>
         <ul>
@@ -429,7 +429,7 @@
     definition that only depend on the basic set theory we've done
     so far. 
   </p>
-  <definition>
+  <definition xml:id="definition-functions-jective">
     <statement>
       <p>
         Let <m>f:A \rightarrow B</m> be a function.
