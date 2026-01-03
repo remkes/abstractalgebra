@@ -1,5 +1,9 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-groups">
   <title>Groups</title>
   <xi:include href="groups-definition.ptx" />
-  <xi:include href="groups-examples.ptx" />
+  <!--
+  <xi:include href="cyclic-groups.ptx" />
+  <xi:include href="dihedral-groups.ptx" />
+  <xi:include href="permutation-groups.ptx" />
+  -->
 </chapter>

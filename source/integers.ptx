@@ -185,14 +185,20 @@
     <me>
       \{ \bar{0}, \bar{1}, \bar{2}, \ldots, \overline{n-1} \}
     </me>
-    The notation for this set is <m>\ZZ/n\ZZ</m>, and it is called
-    the integers modulo <m>n</m> (or just mod <m>n</m>). 
-    </p>
+  </p>
+  <definition xml:id="definition-integers-mod">
+    <statement>
+      <p>
+        These equivalence classes for are written <m>\ZZ/n\ZZ</m>, and
+        called the integers modulo <m>n</m> (or just mod <m>n</m>). 
+      </p>
+    </statement>
+  </definition>
   <p>
-    The integers modulo <m>n</m> is a pretty important example for
+    The integers mod <m>n</m> is a pretty important example for
     many parts of the course. It inherit addition and multiplication
     from the integers (again, feel free to check that these
-    operations are well-defined<emdash />an excellent example of the
+    operations are well-defined <emdash/> an excellent example of the
     use of that tricky term as well.) 
   </p>
 </section>

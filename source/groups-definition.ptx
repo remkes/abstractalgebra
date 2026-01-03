@@ -1,6 +1,119 @@
-<section xml:id="section-groups-definition">
-  <title>Groups - Definition</title>
-  <p>
-    About groups.
-  </p>
+<section xml:id="section-groups-definition-examples">
+  <title>Groups - Definition and Examples</title>
+  <subsection xml:id="subsection-groups-definition">
+    <p>
+      Abstract algebra is build by taking familiar mathematical
+      structure and, well, abstracting them: pulling the details of
+      their structure <emdash/> their patterns, their arrangements
+      <emdash/> away from their particular and trying to understand
+      their general patterns. We start with number sets, which are the
+      most familiar. What do number sets have? Well, a good place to
+      start is arithmetic: they have binary operations with certain
+      structure and patterns. 
+    </p>
+    <p>
+      Most number sets have multiple binary operations: addition,
+      subtraction, multiplication, division. We'll get to abstractin
+      of this level, but it makes sense to start at a more fundamental
+      place. Therefore, let's just focus on one binary operation. We
+      can think of the integers with just addition. We can think of
+      the positive real number with just multiplication. These are
+      sets with one binary operation. 
+    </p>
+    <p>
+      This leads to the definition of a group. A group is the first
+      and most fundamental abstraction of a set with a binary
+      operation. Here are the details.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A set <m>G</m> with a binary operation <m>\cdot</m> is a
+          <term>group</term> if it satisfies the following properties. 
+          <ul>
+            <li>
+              The binary operation is associative.
+            </li>
+            <li>
+              There exsts an element <m>e \in G</m> this is an
+              identity for the binary operation.
+            </li>
+            <li>
+              For each eleemnt <m>g \in G</m>, there exist an element
+              <m>g^{-1} \in G</m> which is an inverse to <m>g</m>:
+              that is, <m>g \cdot g^{-1} = g^{-1} \cdot g = e</m>. 
+            </li>
+          </ul>
+          Since both the set and the binary operation are required for
+          the definition, the formal way to refer to a group would be
+          to write <m>(G, \cdot)</m>. Very often, the binary operation
+          is understood from the context and we just use the set
+          <m>G</m> to refer to the group. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      That's all we need: associativity, identity and inverses. In
+      particular, we do not assume that the binary operation is
+      commutative. If it is, we have a term for this. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> be a group. If the binary operation is
+          commutative, we say that <m>G</m> is a
+          <term>commutative</term> group or an <m>abelian</m> group.
+          If the binary operation is not commutative, then <m>G</m> is
+          a <term>noncommuative</term> or <term>nonabelian</term>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Before moving on to the first examples, let me make a very
+      important point about notation. I've defined a group using
+      <sq><m>\cdot</m></sq> as the generic symbol for a binary
+      operation. This is fine for the definition, but now that we know
+      about abelian and non-abelian groups, there are important
+      notation conventions. 
+    </p>
+    <p>
+      Abelian groups are very often written using <sq>+</sq> as the
+      binary operation. In group theory (and elsewhere throughout
+      mathematics), addition is treated as the archetypical
+      commutative operation, and we will often try to write abelian
+      gorups using addition notation, even if this means extending the
+      normal notion of addition. The point here is that the symbol
+      <sq>+</sq> is very strongly associated with commutative
+      operations <emdash/> when you see addition, you should think
+      commutativity. 
+    </p>
+    <p>
+      Similarly, nonabelian groups are almost always written with some
+      kind of multiplicative notation. The most common notation here
+      is to drop the symbol entirely: if <m>g, h \in G</m> are group
+      elements, then usually the operation is just written <m>gh</m>.
+      This will be the convention that I stick to in these notes. When
+      you see this notation, you should have the possibility of a
+      noncommutative operation in mind. That said, many
+      multiplications are still commutative, so there are no
+      guarantees here in either direction. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-groups-examples">
+    <title>First Examples of Groups</title>
+    <p>
+      Examples are, of course, very important to understanding what is
+      going on with this abstract definition. Let's go through a bunch
+      of examples. In addition to these examples, the next three
+      section of this chapter are all devoted to another important
+      example of a group. 
+    </p>
+    <example>
+      <title>Integers Modulo <m>n</m>. </title>
+      <p>
+        In <xref ref="definition-integers-mod"/>, I defined the
+        integers mod <m>n</m>, written <m>\ZZ/m\ZZ</m>. 
+      </p>
+    </example>
+  </subsection>
 </section>
