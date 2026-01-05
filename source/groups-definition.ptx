@@ -290,14 +290,14 @@
       </p>
       <me>
         \begin{array}{c| c c c c c c c c }
-          + \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
+          \times \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
           19  \\
           \hline
           1 \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
           19 \\
           3 \amp 3 \amp 9 \amp 1 \amp 7 \amp 13 \amp 19 \amp 11 \amp
           17 \\
-          7 \amp 7 \amp 1 \amp 9 \amp 13 \amp 17 \amp 11 \amp 19 \amp
+          7 \amp 7 \amp 1 \amp 9 \amp 3 \amp 17 \amp 11 \amp 19 \amp
           13 \\
           9 \amp 9 \amp 7 \amp 3 \amp 1 \amp 19 \amp 17 \amp 13 \amp
           11 \\
