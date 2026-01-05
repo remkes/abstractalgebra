@@ -1,9 +1,15 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-groups">
   <title>Groups</title>
   <xi:include href="groups-definition.ptx" />
-  <!--
   <xi:include href="cyclic-groups.ptx" />
+  <!--
   <xi:include href="dihedral-groups.ptx" />
   <xi:include href="permutation-groups.ptx" />
+  <xi:include href="groups-properties.ptx" />
+  <xi:include href="subgroups.ptx" />
+  <xi:include href="generator-and-relations.ptx" />
+  <xi:include href="homomorphisms.ptx" />
+  <xi:include href="isomorphisms.ptx" />
+  <xi:include href="group-actions.ptx" />
   -->
 </chapter>
