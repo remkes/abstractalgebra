@@ -1,17 +1,20 @@
 <section xml:id="section-sets">
   <title>Set Theory</title>
   <p>
-    Outside of logic, set theory is the start point of modern
-    mathematics. The review here is somewhat informal. 
+    Outside of logic, set theory is the starting point of modern
+    mathematics. Set theory is itself an important branch of
+    mathematic and can be setup very carefully and formally. What I
+    will do here will be a little bit informal, but careful enough to
+    all that we will need in the course. 
   </p>
   <definition>
     <statement>
       <p>
         A <term>set</term> is a collection of things, which are
-        called <term>elements</term> or <term>member</term> of the
-        set. If <m>a</m> is an element of a set <m>A</m>, the
-        notation is <m>a \in A</m>. This is read as <sq><m>a</m> is
-        a member of <m>A</m></sq>. 
+        called the <term>elements</term> or <term>members</term> of
+        the set. If <m>a</m> is an element of a set <m>A</m>, the
+        notation to shows its membership is <m>a \in A</m>. This is
+        read as <sq><m>a</m> is a member of <m>A</m></sq>. 
       </p>
       <p>
         Sets can be defined explicitly as a list of elements.
@@ -47,7 +50,7 @@
             the set of integers. 
           </li>
           <li>
-            <m>\QQ = \{\frac{a}{b} | a, b in \ZZ, a \neq 0 \} </m>
+            <m>\QQ = \{\frac{a}{b} | a, b \in \ZZ, a \neq 0 \} </m>
             is the set of rational numbers. (Technically, I should
             also identity equivalent fractions, but this
             definition will do fow now.) 
@@ -59,8 +62,8 @@
           </li>
           <li>
             <m>\CC = \{a + b \imath | a, b \in \RR \} </m> is the
-            set of complex numbers. The number <m>i</m>, by
-            definition, has the property that <m>i^2 = -1</m>. 
+            set of complex numbers. The number <m>\imath</m>, by
+            definition, has the property that <m>\imath^2 = -1</m>. 
           </li>
         </ul>
       </p>
@@ -93,7 +96,7 @@
           <li>
             The notation <m>A \cup B</m> is the union of the
             sets <m>A</m> and <m>B</m>: the union consists of
-            all elements that below to at least one of the two sets. 
+            all elements that belong to at least one of the two sets. 
           </li>
           <li>
             The notation <m>A \backslash B</m> is the difference of 
@@ -107,7 +110,7 @@
             many elements there are in the set. If <m>|A| \in
             \NN \cup \{0\}</m>, then the set is called
             <term>finite</term>. Otherwise, the set is called
-            <term>infinite</term>.
+            <term>infinite</term>. 
           </li>
         </ul>
       </p>
@@ -115,25 +118,25 @@
   </definition>
   <p>
     Now that we have sets, we can make a variety of useful
-    constructions from sets. All of these will be useful for
+    constructions from sets. All of these will be important for
     buildings the objects of abstract algebra. 
   </p>
   <definition>
     <statement>
       <p>
-        The <term>Cartesian product</term> of two sets <m>A</m> amd
+        The <term>cartesian product</term> of two sets <m>A</m> amd
         <m>B</m> is written <m>A \times B</m>. It is the set of
         ordered pairs:
         <me>
           A \times B \defeq \{(a,b) | a \in A, b \in B\}
         </me>
-        The catesian product can be iterated to product longer
+        The cartesian product can be iterated to produce longer
         ordered lists. 
         <me>
           A \times B \times C \defeq \{(a,b,c) | a \in A, b \in B, c
           \in C\}
         </me>
-        The caretian product of a set with itself is writen with an
+        The cartesian product of a set with itself is writen with an
         exponent: <m>A \times A = A^2</m>, and likewise for
         iterations: <m>A^n</m>. The familiar notations for Euclidean
         space, <m>\RR^2</m>, <m>\RR^3</m>, <m>\RR^n</m>, are
@@ -145,7 +148,7 @@
     <statement>
       <p>
         Let <m>A</m> be a set. The <term>power set</term> of <m>A</m>
-        is the set of all subset of <m>A</m>. It is written
+        is the set of all subsets of <m>A</m>. It is written
         <m>\calP(a)</m>. 
       </p>
     </statement>
@@ -153,16 +156,16 @@
   <definition>
     <statement>
       <p>
-        A <term>relation</term> on the sets <m>A</m> and <m>B</m> is
-        subset of <m>A \times B</m>. 
+        A <term>relation</term> on a set <m>A</m> is
+        subset of <m>A^2</m>. 
       </p>
     </statement>
   </definition>
   <p>
     This is a very general and abstract defintion: intuitive
-    <sq>relations</sq> between sets are usually very particular
+    <sq>relations</sq> on sets are usually very particular
     subsets of the cartesian product. However, having this level of
-    generalize and abstraction in the definition is very useful.
+    generality and abstraction in the definition is very powerful.
     This will become a theme in the course: the power of taking a
     difficult and abstract definition and understanding the property
     of the definition on such a level. 
@@ -170,9 +173,8 @@
   <definition>
     <statement>
       <p>
-        There are many types of relations most of which are defined
-        on the product of a set with itself. Let <m>R \subset
-        A^2</m> be a relation. 
+        There are many types of relations, so let me give you the key
+        definitions. Let <m>R \subset A^2</m> be a relation. 
         <ul>
           <li>
             The relation is <term>reflexive</term> if, <m>\forall a
@@ -208,7 +210,7 @@
             <m>\forall a \in A</m>, <m>(a,a) \notin R</m>.
           </li>
           <li>
-            A relations which is reflexive, symmetric and transitive
+            A relation which is reflexive, symmetric and transitive
             is called an <term>equivalence relation</term>.
           </li>
           <li>
@@ -222,7 +224,10 @@
             A relation which is reflexive, transitive,
             anti-symmetric, and connected is called a <term>linear
             order</term> or a <term>total order</term>. A set with a
-            linear order is called an <term>ordered set</term>
+            linear order is called an <term>ordered set</term>. A
+            linear order is an abstraction of the relations
+            <sq><m>\leq</m></sq> and <sq><m>\geq</m></sq> on the usual
+            number sets. 
           </li>
           <li>
             A relation which is irreflexive, transitive, and
@@ -231,7 +236,10 @@
           <li>
             A relation which is irreflexive, transitive,
             asymmetric, and connected is called a <term>strict linear
-            order</term> or a <term>strict total order</term>. 
+            order</term> or a <term>strict total order</term>. A
+            strict linear order is an abstraction on the relations
+            <sq><m>\lt</m></sq> and <sq><m>/gt</m></sq> on the usual
+            number sets. 
           </li>
         </ul>
       </p>
@@ -336,22 +344,26 @@
       <p>
         Let <m>A</m> be a set with an equivalence relation
         <m>\sim</m>. The set of equivalence classes of <m>A</m> is
-        called the <term>(set) quotient)</term> of <m>A</m> under the
+        called the <term>(set) quotient</term> of <m>A</m> under the
         relation <m>\sim</m>. It is often written <m>A/\sim</m>. 
       </p>
     </statement>
   </definition>
   <p>
-    The most important kind of relation is surely a function. Here
-    is the formal, abstract definition. 
+    Relations are general enough that they also include functions
+    (indeed, functions are probably the most important kind of
+    relations. Here is the formal, abstract definition of a function
+    on sets. 
   </p>
   <definition>
     <statement>
       <p>
         A relation <m>R \subset A \times B</m> is called a
-        <m>function</m> from <m>A</m> to <m>B</m> if, <m>forall a
-        \in A</m>, there is exactly one <m>b \in B</m> such that
-        <m>(a,b) \in R</m>. 
+        <m>function</m> from <m>A</m> to <m>B</m> if, <m>\forall a
+        \in A</m>, <m>\exists! b \in B</m> such that
+        <m>(a,b) \in R</m>. (The uniqueness is the important part
+        here: for each input <m>a</m> there is a unique output
+        <m>b</m>.) 
       </p>
       <p>
         Functions have a number of associated notation and
@@ -363,14 +375,14 @@
           <li>
             If <m>(a,b)</m> is an element of the relation defining a
             function, then usually this is written <m>f(a) = b</m>.
-            This can be used to defined the function: if I define
-            <m>f(a)</m> by some process, that is equivalent to saying
-            that the pair <m>(a,f(a)</m> is in the relation defining
-            the function. 
+            This notation can be used to defined the function: if I
+            define <m>f(a)</m> by some process, that is equivalent to
+            saying that the pair <m>(a,f(a))</m> is in the relation
+            defining the function.  
           </li>
           <li>
             A function can also be called a <term>map</term> or 
-            <term>mapping</term>.
+            a <term>mapping</term>.
           </li>
           <li>
             The set <m>A</m> is called the <term>domain</term> of
@@ -380,7 +392,9 @@
           <li>
             Tet set <m>\{ b \in B | \exists (a,b) \in R\}</m> is
             called the <term>range</term> or <term>image</term>  of
-            the function. It is often written <m>f(A)</m>. 
+            the function. It is often written <m>f(A)</m>. Is it all
+            the possible outputs of the function and is a subset of
+            the codomain. 
           </li>
         </ul>
       </p>
@@ -389,15 +403,15 @@
   <p>
     The most important operation on functions is composition. I'll
     give the abstract relation-based definition here, even though
-    composition is almost always through of as doing functions in
+    composition is almost always conceptualized as doing functions in
     sequence, one after the other. 
   </p>
   <definition>
     <statement>
       <p>
         Let <m>f: A \rightarrow B</m> and <m>g: B \rightarrow C</m>
-        be function. The composition of the two function is a new
-        function<m>g \circ f: A \rightarrow C</m>. It is defined
+        be functions. The composition of the two function is a new
+        function <m>g \circ f: A \rightarrow C</m>. It is defined
         this way: whenever <m>(a,b)</m> is in the relation defining
         <m>f</m> and <m>(b,c)</m> is in the relation defining
         <m>g</m>, then <m>(a,c)</m> is in the relation defining the
@@ -408,26 +422,26 @@
   <p>
     Next, let me define a very important function.
   </p>
-  <definition>
+  <definition xml:id="definition-identity-function">
     <statement>
       <p>
         Let <m>A</m> be a set. The <term>identity function</term> on
         the set A is written <m>\Id_A</m> and defined by the
         property <m>\forall a \in A, \Id_A(a) = a</m>. Often when
-        the set it understood, the subscript is dropped that the
-        identity function is just written <m>\Id</m>. 
+        the set is understood from context, the subscript is dropped
+        and the identity function is just written <m>\Id</m>. 
       </p>
     </statement>
   </definition>
   <p>
     There are a number of important properties of functions to
     mention here. These are general set-theoretic properties. In
-    other setting, function can many properties: continuous, linear,
-    differentiable, increasing, decreasing, bounded, integrable,
-    analytic, etc. All of these propreties rely on special structure
-    on the domain and codomain; for now, I'll just give the
-    definition that only depend on the basic set theory we've done
-    so far. 
+    other setting, functions can have many other properties:
+    continuous, linear, differentiable, increasing, decreasing,
+    bounded, integrable, analytic, etc. All of these propreties rely
+    on other structures on the domain and codomain; for now, I'll
+    just give the definitions that only depend on the basic set theory
+    I've reviewed so far.
   </p>
   <definition xml:id="definition-functions-jective">
     <statement>
@@ -450,7 +464,7 @@
           </li>
           <li>
             <m>f</m> is <term>bijective</term> if it is both
-            injective and surjective. A bijection function is in
+            injective and surjective. A bijective function is in
             <term>invertible</term>: that is, there exists an <term>
             inverse function</term> <m>f^{-1}</m> such that <m>f
             \circ f^{-1} = \Id_B</m> and <m>f^{-1} \circ f =
@@ -468,7 +482,7 @@
   <definition>
     <statement>
       <p>
-        Let <m>A</m> be a set. A bijection function <m>f: A
+        Let <m>A</m> be a set. A bijective function <m>f: A
         \rightarrow A</m> is called a <term>permutation</term> of
         the set <m>A</m>. 
       </p>
@@ -477,7 +491,7 @@
   <p>
     Bijective functions allow me to say some interesting things
     about infinite sets. There is a great deal of mystery and
-    subtlety in the cardinality of infinite set, but I'll just
+    subtlety in the cardinality of infinite sets, but I'll just
     scratch the surface here with the definition that we need for
     this course. 
   </p>
@@ -486,7 +500,7 @@
       <p>
         Let <m>A</m> be an infinite set. If there exists a bijection
         <m>f: A \rightarrow \NN</m>, then <m>A</m> is called
-        <term>countably infinite</term>. If not such bijection
+        <term>countably infinite</term>. If no such bijection
         exists (that is, if you can prove that it is impossible to
         build one), then the set if called <term>uncountably
         infinite</term>. A set is simply called

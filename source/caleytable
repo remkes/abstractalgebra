@@ -1,0 +1,7 @@
+      \setlength\extrarowheight{3pt}
+      \begin{tabular}{c| c c }
+        Operation \amp \amp \\
+        \cline{1-n}
+        \amp \amp \\
+        \amp \amp \\
+      \end{tabular}

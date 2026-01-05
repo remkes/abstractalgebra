@@ -1,19 +1,19 @@
 <section xml:id="section-logic">
   <title>Introduction and Logic</title>
   <p>
-    Abstract algebra is a fundamental discipline in pure
+    Abstract algebra is a core discipline in pure
     mathematics: much of the edifice of mathematics rests of the
     fundamental constructions of groups, rings and fields. However,
     abstract algebra itself relies on other fundamental pieces of
-    mathematics.  In this preliminary sections, I'm going to quickly
+    mathematics.  In this preliminary section, I'm going to quickly
     review these mathematical building blocks. 
   </p>
   <p>
-    This has the added benefit of setting the notational convention
-    for the rest of these notes. 
+    Doing so has the added benefit of setting the notational
+    conventions for the rest of these notes. 
   </p>
   <p>
-    Before even starting the mathematics, let me review some
+    Before even starting mathematical review, let me review some
     important notations from logic.
     <ul>
       <li>  
@@ -53,19 +53,19 @@
     </ul>
   </p>
   <p>
-    Also before starting even the mathematic review, I also want to
+    Also before the mathematic review get underway, I also want to
     comment on a few tricky terms. These terms are used frequently
-    in pure mathematics and are often take for granted, but it is
+    in pure mathematics and are often taken for granted, but it is
     very useful to clarify them at the very start. 
     <ul>
       <li>
-        Many definition in mathematics depend on choices,
+        Many definitions in mathematics depend on choices,
         representatives, or some other variability. A construction is
         <term>well-defined</term> if is doesn't depend on any of
-        these choices. Basically, well-defined means that the method
-        of construction can be shown to actually work, that the
-        definition makes sense and lives up to what is claim about
-        it. 
+        these choices. Basically, <sq>well-defined</sq> means that the
+        method of construction can be shown to actually work, that
+        the definition makes sense and lives up to what is claimed
+        about it. 
       </li>
       <li>
         Many things in mathematics are <term>indexed</term>. The
@@ -74,6 +74,16 @@
         Usually, the index <m>i</m> comes from a set: <m>i \in
         I</m>. This called the <term>indexing set</term>. In
         generally, any set can be an indexing set. 
+      </li>
+      <li>
+        Using sigma notation, I can take sums over any index set.
+        Instead of writing a start and end to the index, I just use
+        the index set as a subscript. This notation 
+        <me>
+          \Sigma_{i \in I} a_i
+        </me>
+        means the sum of all the <m>a_i</m> as <m>i</m> ranges over
+        the entire indexing set. 
       </li>
     </ul>
   </p>

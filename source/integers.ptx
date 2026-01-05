@@ -1,5 +1,5 @@
 <section xml:id="section-integers">
-  <title>Properties of the Integers</title>
+  <title>The Integers</title>
   <p>
     Abstract algebra is going to take the familiar number sets and
     abstract them, pulling their properties away from the numbers
@@ -7,15 +7,16 @@
     this, I need to set a solid foundation of numbers. All the
     number sets will be useful in this course, but the integers are
     have a special central place. It's pretty valuable to review
-    properties of the integers. A lot of this is review from many
-    years ago: ideas that you originally may have learned somewhere
-    in elementary school. That said, my definition will differ a bit
-    from what you learned in elementary school; I do so in order to
-    properly setup important definitions later in the course. 
+    properties of the integers. A lot of this is review is likely of
+    ideas from many years ago: ideas that you originally may have
+    learned somewhere in elementary school. That said, my definitions
+    will differ a bit from what you may have learned so long ago; I do
+    so in order to properly setup important definitions later in the
+    course. 
   </p>
   <p>
     I'll start with one very important property of the integers,
-    which I won't proof. (What a proof even constitute here is a bit
+    which I won't prove. (What a proof even constitute here is a bit
     tricky to say: this is almost by definition, depending on your
     perpsective.) 
   </p>
@@ -24,7 +25,7 @@
       <p>
         The relation <m>a \leq b</m> is a total order on <m>\ZZ</m>.
         Similarly, the relation <m>a \lt b</m> is a strict total
-        order on <m>\ZZ</m>. 
+        order on <m>\ZZ</m>.  
       </p>
     </statement>
   </proposition>
@@ -38,8 +39,9 @@
           <li>
             Let <m>a,b,n\in \ZZ</m>. If <m>n = ab</m>, then <m>a</m>
             and <m>b</m> are called <term>factors</term> of
-            <m>n</m>. The number <m>n</m> is called a multiple of
-            <m>a</m> and likewise a multiple of <m>b</m>. 
+            <m>n</m>. The number <m>n</m> is called a
+            <term>multiple</term> of <m>a</m> and likewise a multiple
+            of <m>b</m>. 
           </li>
           <li>
             The numbers <m>1</m> and <m>-1</m> in <m>\ZZ</m> are
@@ -47,17 +49,17 @@
           </li>
           <li>
             A non-zero, non-unit integer <m>n</m> is called <term>
-            prime</term> if in any integer equation <m>n = ab</m>,
-            one of <m>a</m> or <m>b</m> is a unit. Equiavlently,
+            prime</term> if, in any integer equation <m>n = ab</m>,
+            one of <m>a</m> or <m>b</m> is a unit. Equivalently,
             <m>n</m> has no integer factors other than itself,
             excluding units and multiplication by units (meaning
             the factors are <m>n</m>, <m>-n</m>, <m>1</m> and
-            <m>-1</m>.
+            <m>-1</m>.)
           </li>
           <li>
             A non-zero, non-unit integer <m>n</m> is called
-            <term>composite</term> it if is not prime. This means that
-            there is a factorization <m>m = ab</m> where neither
+            <term>composite</term> if it is not prime. This means that
+            there is a factorization <m>n = ab</m> where neither
             <m>a</m> nor <m>b</m> is a unit. 
           </li>
           <li>
@@ -84,20 +86,22 @@
     <title>Fundamental Theorem of Arithmetic</title>
     <statement>
       <p>
-        Let <m>n \in \ZZ</m>. Then there exists a unique list of
-        positive prime integers (not necessarily distinct) <m>p_1,
-        p_2, \ldots p_k</m> and a unit <m>u</m>  such that 
+        Let <m>n \in \ZZ</m> be non-zero and not a unit. Then there
+        exists a list of positive prime integers <m>p_1, p_2, \ldots
+        p_k</m> and a unit <m>u</m> such that this equation holds.
         <me>
           n = up_1p_2 \ldots p_k
         </me>  
         This list is called the <term>prime factors</term> of
-        <m>n</m>. The number of times any prime shows up in the list
-        is the <term>multiplicity</term> of that prime factor. (The
-        list is only unique up to reordereing, of course.) 
+        <m>n</m>. The primes in the list are not necessarily distinct;
+        indeed, the number of times any prime shows up in the list
+        is called the <term>multiplicity</term> of that prime factor.
+        The list of prime factors is unique up to reordering and up
+        to multiplication by units. 
       </p>
     </statement>
   </theorem>
-  <theorem>
+  <theorem xml:id="theorem-division-algorithm">
     <title>Division Algorithm</title>
     <statement>
       <p>
@@ -127,46 +131,60 @@
   </p>
   <p>
     The division algorithm is very useful. In particular, I can use
-    it to calculate greatest common divisors.  This process is
-    called the Euclidean Algorithm. Start with the two integers
-    <m>a_1</m> and <m>b_1</m>. 
-    <ul>
-      <li>
+    it to calculate greatest common divisors.  
+  </p>
+  <definition>
+    <statement>
+      <p>
+        The exists a process to calculate greatest common divisors
+        called the <term>Euclidean algorithm</term>. Start with the
+        two integers <m>a_1</m> and <m>b_1</m>. 
+      </p>
+      <p>
         Use the division algorithm to calculate the quotient and
-        remainder <m>q_1</m> and <m>r_1</m>. That gives this equation
+        remainder <m>q_1</m> and <m>r_1</m>. That gives this
+        equation
         <me>
           a_1 = q_1 b_1 + r_1 
         </me>
-        Then set <m>a_2 = b_1</m> and <m>b_2 = r_1</m>. Then repeat,
-        calculating <m>q_2</m> and <m>r_2</m>. 
+      </p>
+      <p>
+        Then set <m>a_2 = b_1</m> and <m>b_2 = r_1</m>. Then
+        repeat, calculating <m>q_2</m> and <m>r_2</m>. 
         <me>
           a_2 = q_2 b_2 + r_2 
         </me>
-        Then keep repeating. Each time this repeates, the next
-        <m>b_i</m> is the remainder of the previous step. As a
-        remainder, it satisfies <m>b_i = r_{i-1} \lt b_{i-1}</m>.
-        The sequence of <m>b_i</m> is a sequence of positive
-        decreasing number. It eventually gets to 0. If the last step
-        has index <m>k</m>, it looks like this:
+      </p>
+      <p>
+        Then keep repeating. Each time this repeats, the next
+        <m>b_i</m> is the remainder of the previous step and the
+        next <m>a_i</m> is the <m>b_{i-1}</m> of the previous
+        step. 
+      </p>
+      <p>
+        As a remainder, each <m>b_i</m> satisfies <m>b_i = r_{i-1}
+        \lt b_{i-1}</m>.  The sequence of <m>b_i</m> is a sequence of
+        positive decreasing numbers. It eventually must reach  0. If the
+        last step has index <m>k</m>, it looks like this:
         <me>
           a_k = q_k b_k + 0 
         </me>
         From this, you can prove that <m>b_k</m> is actually the
-        gcd. Just iterating the division algorith accomplishes this
-        fact. 
-      </li>
-    </ul>
-  </p>
+        greatest common disivor. Just iterating the division algorith
+        accomplishes this fact. 
+      </p>
+    </statement>
+  </definition>
   <p>
-    In <xref ref="definition-set-quotient"/>, I define the set
+    In <xref ref="definition-set-quotient"/>, I defined the set
     quotient by an equivalence relation. Let me apply this now to
-    the integer for the most important example.  
+    the integers for the most important example.  
   </p>
   <definition>
     <statement>
       <p>
         Let <m>a, b, n \in \ZZ</m>. If <m>a-b</m> is a multiple of
-        <m>n</m>, then we say that <m>a</m> amd <m>b</m> are
+        <m>n</m>, then we say that <m>a</m> and <m>b</m> are
         <term>congruence modulo </term> <m>n</m>. This is written as
         follows. 
         <me>
@@ -176,12 +194,13 @@
     </statement>
   </definition>
   <p>
-    This is an equivalence relation on <m>\ZZ</m>. (Feel free to
-    check the definition if you wish.). By <xref
-    ref="proposition-equivalence-relation-partition" />, this means
-    that the relation partitions <m>\ZZ</m> into equivalence
-    classes. Since element in each equivalence class differ by
-    multiples of <m>n</m>, I can write these classes as follows.
+    For a fixed <m>n</m>, this congruence is an equivalence relation on
+    <m>\ZZ</m>. (Feel free to check the definition if you wish.). By
+    <xref ref="proposition-equivalence-relation-partition" />, I know
+    that the equivalence relation partitions <m>\ZZ</m> into
+    equivalence classes. Since elements in each equivalence class
+    differ by multiples of <m>n</m>, I can write these classes as
+    follows.
     <me>
       \{ \bar{0}, \bar{1}, \bar{2}, \ldots, \overline{n-1} \}
     </me>
@@ -189,16 +208,17 @@
   <definition xml:id="definition-integers-mod">
     <statement>
       <p>
-        These equivalence classes for are written <m>\ZZ/n\ZZ</m>, and
-        called the integers modulo <m>n</m> (or just mod <m>n</m>). 
+        These equivalence classes form a set with the notation
+        <m>\ZZ/n\ZZ</m>. This set is called the integers modulo
+        <m>n</m> (or just mod <m>n</m>). 
       </p>
     </statement>
   </definition>
   <p>
     The integers mod <m>n</m> is a pretty important example for
-    many parts of the course. It inherit addition and multiplication
+    many parts of the course. It inherits addition and multiplication
     from the integers (again, feel free to check that these
-    operations are well-defined <emdash/> an excellent example of the
+    operations are well-defined <mdash/> an excellent example of the
     use of that tricky term as well.) 
   </p>
 </section>

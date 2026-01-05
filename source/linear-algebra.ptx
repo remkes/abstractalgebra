@@ -1,19 +1,18 @@
 <section xml:id="section-linear-algebra">
-  <title>Important Definitions from Linear Algebra</title>
+  <title>Linear Algebra</title>
   <p>
     There are some definitions and constructions from linear algebra
     which are worth reviewing. These will be useful for the course. 
   </p>
   <p>
-    First, linear algebra happens in a vector space, so let me start
-    with definition. As with polynomials in the previous section,
-    where the coefficient were informally just <sq>numbers</sq> a
-    vector space relies on some <sq>scalars</sq> which are numbers.
-    I'll take the same informal treamenet here: scalars are numbers,
-    usually real or complex. What sets of numbers (or other sets!) can
-    serve as the scalar for a vector space? That is again an important
-    question in linear algebra which we will try to answer later in
-    the course. 
+    First, linear algebra happens in vector spaces, so let me start
+    with the definition of a vector space. As with polynomials, where
+    the coefficient were informally just <sq>numbers</sq> a vector
+    space relies on some set of <sq>scalars</sq>.  I'll take the same
+    informal treamenet here: scalars are just numbers, usually real or
+    complex. What sets of numbers (or other sets!) can serve as the
+    scalars for a vector space? That is again an important question in
+    abstract algebra which we will try to answer later in the course.
   </p>
   <definition>
     <statement>
@@ -49,16 +48,16 @@
   </p>
   <p>
     Once we have vectors spaces, we get a bunch of useful terminology.
-    This terminology is defined for <sq>vector</sq>, but it ends up
+    This terminology is defined for <sq>vectors</sq>, but it ends up
     applying much more broadly in abstract algebra. 
   </p>
   <definition>
     <statement>
       <p>
-        Let <m>u,v,w,u_i</m> be vectors in some vector space, and let
-        <m>a,b,c,a_i</m> be scalars. The index <m>i</m> comes from
-        some finite indexing set <m>I</m>. It is important, for
-        these definitions, that the indexing set is finite. 
+        Let <m>u,v,u_i</m> be vectors in some vector space, and let
+        <m>a,b,a_i</m> be scalars. The index <m>i</m> comes from
+        some finite indexing set <m>I</m>. (It is important, for
+        these definitions, that the indexing set is finite.)
         <ul>
           <li>
             A <term>linear combination</term> of <m>u</m> and
@@ -72,11 +71,16 @@
           </li>
           <li>
             The <term>span</term> of a finite set of vectors is the
-            set of all linear combinations of those vectors. 
+            set of all linear combinations of those vectors. If
+            <m>u_i, i \in I</m> is a finite set of vectors, the span
+            is written
+            <me>
+              \Span \{ u_i | i \in I \} 
+            </me>
           </li>
           <li>
             A set of vectors <m>\{u_i | i \in I\}</m> is called
-            <term>linearly independent</term> is the only solution
+            <term>linearly independent</term> if the only solution
             to the equation
             <me>
               \sum_{i \in I} a_i u_i = 0 
@@ -92,7 +96,7 @@
             scalar multiplication. It is true that all linear
             subspaces can be written as spans and all spans are
             linear subspaces. It is also true that all linear
-            subspace include <m>O</m>. 
+            subspace include <m>0</m>. 
           </li>
           <li>
             A <term>spanning set</term> for a linear subspace is any
@@ -117,15 +121,16 @@
     </statement>
   </definition>
   <p>
-    Like most mathematical object, vectors spaces have functions
+    Like most mathematical objects, vector spaces have functions
     between them. 
   </p>
   <definition>
     <statement>
       <p>
-        Let <m>U</m> and <m>V</m> be vector spaces. A function <m>f:
-        U \rightarrow V</m> is called a <term>linear
-        transfomration</term> if it satisfies these two properties. 
+        Let <m>U</m> and <m>V</m> be vector spaces over the same set
+        of scalars. A function <m>f: U \rightarrow V</m> is called a
+        <term>linear transfomration</term> if it satisfies these two
+        properties. 
         <ul>
           <li>
             If <m>u_1, u_2 \in U</m>, then <m>f(u_1 + u_2) = f(u_1)
@@ -142,7 +147,7 @@
   <p>
     Most of your experience with functions between vector spaces is
     likely between Euclidean spaces, where these functions are very
-    nicely presented an classified. 
+    nicely presented and classified. 
   </p>
   <proposition>
     <statement>
@@ -152,8 +157,8 @@
         the matrix action on vectors given by some <m>n \times m</m>
         matrix <m>M</m>. In this way, linear transformation between
         Euclidean spaces completely and perfectly classified by
-        matrices, so much so that often only the matrix is given to
-        identify the function. 
+        matrices, so much so that the matrix is usually used to
+        entirely identify the function.
       </p>
     </statement>
   </proposition>
@@ -169,7 +174,7 @@
           is called the <term>zero matrix</term> of that size. 
         </li>
         <li>
-          The <m>n times n</m> matrix with <m>1</m> on the diagonal
+          The <m>n \times n</m> matrix with <m>1</m>s on the diagonal
           and all other entires zero is called the <term>identity
           matrix</term> of that size. 
         </li>
@@ -196,13 +201,14 @@
           etc) and orientation. 
         </li>
         <li>
-          An <term>orthogonal matrix</term> is a matrix which preserve
-          lengths of vectors. (There are many equivalent definitions
-          which you might remember, but this will do for now.) 
+          An <term>orthogonal matrix</term> is a matrix which
+          preserves lengths of vectors. (There are many equivalent
+          definitions which you might remember, but this will do for
+          now.) 
         </li>
         <li>
           The operation <term>matrix multiplication</term> is a binary
-          operation on matrix. It corresponds to composition of
+          operation on matrices. It corresponds to composition of
           functions when the matrices are interpreted as linear
           transformation. The identity matrix is the identity for this
           binary operation, justifying its name. 
@@ -210,7 +216,7 @@
         <li>
           A square matrix <m>M</m> is invertible is there exists
           another matirix <m>M^{-1}</m> such that <m>MM^{-1} =
-          M^{-1}M = \Id</m>. Equivalently, the matrix is invertible as
+          M^{-1}M = \Id</m>. Equivalently, the matrix is bijective as
           a function and <m>M^{-1}</m> is the matrix associated to the
           inverse function. It is true that a matrix is invertible if
           and only it its determinant is non-zero. 

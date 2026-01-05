@@ -2,10 +2,10 @@
   <title>Groups - Definition and Examples</title>
   <subsection xml:id="subsection-groups-definition">
     <p>
-      Abstract algebra is build by taking familiar mathematical
+      Abstract algebra is built by taking familiar mathematical
       structure and, well, abstracting them: pulling the details of
-      their structure <emdash/> their patterns, their arrangements
-      <emdash/> away from their particular and trying to understand
+      their structure <mdash/> their patterns, their arrangements
+      <mdash/> away from their particulars and trying to understand
       their general patterns. We start with number sets, which are the
       most familiar. What do number sets have? Well, a good place to
       start is arithmetic: they have binary operations with certain
@@ -13,12 +13,12 @@
     </p>
     <p>
       Most number sets have multiple binary operations: addition,
-      subtraction, multiplication, division. We'll get to abstractin
-      of this level, but it makes sense to start at a more fundamental
-      place. Therefore, let's just focus on one binary operation. We
-      can think of the integers with just addition. We can think of
-      the positive real number with just multiplication. These are
-      sets with one binary operation. 
+      subtraction, multiplication, division. We'll get to abstractions
+      with multiple binary operations interacting, but it makes sense
+      to start at a more fundamental place. Therefore, let's just
+      focus on one binary operation. We can think of the integers with
+      just addition. We can think of the positive real numbers with
+      just multiplication. These are sets with one binary operation. 
     </p>
     <p>
       This leads to the definition of a group. A group is the first
@@ -35,11 +35,11 @@
               The binary operation is associative.
             </li>
             <li>
-              There exsts an element <m>e \in G</m> this is an
+              There exsts an element <m>e \in G</m> which is an
               identity for the binary operation.
             </li>
             <li>
-              For each eleemnt <m>g \in G</m>, there exist an element
+              For each element <m>g \in G</m>, there exist an element
               <m>g^{-1} \in G</m> which is an inverse to <m>g</m>:
               that is, <m>g \cdot g^{-1} = g^{-1} \cdot g = e</m>. 
             </li>
@@ -62,9 +62,10 @@
         <p>
           Let <m>G</m> be a group. If the binary operation is
           commutative, we say that <m>G</m> is a
-          <term>commutative</term> group or an <m>abelian</m> group.
-          If the binary operation is not commutative, then <m>G</m> is
-          a <term>noncommuative</term> or <term>nonabelian</term>
+          <term>commutative</term> group or an <term>abelian</term>
+          group.  If the binary operation is not commutative, then
+          <m>G</m> is a <term>noncommuative</term> or
+          <term>nonabelian</term>.
         </p>
       </statement>
     </definition>
@@ -81,10 +82,10 @@
       binary operation. In group theory (and elsewhere throughout
       mathematics), addition is treated as the archetypical
       commutative operation, and we will often try to write abelian
-      gorups using addition notation, even if this means extending the
+      groups using addition notation, even if this means extending the
       normal notion of addition. The point here is that the symbol
       <sq>+</sq> is very strongly associated with commutative
-      operations <emdash/> when you see addition, you should think
+      operations <mdash/> when you see addition, you should think
       commutativity. 
     </p>
     <p>
@@ -109,11 +110,383 @@
       example of a group. 
     </p>
     <example>
-      <title>Integers Modulo <m>n</m>. </title>
+      <title>Usual Sets of Numbers</title>
       <p>
-        In <xref ref="definition-integers-mod"/>, I defined the
-        integers mod <m>n</m>, written <m>\ZZ/m\ZZ</m>. 
+        Many of the usual numbers sets are groups. That said, not all
+        of them are groups, and such a fact always depends on the
+        binary operation.
+        <ul>
+          <li>
+            The natural numbers <m>\NN</m> are not a group under any
+            of the normal arithmetic operations. The problem here is
+            inverses: the inverse under addition of <m>n</m> should be
+            <m>-n</m>, but the natural numbers don't have negatives.
+            Similarly, the inverse for multiplication would be
+            <m>\frac{1}{n}</m>, which is also not a natural number. 
+          </li>
+          <li>
+            The integers are a group under addition. The addition of
+            two integers is an integer, the number <m>0</m> is the
+            identity for addition, and the inverse of <m>n</m> is 
+            <m>-n</m>, which remains in the integers. The integers are
+            not a group under multiplication, again since
+            <m>\frac{1}{n}</m> is not an integer.
+          </li>
+          <li>
+            The rational numbers <m>\QQ</m> are a group under
+            addition: <m>0</m> is still the identity and negatives
+            still give the inverses. The rational numbers are not a
+            group under multiplication because there is no inverse
+            for <m>0</m>.
+          </li>
+          <li>
+            The rational number except for zero, usually written
+            <m>\QQ^*</m>, are a group under multiplication. The
+            identity is <m>1</m>, and the inverse of
+            <m>\frac{a}{b}</m> is <m>\frac{b}{a}</m>. This inverse
+            always works because I have excluded zero. 
+          </li>
+          <li>
+            The real numbers are a group under addition. They are not
+            a group under multiplication again because <m>0</m> has no
+            inverse. 
+          </li>
+          <li>
+            The real numbers except for zero, usually written
+            <m>\RR^*</m>, are a group under multiplication.
+          </li>
+          <li>
+            The complex numbers are a group under addition. <m>0</m>
+            (or, more formally, <m>0 + 0 \imath</m>) is the identity.
+            The inverse of <m>a + b\imath</m> is <m>a - b\imath</m>.
+          </li>
+          <li>
+            The complex numbers without zero are a group under
+            multiplication. The identity is <m>1</m> (or <m>(1 + 0
+            \imath)</m>) and the inverse of <m>a + b\imath</m> is
+            <m>\frac{a - b\imath}{a^2 + b^2}</m>. 
+          </li>
+        </ul>
+      </p>
+      <p>
+        All of these number groups are abelian: addition and
+        multiplication for numbers is always commutative. 
+      </p>
+      <p>
+        I've only talked about addition and multiplication here.
+        Subtraction and division are also binary operations, but not
+        really the kind of binary operations that lend themselves to
+        group structure. (They are neither associative or commutative,
+        in particular). When thinking about number sets as groups,
+        only addition and multiplication should really be considered.
+        You should think of subtraction as something relatve to the
+        inverse operation: subtraction is adding an inverse. In this
+        way, subtraction is part of the group structure, but only
+        because it comes from addition and inverses. Likewise,
+        division is only multiplication by an inverse as well. 
       </p>
     </example>
+    <example>
+      <title>Integers Modulo <m>n</m></title>
+      <p>
+        In <xref ref="definition-integers-mod"/>, I defined the
+        integers mod <m>n</m>, written <m>\ZZ/m\ZZ</m>. This is also a
+        group under addition. In this case, I am adding
+        equivalence classes, since <m>\ZZ/m\ZZ</m> consists of
+        equivalent classes. There are a number of ways to write this,
+        but the follow two are the most common. For example, let's
+        work in <m>\ZZ/13\ZZ</m>.
+        <md>
+          <mrow>
+            \overline{11} + \overline{9} = \overline{7} 
+          </mrow>
+          <mrow>
+            11 + 9 \equiv 7 \mod 13 
+          </mrow>
+        </md>
+      </p>
+      <p>
+        The integers modulo n are not a group under multiplication.
+        Even with equivalence classes, there is still no inverse to
+        the class <m>\bar{0}</m>. However, a subset can be made into a
+        group by multiplication. I need a result from integer
+        arithmetic here, which I will present without proof. 
+      </p>
+      <proposition>
+        <statement>
+          <p>
+            The element <m>\bar{k}</m> of <m>\ZZ/n\ZZ</m> has a
+            multiplicative inverse if and only if <m>\gcd(n,k) =
+            1</m>. The number of such classes (which is equivalent to
+            the positive integers between <m>2</m> and <m>n</m> which
+            are coprime to <m>n</m>) defines a function called
+            <term>Euler's totient</term> function, and is written
+            <m>\phi(n)</m>. 
+          </p>
+        </statement>
+      </proposition>
+      <p>
+        Like with numbers sets above, a superscript star is used to
+        indicate the elements with multiplicative inverses:
+        <m>\ZZ/n\ZZ^*</m>. This is a group under multiplication and
+        the size of this group is <m>\phi(n)</m>. 
+      </p>
+    </example>
+    <p>
+      These are the first example of finite groups: <m>\ZZ/n\ZZ</m>
+      has only <m>n</m> elements; <m>\ZZ/n\ZZ^*</m> has only
+      <m>\phi(n)</m> elements. For finite groups, since there are
+      only finitely many elements and therefore finitely many pairs
+      of elements, the binary operations can be displayed (or even
+      defined) explicitly by showing all the possibilities. One way
+      to do this is with a <sq>multiplication table</sq>: a table
+      that shows all possible operations. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> be a finite group. A table which shows all of
+          the outcomes of the binary operation for <m>G</m> is called
+          a <term>Caley table</term> for the group. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Caley tables are a very nice way to see the explicit structure
+      of a group, at least for small groups. I'll make frequent use of
+      them to talk about groups structure. 
+    </p>
+    <p>
+      For now, let me show you some Caley tables for the integers
+      modulo n. For all of these, feel free to verify the operations
+      yourself. 
+    </p>
+    <example>
+      <p>
+        Here is the Caley table for <m>\ZZ/7\ZZ</m> under the
+        operation of addition. I'll not write the bars over the
+        numbers, but these do, of course, represent equivalence
+        classes modulo 7. 
+      </p>
+      <me>
+        \begin{array}{c| c c c c c c c }
+          + \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\
+          \hline
+          0 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\
+          1 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 0 \\
+          2 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 0 \amp 1 \\
+          3 \amp 3 \amp 4 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \\
+          4 \amp 4 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \\
+          5 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \\
+          6 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \\
+        \end{array}
+      </me>
+    </example>
+    <example>
+      <p>
+        Here is the Caley table for <m>\ZZ/20\ZZ^*</m> under the
+        operation of multiplication. There are eight numbers coprime
+        to <m>20</m>, so those numbers are the classes in this group. 
+      </p>
+      <me>
+        \begin{array}{c| c c c c c c c c }
+          + \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
+          19  \\
+          \hline
+          1 \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
+          19 \\
+          3 \amp 3 \amp 9 \amp 1 \amp 7 \amp 13 \amp 19 \amp 11 \amp
+          17 \\
+          7 \amp 7 \amp 1 \amp 9 \amp 13 \amp 17 \amp 11 \amp 19 \amp
+          13 \\
+          9 \amp 9 \amp 7 \amp 3 \amp 1 \amp 19 \amp 17 \amp 13 \amp
+          11 \\
+          11 \amp 11 \amp 13 \amp 17 \amp 19 \amp 1 \amp 3 \amp 7 \amp
+          9 \\
+          13 \amp 13 \amp 19 \amp 11 \amp 17 \amp 3 \amp 9 \amp 1 \amp
+          7 \\
+          17 \amp 17 \amp 11 \amp 19 \amp 13 \amp 7 \amp 1 \amp 9 \amp
+          3 \\
+          19 \amp 19 \amp 17 \amp 13 \amp 11 \amp 9 \amp 7 \amp 3 \amp
+          1 \\
+        \end{array}
+      </me>
+    </example>
+    <p>
+      Before moving on, there are a couple important things to note
+      about Caley tables.
+      <ul>
+        <li>
+          The two examples we gave were for abelian groups, so
+          these tables are symmetric over the diagonal. You may
+          remember from elementary school multiplication tables that
+          usually half the table was left blank for this reason.
+          However, groups in general are not abelian, so I will
+          write the entire table.
+        </li>
+        <li>
+          Since groups are not commutative, we need to be explicit for
+          the order of multiplication. If the row is labelled <m>g</m>
+          and the column is labelled <m>h</m>, then the entry in that
+          square is <m>gh</m>, not <m>hg</m>. 
+        </li>
+        <li>
+          You may have noticed that each row and each column has
+          exactly one of each group elements. This is always true, and
+          a good way to check if you have made a correct Caley table. 
+        </li>
+        <li>
+          Finally, the Caley table shows inverses as well. In the
+          table for <m>\ZZ/20\ZZ^*</m>, I can read off the table that
+          the inverse of 13 is 17, for example. 
+        </li>
+      </ul>
+    </p>
+    <p>
+      Now we can move on from numbers. There are many more
+      mathematical objects that we can make groups out of. 
+    </p>
+    <example>
+      <title>Polynomial Groups</title>
+      <p>
+        The set of polynomials in a variable <m>x</m> with
+        coefficients from a particular set of numbers forms a group
+        under multiplication. The <m>0</m> polynomial is the identity,
+        and the inverse of <m>p(x)</m> is <m>-p(x)</m>. 
+      </p>
+    </example>
+    <example>
+      <title>Groups of Functions</title>
+      <p>
+        The functions in calculus have the usual arithmetic
+        operations: I can add, multiply, subtract and divide
+        functions. Therefore, I can form groups out of them. There are
+        many such groups.
+        <ul>
+          <li>
+            <m>C(\RR)</m> is the set of continuous function <m>f: \RR
+            \rightarrow \RR</m>. This forms a group under addition.
+            The zero function is the identity (the function that sends
+            everything to zero). The inverse of a function <m>f(x)</m>
+            is the function <m>-f(x)</m>. 
+          </li>
+          <li>
+            I can multiply functions, but <m>C(\RR)</m> is not a group
+            under multiplication because of the potential for division
+            by zero. However, I can still make a group here. The set
+            of <term>nowhere-zero</term> functions <m>f: \RR
+            \rightarrow \RR</m> is the set of function where the
+            output is never zero. (Equivalently, I could say that
+            these are function <m>f: \RR \rightarrow \RR^*</m>). This
+            set does form a group under multiplication. The identity is
+            the function which is constant 1 (every output is the
+            number 1). The inverse of <m>f(x)</m> is
+            <m>\frac{1}{f(x)}</m>, which is well-defined because the
+            functions are all nowhere-zero. 
+          </li>
+          <li>
+            The previous definition had continuous function whose
+            domain was all real numbers. By altering the domain or the
+            condition, I can make all sorts of examples. 
+          </li>
+          <li>
+            The set of continuous real-valued function on a closed
+            interval, written <m>C([a,b])</m> is a group under addition. 
+          </li>
+          <li>
+            The set of continuously differentiable real-valued
+            functions on <m>\RR</m>, written <m>C^1(\RR)</m>, is a
+            group under addition. 
+          </li>
+          <li>
+            The set of integrable real-valued functions on <m>\RR</m>
+            is group under addition. 
+          </li>
+          <li>
+            The set of continuously twice differentiable real-valued
+            functions on <m>\RR</m>, written <m>C^2(\RR)</m>, is a
+            group under addition. 
+          </li>
+          <li>
+            The set of analytic real-valued
+            functions on <m>\RR</m>, written <m>C^\infty(\RR)</m>, is a
+            group under addition. 
+          </li>
+          <li>
+            The set of nowhere-zero real-valued differentiable
+            function on the positive real numbers is a group under
+            multiplication.
+          </li>
+          <li>
+            The set of positive real-valued increasing functions on
+            <m>\RR</m> is a group under addition. 
+          </li>
+          <li>
+            I could go on, but you hopefully get the idea. Many
+            conditions and many choices of domain give way to groups of
+            functions. Note that all of the groups in this section are
+            still abelian groups, since the addition and
+            multiplication are still commuttive. 
+          </li>
+        </ul>
+      </p>
+    </example>
+    <example>
+      <p>
+        The previous example covered functions under pointwise
+        operations: addition or multiplication of functions. But
+        functions have another binary operation: composition. I can
+        also make groups of functions under composition. 
+      </p>
+      <p>
+        Let <m>A</m> be any set. Then the set of bijective function
+        <m>f: A \rightarrow A</m> forms a group under composition. The
+        identity of this group is the identity function <m>\Id_A</m>,
+        which was defined in <xref
+        ref="definition-identity-function"/>.  Since all the functions
+        here are bijective, they are all invertible; the inverse of
+        <m>f</m> is the inverse function <m>f^{-1}</m>, as discussed
+        in <xref ref="definition-functions-jective"/>. 
+      </p>
+      <p>
+        This group of bijective functions can be a finite or infinite
+        groups, depending on the set <m>A</m>. However, this is almost
+        always a nonabelian group. Usually, composition functions
+        depends very much on the order of the composition:
+        interchanging the order leads to very different composition. 
+      </p>
+    </example>
+    <example>
+      <title>Boolean Groups</title>
+      <p>
+        This may seem like a strange example, but it is a useful one.
+        The set <m>\{T, F\}</m> of truth-values in logic is a group
+        under two different operations. First, it is a group under the OR
+        operation; under this operation, <m>F</m> is the identity.
+        Second, it is also a group under the AND operation; under this
+        operation, <m>T</m> is the identity. Here are the Caley tables
+        for these two groups. 
+        <me>
+          \begin{array}{c| c c }
+            OR \amp T \amp F \\
+            \hline
+            T \amp T \amp T\\
+            F \amp T \amp F \\
+          \end{array}
+          \hspace{1cm}
+          \begin{array}{c| c c }
+            AND \amp T \amp F \\
+            \hline
+            T \amp T \amp F\\
+            F \amp F \amp F \\
+          \end{array}
+        </me>
+      </p>
+    </example>
+    <p>
+      That ends this list of first examples. However, the next three
+      sections of these notes are each devoted to another important
+      class of groups, so we are far from done with examples. 
+    </p>
   </subsection>
 </section>
