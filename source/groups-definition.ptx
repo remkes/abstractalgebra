@@ -488,30 +488,30 @@
       sections of these notes are each devoted to another important
       class of groups, so we are far from done with examples. 
     </p>
+    <p>
+      I'll end with two silly examples, but there are also important.
+      Mathematicians love trivial cases, and getting the trivial cases
+      right often makes a difference for proofs. 
+    </p>
+    <example>
+      <p>
+        Any singleton set <m>\{e\}</m> is a group with identity
+        <m>e</m> and binary operation <m>e \cdot e = e</m>. There is
+        almost nothing to check here, but you could go through the
+        properties carefully if you wish and check what little there
+        is here to check. (For example, the inverse of <m>e</m> is
+        <m>e</m>, since <m>e \cdot e = e</m>, which covers all the
+        inverses needed since there is only one element.) 
+      </p>
+      <p>
+        A singleton may be a group, but the empty set <m>\emptyset</m>
+        is not a group under any binary operations. The reason that
+        <m>\emptyset</m> is not a group is because of the properties:
+        the second property in the definition of a group says that an
+        identity must exist. The empty set has no elements at all, so
+        onthing to serve as an identity. Therefore, it cannot be a
+        group.  
+      </p>
+    </example>
   </subsection>
-  <p>
-    I'll end with two silly examples, but there are also important.
-    Mathematicians love trivial cases, and getting the trivial cases
-    right often makes a difference for proofs. 
-  </p>
-  <example>
-    <p>
-      Any singleton set <m>\{e\}</m> is a group with identity
-      <m>e</m> and binary operation <m>e \cdot e = e</m>. There is
-      almost nothing to check here, but you could go through the
-      properties carefully if you wish and check what little there is
-      here to check. (For example, the inverse of <m>e</m> is
-      <m>e</m>, since <m>e \cdot e = e</m>, which covers all the
-      inverses needed since there is only one element.) 
-    </p>
-    <p>
-      A singleton may be a group, but the empty set <m>\emptyset</m>
-      is not a group under any binary operations. The reason that
-      <m>\emptyset</m> is not a group is because of the properties:
-      the second property in the definition of a group says that an
-      identity must exist. The empty set has no elements at all, so
-      onthing to serve as an identity. Therefore, it cannot be a
-      group.  
-    </p>
-  </example>
 </section>
