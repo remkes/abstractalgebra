@@ -1,111 +1,334 @@
 <section xml:id="section-permutation-groups">
   <title>Permutation Groups</title>
-  <p>
-    The next type of group to introduce are permutation groups. These
-    are, in a sense, something that we've already considered before. A
-    permutaiton is just a bijection map from a set to itself: it is a
-    way of reordering the set. As such, these are function groups. But
-    presenting these groups as permutations groups has many
-    advantages, as well as a long history in group theory. 
-  </p>
-  <definition>
-    <statement>
+    <subsection xml:id="subsection-permutation-definition">
+    <title>Permutation Groups - Definition and Examples</title>
+    <p>
+      The next type of group to introduce are permutation groups.
+      These are, in a sense, something that we've already considered
+      before. A permutaiton is just a bijection map from a set to
+      itself: it is a way of reordering the set. As such, these are
+      function groups. But presenting these groups as permutations
+      groups has many advantages, as well as a long history in group
+      theory. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let<m>A</m> be a set. The <term>permutation group on
+          <m>A</m></term> of the <term>symmetric group on
+          <m>A</m></term> is the set of bijective functions from
+          <m>A</m> to itself. Its notation is <m>Sym(A)</m>.  If the
+          set is <m>A = \{1,2,3 \ldots, n \}</m>, then the permutation
+          group is often called the <term>symmetric group on <m>n</m>
+          letter</term> and given the notation <m>S_n</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The finite case, <m>S_n</m>, will be where we spend our time int
+      this course. I want to setup some standard terms and notations
+      to help us understand this group. 
+    </p>
+    <p>
+      I'll start with permutation notation: how do I write a
+      permutation? I can do something like I did with vertices and
+      dihedral groups (note! dihedral groups are just permutations of
+      vertices <m>\ldots</m>), where I draw arrows showing where each
+      set element goes. That works, but there are some more succint
+      standard notations. The first is Cauchy's notation. Here is a
+      permutation in <m>S_7</m>. (Lower case greek letters are pretty
+      common for permutations.) 
+      <me>
+        \sigma = \begin{pmatrix} 
+          1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \\
+          2 \amp 7 \amp 1 \amp 4 \amp 6 \amp 5 \amp 3 
+        \end{pmatrix} 
+      </me>
+      This is the permutation that sends 1 to 2, 2 to 7, 3 to 1, 4 to
+      itself, 5 to 6, 6 to 5 and 7 to 3. (Feel free to check that this
+      is, indeed, bijective.) To speak generally, in Cauchy's
+      notation, the top line is always the usual ordered list and the
+      bottom line is the destination of each element under the
+      permutation. 
+    </p>
+    <p>
+      This is pretty good notation, but there is something even more
+      concise and even more common. Look at the example again. It has
+      one fixed point, 4. It has one loop of length four: 1 goes to 2,
+      then 2 to 7, then 7 to 3, then 3 to 1. And then it has another
+      loop of length 2: 5 and 6 switch with each other. Here is the
+      cycle notation for the permutation.
+      <me>
+        (1273)(4)(56)
+      </me>
+      Cycle notation identifies the loops in the permutation and write
+      those between brackets. A fixed point is its own bracket, like
+      <m>(4)</m> (though often they are just ommited entirely). A
+      switch is something with two numbers, like <m>(56)</m>. Longer
+      cycles loop through more numbers. 
+    </p>
+    <p>
+      Cycle notation will be the way that we analyze (finite)
+      permutation groups. It takes some getting used to, but it is
+      efficient and clear. Let me show you some examples of how to use
+      cycle notation. In all the examples, I'll keep working in
+      <m>S_7</m>. 
+    </p>
+    <example>
       <p>
-        Let<m>A</m> be a set. The <term>permutation group on
-        <m>A</m></term> of the <ter>symmetric group on <m>A</m></term>
-        is the set of bijective functions from <m>A</m> to itself. Its
-        notation is <m>Sym(A)</m>.  If the set is <m>A = \{1,2,3
-        \ldots, n \}</m>, then the permutation group is often
-        called the <term>symmetric group on <m>n</m> letter</term> and
-        given the notation <m>S_n</m>. 
+        The identity can be write in cycle notation as follows. 
+        <me>
+          \Id = (1)(2)(3)(4)(5)(6)(7)
+        </me>
+        Again, usually fixed points are not written at all, and the
+        <m>\Id</m> is still the identity. 
       </p>
-    </statement>
-  </definition>
-  <p>
-    The finite case, <m>S_n</m>, will be where we spend our time int
-    this course. I want to setup some standard terms and notations to
-    help us understand this group. 
-  </p>
-  <p>
-    I'll start with permutation notation: how do I write a
-    permutation? I can do something like I did with vertices and
-    dihedral groups (note! dihedral groups are just permutations of
-    vertices <m>\ldots</m>), where I draw arrows showing where each
-    set element goes. That works, but there are some more succint
-    standard notations. The first is Cauchy's notation. Here is a
-    permutation in <m>S_7</m>. (Lower case greek letters are pretty
-    common for permutations.) 
-    <me>
-      \sigma = \begin{pmatrix} 
-        1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \\
-        2 \amp 7 \amp 1 \amp 4 \amp 6 \amp 5 \amp 3 
-      \end{pmatrix} 
-    </me>
-    This is the permutation that sends 1 to 2, 2 to 7, 3 to 1, 4 to
-    itself, 5 to 6, 6 to 5 and 7 to 3. (Feel free to check that this
-    is, indeed, bijective.) To speak generally, 
-    in Cauchy's notation, the top line is always the usual ordered
-    list and the bottom line is the destination of each element under
-    the permutation. 
-  </p>
-  <p>
-    This is pretty good notation, but there is something even more
-    concise and even more common. Look at the example again. It has
-    one fixed point, 4. It has one loop of length four: 1 goes to 2,
-    then 2 to 7, then 7 to 3, then 3 to 1. And then it has another
-    loop of length 2: 5 and 6 switch with each other. Here is the
-    cycle notation for the permutation.
-    <me>
-      (1273)(4)(56)
-    </me>
-    Cycle notation identifies the loops in the permutation and write
-    those between brackets. A fixed point is its own bracket, like
-    <m>(4)</m> (though often they are just ommited entirely). A switch
-    is something with two numbers, like <m>(56)</m>. Longer cycles
-    loop through more numbers. 
-  </p>
-  <p>
-    Cycle notation will be the way that we analyze (finite)
-    permutation groups. It takes some getting used to, but it is
-    efficient and clear. Let me show you some examples of how to use
-    cycle notation. In all the examples, I'll keep working in
-    <m>S_7</m>. 
-  </p>
-  <example>
+      <p>
+        The permutation that fixed 1, 3 and 7; switches 4 and 6; and
+        switched 2 and 5 has this cycle representation.
+        <me>
+          \sigma = (25)(46) 
+        </me>
+        I am not ommiting the fixed points: since they don't show up in
+        the cycle representation, 1, 3 and 7 all don't change, which is
+        understood by their absence here. 
+      </p>
+      <p>
+        Finally, the permutation that increases each number by one, and
+        loops around for 7, is given by this cycle. 
+        <me>
+          \sigma = (1234567)
+        </me>
+      </p>
+    </example>
+    <example>
+      <p>
+        I can also use cycles to compose permutations. This takes a bit
+        of thinking, but let me demonstrate. 
+      </p>
+      <p>
+        Say I want to calculate <m>\sigma \tau</m>, remembing that the
+        right most permutation happens first. Let's say that <m>\sigma =
+        (15)(263)</m> and <m>\tau = (234)(57)</m>. Then I want to
+        calculate this product.
+        <me>
+          \sigma \tau = (15)(263)(234)(57)
+        </me>
+        How do I do this? We'll, I'll work step by step. 
+        <ul>
+          <li>
+            First, where does 1 go under this permutation? I work from
+            right to left, looking for the first place that 1 appears.
+            It only appears in the last step, where it is sent to 5.
+            Therefore, 1 goes to 5. 
+          </li>
+          <li>
+            Now where does 2 go? Working from the right, 2 is in the
+            second cycle, where it is snet to 3. Then I keep moving
+            left, now looking for 3. 3 is in the next cycle where it is
+            sent to 2. Then, still moving left, 2 does not appear again.
+            I conclude that 2 goes to 2 in this composition.
+          </li>
+          <li>
+            Now where does 3 go? From the right, the second cycle
+            sents 3 to 4, and then 4 does not show up again moving left.
+            Therefore, 3 goes to 4. 
+          </li>
+          <li>
+            Now where does 4 go? From the right, the second cycle
+            sends 4 to 2 and then the next cycle sents 2 to 6. 6
+            doesn't appear again moving left, so 4 goes to 6. 
+          </li>
+          <li>
+            Now where does 5 go? From the right, the first cycle
+            sends 5 to 7 and 7 doesn't appear again in any other cycle,
+            so 5 goes to 7. 
+          </li>
+          <li>
+            Now where does 6 go? From the right, I get to the third
+            cycle where 6 is sent to 3. Then 3 doesn't appear again, so
+            6 goes to three. 
+          </li>
+          <li>
+            Finally, where does 7 go? The first cycle sents 7 to 5, then
+            the last cycle sends 5 to 1. Therefore, 7 goes to 1. 
+          </li>
+        </ul>
+        Now I put this all together. 1 goes to 5, 5 to 7, and 7 to 1. So
+        I have a cycle <m>(157)</m>. 2 is fixed, so it doesn't show up.
+        3 goes to 4, 4 to 6, and 6 to 3, so I have a cycle <m>(346)</m>.
+        That's everything. here is the result. 
+        <me>
+          \sigma \tau = (15)(263)(234)(57) = (157)(346) 
+        </me>
+      </p>
+      <p> 
+        I could also calculate the reverse composition, <m>\tau
+        \sigma</m>.
+        <me>
+          \tau \sigma = (234)(57)(15)(263) 
+        </me>
+        Let me run through the piece, with a little less commentary this
+        time. 
+        <ul>
+          <li>
+            1 goes to 5, then 5 to 7. So 1 is sent to 7.
+          </li>
+          <li>
+            2 goes to 6 with no more movements. So 2 is sent to 6. 
+          </li>
+          <li>
+            3 goes to 2 and then 2 to 3. So 3 is fixed. 
+          </li>
+          <li>
+            4 goes to 2 with no more movements. So 4 is sent to 2. 
+          </li>
+          <li>
+            5 goes to 1 with no move movements. So 5 is sent to 1. 
+          </li>
+          <li>
+            6 goes to 3, then to 4. So 6 is sent to 4. 
+          </li>
+          <li>
+            7 goes to 5 with no move movements. So 7 is sent to 5. 
+          </li>
+        </ul>
+        The I summarize these movements as cycles. 1 goes to 7, 7 to 5
+        and then 5 to 1, so I have a cycle (175). 2 goes to 6, 6 to 4,
+        and then 4 to 2, so I have a cycle (264). 3 is fixed. Putting
+        these cycles together gives me the composition. 
+        <me>
+          \tau \sigma = (234)(57)(15)(263) = (175)(264) 
+        </me>
+      </p>
+      <p>
+        I see, in this process, that <m>\tau \sigma \neq \sigma
+        \tau</m>. As with matrix groups, permutations groups are a good
+        source of interseting non-abelian group structures. In general,
+        I expect that most permutations do not commute with each other.
+      </p>
+    </example>
     <p>
-      The identity can be write in cycle notation as follows. 
-      <me>
-        \Id = (1)(2)(3)(4)(5)(6)(7)
-      </me>
-      Again, usually fixed points are not written at all, and the
-      <m>\Id</m> is still the identity. 
+      Having done some examples, let me move on to stating (and perhaps
+      proving) some of the important facts about cycles. The previous
+      example shows that permutations do not, in general, commute. Is
+      there an issue, then, in how I write cycle decomposition? I wrote
+      the decomposition of the last calculation as <m>(175)(264)</m>,
+      but should it have been written <m>(264)(175)</m>? Thankfully, the
+      following proposition shows that I don't have to worry. 
     </p>
+    <proposition xml:id="proposition-disjoint-cycles">>
+      <statement>
+        <p>
+          Two cycles representing permutations are <term>disjoint</term>
+          if they have no numbers in common. With this definition, it is
+          true that disjoint cycles commute. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I can make a pretty straightforward argument here. Let
+          <m>a</m> and <m>b</m> be disjouint cyclesn <m>S_n</m>. Then
+          written <m>ab</m> means that <m>b</m> happens first. <m>b</m>
+          will act on the numbers present in its notation. Then <m>a</m>
+          happens second, and <m>a</m> will again act on the numbers
+          present in its notation. Since the cycles are disjoint,
+          nothing in the first movement affects the second: they are
+          moving entirely different subsets of <m>\{1,2, \ldots n
+          \}</m>. If they were reversed, likewise nothing in the second
+          cycle affect anything in the first. They are independent
+          permutations of different subsets. Therefore, they can happen
+          in any order with the same total effect. 
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+  <subsection xml:id="subsection-cycle-decomposition">
+    <title>Cycle Decomposition</title>
     <p>
-      The permutation that fixed 1, 3 and 7; switches 4 and 6; and
-      switched 2 and 5 has this cycle representation.
-      <me>
-        \sigma = (25)(46) 
-      </me>
-      I am not ommiting the fixed points: since they don't show up in
-      the cycle representation, 1, 3 and 7 all don't change, which is
-      understood by their absence here. 
+      One of the main overarching problems in groups theory (and in
+      abstract mathematics in general) is one of
+      <emph>representation</emph>. What is the best way to represent a
+      mathematical definition, such as a permutation? Both Cauchy
+      notation and cycle decomposition gives representations for
+      permutations. We want these representations to be unique, since
+      multiple ways to write the same object leads to confusion.
+      (Think again of the challenges of multiple ways to write each
+      rational number, which is solved by unique representation of
+      reduced fractions.) Are cycle decompositions unique? They can
+      be, but with some subtleties. First, this is fairly easy to see
+      with disjoint cycles. 
     </p>
-    <p>
-      Finally, the permutation that increases each number by one, and
-      loops around for 7, is given by this cycle. 
-      <me>
-        \sigma = (1234567)
-      </me>
-    </p>
-  </example>
-  <example>
-    <p>
-      I can also use cycles to compose permutations. This takes a bit
-      of thinking, but let me demonstrate. 
-    </p>
-    <p>
-      Say I want to calculate <m>\sigma \tau</m>, remembing that the
-      right most permutation happens first. 
-    </p>
-  </example>
+    <proposition>
+      <statement>
+        <p> 
+          Let <m>\sigma \in S_n</m>. Then, up to reordering of the
+          both the multiplication of cycles and shifting the numbers
+          in the cycles themselves, <m>\sigma</m> can be uniquely
+          written as a product of disjoint cycles. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First, I know that I can produce a disjoint cycle
+          representation. The algorithm that produces is is as
+          follows. 
+          <ul>
+            <li>
+              Start with 1. Write the cycle <m>(1 \ldots )</m> determined
+              by the image of 1, then the image of that, and so on
+              until 1 is reached again.
+            </li>
+            <li>
+              Then choose the smallest number <m>k</m> which was not
+              in the first cycle. Repeat the process making the cycle
+              <m>(k \ldots )</m>. 
+            </li>
+            <li>
+              Repeat this process until there are no numbers left.
+              Since the original list is finite, this can always be
+              completed
+                Repeat this process until there are no numbers left.
+                Since the original list is finite, this can always be
+                completed
+            </li>
+          </ul>
+          Therefore, I can always produce a representation as disjoint
+          cycles. 
+        </p>
+        <p>
+          I know from <xref ref="proposition-disjoint-cycles"/> that
+          disjoint cycles commute. Therefore, any order of the product
+          of disjoint cycles is the same permutation. This covers
+          reordering of the product of cycles.
+        </p>
+        <p>
+          Now for the reodering of the cycles themselves. A cycle is a
+          loop, since the end of the cycle is sent back to the start.
+          As a loop, the starting point is arbitrary. (For example,
+          these cycles all do exactly the same thing: <m>(1375),
+          (3751), (7513), (3751)</m>). Therefore, a shift of the
+          numbers is a cycle doesn't change the cycle, and the
+          presentation by cycles is unique only up to this shifting.
+          (You could also impose a restriction here to make this a
+          unique notation: say, a cycle must always start with the
+          smallest number in its list.) 
+        </p>
+        <p>
+          So I have a cycle decomposition and I can reorder it in both
+          ways. Is it actually unique, though? Can there be another
+          way to write the same permutation as difference disjoint
+          cycles? There cannot, and the algorithm presented earliert is
+          actually an argument for this. In that algorithm, I started
+          with the number 1. Where 1 goes is determined by the
+          function, so the next element of its cycle is fixed.
+          Likewise for the next, and all the way down the cycle. The
+          only variance is the starting element of the cycle, as
+          discussed in the previous paragraph. But the cycles
+          themselves are entirely determined by the permutation and,
+          therefore, are unique. 
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
 </section>
