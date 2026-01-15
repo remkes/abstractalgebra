@@ -1,0 +1,111 @@
+<section xml:id="section-permutation-groups">
+  <title>Permutation Groups</title>
+  <p>
+    The next type of group to introduce are permutation groups. These
+    are, in a sense, something that we've already considered before. A
+    permutaiton is just a bijection map from a set to itself: it is a
+    way of reordering the set. As such, these are function groups. But
+    presenting these groups as permutations groups has many
+    advantages, as well as a long history in group theory. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let<m>A</m> be a set. The <term>permutation group on
+        <m>A</m></term> of the <ter>symmetric group on <m>A</m></term>
+        is the set of bijective functions from <m>A</m> to itself. Its
+        notation is <m>Sym(A)</m>.  If the set is <m>A = \{1,2,3
+        \ldots, n \}</m>, then the permutation group is often
+        called the <term>symmetric group on <m>n</m> letter</term> and
+        given the notation <m>S_n</m>. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The finite case, <m>S_n</m>, will be where we spend our time int
+    this course. I want to setup some standard terms and notations to
+    help us understand this group. 
+  </p>
+  <p>
+    I'll start with permutation notation: how do I write a
+    permutation? I can do something like I did with vertices and
+    dihedral groups (note! dihedral groups are just permutations of
+    vertices <m>\ldots</m>), where I draw arrows showing where each
+    set element goes. That works, but there are some more succint
+    standard notations. The first is Cauchy's notation. Here is a
+    permutation in <m>S_7</m>. (Lower case greek letters are pretty
+    common for permutations.) 
+    <me>
+      \sigma = \begin{pmatrix} 
+        1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \\
+        2 \amp 7 \amp 1 \amp 4 \amp 6 \amp 5 \amp 3 
+      \end{pmatrix} 
+    </me>
+    This is the permutation that sends 1 to 2, 2 to 7, 3 to 1, 4 to
+    itself, 5 to 6, 6 to 5 and 7 to 3. (Feel free to check that this
+    is, indeed, bijective.) To speak generally, 
+    in Cauchy's notation, the top line is always the usual ordered
+    list and the bottom line is the destination of each element under
+    the permutation. 
+  </p>
+  <p>
+    This is pretty good notation, but there is something even more
+    concise and even more common. Look at the example again. It has
+    one fixed point, 4. It has one loop of length four: 1 goes to 2,
+    then 2 to 7, then 7 to 3, then 3 to 1. And then it has another
+    loop of length 2: 5 and 6 switch with each other. Here is the
+    cycle notation for the permutation.
+    <me>
+      (1273)(4)(56)
+    </me>
+    Cycle notation identifies the loops in the permutation and write
+    those between brackets. A fixed point is its own bracket, like
+    <m>(4)</m> (though often they are just ommited entirely). A switch
+    is something with two numbers, like <m>(56)</m>. Longer cycles
+    loop through more numbers. 
+  </p>
+  <p>
+    Cycle notation will be the way that we analyze (finite)
+    permutation groups. It takes some getting used to, but it is
+    efficient and clear. Let me show you some examples of how to use
+    cycle notation. In all the examples, I'll keep working in
+    <m>S_7</m>. 
+  </p>
+  <example>
+    <p>
+      The identity can be write in cycle notation as follows. 
+      <me>
+        \Id = (1)(2)(3)(4)(5)(6)(7)
+      </me>
+      Again, usually fixed points are not written at all, and the
+      <m>\Id</m> is still the identity. 
+    </p>
+    <p>
+      The permutation that fixed 1, 3 and 7; switches 4 and 6; and
+      switched 2 and 5 has this cycle representation.
+      <me>
+        \sigma = (25)(46) 
+      </me>
+      I am not ommiting the fixed points: since they don't show up in
+      the cycle representation, 1, 3 and 7 all don't change, which is
+      understood by their absence here. 
+    </p>
+    <p>
+      Finally, the permutation that increases each number by one, and
+      loops around for 7, is given by this cycle. 
+      <me>
+        \sigma = (1234567)
+      </me>
+    </p>
+  </example>
+  <example>
+    <p>
+      I can also use cycles to compose permutations. This takes a bit
+      of thinking, but let me demonstrate. 
+    </p>
+    <p>
+      Say I want to calculate <m>\sigma \tau</m>, remembing that the
+      right most permutation happens first. 
+    </p>
+  </example>
+</section>
