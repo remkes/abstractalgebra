@@ -259,7 +259,7 @@
       be, but with some subtleties. First, this is fairly easy to see
       with disjoint cycles. 
     </p>
-    <proposition>
+    <proposition xml:id="proposition-cycle-decomposition">>
       <statement>
         <p> 
           Let <m>\sigma \in S_n</m>. Then, up to reordering of the
@@ -330,5 +330,306 @@
         </p>
       </proof>
     </proposition>
+    <p>
+      So I have a unique representation of permutations as disjoint
+      cycles. This is good and useful, and often the preferred
+      representation. However, there is another way that also provides
+      important insight
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The number of individual set elements in a cycle is called
+          the <term>length</term> of the cycle. A cycle of length two
+          is called a <term>transposition</term>
+        </p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>
+          Any permutation <m>\sigma \in S_n</m> can be written as a
+          product of tranpositions. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I know from <xref ref="proposition-cycle-decomposition"/>
+          that any permutation can be written as a product of
+          disjoint cycles. Therefore, it is enough to show that any
+          cycle can be written as a product of transpositions, since
+          such an argument can be applied to all the cycles of a cycle
+          decomposition. 
+        </p>
+        <p>
+          So let <m>(a_1 a_2 \ldots a_k)</m> be a cycle. I claim that
+          this equation is true. 
+          <me>
+            (a_1 a_2 \ldots a_k) = (a_1 a_k) (a_1 a_{k-1} ) \ldots
+            (a_1 a_2) 
+          </me>
+          I'll prove this by induction on <m>k</m>. 
+        </p>
+        <p>
+          The first steps is the base case, which in this proof is
+          <m>k=2</m>. For <m>k=2</m>, the equation I want to prove
+          simply states 
+          <me>
+            (a_1 a_2) = (a_1 a_2) 
+          </me>
+          This two sides are exactly the same, so this is true. 
+        </p>
+        <p>
+          Then I make the induction assumption. I assume this
+          statement is true:
+          <me>
+            (a_1 a_2 \ldots a_k) = (a_1 a_k) (a_1 a_{k-1} ) \ldots
+            (a_1 a_2) 
+          </me>
+          Then I want to prove the statement for <m>k+1</m>. I'll
+          start with the right side of the previous equation.
+          <me>
+            (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
+          </me>
+          Then I multiply by (a_1 a_{k+1}) on the left. 
+          <me>
+            (a_1 a_{k+1}) (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
+          </me>
+          Then I use the induction assumption, replacing all but the
+          first cycle with the left side of the assumption equation. 
+          <me>
+            = (a_1 a_{k+1}) (a_1 a_2 \ldots a_k) 
+          </me>
+          Then I need to analyze this cycle as I did in the example
+          previously. 
+          <ul>
+            <li>
+              <m>a_1</m> goes to <m>a_2</m> in the first cycle
+              (starting from the right and moving left). <m>a_2</m>
+              doesn't show up in the second cycle, so I conclude that
+              <m>a_1</m> goes to <m>a_2</m>
+            </li>
+            <li>
+              <m>a_2</m> goes to <m>a_3</m> in the first cycle
+              (starting from the right and moving left). <m>a_2</m>
+              doesn't show up in the second cycle, so I conclude that
+              <m>a_2</m> goes to <m>a_3</m>
+            </li>
+            <li>
+              This same logic holds for <m>a_3</m>, <m>a_4</m> and so
+              on up to <m>a_{k-1}</m>. Since none of these show up in
+              the second cycle. 
+            </li>
+            <li>
+              Then what happens to <m>a_k</m>? In the first cycle
+              (again, from the right moving left), <m>a_k</m> goes to
+              <m>a_1</m>. But then, in the second cycle, <m>a_1</m>
+              goes to <m>a_{k+1}</m>. So I conclude <m>a_k</m> goes to
+              <m>a_{k+1}</m>.
+            </li>
+            <li>
+              Finally, what happens to <m>a_{k+1}</m>? This element
+              isn't in the first cycle, so I just look at the second.
+              In that cycle, this is sent to <m>a_1</m>, so I conclude
+              <m>a_{k+1}</m> goes to <m>a_1</m>.
+            </li>
+          </ul>
+          This list of actions is simply the cycle <m>(a_1 a_2 \ldots
+          a_{k+1})</m>. Therefore, I can conclude that 
+          <me>
+            (a_1 a_{k+1}) (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
+            = (a_1 a_2 \ldots a_{k+1}
+          </me>
+          This is the induction step completed. I conclude, by
+          induction, that the proposition holds for all <m>k \geq
+          2</m>. This means that every cycle can be decomposed into
+          transpositions, which likewise means that every permutation
+          can be decomposted into transpositions. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      So I can write any permutation as transpositions. What does that
+      do for me? This is certainly not unique, which I can demonstrate
+      by example: <m>(12) = (12)(12)(12)</m>. Indeed, any repeated
+      transpotitions cancel out: switching a pair of numbers twice
+      undoes the switch and leaves everything unchanged. Maybe there
+      is a way to make a unique representation as transpotitions, but
+      that's not really the point. The point is this next proposition,
+      but before the proposition, I need a lemma. 
+    </p>
+    <lemma>
+      <statement>
+        <p>
+          Assume the identity permutation in <m>S_n</m> is written as
+          a product of cycles.
+          <me>
+            \Id = \tau_1 \tau_2 \ldots \tau_k
+          </me>
+          Then <m>k</m> must be an even number 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This lemma and the proof of the following proposition are
+          adapted from the GNU Free Documentation Licensed book
+          Abstract Algebra by Thomas W. Judson. 
+        </p>
+        <p>
+          This is an induction proof on <m>k</m> with base case
+          <m>k=2</m>. (<m>k=1</m> is not possible since any individual
+          transposition is not the identity.) 
+        </p>
+        <p>
+          The base case is already an even product, so there is
+          nothing to prove here. 
+        </p>
+        <p>
+          Now I take the induction assumption. I assume if 
+          <me>
+            \Id = \tau_1 \tau_2 \ldots \tau_l
+          </me>
+          for any <m>l \leq k</m>, then <m>l</m> must be even. To
+          finish the induction, I need to prove that this is true for
+          <m>l \leq k+1</m>.
+        </p>
+        <p>
+          From this step, the proof works in four cases by looking at
+          the last two transposition <m>\tau_{l-1} \tau_l}</m>. There
+          are three possible patterns for these transposition, where
+          <m>a,b,c,d</m> are distinct numbers between 1 and <m>n/</m>. 
+          <ul>
+            <li>
+              Case 1: <m>\tau_{l-1} \tau_l = (ab)(ab)</m>. In this pattern,
+              the last to transpositions are the same. 
+            </li>
+            <li>
+              Case 1: <m>\tau_{l-1} \tau_l = (ab)(cd)</m> or
+              <m>\tau_{l-1}\tau_1 = (ab)(cd)</m> In this pattern,
+              the second last transposition shares at most one number
+              with the last transposition. (If a number is shared,
+              which number is shared is not important, since I can
+              switch the order of any transposition without changing
+              anything.) 
+            </li>
+          </ul>
+        </p>
+        <p>
+          In Case 1, since these two transposition are the same, they
+          cancel each other out in the product. I can then write:
+          <me>
+            \Id = \tau_1 \tau_2 \ldots \tau_{l-2}
+          </me>
+          The induction assumption now applies to this shorter
+          product, so <m>l-2</m> must be even, implying that <m>l</m>
+          is even as well. 
+        </p>
+        <p>
+          Case 2 is more work. Here, the idea is 
+          to move the number <m>a</m> farther and farther left in the
+          product of transpositions. How do we do this? Using these
+          three identities:
+          <md>
+            <mrow>
+              (bc)(ab) = (ac)(bc) 
+            </mrow>
+            <mrow>
+              (cd)(ab) = (ab)(cd)
+            </mrow>
+            <mrow>
+              (ac)(ab) = (ab)(bc)
+            </mrow>
+          </md>
+          You can verify, if you wish, that all three of these are
+          true: it is just checking that the left and the right side
+          have the same action on <m>a,b,c,d</m>. 
+        </p>
+        <p>
+          How do these identities help? We are focusing on where the
+          number <m>a</m> shows up in the transposition. This
+          identities preserve the permutation and the number of
+          tranposition, but move <m>a</m> one transposition to the
+          left. 
+        </p>
+        <p>
+          So I start with <m>a</m> in the last transposition and the
+          last two transposition are identical. Then I start a
+          process:
+          <ul>
+            <li>
+              I apply one of the three identities to move <m>a</m> one
+              transposition to the left. 
+            </li>
+            <li>
+              Then I look at the pair of transposition where the
+              second transposition is where I just moved a. (That is,
+              I go left one transposition and now look at a new pair
+              of tranposition.) 
+            </li>
+            <li>
+              If these two transposition are identical, then I can
+              cancel them. In this case, I have removed the, I have
+              have an expression of length <m>l-2</m> for the
+              identity. As before, by the induction assumption, this
+              means <m>l-2</m> is even, so <m>l</m> is even. 
+            </li>
+            <li>
+              If these two transposition are not identical, then they
+              are one of the three patterns listed above, and I can
+              repeat the loop. 
+            </li>
+          </ul>
+          If I even reach two identitcal transposition, then the
+          induction step is finished. What about if I keep doing the
+          loop and never reach two identical transposition? Well, if I
+          do that, I will reach the left most transposition. I'll have
+          an equation like this. 
+          <me>
+            \Id = (ab)  \tau_2 \ldots \tau_{l}
+          </me>
+          I will also know that the letter <m>a</m> doesn't show up in
+          any of the other transpositions: the loop move <m>a</m> to
+          the left, leaving transpositions without <m>a</m> behind at
+          every step. But this is impossible! (Technically, I'm using
+          a very short proof by contradiction for this step.) If
+          <m>a</m> is only in the first transposition, then the whole
+          product send <m>a</m> to <m>b</m>, which is not the identity.
+          Therefore, finishing the loop without finding a repeated
+          transposition is impossible. Since finding a repeated
+          transposition always means that <m>l</m> is even, I have
+          completed the induction step and have therefore completed
+          the proof. 
+        </p>
+      </proof>
+    </lemma>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>\sigma \in S_n</m>. Is <m>\sigma</m> can be written
+          as the product of an odd number of transpotitions, then any
+          other way of writing <m>sigma</m> as a product of
+          transposition will also have an odd number of transposition.
+          Likewise if <m>\sigma</m> can be written as the product of
+          an even number of transpotition. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          To be written 
+        </p>
+      </proof>
+    </proposition>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\sigman \in S_n</m>. The fact that <m>\sigma</m> can
+          be written as an odd or even product of transpotitions, is
+          called the <term>parity</term> of the permutation. If the
+          parity is even, then <m>\sigma</m> is an <term>even
+          permutation</term>. Likewise, if the parity is odd, then
+          <m>\sigma</m> is an <term>odd permutation</term>. 
+        </p>
+      </statement>
+    </definition>
   </subsection>
 </section>
