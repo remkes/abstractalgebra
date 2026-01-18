@@ -190,13 +190,13 @@
             R</m> imply that <m>(a,c) \in R</m>. 
           </li>
           <li>
-            The relation is <term>connected</term> if,  <m>\forall
-            a,b, \in A</m>, either <m>(a,b) \in R</m> or <m>(b,a) \in R
+            The relation is <term>connected</term> if, <m>\forall
+            a,b \in A</m>, either <m>(a,b) \in R</m> or <m>(b,a) \in R
             </m>. 
           </li>
           <li>
             The relation is <term>anti-symmetric</term> if,
-            <m>\forall a,b,c \in A</m>,  <m>(a,b)
+            <m>\forall a,b \in A</m>,  <m>(a,b)
             \in R</m> and <m>(b,a) \in R</m> imply that <m>a =
             b</m>.
           </li>
@@ -238,7 +238,7 @@
             asymmetric, and connected is called a <term>strict linear
             order</term> or a <term>strict total order</term>. A
             strict linear order is an abstraction on the relations
-            <sq><m>\lt</m></sq> and <sq><m>/gt</m></sq> on the usual
+            <sq><m>\lt</m></sq> and <sq><m>\gt</m></sq> on the usual
             number sets. 
           </li>
         </ul>
@@ -350,15 +350,16 @@
     </statement>
   </definition>
   <p>
-    Relations are general enough that they also include functions
-    (indeed, functions are probably the most important kind of
-    relations. Here is the formal, abstract definition of a function
-    on sets. 
+    Having defined relations, let me move on to functions. Like
+    relations, the formal definition just uses the tools of set
+    theory: a function is a certain subset of the cartesian product of
+    two setst. This is very similar to a relation, but now the two
+    sets can be different. 
   </p>
   <definition>
     <statement>
       <p>
-        A relation <m>R \subset A \times B</m> is called a
+        A subset <m>f \subset A \times B</m> is called a
         <m>function</m> from <m>A</m> to <m>B</m> if, <m>\forall a
         \in A</m>, <m>\exists! b \in B</m> such that
         <m>(a,b) \in R</m>. (The uniqueness is the important part

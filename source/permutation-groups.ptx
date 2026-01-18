@@ -3,41 +3,48 @@
     <subsection xml:id="subsection-permutation-definition">
     <title>Permutation Groups - Definition and Examples</title>
     <p>
-      The next type of group to introduce are permutation groups.
+      The next type of group to introduce is permutation groups.
       These are, in a sense, something that we've already considered
       before. A permutaiton is just a bijection map from a set to
       itself: it is a way of reordering the set. As such, these are
-      function groups. But presenting these groups as permutations
-      groups has many advantages, as well as a long history in group
-      theory. 
+      function groups (under composition) and I included many function
+      groups in the initial examples. But presenting these groups as
+      permutations groups has many advantages, as well as a long
+      history in group theory. 
     </p>
     <definition>
       <statement>
         <p>
-          Let<m>A</m> be a set. The <term>permutation group on
-          <m>A</m></term> of the <term>symmetric group on
-          <m>A</m></term> is the set of bijective functions from
+          Let <m>A</m> be a set. The <term>permutation group on
+          <m>A</m></term>, or the <term>symmetric group on
+          <m>A</m></term>, is the set of bijective functions from
           <m>A</m> to itself. Its notation is <m>Sym(A)</m>.  If the
           set is <m>A = \{1,2,3 \ldots, n \}</m>, then the permutation
           group is often called the <term>symmetric group on <m>n</m>
-          letter</term> and given the notation <m>S_n</m>. 
+          letters</term> and given the notation <m>S_n</m>. 
         </p>
       </statement>
     </definition>
     <p>
-      The finite case, <m>S_n</m>, will be where we spend our time int
-      this course. I want to setup some standard terms and notations
-      to help us understand this group. 
+      The finite case, <m>S_n</m>, will be where we spend our time in
+      this course. You could conisder permutations of any finite set,
+      not just the first <m>n</m> numbers. But if I wanted the
+      permutations of the set <m>\{a,b,c,d\}</m>, then I don't really
+      change anything by re-labelling the elements <m>\{1,2,3,4\}</m>.
+      Therefore, <m>S_n</m> is really understood to be the
+      permutations of any set of size <m>n</m>, and therefore,
+      understanding all of the groups <m>S_n</m> is understanding all
+      finite permutation groups. 
     </p>
     <p>
-      I'll start with permutation notation: how do I write a
-      permutation? I can do something like I did with vertices and
-      dihedral groups (note! dihedral groups are just permutations of
-      vertices <m>\ldots</m>), where I draw arrows showing where each
-      set element goes. That works, but there are some more succint
-      standard notations. The first is Cauchy's notation. Here is a
-      permutation in <m>S_7</m>. (Lower case greek letters are pretty
-      common for permutations.) 
+      I want to setup some standard terms and notations to help us
+      understand <m>S_n</m> group.  I'll start with permutation notation:
+      how do I write a permutation? I can do something like I did with
+      vertices and dihedral groups,  where I draw arrows
+      showing where each set element goes. That works, but there are
+      some more succint standard notations. The first is Cauchy's
+      notation. Here is a permutation in <m>S_7</m>. (Lower case greek
+      letters are pretty common for permutations.) 
       <me>
         \sigma = \begin{pmatrix} 
           1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \\
@@ -56,15 +63,17 @@
       concise and even more common. Look at the example again. It has
       one fixed point, 4. It has one loop of length four: 1 goes to 2,
       then 2 to 7, then 7 to 3, then 3 to 1. And then it has another
-      loop of length 2: 5 and 6 switch with each other. Here is the
-      cycle notation for the permutation.
+      loop of length 2: 5 and 6 switch with each other. These loops
+      are called cycles and written as ordered lists between
+      paratheses. Here is the cycle notation for this permutation.
       <me>
         (1273)(4)(56)
       </me>
-      Cycle notation identifies the loops in the permutation and write
-      those between brackets. A fixed point is its own bracket, like
-      <m>(4)</m> (though often they are just ommited entirely). A
-      switch is something with two numbers, like <m>(56)</m>. Longer
+      
+      A fixed point is its own cycle, so just a single number in its
+      own brackets, like <m>(4)</m>. (Often, fixed points just ommited
+      entirely and any number not present is understood to be fixed).
+      A switch is something with two numbers, like <m>(56)</m>. Longer
       cycles loop through more numbers. 
     </p>
     <p>
@@ -81,21 +90,21 @@
           \Id = (1)(2)(3)(4)(5)(6)(7)
         </me>
         Again, usually fixed points are not written at all, and the
-        <m>\Id</m> is still the identity. 
+        the symbol <m>\Id</m> is used for the identity. 
       </p>
       <p>
-        The permutation that fixed 1, 3 and 7; switches 4 and 6; and
-        switched 2 and 5 has this cycle representation.
+        Consider the permutation that fixes 1, 3 and 7; switches 4 and
+        6; and switches 2 and 5. It has this cycle representation.
         <me>
           \sigma = (25)(46) 
         </me>
-        I am not ommiting the fixed points: since they don't show up in
+        I am now ommiting the fixed points: since they don't show up in
         the cycle representation, 1, 3 and 7 all don't change, which is
         understood by their absence here. 
       </p>
       <p>
-        Finally, the permutation that increases each number by one, and
-        loops around for 7, is given by this cycle. 
+        Finally, consider the permutation that increases each number
+        by one, and loops around for 7. It is described by this cycle. 
         <me>
           \sigma = (1234567)
         </me>
@@ -168,7 +177,7 @@
         <me>
           \tau \sigma = (234)(57)(15)(263) 
         </me>
-        Let me run through the piece, with a little less commentary this
+        Let me run through the pieces, with a little less commentary this
         time. 
         <ul>
           <li>
@@ -215,21 +224,28 @@
       there an issue, then, in how I write cycle decomposition? I wrote
       the decomposition of the last calculation as <m>(175)(264)</m>,
       but should it have been written <m>(264)(175)</m>? Thankfully, the
-      following proposition shows that I don't have to worry. 
+      following definition and proposition show that I don't have to
+      worry.
     </p>
-    <proposition xml:id="proposition-disjoint-cycles">>
+    <definition>
       <statement>
         <p>
           Two cycles representing permutations are <term>disjoint</term>
-          if they have no numbers in common. With this definition, it is
-          true that disjoint cycles commute. 
+          if they have no numbers in common. 
+        </p>
+      </statement>
+    </definition>
+    <proposition xml:id="proposition-disjoint-cycles">>
+      <statement>
+        <p>
+          Disjoint cycles commute. 
         </p>
       </statement>
       <proof>
         <p>
           I can make a pretty straightforward argument here. Let
           <m>a</m> and <m>b</m> be disjouint cyclesn <m>S_n</m>. Then
-          written <m>ab</m> means that <m>b</m> happens first. <m>b</m>
+          writing <m>ab</m> means that <m>b</m> happens first. <m>b</m>
           will act on the numbers present in its notation. Then <m>a</m>
           happens second, and <m>a</m> will again act on the numbers
           present in its notation. Since the cycles are disjoint,
@@ -250,34 +266,37 @@
       abstract mathematics in general) is one of
       <emph>representation</emph>. What is the best way to represent a
       mathematical definition, such as a permutation? Both Cauchy
-      notation and cycle decomposition gives representations for
+      notation and cycle decomposition give representations for
       permutations. We want these representations to be unique, since
       multiple ways to write the same object leads to confusion.
       (Think again of the challenges of multiple ways to write each
       rational number, which is solved by unique representation of
       reduced fractions.) Are cycle decompositions unique? They can
-      be, but with some subtleties. First, this is fairly easy to see
-      with disjoint cycles. 
+      be, but with some subtleties. This section will pursue two ways
+      to understand cycle deomposition. The first uses disjoint
+      cycles. 
     </p>
     <proposition xml:id="proposition-cycle-decomposition">>
       <statement>
         <p> 
-          Let <m>\sigma \in S_n</m>. Then, up to reordering of the
-          both the multiplication of cycles and shifting the numbers
+          Let <m>\sigma \in S_n</m>. Then, up to reordering the
+          the product of cycles and shifting the numbers
           in the cycles themselves, <m>\sigma</m> can be uniquely
           written as a product of disjoint cycles. 
         </p>
       </statement>
       <proof>
         <p>
-          First, I know that I can produce a disjoint cycle
-          representation. The algorithm that produces is is as
-          follows. 
+          First, I want to simply demonstrate  that I can produce at
+          least one  disjoint cycle representation. The algorithm that
+          produces is is as follows. 
           <ul>
             <li>
               Start with 1. Write the cycle <m>(1 \ldots )</m> determined
               by the image of 1, then the image of that, and so on
-              until 1 is reached again.
+              until 1 is reached again. (This is a finite set, so the
+              permutation will necessarily loop around to 1
+              eventually.)
             </li>
             <li>
               Then choose the smallest number <m>k</m> which was not
@@ -287,14 +306,11 @@
             <li>
               Repeat this process until there are no numbers left.
               Since the original list is finite, this can always be
-              completed
-                Repeat this process until there are no numbers left.
-                Since the original list is finite, this can always be
-                completed
+              completed.
             </li>
           </ul>
-          Therefore, I can always produce a representation as disjoint
-          cycles. 
+          Following this algorithm, I can always produce a
+          representation as disjoint cycles. 
         </p>
         <p>
           I know from <xref ref="proposition-disjoint-cycles"/> that
@@ -308,7 +324,7 @@
           As a loop, the starting point is arbitrary. (For example,
           these cycles all do exactly the same thing: <m>(1375),
           (3751), (7513), (3751)</m>). Therefore, a shift of the
-          numbers is a cycle doesn't change the cycle, and the
+          numbers in a cycle doesn't change the cycle, and the
           presentation by cycles is unique only up to this shifting.
           (You could also impose a restriction here to make this a
           unique notation: say, a cycle must always start with the
@@ -317,7 +333,7 @@
         <p>
           So I have a cycle decomposition and I can reorder it in both
           ways. Is it actually unique, though? Can there be another
-          way to write the same permutation as difference disjoint
+          way to write the same permutation as different disjoint
           cycles? There cannot, and the algorithm presented earliert is
           actually an argument for this. In that algorithm, I started
           with the number 1. Where 1 goes is determined by the
@@ -334,18 +350,18 @@
       So I have a unique representation of permutations as disjoint
       cycles. This is good and useful, and often the preferred
       representation. However, there is another way that also provides
-      important insight
+      important insight.
     </p>
     <definition>
       <statement>
         <p>
           The number of individual set elements in a cycle is called
           the <term>length</term> of the cycle. A cycle of length two
-          is called a <term>transposition</term>
+          is called a <term>transposition</term>.
         </p>
       </statement>
     </definition>
-    <proposition>
+    <proposition xml:id="proposition-permutation-product-transpositions">
       <statement>
         <p>
           Any permutation <m>\sigma \in S_n</m> can be written as a
@@ -371,7 +387,7 @@
           I'll prove this by induction on <m>k</m>. 
         </p>
         <p>
-          The first steps is the base case, which in this proof is
+          The first step is the base case, which in this proof is
           <m>k=2</m>. For <m>k=2</m>, the equation I want to prove
           simply states 
           <me>
@@ -391,7 +407,7 @@
           <me>
             (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
           </me>
-          Then I multiply by (a_1 a_{k+1}) on the left. 
+          Then I multiply by <m>(a_1 a_{k+1})</m> on the left. 
           <me>
             (a_1 a_{k+1}) (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
           </me>
@@ -438,16 +454,40 @@
           a_{k+1})</m>. Therefore, I can conclude that 
           <me>
             (a_1 a_{k+1}) (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
-            = (a_1 a_2 \ldots a_{k+1}
+            = (a_1 a_2 \ldots a_{k+1})
           </me>
           This is the induction step completed. I conclude, by
           induction, that the proposition holds for all <m>k \geq
           2</m>. This means that every cycle can be decomposed into
           transpositions, which likewise means that every permutation
-          can be decomposted into transpositions. 
+          can be decomposed into transpositions. 
         </p>
       </proof>
     </proposition>
+    <example>
+      <p>
+        The previous proposition was complicated and general. Let me
+        give a few concrete examples to demonstrate how the
+        transpositions end up <sq>counting backwards</sq> through the
+        cycle. All these examples will be from <m>S_9</m>. I'll just
+        state these, but feel free to verify the equalities if you
+        wish by checking that both sides do, in fact, have the same
+        effect on all nine numbers. The verification is useful for
+        getting the logic of the construction, so I do really
+        encourage you to do this. 
+        <md>
+          <mrow>
+            (5714329) = (59)(52)(53)(54)(51)(57)
+          </mrow>
+          <mrow>
+            (12789) = (19)(18)(17)(12)
+          </mrow>
+          <mrow>
+            (9865321) = (91)(92)(93)(96)(98)
+          </mrow>
+        </md>
+      </p>
+    </example>
     <p>
       So I can write any permutation as transpositions. What does that
       do for me? This is certainly not unique, which I can demonstrate
@@ -455,10 +495,10 @@
       transpotitions cancel out: switching a pair of numbers twice
       undoes the switch and leaves everything unchanged. Maybe there
       is a way to make a unique representation as transpotitions, but
-      that's not really the point. The point is this next proposition,
-      but before the proposition, I need a lemma. 
+      that's not really the point. The point is the next proposition I
+      want to prove, but before the proposition, I need a lemma. 
     </p>
-    <lemma>
+    <lemma xml:id="lemma-identity-cycles">
       <statement>
         <p>
           Assume the identity permutation in <m>S_n</m> is written as
@@ -481,8 +521,8 @@
           transposition is not the identity.) 
         </p>
         <p>
-          The base case is already an even product, so there is
-          nothing to prove here. 
+          The base case of <m>k=2</m> is already an even product, so
+          there is nothing to prove here. 
         </p>
         <p>
           Now I take the induction assumption. I assume if 
@@ -494,10 +534,10 @@
           <m>l \leq k+1</m>.
         </p>
         <p>
-          From this step, the proof works in four cases by looking at
-          the last two transposition <m>\tau_{l-1} \tau_l}</m>. There
-          are three possible patterns for these transposition, where
-          <m>a,b,c,d</m> are distinct numbers between 1 and <m>n/</m>. 
+          From this step, the proof works in two cases by looking at
+          the last two transposition <m>\tau_{l-1} \tau_l</m>. To
+          define the two cases, let 
+          <m>a,b,c,d</m> be distinct numbers between 1 and <m>n</m>. 
           <ul>
             <li>
               Case 1: <m>\tau_{l-1} \tau_l = (ab)(ab)</m>. In this pattern,
@@ -510,7 +550,7 @@
               with the last transposition. (If a number is shared,
               which number is shared is not important, since I can
               switch the order of any transposition without changing
-              anything.) 
+              anything, i.e. <m>(ab) = (ba)</m> for any transposition.) 
             </li>
           </ul>
         </p>
@@ -541,7 +581,7 @@
             </mrow>
           </md>
           You can verify, if you wish, that all three of these are
-          true: it is just checking that the left and the right side
+          true: just check that the left and the right side
           have the same action on <m>a,b,c,d</m>. 
         </p>
         <p>
@@ -553,7 +593,7 @@
         </p>
         <p>
           So I start with <m>a</m> in the last transposition and the
-          last two transposition are identical. Then I start a
+          last two transposition are not identical. Then I start a
           process:
           <ul>
             <li>
@@ -564,11 +604,12 @@
               Then I look at the pair of transposition where the
               second transposition is where I just moved a. (That is,
               I go left one transposition and now look at a new pair
-              of tranposition.) 
+              of tranpositions, half overlaping with the previous pair.) 
             </li>
             <li>
               If these two transposition are identical, then I can
-              cancel them. In this case, I have removed the, I have
+              cancel them. In this case, I have removed two
+              transposition, so I have
               have an expression of length <m>l-2</m> for the
               identity. As before, by the induction assumption, this
               means <m>l-2</m> is even, so <m>l</m> is even. 
@@ -579,57 +620,232 @@
               repeat the loop. 
             </li>
           </ul>
-          If I even reach two identitcal transposition, then the
+          If I ever reach two identitcal transposition, then the
           induction step is finished. What about if I keep doing the
           loop and never reach two identical transposition? Well, if I
-          do that, I will reach the left most transposition. I'll have
+          do that, I will reach the left-most transposition. I'll have
           an equation like this. 
           <me>
             \Id = (ab)  \tau_2 \ldots \tau_{l}
           </me>
           I will also know that the letter <m>a</m> doesn't show up in
-          any of the other transpositions: the loop move <m>a</m> to
+          any of the other transpositions: the loop moves <m>a</m> to
           the left, leaving transpositions without <m>a</m> behind at
           every step. But this is impossible! (Technically, I'm using
           a very short proof by contradiction for this step.) If
           <m>a</m> is only in the first transposition, then the whole
-          product send <m>a</m> to <m>b</m>, which is not the identity.
+          product sends <m>a</m> to <m>b</m>, which is not the identity.
           Therefore, finishing the loop without finding a repeated
           transposition is impossible. Since finding a repeated
           transposition always means that <m>l</m> is even, I have
-          completed the induction step and have therefore completed
-          the proof. 
+          completed the induction step and, by induction, I have
+          completed the proof. 
         </p>
       </proof>
     </lemma>
     <proposition>
       <statement>
         <p>
-          Let <m>\sigma \in S_n</m>. Is <m>\sigma</m> can be written
+          Let <m>\sigma \in S_n</m>. If <m>\sigma</m> can be written
           as the product of an odd number of transpotitions, then any
-          other way of writing <m>sigma</m> as a product of
+          other way of writing <m>\sigma</m> as a product of
           transposition will also have an odd number of transposition.
           Likewise if <m>\sigma</m> can be written as the product of
-          an even number of transpotition. 
+          an even number of transpotition, then any other way of
+          writing it as a product of transpositions must also have an
+          even number of transpositions. 
         </p>
       </statement>
       <proof>
         <p>
-          To be written 
+          Suppose that there are two ways to write the same
+          permutation as a product of cycles. 
+          <me>
+            \sigma_1 \sigma_2 \ldots \sigma_m = \tau_1 \tau_2 \ldots
+            \tau_n
+          </me>
+          I have to prove that <m>m</m> and <m>n</m> have the same
+          parity: both are even or both are odd. 
+        </p>
+        <p>
+          The inverse of a product of transposition is the same
+          transposition written in the reverse order. (Feel free to
+          check this: they all cancel off, one by one.) Therefore, I
+          can invert the left side of the previous equation, which
+          then can act as the inverse of the right side. Multiplying
+          by an inverse produced the identity. 
+          <me>
+            \Id = \sigma_m \sigma_{m-1} \ldots \sigma_2 \sigma_1
+            \tau_1 \tau_2 \ldots \tau_n
+          </me>
+          Then I can use <xref ref="lemma-identity-cycles"/>. The left
+          side is the identity, so the lemma says that this product on
+          the right must contain an even number of transposition. That
+          is, <m>n + m</m> must be even. But the sum of an even and
+          and odd number is odd, so this says that either both are
+          even or both are odd, which is precisely what I needed to
+          prove. 
         </p>
       </proof>
     </proposition>
     <definition>
       <statement>
         <p>
-          Let <m>\sigman \in S_n</m>. The fact that <m>\sigma</m> can
-          be written as an odd or even product of transpotitions, is
-          called the <term>parity</term> of the permutation. If the
-          parity is even, then <m>\sigma</m> is an <term>even
-          permutation</term>. Likewise, if the parity is odd, then
-          <m>\sigma</m> is an <term>odd permutation</term>. 
+          Let <m>\sigma \in S_n</m>. The fact that <m>\sigma</m> can
+          be written as an odd or even product of transpotitions is
+          called the <term>parity</term> or the <term>sign</term> of
+          the permutation. If the parity is even, then <m>\sigma</m>
+          is an <term>even permutation</term>. Likewise, if the parity
+          is odd, then <m>\sigma</m> is an <term>odd
+          permutation</term>. 
         </p>
       </statement>
     </definition>
+    <p>
+      The definition of odd and even permutations is a fundamental
+      one. If I write permutations in terms of transposition, then
+      obviously the definition makes sense. However, there is one
+      really annoying observation here. Consider the three examples of
+      cycles written as transpositions that I did earlier. 
+      <md>
+        <mrow>
+          (5714329) = (59)(52)(53)(54)(51)(57)
+        </mrow>
+        <mrow>
+          (12789) = (19)(18)(17)(12)
+        </mrow>
+        <mrow>
+          (9865321) = (91)(92)(93)(96)(98)
+        </mrow>
+      </md>
+      The first is the product of six transpositions, so it is an even
+      permutation.  The second is the product of four transpositions,
+      so it is also an even permutation. The third is the product of
+      five transpositions, so it is an odd permutations. 
+    </p>
+    <p>
+      So what is annoying here? Well, look at the length of the
+      cycles themselves: the first two were cycles of odd length,  and
+      the last is a cycle of even length. Using 
+      <xref ref="proposition-permutation-product-transpositions"/>,
+      this is true in general: by itself, any cycle of even length is
+      an odd permutation and any cycle of odd length is an even
+      permutation. It makes sense, but the mismatch is just slightly
+      frustrating. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The subset of all even permutation in <m>S_n</m> is called
+          the <term>alternating group</term> of even permutations on
+          <m>n</m> letters. The notation for the alternating group is
+          <m>A_n</m>. 
+        </p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>
+          The alternating groups is indeed a group, justifying its name. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I have a set, and the binary operation is still composition.
+          If I compose two even permutations, then the composition is
+          the product of the two list of transpositions. The number of
+          transpositions in the product is the sum of the number of
+          tranpositions in each part. Since the sum of two even
+          numbers is still even, the alternating groups is closed
+          under this operation, so it is a valid operation for
+          definining a group. Now I need to check the group axioms.
+        </p>
+        <p>
+          Composition of permutations (which is still just composition
+          of functions) is associative, as in all the function groups
+          we've considered so far in this course. 
+        </p>
+        <p>
+          The identity can be written as a product of zero
+          transformations, so it is an even transposition. Therefore,
+          the identity is in the alternating group. 
+        </p>
+        <p>
+          As remarked before, the inverse of a product of
+          transpositions is the same product in reverse. So, the
+          inverse of an even permutation can be written as a product
+          of exactly as many transposition as the original even
+          permutation. This is an even number of transposition, so the
+          inverses are also even permutations.  This means that all
+          the inverses are in the alternating group.
+        </p>
+        <p>
+          Those are the three axioms to check, so the alternating
+          group is indeed a group. 
+        </p>
+      </proof>
+    </proposition>
   </subsection>
+  <subsection xml:id="subsection-permutations-other-remarks">
+    <title>Other Initial Comments about Permutation Groups</title>
+    <p>
+      This concludes the necessary definitions about permutations
+      groups. They will be an important category and we will return to
+      them frequently. However, before moving on to the next section,
+      I have a few more remarks to make.
+    </p>
+    <p>
+      As discussed in <xref ref="example-d4"/>, I can understand
+      dihedral groups by entirely focusing on the vertices. Once I
+      know where the vertices go, I know the symmetry transformation
+      entirely. Therefore, a symmetry of an <m>n</m>-sided regular
+      polygon is, essentially, as a permutation of <m>\{1, 2, 3,
+      \ldots n\}</m>, thinking of the numbers as labels for the
+      vertices. In this way, the elements of dihedral groups are
+      permutations, and I can think of dihedral groups as subsets of
+      permutation groups. 
+    </p>
+    <p>
+      This isn't just dihedral groups, though. Consider any polytope,
+      which is the mathematical term for a higher-dimensional object
+      formed to vertcies, edges, faces, and so on. Polytopes are all
+      flat and straight: no curves allowed. Now think about the
+      symmetries of an polytope. In these symmetries, knowing what
+      happens to the vertices is always enough to determine the entire
+      function. To understand the symmetries of the cube, I need to
+      only understand where the eight vertices go, so the symmetries
+      of the cube are, again, permutation on eight letters. In this
+      ways, symmetry groups of polytopes are again groups of
+      permutations. (What about shapes other than polytopes? For
+      example, what is the symmetry group of, say, a sphere? Is it
+      still a group of permutations? I'll leave the question
+      unanswered for now, but we will get to it!) 
+    </p>
+    <p>
+      This thinking goes even further. Any matrix group is a set of
+      linear transformation of some <m>\RR^n</m>. That is, they are
+      all bijective functions from <m>\RR^n</m> to <m>\RR^n</m>. They
+      could reasonably be interpreted as permutations of <m>\RR^n</m>.
+      Most of the material in this section is about <m>S_n</m> and finite
+      permutations, but the definition of a permutation works for any
+      set, even an uncountably infinite set. Linear transformation are
+      permutations of the the uncountably infinite set <m>\RR^n</m>. 
+    </p>
+    <p>
+      Already many of our examples are overlaping: the dihedral groups
+      and matrix groups are also groups of permutations.
+      This will be come a major theme going forward: the same ideas
+      show up in different contexts. This is part of the rich
+      interconnected nature of group theory, and an example of the
+      rich interconnected nature of pure math writ large. It's
+      fascinating, but it is also a source of challenge. Since there
+      is so much overlap in examples and ideas, it's easy to get
+      confused. Am I thinking about polygons, or functions, or
+      permutations? Maybe all three at the same time? You will need to
+      get used to holding the connections together in your mind, being
+      flexible with a shifting perspective. This is tricky, but also
+      rewarding when you develop your skill at this kind of mental
+      exercise. 
+    </p>
+  </subsection> 
 </section>

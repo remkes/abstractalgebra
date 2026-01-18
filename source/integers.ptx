@@ -70,7 +70,7 @@
           <li>
             The <term>least common multiple</term> of two integers
             <m>a</m> amd <m>b</m> is, again unsurprisingly, the
-            largest positive integer which is a multiple of both. 
+            smallest positive integer which is a multiple of both. 
           </li>
         </ul>
       </p>
