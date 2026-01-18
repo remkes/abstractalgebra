@@ -1,0 +1,230 @@
+<section xml:id="section-groups-properties">
+  <title>First Properties of Groups</title>
+  <p>
+    Having defined a group and given a decent number of examples, I
+    can now move back to developing the general theory. This sections
+    has a number of useful definitions as well as a number of basic
+    proposition that help to understand how a group behaves. I'll
+    start with some direct clarifications of the group axioms
+    themselves. 
+  </p>
+  <p>
+    When talking about groups in general, it is pretty usual to write
+    the binary operation as a multiplication and talk about products.
+    In specific settings, of course, this might not be the case, but
+    we have adopted these choices for the general case. Just remember
+    that writing <m>ab</m> or talking about <sq>multiplication</sq>
+    and <sq>product</sq> might mean something very different if I went
+    to an example. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        The identity element of a group is unique. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Assume that both <m>e</m> and <m>f</m> are identity elements
+        of a group <m>G</m>. The multiplication by either has no
+        effect: this is the definition of an identity. This
+        observation allows me to write the following equation.
+        <me>
+          e = ef = f 
+        </me>
+          THe first equality recognizes that multiplication by
+          <m>f</m> has not effect, and the second equality recognizes
+          that multiplication by <m>e</m> has no effect. This proves
+          the claim: the two identities must, in fact, be the same
+          group element. 
+      </p>
+    </proof>
+  </proposition>
+  <proposition xml:id="proposition-unique-inverses">
+    <statement>
+      <p>
+        Inverse elements in groups are unique. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>g \in G</m> be a group element. Assume that both
+        <m>h</m> and <m>k</m> are inverse elements. By definition,
+        this means that multiplying <m>g</m> by either (in either
+        order) produces the identity. Using this fact, I can write the
+        following equation. 
+        <me>
+          h = h \Id = h(gk) = (hg)k = \Id k = k 
+        </me>
+        I'm using the assumption of the proof (that both of these are
+        inverses). I'm also using the associativity of the binary
+        operation in the middle step. I conclude that the two inverses
+        must be the same group element, so inverses are also unique. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    In the next propositions, I want to talk about algebra of groups,
+    in the high-school sense of <sq>algebra</sq>: solving equations
+    and using variables. Since groups have a binary operation,
+    algebraic equations and variables make sense. However, groups can
+    consist of many different kinds of mathematical objects. It's not
+    clear, at the start, what parts of algebra still work. Therefore,
+    we should re-establish what rules still hold. One of the
+    challenges of abstraction is realizing that the old rules you are
+    used to may, in fact, fail in new settings. Thankfully, the
+    following propositions show that some algebraic manipulation in
+    groups still works. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        The cancellation law holds in groups. Specifically, consider
+        this equation of elements of some group. 
+        <me>
+          gh = gk
+        </me>
+        Then I can cancel <m>g</m> and conclude that <m>h = k</m>. The
+        same is true for the following equation.
+        <me>
+          hg = kg
+        </me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The proof here is pretty straightforward: just multiply on the
+        left by the inverse and then reduce <m>g^{-1}g</m> to the
+        identify (which is the definition of an inverse). 
+        <md>
+          <mrow>
+            gh = gk 
+          </mrow>
+          <mrow>
+            g^{-1}gh = g^{-1}gk 
+          </mrow>
+          <mrow>
+            \Id h = \Id k 
+          </mrow>
+          <mrow>
+            h = k 
+          </mrow>
+        </md>
+        The proof for the second equation is precisely the same steps
+        just multiplying by the inverse on the right. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    So cancellation works, with is great, since it is a very natural
+    and instinctual operation. However, care is still required here:
+    cancellation only works if the cancelled element is on the same
+    side of both product. Consider this equation of elements of some
+    group. 
+    <me>
+      gh = kg
+    </me>
+    In general, this <m>g</m> cannot be cancelled. For an example,
+    consider this equation in <m>D_4</m>.
+    <me>
+      F_3 R_3 = R_1 F_3 
+    </me>
+    From <xref ref="table-d4-multiplication"/>, I can check that both
+    of these product are equal fo <m>F_4</m>. However, if I could
+    cancel <m>F_3</m>, I would produce the false equality <m>R_3 =
+    R_3</m>. So care is required for non-abelian groups and
+    cancellation. (If the group is abelian, of course,
+    then I can change the order of equations and this cancellation
+    would be fine.) 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>g,h \in G</m> and let <m>x</m> be a variable that
+        stands for an unknown element of the same group. Then the
+        equation
+        <me>
+          gx = h
+        </me>
+        always has a unique solution in the group <m>G</m>. Likewise,
+        the equation 
+        <me>
+          xg = h
+        </me>
+        also has a unique solution. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The proof here is, again, just multiplication by
+        <m>g^{-1}</m>. 
+        <md>
+          <mrow>
+            gx = h 
+          </mrow>
+          <mrow>
+            g^{-1}gx = g^{-1}h}
+          </mrow>
+          <mrow>
+            x = g^{-1}h}
+          </mrow>
+        </md>
+        The equation is solve by <m>g^{-1}h</m>. Since inverses are
+        unique by <xref ref="proposition-unique-inverses"/>, this
+        solution to the equation is a unique solution. The second
+        equation is solve in the same manner, just multiply on the
+        right instead of on the left. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    Let me give a couple of propositions for working with inverses. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>g \in G</m>. Then <m>(g^{-1})^{-1} = g</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        This proposition say that the inverse of <m>g^{-1}</m> is g. I
+        alreay know that the inverse of <m>g</m> is <m>g^{-1}</m>,
+        which, by definition, means the following. 
+        <me>
+         g g^{-1} = g^{-1}g = \Id 
+        </me>
+        However, the same equation reinterpreted mean exactly that
+        <m>g</m> is the inverse of <m>g^{-1}</m>, which proves the
+        claim. 
+      </p>
+    </proof>
+  </proposition>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>g,h \in G</m>. Then <m>(gh)^{-1} = h^{-1}
+        g^{-1}</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        To prove this, I have to prove that <m>h^{-1}g^{-1}</m> is the
+        inverse of <m>gh</m>, which means I have to show that the
+        multiplication by the potential inverse, on both sides,
+        produces the identity. I'll first do multiplication on the
+        left. 
+        <me>
+          h^{-1}g^{-1}gh = h^{-1}\Id h = h^{-1}h = \Id 
+        </me>
+        Similarly, I can do multiplication on the right.
+        <me>
+          ghh^{-1}g^{-1} = g \Id g^{-1} = gg^{-1} = \Id 
+        </me>
+        In both equation, I have used the fact that the inverses of
+        <m>g</m> and <m>h</m> produce the identity. Both equations
+        together justify the proposition. 
+      </p>
+    </proof>
+  </proposition>
+</section>

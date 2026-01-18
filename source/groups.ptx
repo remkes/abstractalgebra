@@ -4,8 +4,8 @@
   <xi:include href="cyclic-groups.ptx" />
   <xi:include href="dihedral-groups.ptx" />
   <xi:include href="permutation-groups.ptx" />
-  <!--
   <xi:include href="groups-properties.ptx" />
+  <!--
   <xi:include href="subgroups.ptx" />
   <xi:include href="generator-and-relations.ptx" />
   <xi:include href="homomorphisms.ptx" />
