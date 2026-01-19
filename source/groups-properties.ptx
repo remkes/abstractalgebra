@@ -2,14 +2,14 @@
   <title>First Properties of Groups</title>
   <p>
     Having defined a group and given a decent number of examples, I
-    can now move back to developing the general theory. This sections
-    has a number of useful definitions as well as a number of basic
-    proposition that help to understand how a group behaves. I'll
-    start with some direct clarifications of the group axioms
+    can now move back to developing the general theory. This section
+    contains a number of useful definitions as well as basic
+    propositions that help to understand how a group is structured.
+    I'll start with some direct clarifications of the group axioms
     themselves. 
   </p>
   <p>
-    When talking about groups in general, it is pretty usual to write
+    When talking about groups in general, it is conventional to write
     the binary operation as a multiplication and talk about products.
     In specific settings, of course, this might not be the case, but
     we have adopted these choices for the general case. Just remember
@@ -26,17 +26,18 @@
     <proof>
       <p>
         Assume that both <m>e</m> and <m>f</m> are identity elements
-        of a group <m>G</m>. The multiplication by either has no
-        effect: this is the definition of an identity. This
-        observation allows me to write the following equation.
+        of a group <m>G</m>. Both being the identity  means that
+        multiplication by either has no effect: this is the definition
+        of an identity. This observation allows me to write the
+        following equation.
         <me>
           e = ef = f 
         </me>
-          THe first equality recognizes that multiplication by
-          <m>f</m> has not effect, and the second equality recognizes
-          that multiplication by <m>e</m> has no effect. This proves
-          the claim: the two identities must, in fact, be the same
-          group element. 
+          The first equality recognizes that multiplication by
+          <m>f</m> has no effect, and the second equality recognizes
+          that multiplication by <m>e</m> has no effect. Together, the
+          two equalities prove the claim: the two identities must, in
+          fact, be the same group element. 
       </p>
     </proof>
   </proposition>
@@ -49,10 +50,10 @@
     <proof>
       <p>
         Let <m>g \in G</m> be a group element. Assume that both
-        <m>h</m> and <m>k</m> are inverse elements. By definition,
-        this means that multiplying <m>g</m> by either (in either
-        order) produces the identity. Using this fact, I can write the
-        following equation. 
+        <m>h</m> and <m>k</m> are inverse elements go <m>g</m>. By
+        definition, this means that multiplying <m>g</m> by either
+        element (in either order) produces the identity. Using this
+        fact, I can write the following equation. 
         <me>
           h = h \Id = h(gk) = (hg)k = \Id k = k 
         </me>
@@ -64,7 +65,7 @@
     </proof>
   </proposition>
   <p>
-    In the next propositions, I want to talk about algebra of groups,
+    In the next few propositions, I want to talk about algebra of groups,
     in the high-school sense of <sq>algebra</sq>: solving equations
     and using variables. Since groups have a binary operation,
     algebraic equations and variables make sense. However, groups can
@@ -116,10 +117,10 @@
     </proof>
   </proposition>
   <p>
-    So cancellation works, with is great, since it is a very natural
+    So cancellation works, which is great, since it is a very natural
     and instinctual operation. However, care is still required here:
     cancellation only works if the cancelled element is on the same
-    side of both product. Consider this equation of elements of some
+    side of both products. Consider this equation of elements of some
     group. 
     <me>
       gh = kg
@@ -163,16 +164,16 @@
             gx = h 
           </mrow>
           <mrow>
-            g^{-1}gx = g^{-1}h}
+            g^{-1}gx = g^{-1}h
           </mrow>
           <mrow>
-            x = g^{-1}h}
+            x = g^{-1}h
           </mrow>
         </md>
-        The equation is solve by <m>g^{-1}h</m>. Since inverses are
+        The equation is solved by <m>g^{-1}h</m>. Since inverses are
         unique by <xref ref="proposition-unique-inverses"/>, this
         solution to the equation is a unique solution. The second
-        equation is solve in the same manner, just multiply on the
+        equation is solved in the same manner: I just multiply on the
         right instead of on the left. 
       </p>
     </proof>
@@ -180,7 +181,7 @@
   <p>
     Let me give a couple of propositions for working with inverses. 
   </p>
-  <proposition>
+  <proposition xml:id="proposition-inverse-product">
     <statement>
       <p>
         Let <m>g \in G</m>. Then <m>(g^{-1})^{-1} = g</m>. 
@@ -194,7 +195,7 @@
         <me>
          g g^{-1} = g^{-1}g = \Id 
         </me>
-        However, the same equation reinterpreted mean exactly that
+        However, the same equation reinterpreted means exactly that
         <m>g</m> is the inverse of <m>g^{-1}</m>, which proves the
         claim. 
       </p>
@@ -221,10 +222,486 @@
         <me>
           ghh^{-1}g^{-1} = g \Id g^{-1} = gg^{-1} = \Id 
         </me>
-        In both equation, I have used the fact that the inverses of
+        In both equations, I have used the fact that the inverses of
         <m>g</m> and <m>h</m> produce the identity. Both equations
         together justify the proposition. 
       </p>
     </proof>
   </proposition>
+  <p>
+    When groups are written with a multiplicative product,
+    exponentials can be used for iterated products: <m>g^n = gg \ldots
+    g</m>. Since we have inverses, we can allow <m>n \in \ZZ</m> for
+    these exponents. With this notations, the laws of exponents still
+    apply. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>g, h \in G</m>  and let <m>m,n \in \ZZ</m>. Then the
+        following equations are true. 
+        <md>
+          <mrow>
+            g^m g^n = g^{n+m}
+          </mrow>
+          <mrow>
+            (g^m)^n = g^{nm}
+          </mrow>
+        </md>
+        In addition, if <m>G</m> is an abelian group, the following
+        equation is true. 
+        <me>
+          (gh)^n = g^n h^n 
+        </me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The proof of the first two is just counting now many copies of
+        <m>g</m> or <m>g^{-1}</m> are in the expression and verifying
+        that the count is the same on both sides. 
+      </p>
+      <p>
+        For the third equation, I can expand the left side as <m>n</m>
+        iterated multiplications. 
+        <me>
+          (gh)(gh)(gh) \ldots (gh)
+        </me>
+        If <m>G</m> is abelian, then I can rearrange this product,
+        grouping all the <m>g</m>`s together at the start. 
+        <me>
+          (gh)(gh)(gh) \ldots (gh) = g^nh^h
+        </me>
+        The abelian assumption is important: in general, this exponent
+        law is not true for non-abelian groups. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    Already in the previous proposition there are new subtleties. Most
+    of the exponent laws work, but the third needs the additional
+    assumption of an abelian groups. This is, again, how we expect the
+    process of abstraction to work: the familiar patterns extend, but
+    that extension can get subtle and complicated. 
+  </p>
+  <p>
+    Other exponential ideas may or may not extend. If we have exponents,
+    we can also ask about logarithms. Given group elements <m>g</m>
+    amd <m>h</m>, to solve the equation <m>g^n = m</m> is equivalent
+    to a logarithm. For finite groups, this is often called a
+    <term>discrete logarithm</term> and is quite important in
+    cryptography. For a general group and general elements, there is
+    no guarantee that a logarithm is solvable.
+  </p>
+  <p>
+    A similar problem is roots, which can be expressed as fractional
+    exponents. For <m>g</m> a group element, <m>g^{\frac{1}{k}}</m> is
+    implicitly asking if there is another group element <m>h</m> such
+    that <m>h^k = g</m>. (This is almost identical to the logarithm
+    problem, but note the difference: in the logarithm, I am asking for
+    the unknown exponent, which is an integer; and in the root
+    problem, I am asking for the unknown base, this is a group
+    element.) Like the logarithm, there is no guarantee that any roots
+    exists in general for groups. 
+  </p>
+  <p>
+    All of this discussion of exponents is done with multiplicative
+    notations. However, some groups are written with addition. The
+    laws still work there, but they look a little different. Iterative
+    addition is written <m>ng = g + g + g + \ldots + g</m>.
+    I can write the additive versions of exponent laws
+    (inlcuding the one that assumes the group is abelian -- additive
+    notation is exclusively used for abelian groups, so that
+    assumption is safe here.) Again, <m>g,h \in G</m> and <m>m, n \in
+    \ZZ</m>.
+    <md>
+      <mrow>
+        (mg) + (ng) = (m+n) g 
+      </mrow>
+      <mrow>
+        n(mg) = (nm)g 
+      </mrow>
+      <mrow>
+        m(g + h) = mg + mh 
+      </mrow>
+    </md>
+    These are all pretty familiar rules. The first and third look like
+    distributive laws. But be careful: these are only rules about
+    iterated addition, and the distribution is only for integers. 
+  </p>
+  <p>
+    I'll finish this section by talking, at some length, about
+    conjugation. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>g, h, k \in G</m> be elements of a group. The
+        <term>conjugation</term> of <m>h</m> by <m>g</m> is the
+        group element calculated by the expression <m>ghg^{-1}</m>. If
+        <m>k = ghg^{-1}</m> for some <m>g</m>, then we say that
+        <m>h</m> and <m>k</m> are <term>conjugate</term>. (There is
+        some inconsistency in mathematics for the definition of
+        conjugacy. Some source will define the conjugate as
+        <m>g^{-1}hg</m>, with the inverse on the left. In these notes,
+        I'll be consistent and always keep the inverse on the right.) 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Conjugacy turns out to be a pretty valuable term. Note, though,
+    that this is only interesting for non-abelian groups. If the group
+    is abelian, then <m>ghg{-1} = gg^{-1}h = h</m>, so conjugation
+    doesn't do anything, and only <m>h</m> is the only group element
+    which is conjugate with itself. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>G</m> be a group. Then conjugacy defines a relation on
+        the group: two elements are reated if they are conjugate. This
+        is an equivalence relation.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        I need to prove the three properties of an equivalent
+        relation. Let me start with reflexive: elements need to be
+        conjugate to themselves. Consider this equation.
+        <me>
+          h = h\Id = h(hh^{-1}) - hhh^{-1}
+        </me>
+        This equations shows that <m>h</m> is conjugate to itself, so
+        reflexivity is proved. 
+      </p>
+      <p>
+        Next is symmetry. If <m>h</m> is conjugate to <m>k</m>, I need
+        to also prove that <m>k</m> is conjugate to <m>h</m>. The
+        assumption here means that there exists <m>g</m> such that
+        this equation holds. 
+        <me>
+          h = gkg^{-1}
+        </me>
+        Now I'll multiply by <m>g</m> on the right and by
+        <m>g^{-1}</m> on the left and simplify. 
+        <md>
+          <mrow>
+            h = gkg^{-1}
+          </mrow>
+          <mrow>
+            g^{-1}hg = g^{-1}gkg^{-1}g 
+          </mrow>
+          <mrow>
+            g^{1}hg = \Id k \Id = k
+          </mrow>
+        </md>
+        This shows that <m>k</m> is also conjugate to <m>h</m>,
+        finishing the proof of symmetry. 
+      </p>
+      <p>
+        Finally, I need transitivity. Assume that <m>h</m> is
+        conjugate to <m>k</m> and also <m>k</m> is conjugate to
+        <m>l</m>. That means there exist two groups elements
+        <m>g_1</m> and <m>g_2</m> with these two equations. 
+        <md>
+          <mrow>
+            h = g_1kg_1^{-1}
+          </mrow>
+          <mrow>
+            k = g_2lg_2^{-1}
+          </mrow>
+        </md>
+        Then I replace <m>k</m> in the first equation with its
+        expression from the second. 
+        <me>
+          h = g_1(g_2 l g_2^{-1}) g_1^{-1} = g_1 g_2 l g_2^{-1}
+          g_1^{-1} 
+        </me>
+        Then I use <xref ref="proposition-inverse-product"/>, which I
+        can apply to the last two elements of this equation.
+        <me>
+          h = g_1 g_2 l (g_1g_2)^{-1} 
+        </me>
+        This prove that <m>h</m> is conjugate to <m>l</m>, but use of
+        the group element <m>(g_1g_2)</m>. 
+      </p>
+    </proof>
+  </proposition>
+  <definition>
+    <statement>
+      <p>
+        Since conjugacy is an equivalence relation, I can partition a
+        group using this relation. The partitions of a group under
+        this relation are called the <term>conjugacy classes</term> of
+        the group. 
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <p>
+      In an abelian group, all elements are only conjugate to
+      themselves. So the conjugacy classes are all singletons: just a
+      set containing a single group element. Again, conjugacy doesn't
+      really do anything for an abelian group
+    </p>
+    <p>
+      In any group, <m>\{Id\}</m> is always a conjugacy class. Why is
+      this so? Well, assume that some other <m>h</m> is conjugate to
+      the identity. That would mean the following equation holds for
+      some other group element <m>g</m>.
+      <me>
+        h = g\Id g^{-1}
+      </me>
+      But I can simplify this. 
+      <me>
+        h = g\Id g^{-1} = gg^{-1} = \Id 
+      </me>
+      This means <m>h</m> is also the identity, so only the identity
+      is conjugate to the identity. 
+    </p>
+    <p>
+      The conjugacy classes of <m>D_4</m> are the following sets.
+      <me>
+        \{\Id\}, \quad 
+        \{R_1, R_3}, \quad 
+        \{R_2}, \quad 
+        \{F_1, F_3}, \quad 
+        \{F_2, F_4}
+      </me>
+      Feel free to verify this: doing so consists of a lot of
+      calculations using the Caley table. For example, taking all the
+      conjugates of <m>R_1</m>, by all possible group elements,  you
+      will find that you only product <m>R_1</m> and <m>R_3</m>, and
+      likewise for <m>R_3</m>. That justifies the second class, and
+      the rest a justified similarly. 
+    </p>
+    <p>
+      I can say more about the conjugacy classes of <m>D_4</m>. The
+      identity is always its own class. For the rotations, the classes
+      separate the rotations of order 4 from the single rotation of
+      order 2. Then, the classes of the reflections separate the
+      reflections that go through two vertices from the reflections
+      that go through the middle of two opposite edges. This is
+      intersting: the conjugacy classes seem to separate the group
+      into sets of transformation which share some properties. This
+      doesn't always happen perfectly, but it is, thematically, what
+      we hope to see from conjugacy. 
+    </p>
+    <p>
+      This is also helping us to understand the <emph>structure</emph>
+      pf <m>D_4</m>. Once we have defined groups, pure mathematicians
+      want to understand the structure of groups. That's a tricky
+      term: what exactly is a <sq>structure</sq>? It's hard to say
+      precisely, since the term is used informally. But I can say that
+      the conjugacy classes are a structure. If I know the conjugacy
+      classes, I know something valuable and interesting about the
+      group: how it breaks down, how many classes exist, what common
+      properties are held inside each class. This is exaclty the kind
+      of thing that we want to accomplish in abstract mathematics:
+      buildling analytic tools to understand an abstract definition,
+      investigate how it works, distringuish between different kinds
+      of instances. 
+    </p>
+  </example>
+  <p>
+    In that spirit, and to demonstrate some proofs, here are some
+    propositions about conjugacy classes. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>g,h \in G</m> be an element of a group. Then the order
+        of <m>h</m> is unchanged by conjugation by <m>g</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        There are two cases here: finite and infinite order. I'll
+        start with finite order. Let <m>d</m> be the smallest positive
+        integer such that <m>h^d = \Id</m>. Then consider this
+        calculation.
+        <md>
+          <mrow>
+            \amp (ghg^{-1})^d \amp = \amp (ghg^{-1}) (ghg^{-1}) \ldots
+            (ghg^{-1}) 
+          </mrow>
+          <mrow>
+            \amp \amp = \amp gh (g^{-1}g) h (g^{-1}g) h \ldots h
+            (g^{-1}g) h g^{-1} 
+          </mrow>
+            \amp \amp = \amp g h \Id h \Id h \ldots h \Id h g^{-1}
+          <mrow>
+          </mrow>
+          <mrow>
+            \amp \amp = \amp gh^d g^{-1}  = gg^{-1} = \Id
+          </mrow>
+        </md>
+        What am I using here? First I am using associativity to change
+        the brackets. Then I am cancelling with inverses to make the
+        identity. Finally, I am using the fact that <m>h^d = \Id</m>.
+        With this calculation, I show that the degree of the
+        conjugation of <m>h</m> is at most <m>d</m>. But could there
+        be a smaller number <m>c</m> such that <m>(ghg^{-1})^c =
+        \Id</m>? We'll, let me use <m>c</m> and repeat the first three
+        steps of the previous calculation to get this equation.
+        <me>
+          \Id = (ghg^{-1)^c = g h^c g^{-1} 
+        </me>
+        Then I can multiply by <m>g</m> on the left and <m>g^{-1}</m>
+        on the right. 
+        <me>
+          g^{-1} \Id  g = g^{-1} g h^c g^{-1} g 
+        </me>
+        After cancelling, I get this. 
+        <me>
+          \Id = h^c 
+        </me>
+        If <m>c \lt d</m>, this contradicts that <m>d</m> is the order
+        of <m>h</m>, which cannot be true. (This is, yet again,
+        another mini-use of proof by contradiction.) Therefore,
+        <m>d</m> is also the smallest positive integer such that
+        <m>(ghg^{-1})^d = \Id</m>, so it is the order of the
+        conjugation and the proof is completed. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    Now I want to say something about conjugation in permutation
+    groups. 
+  </p>
+  <proposition xml:id="proposition-conjugate-cycles">
+    <statement>
+      <p>
+        Any two cycles of the same length in <m>S_n</m> are conjugate
+        to each other. More specifically, let <m>(a_1 a_2 \ldots
+        a_k</m> be a cycle and <m>g \in S_n</m>. Then the conjugate of
+        the cycle by <m>g</m> is the cycle <m>(g(a_1) g(a_2) \ldots
+        g(a_k)</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The <sq>more specifically</sq> is, indeed, the way to to prove
+        the general proposition. Consider the conjugation in question.
+        <me>
+          g (a_1 a_2 \ldots a_k) g^{-1}
+        </me>
+        I'm going to specifically determing what this product does, as
+        a permutation, to each element of <m>\{1, 2, 3, \ldots n\}</m>?
+        I work in two cases.
+      </p>
+      <p>
+        First, consider any element <m>b \in \{1, 2, 3 \ldots n\}</m>j
+        such that <m>g^{-1}(b)</m> which is does not show up on the cycle.
+        For such element, I trace the action, moving from right to
+        left. Doing so, I see that <m>b</m> is sent to
+        <m>g^{-1}(b)</m>, is left unchanged by the cycle, and then is
+        sent to <m>g(g^{-1}(b))</m>, which is just <m>b</m>. So these
+        elements are unchanged and don't need to show up in a cycle
+        description of the product. 
+      </p>
+      <p>
+        Next consider any element such that <m>g^{-1}(b) = a_l</m> for
+        some index <m>1 \leq l \leq k</m>. I can write such an element
+        as <m> b = g(a_l)</m>. I again trace the path of this
+        element. <m>b</m> is sent to <m>a_1</m> by <m>g^{-1}</m>. Then
+        it is sent to next item in the cycle: <m>a_{l+1}</m>. (This is
+        <m>a_1</m> if <m>l = k</m>, when the cycle loops around.)
+        Finally, a_{l+1} is  sent to <m>g(a_l+1}</m> by the last part
+        of the product. All in all, <m>g(a_l)</m> is sent to
+        <m>g(a_{l+1})</m>, including allowing for <m>l=k</m> when this
+        loops around. 
+      </p>
+      <p>
+        So what have I done here? Only the elements <m>g(a_i)</m> show
+        up, and they are send one step down the index. This is a new
+        cycle, specifically
+        <me>
+          (g(a_1) g(a_2) \ldots g g(a_k)) 
+        </me>
+        I conclude that the conjugate of the cycle is just another
+        cycle of length <m>k</m> (and I even know how to calculate
+        this new cycle by the argument of this proof). 
+      </p>
+      <p>
+        This argued that the conjugate of a cycle of length <m>k</m>
+        is another cycle of length <m>k</m>. But the theorem say that
+        <emph>all</emph> cycle of a fixed length are conjugate. Why is
+        this stronger statement true? Well, consider the argument I
+        just make. I took any permutation <m>g \in S_n</m> an got a
+        cycle where the elements in the cycle were acted on by the
+        permutation. But <m>S_n</m> is, by definition, the set of all
+        permutations! Therefore, in this way, I can produce any cycle
+        of length <m>k</m>: there is some permutation of <m>\{1,2,3
+        \ldots n\}</m> that will take the original cycle and product
+        any possible new cycle of the same length. Therefore, all
+        cycles of the same length are conjugate to each other. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    This lets me state a final result about permutations and
+    conjugation. I'll call this a theorem; there is no real different
+    between a proposition and theorem other than the fact that a
+    theorem sound more important. Therefore, we tend to reserve the
+    word for results that seem to carry more weight. This seems like a
+    big result about permutations, so a theorem it is!
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Two permutations in <m>S_n</m> are conjugate if and only if
+        they have the same lengths of cycles in their decomposition
+        into disjoint cycles. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        I start with a permutation that is a product of disjoint cycles
+        <m>c_i</m>. 
+        <me>
+          \sigma = c_1 c_2 \ldots c_k
+        </me>
+        Then I apply conjugation by any permutation <m>g</m> 
+        <me>
+          g \sigma g^{-1} = g c_1 c_2 \ldots c_k g^{-1} 
+        </me>
+        Then, since <m>g^{-1}g = \Id</m>, I can squeeze that
+        expression betweeen any two cycle without changing anything. 
+        <me>
+          g \sigma g^{-1} = g c_1 g^{-1} g c_2 g^{-1} \ldots g c_k g^{-1} 
+        </me>
+        Then I can change the grouping by associativity. 
+        <me>
+          g \sigma g^{-1} = (g c_1 g^{-1}) (g c_2 g^{-1}) \ldots (g
+          c_k g^{-1 )
+        </me>
+        Now the right side is a bunch of conjugations of cycles. Using
+        <xref ref="proposition-conjugate-cycles"/>, the result of
+        these conjugations is another product of cycles, all of which
+        have the same length as the original cycles. Also, I know the
+        entires in all the cycles <m>c_i</m> are disjoint. From the
+        proof of the prosition, the entries in the new cycles are
+        simply given by the permutation <m>g</m> acting on the
+        original entries.  The fact that the original entires are
+        disjoint means that all the entries were distinct. The fact
+        that a bijective map acts on them means that all the entires
+        of the new cycles are still distinct: these are still disjoint
+        cycles. 
+      </p>
+      <p>
+        This prove one direction of the theorem: if two permutations
+        are conjugate, then they have the same lengths of cycles in
+        their decomposition into cycles. What about the reverse? Well,
+        if two permutations have the same lengths of cycles in their
+        decomposition into disjoint cycles, remember that the entires
+        in the cycles are just the number <m>\{1, 2, \ldots, n\}</m>.
+        The calculation in above shows that there  is at least one
+        permutation of these number that sends all the entries in the
+        cycles of the first permutation to the entires of the cycles
+        of the second and does so by conjugation. Therefore, the
+        reverse implication is also proved. 
+      </p>
+    </proof>
+  </theorem>
 </section>
