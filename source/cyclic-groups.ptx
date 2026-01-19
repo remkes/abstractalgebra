@@ -140,7 +140,7 @@
       <p>
         Let <m>G</m> be the group and let <m>a</m> be the generator.
         Then, for any two groups elements, the can be written as
-        <m>g = a^k</m> and <m>g = a^l</m> for some integers <m>k</m>
+        <m>g = a^k</m> and <m>h = a^l</m> for some integers <m>k</m>
         and <m>l</m>. Then I can make this calculation.
         <me>
           gh = a^k a^l = a^{k+l} = a^{l+k} = a^la^k = hg 

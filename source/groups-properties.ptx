@@ -342,24 +342,25 @@
         <m>k = ghg^{-1}</m> for some <m>g</m>, then we say that
         <m>h</m> and <m>k</m> are <term>conjugate</term>. (There is
         some inconsistency in mathematics for the definition of
-        conjugacy. Some source will define the conjugate as
+        conjugacy. Some sources will define the conjugate as
         <m>g^{-1}hg</m>, with the inverse on the left. In these notes,
         I'll be consistent and always keep the inverse on the right.) 
       </p>
     </statement>
   </definition>
   <p>
-    Conjugacy turns out to be a pretty valuable term. Note, though,
-    that this is only interesting for non-abelian groups. If the group
-    is abelian, then <m>ghg{-1} = gg^{-1}h = h</m>, so conjugation
-    doesn't do anything, and only <m>h</m> is the only group element
-    which is conjugate with itself. 
+    That that conjugacy is only interesting for non-abelian groups. If
+    the group is abelian, then <m>ghg{-1} = gg^{-1}h = h</m>, so
+    conjugation doesn't do anything, and only <m>h</m> itself is the only
+    group element which is conjugate with <m>h</m>. However, for
+    non-abelian groups, conjugacy leads to some pretty interesting
+    structural information. 
   </p>
   <proposition>
     <statement>
       <p>
         Let <m>G</m> be a group. Then conjugacy defines a relation on
-        the group: two elements are reated if they are conjugate. This
+        the group: two elements are related if they are conjugate. This
         is an equivalence relation.
       </p>
     </statement>
@@ -369,10 +370,10 @@
         relation. Let me start with reflexive: elements need to be
         conjugate to themselves. Consider this equation.
         <me>
-          h = h\Id = h(hh^{-1}) - hhh^{-1}
+          h = h\Id = h(hh^{-1}) = hhh^{-1}
         </me>
-        This equations shows that <m>h</m> is conjugate to itself, so
-        reflexivity is proved. 
+        This equations shows that <m>h</m> is conjugate to itself (via
+        conjugation by <m>h</m>), so reflexivity is proved. 
       </p>
       <p>
         Next is symmetry. If <m>h</m> is conjugate to <m>k</m>, I need
@@ -395,8 +396,8 @@
             g^{1}hg = \Id k \Id = k
           </mrow>
         </md>
-        This shows that <m>k</m> is also conjugate to <m>h</m>,
-        finishing the proof of symmetry. 
+        This shows that <m>k</m> is also conjugate to <m>h</m> (via
+        conjugation by <m>h^{-1}</m>), finishing the proof of symmetry. 
       </p>
       <p>
         Finally, I need transitivity. Assume that <m>h</m> is
@@ -422,8 +423,8 @@
         <me>
           h = g_1 g_2 l (g_1g_2)^{-1} 
         </me>
-        This prove that <m>h</m> is conjugate to <m>l</m>, but use of
-        the group element <m>(g_1g_2)</m>. 
+        This prove that <m>h</m> is conjugate to <m>l</m>, via
+        conjugation of <m>l</m> by the group element <m>(g_1g_2)</m>. 
       </p>
     </proof>
   </proposition>
@@ -437,13 +438,19 @@
       </p>
     </statement>
   </definition>
+  <p>
+    I'll run through a few examples here to make conjugation
+    hopefully a bit clearer. 
+  </p>
   <example>
     <p>
       In an abelian group, all elements are only conjugate to
       themselves. So the conjugacy classes are all singletons: just a
       set containing a single group element. Again, conjugacy doesn't
-      really do anything for an abelian group
+      really do anything for an abelian group.
     </p>
+  </example>
+  <example>
     <p>
       In any group, <m>\{Id\}</m> is always a conjugacy class. Why is
       this so? Well, assume that some other <m>h</m> is conjugate to
@@ -459,53 +466,60 @@
       This means <m>h</m> is also the identity, so only the identity
       is conjugate to the identity. 
     </p>
+  </example>
+  <example>
     <p>
       The conjugacy classes of <m>D_4</m> are the following sets.
       <me>
         \{\Id\}, \quad 
-        \{R_1, R_3}, \quad 
-        \{R_2}, \quad 
-        \{F_1, F_3}, \quad 
-        \{F_2, F_4}
+        \{R_1, R_3\}, \quad 
+        \{R_2\}, \quad 
+        \{F_1, F_3\}, \quad 
+        \{F_2, F_4\}
       </me>
       Feel free to verify this: doing so consists of a lot of
-      calculations using the Caley table. For example, taking all the
-      conjugates of <m>R_1</m>, by all possible group elements,  you
-      will find that you only product <m>R_1</m> and <m>R_3</m>, and
-      likewise for <m>R_3</m>. That justifies the second class, and
-      the rest a justified similarly. 
+      calculations, either directly or by using the Caley table. For
+      example, taking all the conjugates of <m>R_1</m> (that is,
+      conjugates by all possible other group elements), you will find
+      that you only produce <m>R_1</m> or <m>R_3</m>, and likewise
+      for <m>R_3</m>. That justifies the second class, and the rest
+      are justified similarly.
     </p>
     <p>
       I can say more about the conjugacy classes of <m>D_4</m>. The
-      identity is always its own class. For the rotations, the classes
+      identity is always its own class, as the previous example
+      established in general. For the rotations, the classes
       separate the rotations of order 4 from the single rotation of
       order 2. Then, the classes of the reflections separate the
       reflections that go through two vertices from the reflections
       that go through the middle of two opposite edges. This is
       intersting: the conjugacy classes seem to separate the group
-      into sets of transformation which share some properties. This
-      doesn't always happen perfectly, but it is, thematically, what
-      we hope to see from conjugacy. 
+      into sets of transformations which share some properties. This
+      doesn't always happen perfectly, but this pattern is,
+      thematically, what we hope to see from conjugacy. Conjugacy
+      classes, hopefully, should be groups of groups elements with
+      similar properties. 
     </p>
     <p>
-      This is also helping us to understand the <emph>structure</emph>
-      pf <m>D_4</m>. Once we have defined groups, pure mathematicians
-      want to understand the structure of groups. That's a tricky
-      term: what exactly is a <sq>structure</sq>? It's hard to say
-      precisely, since the term is used informally. But I can say that
-      the conjugacy classes are a structure. If I know the conjugacy
-      classes, I know something valuable and interesting about the
-      group: how it breaks down, how many classes exist, what common
-      properties are held inside each class. This is exaclty the kind
-      of thing that we want to accomplish in abstract mathematics:
-      buildling analytic tools to understand an abstract definition,
-      investigate how it works, distringuish between different kinds
-      of instances. 
+      This separation into conjugacy classes helps to understand the
+      <emph>structure</emph> of <m>D_4</m>. Once we have defined
+      groups, pure mathematicians want to understand the structure of
+      groups. That's a tricky term: what exactly is a
+      <sq>structure</sq>? It's hard to say precisely, since the term
+      is used informally. But I can say that the conjugacy classes are
+      a structure. If I know the conjugacy classes, I know something
+      valuable and interesting about the group: how it breaks down,
+      how many classes exist, what common properties are held inside
+      each class. This is exactly the kind of thing that we want to
+      accomplish in abstract mathematics: buildling analytic tools to
+      understand an abstract definition, investigate how it works, and 
+      distringuish between different kinds of instances of the
+      definition. 
     </p>
   </example>
   <p>
-    In that spirit, and to demonstrate some proofs, here are some
-    propositions about conjugacy classes. 
+    In that spirit, and also to demonstrate some interesting proofs,
+    here are some propositions about conjugacy classes. 
   </p>
   <proposition>
     <statement>
@@ -517,35 +531,35 @@
     <proof>
       <p>
         There are two cases here: finite and infinite order. I'll
-        start with finite order. Let <m>d</m> be the smallest positive
-        integer such that <m>h^d = \Id</m>. Then consider this
-        calculation.
+        start with finite order. Let <m>d</m> be the order of
+        <m>h</m>: the smallest positive integer such that <m>h^d =
+        \Id</m>. Then consider this calculation.
         <md>
           <mrow>
-            \amp (ghg^{-1})^d \amp = \amp (ghg^{-1}) (ghg^{-1}) \ldots
+            (ghg^{-1})^d \amp = (ghg^{-1}) (ghg^{-1}) \ldots
             (ghg^{-1}) 
           </mrow>
           <mrow>
-            \amp \amp = \amp gh (g^{-1}g) h (g^{-1}g) h \ldots h
+            \amp = gh (g^{-1}g) h (g^{-1}g) h \ldots h
             (g^{-1}g) h g^{-1} 
           </mrow>
-            \amp \amp = \amp g h \Id h \Id h \ldots h \Id h g^{-1}
+            \amp = g h \Id h \Id h \ldots h \Id h g^{-1}
           <mrow>
           </mrow>
           <mrow>
-            \amp \amp = \amp gh^d g^{-1}  = gg^{-1} = \Id
+            \amp = gh^d g^{-1}  = gg^{-1} = \Id
           </mrow>
         </md>
         What am I using here? First I am using associativity to change
         the brackets. Then I am cancelling with inverses to make the
         identity. Finally, I am using the fact that <m>h^d = \Id</m>.
-        With this calculation, I show that the degree of the
+        With this calculation, I show that the order of the
         conjugation of <m>h</m> is at most <m>d</m>. But could there
         be a smaller number <m>c</m> such that <m>(ghg^{-1})^c =
         \Id</m>? We'll, let me use <m>c</m> and repeat the first three
         steps of the previous calculation to get this equation.
         <me>
-          \Id = (ghg^{-1)^c = g h^c g^{-1} 
+          \Id = (ghg^{-1})^c = g h^c g^{-1} 
         </me>
         Then I can multiply by <m>g</m> on the left and <m>g^{-1}</m>
         on the right. 
@@ -561,7 +575,24 @@
         another mini-use of proof by contradiction.) Therefore,
         <m>d</m> is also the smallest positive integer such that
         <m>(ghg^{-1})^d = \Id</m>, so it is the order of the
-        conjugation and the proof is completed. 
+        conjugation and the proof is completed for the finite case. 
+      </p>
+      <p>
+        Now for the infinite case. <m>h</m> has an infinite order is
+        there is no <m>d \in \NN</m> such that <m>h^d = \Id</m>.
+        Assume, for the sake of contradiction, that there exists some
+        <m>d</m> such that <m>(ghg^{-1})^d = \Id</m>. I can then
+        repeat the previous calculation once more; like the second
+        part of the finite case, this would result in <m>h^d =
+        \Id</m>. But this contradicts the fact that <m>h</m> has
+        infinite order. So, by contradiction, no such <m>d</m> can
+        exist and I can conclude that <m>ghg^{-1}</m> also has
+        infinite order. 
+      </p>
+      <p>
+        That's both possible cases: finite or infinite order. In both
+        cases, the order of the conjugation is the same as the
+        original order, so the proof is completed. 
       </p>
     </proof>
   </proposition>
@@ -574,7 +605,7 @@
       <p>
         Any two cycles of the same length in <m>S_n</m> are conjugate
         to each other. More specifically, let <m>(a_1 a_2 \ldots
-        a_k</m> be a cycle and <m>g \in S_n</m>. Then the conjugate of
+        a_k)</m> be a cycle and <m>g \in S_n</m>. Then the conjugate of
         the cycle by <m>g</m> is the cycle <m>(g(a_1) g(a_2) \ldots
         g(a_k)</m>. 
       </p>
@@ -587,62 +618,64 @@
           g (a_1 a_2 \ldots a_k) g^{-1}
         </me>
         I'm going to specifically determing what this product does, as
-        a permutation, to each element of <m>\{1, 2, 3, \ldots n\}</m>?
+        a permutation, to each element of <m>\{1, 2, 3, \ldots n\}</m>
         I work in two cases.
       </p>
       <p>
-        First, consider any element <m>b \in \{1, 2, 3 \ldots n\}</m>j
-        such that <m>g^{-1}(b)</m> which is does not show up on the cycle.
-        For such element, I trace the action, moving from right to
+        First, consider any element <m>b \in \{1, 2, 3 \ldots n\}</m>
+        such that <m>g^{-1}(b)</m> does not show up in the original cycle.
+        For such elements, I trace the action, moving from right to
         left. Doing so, I see that <m>b</m> is sent to
-        <m>g^{-1}(b)</m>, is left unchanged by the cycle, and then is
-        sent to <m>g(g^{-1}(b))</m>, which is just <m>b</m>. So these
-        elements are unchanged and don't need to show up in a cycle
-        description of the product. 
+        <m>g^{-1}(b)</m>, is left unchanged by the cycle (since it
+        doesn't show up!), and then is sent to <m>g(g^{-1}(b))</m>,
+        which is just <m>b</m>. So these elements are unchanged and
+        don't need to show up in a cycle description of the
+        conjugation. 
       </p>
       <p>
         Next consider any element such that <m>g^{-1}(b) = a_l</m> for
         some index <m>1 \leq l \leq k</m>. I can write such an element
-        as <m> b = g(a_l)</m>. I again trace the path of this
-        element. <m>b</m> is sent to <m>a_1</m> by <m>g^{-1}</m>. Then
-        it is sent to next item in the cycle: <m>a_{l+1}</m>. (This is
-        <m>a_1</m> if <m>l = k</m>, when the cycle loops around.)
-        Finally, a_{l+1} is  sent to <m>g(a_l+1}</m> by the last part
-        of the product. All in all, <m>g(a_l)</m> is sent to
-        <m>g(a_{l+1})</m>, including allowing for <m>l=k</m> when this
-        loops around. 
+        as <m> b = g(a_l)</m>. I again trace the path of this element.
+        <m>b</m> is sent to <m>a_l</m> by <m>g^{-1}</m>. Then it is
+        sent to next item in the cycle: <m>a_{l+1}</m>. (This
+        <m>a_{l+1}</m> is actually <m>a_1</m> if <m>l = k</m>, when
+        the cycle loops around.) Finally, a_{l+1} is  sent to
+        <m>g(a_{l+1})</m> by the last part of the product. All in all,
+        <m>g(a_l)</m> is sent to <m>g(a_{l+1})</m>, including looping
+        around to <m>g(a_1)</m> when <m>l=k</m>.
       </p>
       <p>
         So what have I done here? Only the elements <m>g(a_i)</m> show
-        up, and they are send one step down the index. This is a new
-        cycle, specifically
+        up, and they are sent one step down the index. This is exactly
+        a new cycle: 
         <me>
-          (g(a_1) g(a_2) \ldots g g(a_k)) 
+          (g(a_1) g(a_2) \ldots g(a_k)) 
         </me>
         I conclude that the conjugate of the cycle is just another
-        cycle of length <m>k</m> (and I even know how to calculate
-        this new cycle by the argument of this proof). 
+        cycle of length <m>k</m>. I even know how to calculate
+        this new cycle, using the argument of this proof. 
       </p>
       <p>
         This argued that the conjugate of a cycle of length <m>k</m>
-        is another cycle of length <m>k</m>. But the theorem say that
-        <emph>all</emph> cycle of a fixed length are conjugate. Why is
-        this stronger statement true? Well, consider the argument I
-        just make. I took any permutation <m>g \in S_n</m> an got a
-        cycle where the elements in the cycle were acted on by the
-        permutation. But <m>S_n</m> is, by definition, the set of all
-        permutations! Therefore, in this way, I can produce any cycle
-        of length <m>k</m>: there is some permutation of <m>\{1,2,3
-        \ldots n\}</m> that will take the original cycle and product
-        any possible new cycle of the same length. Therefore, all
-        cycles of the same length are conjugate to each other. 
+        is another cycle of length <m>k</m>. But the proposition said
+        that <emph>all</emph> cycles of a fixed length are conjugate.
+        Why is this stronger statement true? Well, consider the
+        argument I just made. I took any permutation <m>g \in S_n</m>
+        an got a cycle where the elements in the cycle were acted on
+        by the permutation. But <m>S_n</m> is, by definition, the set
+        of all permutations! Therefore, in this way, I can produce any
+        cycle of length <m>k</m>: there is some permutation of
+        <m>\{1,2,3 \ldots n\}</m> that will take the original cycle
+        and product any possible new cycle of the same length using
+        conjugation.  Therefore, all cycles of the same length are
+        conjugate to each other. 
       </p>
     </proof>
   </proposition>
   <p>
     This lets me state a final result about permutations and
     conjugation. I'll call this a theorem; there is no real different
-    between a proposition and theorem other than the fact that a
+    between a propositions and theorems other than the fact that a
     theorem sound more important. Therefore, we tend to reserve the
     word for results that seem to carry more weight. This seems like a
     big result about permutations, so a theorem it is!
@@ -662,19 +695,19 @@
         <me>
           \sigma = c_1 c_2 \ldots c_k
         </me>
-        Then I apply conjugation by any permutation <m>g</m> 
+        Then I apply conjugation by any permutation <m>g</m>.
         <me>
           g \sigma g^{-1} = g c_1 c_2 \ldots c_k g^{-1} 
         </me>
         Then, since <m>g^{-1}g = \Id</m>, I can squeeze that
-        expression betweeen any two cycle without changing anything. 
+        expression betweeen any two cycles without changing anything. 
         <me>
           g \sigma g^{-1} = g c_1 g^{-1} g c_2 g^{-1} \ldots g c_k g^{-1} 
         </me>
         Then I can change the grouping by associativity. 
         <me>
           g \sigma g^{-1} = (g c_1 g^{-1}) (g c_2 g^{-1}) \ldots (g
-          c_k g^{-1 )
+          c_k g^{-1} )
         </me>
         Now the right side is a bunch of conjugations of cycles. Using
         <xref ref="proposition-conjugate-cycles"/>, the result of
@@ -690,17 +723,17 @@
         cycles. 
       </p>
       <p>
-        This prove one direction of the theorem: if two permutations
+        This proves one direction of the theorem: if two permutations
         are conjugate, then they have the same lengths of cycles in
         their decomposition into cycles. What about the reverse? Well,
         if two permutations have the same lengths of cycles in their
         decomposition into disjoint cycles, remember that the entires
-        in the cycles are just the number <m>\{1, 2, \ldots, n\}</m>.
-        The calculation in above shows that there  is at least one
-        permutation of these number that sends all the entries in the
-        cycles of the first permutation to the entires of the cycles
-        of the second and does so by conjugation. Therefore, the
-        reverse implication is also proved. 
+        in the cycles are just the numbers <m>\{1, 2, \ldots, n\}</m>.
+        To change any patterns of the numbers in the cycles into any
+        other pattern is just to apply a permutation of the numbers,
+        and the calculation above shows that conjugation by the
+        permutation has the desired affect on the cycles. Therefore,
+        the reverse implication is also proved. 
       </p>
     </proof>
   </theorem>
