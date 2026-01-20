@@ -133,7 +133,7 @@
     From <xref ref="table-d4-multiplication"/>, I can check that both
     of these product are equal fo <m>F_4</m>. However, if I could
     cancel <m>F_3</m>, I would produce the false equality <m>R_3 =
-    R_3</m>. So care is required for non-abelian groups and
+    R_1</m>. So care is required for non-abelian groups and
     cancellation. (If the group is abelian, of course,
     then I can change the order of equations and this cancellation
     would be fine.) 
@@ -639,7 +639,7 @@
         <m>b</m> is sent to <m>a_l</m> by <m>g^{-1}</m>. Then it is
         sent to next item in the cycle: <m>a_{l+1}</m>. (This
         <m>a_{l+1}</m> is actually <m>a_1</m> if <m>l = k</m>, when
-        the cycle loops around.) Finally, a_{l+1} is  sent to
+        the cycle loops around.) Finally, <m>a_{l+1}</m> is  sent to
         <m>g(a_{l+1})</m> by the last part of the product. All in all,
         <m>g(a_l)</m> is sent to <m>g(a_{l+1})</m>, including looping
         around to <m>g(a_1)</m> when <m>l=k</m>.

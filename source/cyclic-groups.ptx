@@ -12,7 +12,7 @@
       <p>
         Let <m>G</m> be a group and let <m>g \in G</m>. The
         <term>order</term> of the element <m>g</m> is the smallest
-        natural number <m>d</m> such that<m>g^d = e</m>. If no such
+        natural number <m>d</m> such that <m>g^d = e</m>. If no such
         natural number exists, then we say that the order of <m>g</m>
         is infinite. 
       </p>
