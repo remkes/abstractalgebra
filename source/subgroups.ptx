@@ -1,0 +1,88 @@
+<section xml:id="section-subgroups">
+  <title>Subgroups</title>
+  <p>
+    I've already introduced two ways of capturing the structure of a
+    group: Caley tables and conjugacy classes. Another way is to
+    analyze its subgroups. First, the definition.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>G</m> be a group. A subset <m>H \subset G</m> is a
+        <term>subgroup</term> of <m>G</m> is <m>H</m> is itself a
+        group under the same binary operation as <m>G</m>
+      </p>
+      <p>
+        Equivalently, <m>H</m> is a subgroup if three things are true
+        <ul>
+          <li>
+            <m>H</m> contains the group identity.
+          </li>
+          <li>
+            <m>H</m> is closed under the binary operation. 
+          </li>
+          <li>
+            For any <m>h \in H</m>, the inverse <m>h^{-1}</m> is also
+            in <m>H</m>.
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    In abstract algebra, the definition of a <sq>sub-object</sq> is
+    frequently on of the first definitions. It's pretty natural to see
+    what subsets of an object still fulfill the rules of that object.
+    Note that the subgroup definition doesn't need to check
+    associativity: the associativity of the operation is already known
+    from the larger group <m>G</m>. 
+  </p>
+  <p>
+    Let's get to some examples, using the various groups defined so
+    far in the course. 
+  </p>
+  <example>
+    <example>
+      <p>
+        Let <m>e \in G</m> be the identity element of a group. Then
+        <m>\{e\}</m> is always a subgroup. As usual, mathematicians
+        love our trivial cases: feel three to check that all the
+        requirements of the definition are certainly met by the set
+        that only contains the identity. 
+      </p>
+    </example>
+    <p>
+      Many of the number sets were groups under addition. Since many
+      of them are subsets of the larger number sets, these were all
+      subgroups. <m>\ZZ</m> is a subgroup of <m>\QQ</m>, which is a
+      subgroup of <m>\RR</m>, which is a subroup of <m>\CC</m>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Something similar is true under multiplication. <m>\QQ^*</m> is
+      a subgroup of <m>\RR^*</m>, which is a subgroup of <m>\CC^*</m>.
+      The non-zero integers don't show up here, since they are not a
+      group under multiplication. 
+    </p>
+  </example>
+  <example>
+    <p>
+      One might be tempted to say something like <m>\ZZ/n/\ZZ</m> is a
+      subgroup of <m>\Z/m/\ZZ</m> whenever <m>n \leq </m>, or at least
+      when <m>n</m> is a factor of <m>m</m>. Niether are true. The
+      classes in <m>\ZZ/n\ZZ</m> are integers modulo <m>n</m>, while the
+      classes in <m>\ZZ/mZZ</m> are integers modulo <m>m</m>. If the
+      two moduli are different, when these classes can't really be
+      compared and are certainly not part of the same set at all. 
+    </p>
+    <p>
+      For specific examples, though, I can give subgroups. 
+      <ul>
+        <li>
+          Example
+        </li>
+      </ul>
+    </p>
+  </example>
+</section>
