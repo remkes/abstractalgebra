@@ -334,7 +334,7 @@
     </p>
   </subsection>
   <subsection xml:id="subsection-matrix-groups">
-    <title>Matrix Grouos</title>
+    <title>Matrix Groups</title>
     <p>
       The reflections and rotations in dihedral groups can be realized
       as matrices, as long as you centre the polygon at the origin in

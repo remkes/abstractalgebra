@@ -90,7 +90,7 @@
           \Id = (1)(2)(3)(4)(5)(6)(7)
         </me>
         Again, usually fixed points are not written at all, and the
-        the symbol <m>\Id</m> is used for the identity. 
+        symbol <m>\Id</m> is used for the identity. 
       </p>
       <p>
         Consider the permutation that fixes 1, 3 and 7; switches 4 and
@@ -117,7 +117,7 @@
       </p>
       <p>
         Say I want to calculate <m>\sigma \tau</m>, remembing that the
-        right most permutation happens first. Let's say that <m>\sigma =
+        right-most permutation happens first. Let's say that <m>\sigma =
         (15)(263)</m> and <m>\tau = (234)(57)</m>. Then I want to
         calculate this product.
         <me>
@@ -213,7 +213,7 @@
       <p>
         I see, in this process, that <m>\tau \sigma \neq \sigma
         \tau</m>. As with matrix groups, permutations groups are a good
-        source of interseting non-abelian group structures. In general,
+        source of interesting non-abelian group structures. In general,
         I expect that most permutations do not commute with each other.
       </p>
     </example>
@@ -280,7 +280,7 @@
       <statement>
         <p> 
           Let <m>\sigma \in S_n</m>. Then, up to reordering the
-          the product of cycles and shifting the numbers
+          product of cycles and shifting the numbers
           in the cycles themselves, <m>\sigma</m> can be uniquely
           written as a product of disjoint cycles. 
         </p>
@@ -502,7 +502,7 @@
       <statement>
         <p>
           Assume the identity permutation in <m>S_n</m> is written as
-          a product of cycles.
+          a product of transpositions.
           <me>
             \Id = \tau_1 \tau_2 \ldots \tau_k
           </me>
@@ -544,7 +544,7 @@
               the last to transpositions are the same. 
             </li>
             <li>
-              Case 1: <m>\tau_{l-1} \tau_l = (ab)(cd)</m> or
+              Case 2: <m>\tau_{l-1} \tau_l = (ab)(cb)</m> or
               <m>\tau_{l-1}\tau_1 = (ab)(cd)</m> In this pattern,
               the second last transposition shares at most one number
               with the last transposition. (If a number is shared,
@@ -829,7 +829,7 @@
       Most of the material in this section is about <m>S_n</m> and finite
       permutations, but the definition of a permutation works for any
       set, even an uncountably infinite set. Linear transformation are
-      permutations of the the uncountably infinite set <m>\RR^n</m>. 
+      permutations of the uncountably infinite set <m>\RR^n</m>. 
     </p>
     <p>
       Already many of our examples are overlaping: the dihedral groups

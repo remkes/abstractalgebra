@@ -18,7 +18,7 @@
       </p>
     </statement>
   </definition>
-  <definition>
+  <definition xml:id="definition-generated">
     <statement>
       <p>
         Let <m>G</m> be a group and let <m>g_i</m> be some elements of

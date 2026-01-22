@@ -70,6 +70,24 @@
       </statement>
     </definition>
     <p>
+      Groups are sets and sets have cardinality: how many elements are
+      in the set. For groups, this gets a special term. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>order</term> of a group is its cardinality as a
+          set. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As discussed in <xref ref="definition-sets-basics"/>, the only
+      cardinalities that I will deal with in this course are finite
+      cardinalities (<m>n \in \NN</m>), countably infinite, and
+      uncountably infinite. 
+    </p>
+    <p>
       Before moving on to the first examples, let me make a very
       important point about notation. I've defined a group using
       <sq><m>\cdot</m></sq> as the generic symbol for a binary
@@ -261,7 +279,7 @@
       modulo n. For all of these, feel free to verify the operations
       yourself. 
     </p>
-    <example>
+    <example xml:id="example-caley-z20-units">>
       <p>
         Here is the Caley table for <m>\ZZ/7\ZZ</m> under the
         operation of addition. I'll not write the bars over the

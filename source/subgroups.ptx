@@ -26,6 +26,9 @@
             in <m>H</m>.
           </li>
         </ul>
+        Additionally, if <m>H</m> is a proper subset of <m>G</m> (that
+        is, <m>H \neq G</m>, then it is called a <term>propoer
+        subgroup</term>. 
       </p>
     </statement>
   </definition>
@@ -69,7 +72,7 @@
   <example>
     <p>
       One might be tempted to say something like <m>\ZZ/n/\ZZ</m> is a
-      subgroup of <m>\Z/m/\ZZ</m> whenever <m>n \leq </m>, or at least
+      subgroup of <m>\ZZ/m\ZZ</m> whenever <m>n \leq m</m>, or at least
       when <m>n</m> is a factor of <m>m</m>. Niether are true. The
       classes in <m>\ZZ/n\ZZ</m> are integers modulo <m>n</m>, while the
       classes in <m>\ZZ/mZZ</m> are integers modulo <m>m</m>. If the
@@ -77,12 +80,391 @@
       compared and are certainly not part of the same set at all. 
     </p>
     <p>
-      For specific examples, though, I can give subgroups. 
+      That said, I can give some specific examples of subgroups of
+      <m>\ZZ/n\ZZ</m>. For all of these, I leave it to you to verify
+      that they are closed under addition, include the identity, and
+      have all the inverses they need. 
       <ul>
         <li>
-          Example
+          <m>\{0,2,4,6\}</m> is a subgroup of <m>\ZZ/8\ZZ</m>. In
+          general, the even classes are always a subgroup of
+          <m>\ZZ/n\ZZ</m> when <m>n</m> is even. 
+        </li>
+        <li>
+          <m>\{0,3,6,9\}</m> is a subgroup of <m>\ZZ/12</m>. 
+        </li>
+        <li>
+          <m>\{0,5,10,15,20\}</m> is a subgroup  of <m>\ZZ/25</m>.
+        </li>
+        <li>
+          You may be already thinking about various propositions about
+          subgroups of <m>\ZZ/n\ZZ</m> based on these examples: there
+          certainly are patterns here. After doing some more
+          definition, I'll state and prove some propositions about
+          subgroups of cyclic groups, which will generalize some of
+          the patterns you might see here.
         </li>
       </ul>
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>\{1,9\}</m>, <m>\{1,11\}</m>, <m>\{1,19</m>, and
+      <m>\{1,3,7,9\}</m> are subgroups of <m>\ZZ/20\ZZ^*</m>. You can
+      verify the subgroup properties using the Caley table <xref
+      ref="example-caley-z20-units"/>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The set of real-coefficient polynomial of degree at most 2,
+      is a subgroup of <m>\RR[x]</m>. The identity is the zero
+      polynomial, which has degree zero, so it is included. 
+      I can never get a higher degree polynomial by adding quadratics,
+      and the inverse (under addition) of a quadratic is another
+      quadratic. Note that <sq>at most</sq> is important here. I can
+      add two quadratics and get a linear polynomial, as in this
+      example: <m>x^2 + (-x^2 + x) = x</m>, so I need linear and
+      constant polynomials to make sure this subset is closed under
+      addition.
+    </p>
+    <p>
+      There was nothing special about 2 in the previous paragraph. The
+      set of real-coefficient polynomials od degree at most <m>n</m>,
+      for any <m>n \in \NN</m>, is a subgroup of <m>\RR[x]</m>. 
+    </p>
+    <p>
+      This examples work with other coefficients as well: in
+      <m>\ZZ[x]</m>, in <m>\QQ[x]</m> and so on. 
+    </p>
+  </example>
+  <example>
+    <p>
+      There are many subgroups in the function groups, both under
+      pointwise operations and under composition. In general, if the
+      domain and codomains are fixed, then moving to more restrictive
+      properties gives subgroups. For example:
+      <me>  
+        C^{\infty}(\RR) \subset \ldots \subset C^2(\RR) \subset
+        C^1(\RR) \subset C(\RR) 
+      </me>
+      The continuous functions (under pointwise addition) are the most
+      general group in this list. Moving to continuously
+      differentiable functions is a restriction, so a subset. But the
+      inverse of a continuously differentiable function is still
+      continuously differentiable, and likewise for sums of such
+      functions. So this is a subgroup. Then being twice continuously
+      differentiable is a stronger conditions yet, then three times,
+      four times, and so on to infinitely differentiable functions. At
+      each step, the zero function is still present and the inverses
+      and sums stay in the same subset, so this is subgroups all the
+      way down. 
+    </p>
+    <p>
+      This can be repeated for any other real domain as well, of
+      course. 
+    </p>
+    <p>
+      Under composition, something similar happens. 
+      <md>
+        <mrow>
+          \{f: \RR \rightarrow \RR | f \text{ is bijective and
+          infinitely differentiable} \} \subset 
+        </mrow>
+        <mrow>
+          \vdots
+        </mrow>
+        <mrow>
+          \{f: \RR \rightarrow \RR | f \text{ is bijective and
+           twice continuously differentiable} \} \subset 
+        </mrow>
+        <mrow>
+          \{f: \RR \rightarrow \RR | f \text{ is bijective and
+           continuusly  differentiable} \} \subset 
+        </mrow>
+        <mrow>
+          \{f: \RR \rightarrow \RR | f \text{ is bijective and
+           continuusly} \} \subset 
+        </mrow>
+        <mrow>
+          \{f: \RR \rightarrow \RR | f \text{ is bijective} \}
+        </mrow>
+      </md>
+      This is again a cascade of subgroups. Since I am working with
+      compositions, I need to assume that these are bijective at each
+      step: functions under composition are invertible if and only if
+      they are bijective. After that assumption, though, I can impose
+      strong and stronger assumption to make subgroups. At each steps,
+      the subgroups are closed under composition, include the identity
+      function (which is the identity under composition), and have
+      inverses of the same properties. 
+    </p>
+  </example>
+  <example>
+    <p>
+      These are all the subgroups of <m>D_4</m>:
+      <md>
+        <mrow>
+          \{\Id\}, \{\Id, F_1\}, \{\Id, F_2\}, \{\Id, F_3\}, \{\Id,
+          F_4\}, \{\Id, R_2\}, \{\Id, R_1, R_2, R_3\}, 
+        </mrow>
+        <mrow>
+          \{\Id, R_2, F_1, F_3\}, \{\Id, R_2, F_2, F_4\}, D_4
+        </mrow>
+      </md>
+      <me>
+      </me>
+      This can be verified, again, from the Caley table <xref
+      ref="table-d4-multiplication"/>. Doing so is a fair bit of work
+      (to do this the most naive way would be to test all <m>2^8 =
+      256</m> possible subsets to see which satisfied the subgroup
+      properties), but for finite groups, it is nice to at least have
+      the possibility of exhaustively checking. 
+    </p>
+  </example>
+  <example>
+    <p>
+      These are all the subgroups of <m>D_5</m>:
+      <md>
+        <mrow>
+          \{\Id\}, \{\Id, F_1\}, \{\Id, F_2\}, \{\Id, F_3\}, \{\Id,
+          F_4\}, \{\Id, F_5\}, 
+        </mrow>
+        <mrow>
+          \{\Id, R_1, R_2, R_3, R_4\}, D_5
+        </mrow>
+      </md>
+      <me>
+      </me>
+      Note that even though there are more elements in <m>D_5</m> than
+      <m>D_4</m>, there actually fewer subgroups. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The matrix groups (classical groups) also nicely fit subgroup
+      relations. Here are a few of those chains of subgroups. 
+      <md>
+        <mrow>
+          SO(n) \subset SL(n) \subset GL(n)
+        </mrow>
+        <mrow>
+          SO(n) \subset O(n) \subset GL(n) 
+        </mrow>
+        <mrow>
+          GL(\ZZ,n) \subset GL(\QQ,n) \subset GL(\RR,n) \subset
+          GL(\CC,n) 
+        </mrow>
+      </md>
+      All of these subsets are infact subgroups. The identity is
+      matrix is contained in each. Each is closed under matrix
+      multiplication, and the inverses remain in the subsets for each
+      of these.
+    </p>
+    <p>
+      The different between the first and second chains of subgroups
+      is interesting. <m>SO(n)</m> is a subgroup of both <m>SL(n)</m>
+      and <m>O(n)</m>. But there is no subgroup relationship between
+      <m>SL(n)</m> and <m>O(0n)</m>. Neither is a subset of the
+      either, even though they both lie in <m>GL(n)</m>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>A_n</m> is a subgroup of <m>S_n</m>. The identity is an even
+      permutation, the product of two even permutations remains even,
+      and the inverse of an even permutation is even: <m>A_n</m>
+      satisfies the subgroup rules. 
+    </p>
+  </example>
+  <p>
+    Having hopefully given a rich basis of examples, let me move on to
+    some definitions that help to understand subgroup structures.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>G</m> be a group and let <m>A \subset G</m> be a
+        subset. The <term>subgroup generated by <m>A</m></term> is the
+        smallest subgroup of <m>G</m> that contain <m>A</m>. The
+        notation for this <m>\langle \rangle</m>. If <m>A</m> is a
+        singleton or a small finite set, then the notation is usually
+        <m>\langle a \rangle</m> or <m>\langle a,b,c \rangle</m>
+        instead of the more technically correct <m>\langle \{a\}
+        \rangle</m> or <m>\langle \{a,b,c\} \rangle</m>. A subgroup
+        generated by a single element is a <term>cyclic
+        subgroup</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    There are some subtleties with this definition, and with the word
+    <sq>generated</sq>. I'm going to address these subtleties with a
+    proposition, which I won't prove here for sake of time. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>G</m> be a group and let <m>A \subset G</m> be a
+        subset. Then consider the following three constructions.
+        <ul>
+          <li>
+            The subgroup generated by <m>A</m> as I just defined it:
+            the smallest subgroup that contains the set <m>A</m>
+          </li>
+          <li>
+            The set of finite products (using whatever the group
+            binary operation is, of course) of elements of <m>A</m> and
+            their inverses. 
+          </li>
+          <li>
+            The intersection of all subgroups of <m>G</m> which
+            contain <m>A</m>. 
+          </li>
+        </ul>
+        These three constructions are identical, and the term
+        <sq>subgroup generated by <m>A</m></sq> can be understood in
+        any of these three ways. 
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    The equivalence of the first and the second is important here. The
+    first is a nice clear definition: the smallest subgroups that
+    contains a subset. But it doesn't actually capture the sense of
+    <sq>generated</sq> that informed <xref
+    ref="definition-generated"/>. In that definition, generated means
+    that you can get everything in the group (or now subgroup) as
+    product of the generators and their inverses. The proposition
+    tells me that I can still using <sq>generated</sq> in this
+    constructive sense, which is very good. 
+  </p>
+  <p>
+    This is also a good example of constructive and non-constructive
+    definitions. The definition of a subgroup generated by a subset
+    that I gave is nonconstructive. It makes sense that a minimal
+    subgroup containing a set exists, but the definition doesn't give
+    you any idea of what that subgroup it nor how to calculate it. But
+    the alternative definition, where the subgroups is explicitly the
+    things you can get as products of elements of the subset and their
+    inverses, actually shows you how to build the subgroup. It
+    demonstrates a construction.  
+  </p>
+  <p>
+    This definition is very useful: many of the subgroups we talk
+    about in this course will be presented as subgroups generated by
+    elements. But we must be careful. Let me return to the dihedral
+    example to demonstrate. 
+  </p>
+  <example>
+    <p>
+      These are all the subgroups of <m>D_4</m>, but now written with
+      generatores. 
+      <md>
+        <mrow>
+          \{\Id\} \amp = \langle \emptyset \rangle
+        </mrow>
+        <mrow>
+          \{\Id, F_1\} \amp = \langle F_1 \rangle
+        </mrow>
+        <mrow>
+          \{\Id, F_2\} \amp = \langle F_2 \rangle
+        </mrow>
+        <mrow>
+          \{\Id, F_3\} \amp = \langle F_3 \rangle
+        </mrow>
+        <mrow>
+          \{\Id, F_4\} \amp = \langle F_4 \rangle
+        </mrow>
+        <mrow>
+          \{\Id, R_2\} \amp = \langle R_2 \rangle
+        </mrow>
+        <mrow>
+          \{\Id, R_1, R_2, R_3\}
+          \amp = \langle R_1 \rangle
+          = \langle R_3 \rangle
+        </mrow>
+        <mrow>
+          \{\Id, R_2, F_1, F_3\}, \amp = \langle R_2, F_1 \rangle
+          = \langle R_2, F_3 \rangle
+        </mrow>
+        <mrow>
+         \{\Id, R_2, F_2, F_4\}, \amp = \langle  R_2, F_2
+         \rangle = \langle  R_2, F_4 \rangle
+        </mrow>
+        <mrow>
+         D_4 \amp = 
+         \langle  R_1, F_4 \rangle = 
+         \langle  R_3, F_2 \rangle = \text{many others}
+        </mrow>
+      </md>
+      There are a number of useful things to point out from this
+      example. First, the same group can be described by different
+      sets of generates, as the last three examples show. Second, there
+      are several cyclic subgroups of various orders, but not all
+      subgroups are cyclic: the last two subgroups require two
+      generator. Third and most importantly, it can be tricky to see,
+      at a glance, what kind of subgroup is generated by certain
+      elements. <m>\langle R_1 \rangle</m> is a subgroup of order 4, but
+      <m>\langle R_2 \rangle</m> is a subgroup of order 2. <m>\langle
+      R_2,F_4 \rangle</m> is a subgroup of order 4, but <m>\langle
+      R_1,F_4 \rangle</m> is actually all of <m>D_4</m>. It's good to
+      be careful with subgroups description by generations <mdash/> to
+      be hesitant to jump to conclusions about the order of subgroups
+      generated by elements. 
+    </p>
+  </example>
+  <definition>
+    <statement>
+      <p>
+        The <term>quaternion group</term> is the set
+        <m>Q = \{1,-1,i,-i,j,-j,k,-k\}</m> with the following Caley
+        table.  
+        <me>
+          \begin{array}{c|cccccccc}
+            \cdot \amp 1 \amp -1 \amp i \amp -i \amp j \amp -j \amp k
+            \amp -k \\
+            \hline
+            1 \amp 1 \amp -1 \amp i \amp -i \amp j \amp -j \amp k \amp
+            -k \\[0.2em]
+            -1 \amp -1 \amp 1 \amp -i \amp i \amp -j \amp j \amp -k \amp 
+            k\\[0.2em]
+            i \amp i \amp -i \amp -1 \amp 1 \amp k \amp -k \amp -j \amp 
+            j\\[0.2em]
+            -i \amp -i \amp i \amp 1 \amp -1 \amp -k \amp k \amp j \amp 
+            -j \\[0.2em]
+            j \amp j \amp -j \amp -k \amp k \amp -1 \amp 1 \amp i \amp 
+            -i\\[0.2em]
+            -j \amp -j \amp j \amp k \amp -k \amp 1 \amp -1 \amp -i \amp 
+            i\\[0.2em]
+            k \amp k \amp -k \amp j \amp -j \amp -i \amp i \amp -1 \amp 
+            1\\[0.2em]
+            -k \amp -k \amp k \amp -j \amp j \amp i \amp -i \amp 1 \amp 
+            -1
+          \end{array}
+        </me>
+        This table is a bit strange to parse. It's easy to remember
+        that all of <m>i</m>, <m>j</m> and <m>k</m> square to
+        <m>-1</m>, and that multiplying them together in order gives
+        the next in alphabet order (looping around from <m>k</m> to
+        <m>i</m>). 
+        <md>
+          <mrow>
+            i^2 = j^2 = k^2 = -1 
+          </mrow>
+          <mrow>
+            ij = k \hspace{1cm} jk = i \hspace{1cm} ki = j 
+          </mrow>
+          <mrow>
+            ji = -k \hspace{1cm} kj = -i \hspace{1cm} ik = -j 
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <p>
+      These are the subgroups of <m>Q</m>.
     </p>
   </example>
 </section>
