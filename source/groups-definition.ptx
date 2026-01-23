@@ -279,7 +279,7 @@
       modulo n. For all of these, feel free to verify the operations
       yourself. 
     </p>
-    <example xml:id="example-caley-z20-units">>
+    <example>
       <p>
         Here is the Caley table for <m>\ZZ/7\ZZ</m> under the
         operation of addition. I'll not write the bars over the
@@ -300,7 +300,7 @@
         \end{array}
       </me>
     </example>
-    <example>
+    <example xml:id="example-caley-z20-units">>
       <p>
         Here is the Caley table for <m>\ZZ/20\ZZ^*</m> under the
         operation of multiplication. There are eight numbers coprime

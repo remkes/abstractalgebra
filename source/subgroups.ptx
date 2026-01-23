@@ -10,10 +10,11 @@
       <p>
         Let <m>G</m> be a group. A subset <m>H \subset G</m> is a
         <term>subgroup</term> of <m>G</m> is <m>H</m> is itself a
-        group under the same binary operation as <m>G</m>
+        group under the same binary operation as <m>G</m>.
       </p>
       <p>
-        Equivalently, <m>H</m> is a subgroup if three things are true
+        Equivalently, <m>H</m> is a subgroup if these three things are
+        true.
         <ul>
           <li>
             <m>H</m> contains the group identity.
@@ -27,14 +28,14 @@
           </li>
         </ul>
         Additionally, if <m>H</m> is a proper subset of <m>G</m> (that
-        is, <m>H \neq G</m>, then it is called a <term>propoer
+        is, <m>H \neq G</m>), then it is called a <term>proper
         subgroup</term>. 
       </p>
     </statement>
   </definition>
   <p>
     In abstract algebra, the definition of a <sq>sub-object</sq> is
-    frequently on of the first definitions. It's pretty natural to see
+    frequently one of the first definitions. It's pretty natural to see
     what subsets of an object still fulfill the rules of that object.
     Note that the subgroup definition doesn't need to check
     associativity: the associativity of the operation is already known
@@ -45,21 +46,22 @@
     far in the course. 
   </p>
   <example>
-    <example>
-      <p>
-        Let <m>e \in G</m> be the identity element of a group. Then
-        <m>\{e\}</m> is always a subgroup. As usual, mathematicians
-        love our trivial cases: feel three to check that all the
-        requirements of the definition are certainly met by the set
-        that only contains the identity. This subgroup will be called
-        the <term>trivial subgroup</term>. 
-      </p>
-    </example>
     <p>
-      Many of the number sets were groups under addition. Since many
-      of them are subsets of the larger number sets, these were all
-      subgroups. <m>\ZZ</m> is a subgroup of <m>\QQ</m>, which is a
-      subgroup of <m>\RR</m>, which is a subroup of <m>\CC</m>. 
+      Let <m>e \in G</m> be the identity element of a group. Then
+      <m>\{e\}</m> is always a subgroup. As usual, mathematicians
+      love our trivial cases: feel free to check that all the
+      requirements of the definition are certainly met by the set
+      that only contains the identity. This subgroup will be called
+      the <term>trivial subgroup</term>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Many of the number sets were groups under addition. Since
+      smaller numbers sets subsets of the larger number sets, I can
+      identify subgroups. <m>\ZZ</m> is a subgroup of <m>\QQ</m>,
+      which is a subgroup of <m>\RR</m>, which is a subroup of
+      <m>\CC</m>. 
     </p>
   </example>
   <example>
@@ -72,11 +74,11 @@
   </example>
   <example>
     <p>
-      One might be tempted to say something like <m>\ZZ/n/\ZZ</m> is a
+      One might be tempted to say something like <m>\ZZ/n\ZZ</m> is a
       subgroup of <m>\ZZ/m\ZZ</m> whenever <m>n \leq m</m>, or at least
       when <m>n</m> is a factor of <m>m</m>. Niether are true. The
       classes in <m>\ZZ/n\ZZ</m> are integers modulo <m>n</m>, while the
-      classes in <m>\ZZ/mZZ</m> are integers modulo <m>m</m>. If the
+      classes in <m>\ZZ/m\ZZ</m> are integers modulo <m>m</m>. If the
       two moduli are different, when these classes can't really be
       compared and are certainly not part of the same set at all. 
     </p>
@@ -100,8 +102,8 @@
         <li>
           You may be already thinking about various propositions about
           subgroups of <m>\ZZ/n\ZZ</m> based on these examples: there
-          certainly are patterns here. After doing some more
-          definition, I'll state and prove some propositions about
+          certainly are patterns here. Later in this section, 
+          I'll state and prove some propositions about
           subgroups of cyclic groups, which will generalize some of
           the patterns you might see here.
         </li>
@@ -110,7 +112,7 @@
   </example>
   <example>
     <p>
-      <m>\{1,9\}</m>, <m>\{1,11\}</m>, <m>\{1,19</m>, and
+      <m>\{1,9\}</m>, <m>\{1,11\}</m>, <m>\{1,19\}</m>, and
       <m>\{1,3,7,9\}</m> are subgroups of <m>\ZZ/20\ZZ^*</m>. You can
       verify the subgroup properties using the Caley table <xref
       ref="example-caley-z20-units"/>. 
@@ -118,7 +120,7 @@
   </example>
   <example>
     <p>
-      The set of real-coefficient polynomial of degree at most 2,
+      The set of real-coefficient polynomials of degree at most 2,
       is a subgroup of <m>\RR[x]</m>. The identity is the zero
       polynomial, which has degree zero, so it is included. 
       I can never get a higher degree polynomial by adding quadratics,
@@ -155,10 +157,10 @@
       inverse of a continuously differentiable function is still
       continuously differentiable, and likewise for sums of such
       functions. So this is a subgroup. Then being twice continuously
-      differentiable is a stronger conditions yet, then three times,
+      differentiable is a stronger condition yet, then three times,
       four times, and so on to infinitely differentiable functions. At
       each step, the zero function is still present and the inverses
-      and sums stay in the same subset, so this is subgroups all the
+      and sums stay in the same subset, so these are subgroups all the
       way down. 
     </p>
     <p>
@@ -169,36 +171,37 @@
       Under composition, something similar happens. 
       <md>
         <mrow>
-          \{f: \RR \rightarrow \RR | f \text{ is bijective and
-          infinitely differentiable} \} \subset 
+          \amp \{f: \RR \rightarrow \RR | f \text{ is bijective and
+          infinitely differentiable} \} 
         </mrow>
         <mrow>
-          \vdots
+          \amp \vdots
         </mrow>
         <mrow>
-          \{f: \RR \rightarrow \RR | f \text{ is bijective and
-           twice continuously differentiable} \} \subset 
+          \subset \amp \{f: \RR \rightarrow \RR | f \text{ is
+          bijective and twice continuously differentiable} \} 
         </mrow>
         <mrow>
-          \{f: \RR \rightarrow \RR | f \text{ is bijective and
-           continuusly  differentiable} \} \subset 
+          \subset \amp \{f: \RR \rightarrow \RR | f \text{ is
+          bijective and continuously  differentiable} \} 
         </mrow>
         <mrow>
-          \{f: \RR \rightarrow \RR | f \text{ is bijective and
-           continuusly} \} \subset 
+          \subset \amp \{f: \RR \rightarrow \RR | f \text{ is
+          bijective and continuous} \} 
         </mrow>
         <mrow>
-          \{f: \RR \rightarrow \RR | f \text{ is bijective} \}
+          \subset \amp \{f: \RR \rightarrow \RR | f \text{ is
+          bijective} \}
         </mrow>
       </md>
       This is again a cascade of subgroups. Since I am working with
       compositions, I need to assume that these are bijective at each
       step: functions under composition are invertible if and only if
       they are bijective. After that assumption, though, I can impose
-      strong and stronger assumption to make subgroups. At each steps,
+      stronger and stronger assumptions to make subgroups. At each step,
       the subgroups are closed under composition, include the identity
       function (which is the identity under composition), and have
-      inverses of the same properties. 
+      inverses which satisfy the same properties. 
     </p>
   </example>
   <example>
@@ -206,15 +209,36 @@
       These are all the subgroups of <m>D_4</m>:
       <md>
         <mrow>
-          \{\Id\}, \{\Id, F_1\}, \{\Id, F_2\}, \{\Id, F_3\}, \{\Id,
-          F_4\}, \{\Id, R_2\}, \{\Id, R_1, R_2, R_3\}, 
+          \amp \{\Id\} 
         </mrow>
         <mrow>
-          \{\Id, R_2, F_1, F_3\}, \{\Id, R_2, F_2, F_4\}, D_4
+          \amp \{\Id, F_1\}
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_2\} 
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_3\} 
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_4\} 
+        </mrow>
+        <mrow>
+          \amp \{\Id, R_2\} 
+        </mrow>
+        <mrow>
+          \amp \{\Id, R_1, R_2, R_3\} 
+        </mrow>
+        <mrow>
+          \amp \{\Id, R_2, F_1, F_3\}
+        </mrow>
+        <mrow>
+          \amp \{\Id, R_2, F_2, F_4\}
+        </mrow>
+        <mrow>
+          \amp D_4
         </mrow>
       </md>
-      <me>
-      </me>
       This can be verified, again, from the Caley table <xref
       ref="table-d4-multiplication"/>. Doing so is a fair bit of work
       (to do this the most naive way would be to test all <m>2^8 =
@@ -228,15 +252,30 @@
       These are all the subgroups of <m>D_5</m>:
       <md>
         <mrow>
-          \{\Id\}, \{\Id, F_1\}, \{\Id, F_2\}, \{\Id, F_3\}, \{\Id,
-          F_4\}, \{\Id, F_5\}, 
+          \amp \{\Id\} 
         </mrow>
         <mrow>
-          \{\Id, R_1, R_2, R_3, R_4\}, D_5
+          \amp \{\Id, F_1\}
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_2\} 
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_3\}
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_4\}
+        </mrow>
+        <mrow>
+          \amp \{\Id, F_5\}
+        </mrow>
+        <mrow>
+          \amp \{\Id, R_1, R_2, R_3, R_4\}
+        </mrow>
+        <mrow>
+          \amp D_5
         </mrow>
       </md>
-      <me>
-      </me>
       Note that even though there are more elements in <m>D_5</m> than
       <m>D_4</m>, there actually fewer subgroups. 
     </p>
@@ -257,10 +296,9 @@
           GL(\CC,n) 
         </mrow>
       </md>
-      All of these subsets are infact subgroups. The identity is
-      matrix is contained in each. Each is closed under matrix
-      multiplication, and the inverses remain in the subsets for each
-      of these.
+      All of these subsets are subgroups. The identity is matrix is
+      contained in each. Each is closed under matrix multiplication,
+      and the inverses remain in the subsets for each of these.
     </p>
     <p>
       The different between the first and second chains of subgroups
@@ -287,8 +325,8 @@
       <p>
         Let <m>G</m> be a group and let <m>A \subset G</m> be a
         subset. The <term>subgroup generated by <m>A</m></term> is the
-        smallest subgroup of <m>G</m> that contain <m>A</m>. The
-        notation for this <m>\langle \rangle</m>. If <m>A</m> is a
+        smallest subgroup of <m>G</m> that contains <m>A</m>. The
+        notation for this <m>\langle A \rangle</m>. If <m>A</m> is a
         singleton or a small finite set, then the notation is usually
         <m>\langle a \rangle</m> or <m>\langle a,b,c \rangle</m>
         instead of the more technically correct <m>\langle \{a\}
@@ -311,12 +349,12 @@
         <ul>
           <li>
             The subgroup generated by <m>A</m> as I just defined it:
-            the smallest subgroup that contains the set <m>A</m>
+            the smallest subgroup that contains the set <m>A</m>.
           </li>
           <li>
-            The set of finite products (using whatever the group
-            binary operation is, of course) of elements of <m>A</m> and
-            their inverses. 
+            The set of all possible finite products (using whatever
+            the group binary operation is, of course) of elements of
+            <m>A</m> and their inverses. 
           </li>
           <li>
             The intersection of all subgroups of <m>G</m> which
@@ -331,10 +369,10 @@
   </proposition>
   <p>
     The equivalence of the first and the second is important here. The
-    first is a nice clear definition: the smallest subgroups that
+    first is a nice clear definition: the smallest subgroup that
     contains a subset. But it doesn't actually capture the sense of
     <sq>generated</sq> that informed <xref
-    ref="definition-generated"/>. In that definition, generated means
+    ref="definition-generated"/>. In that definition, generated meant
     that you can get everything in the group (or now subgroup) as
     product of the generators and their inverses. The proposition
     tells me that I can still using <sq>generated</sq> in this
@@ -360,7 +398,7 @@
   <example>
     <p>
       These are all the subgroups of <m>D_4</m>, but now written with
-      generatores. 
+      generators. 
       <md>
         <mrow>
           \{\Id\} \amp = \langle \emptyset \rangle
@@ -401,20 +439,24 @@
       </md>
       There are a number of useful things to point out from this
       example. First, the same group can be described by different
-      sets of generates, as the last three examples show. Second, there
+      sets of generators, as the last three examples show. Second, there
       are several cyclic subgroups of various orders, but not all
       subgroups are cyclic: the last two subgroups require two
-      generator. Third and most importantly, it can be tricky to see,
+      generators. Third and most importantly, it can be tricky to see,
       at a glance, what kind of subgroup is generated by certain
       elements. <m>\langle R_1 \rangle</m> is a subgroup of order 4, but
       <m>\langle R_2 \rangle</m> is a subgroup of order 2. <m>\langle
       R_2,F_4 \rangle</m> is a subgroup of order 4, but <m>\langle
       R_1,F_4 \rangle</m> is actually all of <m>D_4</m>. It's good to
-      be careful with subgroups description by generations <mdash/> to
+      be careful with subgroups described by generations <mdash/> to
       be hesitant to jump to conclusions about the order of subgroups
       generated by elements. 
     </p>
   </example>
+  <p>
+    I want to define a new group to use for examples, in this and in
+    future sections of the course.  
+  </p>
   <definition>
     <statement>
       <p>
@@ -461,6 +503,15 @@
           </mrow>
         </md>
       </p>
+      <p>
+        These quaterion relations were first invented by Irish
+        mathematician William Rowan Hamilton. There is a bridge
+        (called the Broom Bridge) in Dublin with a plaque whereon
+        these multiplication rules are written, to commemorate
+        Hamilton's invention <mdash/> according to popular mathematical
+        myth, Hamilton was walking along the canal by this bridge when
+        the idea occured to him. 
+      </p>
     </statement>
   </definition>
   <example>
@@ -468,40 +519,42 @@
       These are the subgroups of <m>Q</m>.
       <me>
         \{\Id\}, \langle -1 \rangle, \langle i \rangle, \langle j
-        \rangle, \langle k \rangle. 
+        \rangle, \langle k \rangle 
       </me>
     </p>
   </example>
   <p>
     The first proposition I want to prove has to do with the relative
-    sizes of subgroup. In order to prove this proposition, I need a 
+    sizes of subgroups. In order to prove this proposition, I need a 
     definition and another proposition first. 
   </p>
   <definition>
     <statement>
       <p>
         Let <m>G</m> be a group, let <m>H \subset G</m> be a
-        subgroup, and let <m>g \in G</m>. A <term>left coset</m> of
+        subgroup, and let <m>g \in G</m>. A <term>left coset</term> of
         <m>H</m> is a subset <m>gH \subset G</m>. This notation means
-        <m>\{gh | h \in H</m>: it is one fixed group element <m>g</m>
-        multiplied by all of the elements of <m>H</m>
+        <m>\{gh | h \in H\}</m>: it is the set made by taking one
+        fixed group element <m>g</m> and multiplying by all of the
+        elements of <m>H</m>.
       </p>
     </statement>
   </definition>
   <p>
     I have a few notes about cosets. First, note that a coset is a
-    subset. Different group elements may lead to the same coset. As an
-    example, consider the subgroup <m>H = \langle 2 \rangle =
-    \{1,3,7,9} \subset \ZZ/20\ZZ^*</m>. The coset <m>7H</m> is the
+    subset. Different group elements <m>g</m> may lead to the same
+    coset. As an
+    example, consider the subgroup <m>H = 
+    \{1,3,7,9\} \subset \ZZ/20\ZZ^*</m>. The coset <m>7H</m> is the
     classes of all four of these elements multiplied by 7: <m>7H =
     \{7, 1, 9, 3\}</m>. This is the same as the coset <m>1H = \{1, 3,
-    7, 9\}</m> (recall that a set is not ordered <mdash/> these are
-    the same set. A coset is a subset, and there can be several ways
+    7, 9\}</m>. (Recall that a set is not ordered <mdash/> these are
+    the same set!) A coset is a subset, and there can be several ways
     to define a coset using some group element <m>g</m>. 
   </p>
   <p> 
     Also note that the definition, as usual, is written
-    multiplicative. If the group operation is some other binary
+    multiplicatively. If the group operation is some other binary
     operation, the cosets will be written with that binary operation.
     For example, I can define the multiples of 10, <m>10\ZZ</m>, as a
     subgroup of the integers. A coset of this subgroup looks like
@@ -515,13 +568,13 @@
     whole theory of cosets can be repeated with right cosets: cosets
     of the form <m>Hg</m>. I'm not going to do that, and for the rest
     of this course, when I say <sq>coset</sq>, I will always means
-    left cosets. But it is good to be aware that the other option was
+    left coset. But it is good to be aware that the other option was
     possible. 
   </p>
   <p>
     Now, to setup the next proposition, recall from <xref
-    ref="definition-partition"> the idea of a partition of a set. So
-    far, partitions have come from equivalence relation, but cosets
+    ref="definition-partition"/> the idea of a partition of a set. So
+    far, partitions have come from equivalence relations, but cosets
     are also a path to a partition. 
   </p>
   <proposition>
@@ -535,7 +588,7 @@
     <proof>
       <p>
         I need to prove that the cosets are disjoint and that all
-        elements of the group show in one of the cosets. I'll start
+        elements of the group show up in one of the cosets. I'll start
         with the first part. 
       </p>
       <p>
@@ -546,7 +599,7 @@
         that there exists <m>h_1 \in H</m> and <m>h_2 \in H</m> such
         that <m>k = g_1h_1</m> and <m>k = g_2h_2</m>.) I need to prove
         these two sets are the same. From <xref
-        ref="subsection-miscelaneous-proof">, the way to prove that
+        ref="subsection-miscelaneous-proof"/>, the way to prove that
         two sets are the same is to prove that each is a subset of the
         other. 
       </p>
@@ -562,7 +615,7 @@
         multiplying by a subgroup element and it inverse; the second
         is using the first expression for <m>k</m> from the previous
         paragraph, and the third is using the second expression for
-        <m>k<m> from above. The result is <m>k = g_2 (h_2 h_1^{-1}
+        <m>k</m> from above. The result is <m>k = g_2 (h_2 h_1^{-1}
         h_3)</m>; the element in brackets here is a product of things
         in the subgroup <m>H</m>, so it is also in the subgroup.
         Therefore, <m>l</m> is in the coset <m>g_2 H</m>. Since
@@ -579,7 +632,7 @@
       <p>
         Finally, to be a partition, the cosets have to cover <m>G</m>.
         So take an arbitrary <m>g \in G</m>. I can write this as <m>g
-        = ge<m> (where <m>e</m> is the standard notation for an identity
+        = ge</m> (where <m>e</m> is the standard notation for an identity
         element). But <m>H</m> is a subgroup, so <m>e \in H</m>. This
         means that <m>g = ge \in gH</m>, and I have proved that
         <m>g</m> is in a coset. Therefore, the cosets cover the whole
@@ -594,14 +647,14 @@
     <statement>
       <p>
         Let <m>H \subset G</m> be a subgroup of a group. Then the
-        <term>index of <m>H</m> i <m>G</m></term> is the number of
+        <term>index of <m>H</m> in <m>G</m></term> is the number of
         <m>H</m> cosets. It is written <m>[G:H]</m>. 
       </p>
     </statement>
   </definition>
   <example>
     <p>
-      <m>H = \{0, 5, 10, 15\}</m> is a subgroup of <m>\ZZ/20\ZZ<m>.
+      <m>H = \{0, 5, 10, 15\}</m> is a subgroup of <m>\ZZ/20\ZZ</m>.
       Here are the cosets of this subgroup:
       <md>
         <mrow>
@@ -621,7 +674,7 @@
         </mrow>
       </md>
       There are five cosets, so the index is <m>[\ZZ/20\ZZ: H] =
-      5</m>. Note that the elements used to define the conset could
+      5</m>. Note that the elements used to define the coset could
       have be chosen differently: <m>1 + H</m> is the same coset at
       <m>16 + H</m>.
     </p>
@@ -654,10 +707,12 @@
         </mrow>
       </md>
       There are seven cosets (each of them an infinite set).
-      Therefore, the index is <m>[\ZZ: 7\ZZ] = 7</m>. (Again,
+      Therefore, the index is <m>[\ZZ: 7\ZZ] = 7</m>. Again,
       different group elements should have been chosen: <m>4 + 7\ZZ =
       74 + \ZZ</m>. Since these are infinite sets, there are in fact
-      infinitely many choices!
+      infinitely many choices! This example also points out that
+      infinite groups can have subgroups of finite index, which is
+      nice to notice. 
     </p>
   </example>
   <example>
@@ -666,13 +721,13 @@
       <m>D_4</m>. Here are its cosets.
       <md>
         <mrow>
-          \Id H = \{\Id, R_2}
+          \Id H = \{\Id, R_2\}
         </mrow>
         <mrow>
-          R_1 H = \{R_1, R_3}
+          R_1 H = \{R_1, R_3\}
         </mrow>
         <mrow>
-          F_1H = \{F_1, F_3}
+          F_1H = \{F_1, F_3\}
         </mrow>
         <mrow>
           F_2H = \{F_2, F_4\}
@@ -683,7 +738,7 @@
     </p>
   </example>
   <p>
-    Now I can get to a very valuable rest for understanding finite
+    Now I can get to a very valuable result for understanding finite
     groups. This is important enough to be a named theorem.
   </p>
   <theorem>
@@ -691,9 +746,9 @@
     <statement>
       <p>
         Let <m>H \subset G</m> be the subgroup of a finite group. The
-        the order of <m>H</m> divide the order of <m>G</m> and 
+        the order of <m>H</m> divides the order of <m>G</m> and 
         <me>
-          [H:G] = \dfarc{|G|}{|H|}
+          [H:G] = \frac{|G|}{|H|}
         </me>
       </p>
     </statement>
@@ -701,39 +756,42 @@
       <p>
         I use cosets to prove this theorem. Since this is a finite
         group, all the cosets are finite sets. I am first going to
-        argue that they have the same cardinality. 
+        argue that the cosets all have the same cardinality. 
       </p>
       <p>
         Let <m>gH</m> be a coset. Then I claim that the set function
-        <m>g: H \rigtharrow gH</m> is a bijection. I need to prove
-        surjective and injective. 
+        <m>f: H \rightarrow gH</m> defined by <m>f(h) = gh</m> is a
+        bijection. I need to prove surjective and injective. 
       </p>
       <p>
         Surjective is basically by definition. Elements of the coset
-        are exactly <m>gh</m> for <m>h \in H</m>, which is exactly the
-        same as the outputs of this function. 
+        are defined to be <m>gh</m> for <m>h \in H</m>, which is
+        exactly the outputs of this function. 
       </p>
       <p>
-        For injective, assume that <m>f(h_1) = f(h_2)</m>. That means
+        For injectivity, assume that <m>f(h_1) = f(h_2)</m>. That means
         that <m>gh_1 = gh_2</m>. But we have cancellation in groups,
         so this mean <m>h_1 = h_2</m>. This is the standard argument
-        for injectivity, so the function is injective.
+        structure for injectivity, so the function is injective.
       </p>
       <p>
         Since the function is bijective, I conclude that all cosets
-        has the same cardinality as <m>H</m> istelf. 
+        have the same cardinality as <m>H</m> istelf, which also means
+        that all cosets have the same cardinality as each other. 
       </p>
       <p>
         So now I have a partition of <m>G</m> into pieces (the cosets)
         and the pieces all have the same cardinality, which is
         <m>|H|</m>. The number of cosets is, by definition,
-        <m>[G:H]</m>. I put this all together for this formula.
+        <m>[G:H]</m>. I put this all together for this formula: the
+        cardinality of <m>G</m> must be the number of cosets
+        multiplied by the cardinality of each coset. 
         <me>
           |G| = [G:H]|H|
         </me>
         This formula leads to both conclusions. The left is the order
         of <m>G</m>, and the right shows that <m>|H|</m> is a factor.
-        Then dividing by <m>|H</m> gives the formula for the index. 
+        Then dividing by <m>|H|</m> gives the formula for the index. 
       </p>
     </proof>
   </theorem>
@@ -748,13 +806,14 @@
   <p>
     Lagrange's theorem also come nice subsequence result. Such results
     are usually called <term>corollaries</term> of a theorem:
-    something that is only a small steps after a major result.
+    something that is only a small step after a major result and is
+    considered, in some sense, a special case of the major result. 
   </p>
   <corollary>
     <statement>
       <p>
         Let <m>g \in G</m> be a member of a finite group. Then the
-        order of <m>g</m> divide the order of <m>G</m>. 
+        order of <m>g</m> divides the order of <m>G</m>. 
       </p>
     </statement>
     <proof>
@@ -766,8 +825,8 @@
           \langle g \rangle = \{e, g, g^2, g^3, g^4 \ldots g^{d-1} \}
         </me>
         This is precisely a subgroup of order <m>d</m>. Lagrange's
-        theorem says that the order of a subgroup divide the order of
-        the (finite) group, so <m>d</m> divides <m>|G|<m> and the
+        theorem says that the order of a subgroup divides the order of
+        the (finite) group, so <m>d</m> divides <m>|G|</m> and the
         proof is completed. 
       </p>
     </proof>
@@ -792,7 +851,7 @@
         This has <m>p</m> elements, so this must be the whole group. I
         conclude the group is cyclic. Similarly, since the order of
         a subgroup must divide the order of the group and only 1 or
-        <m>p</m> divide <m>p</m>, the only subgroup are the entire
+        <m>p</m> divide <m>p</m>, the only subgroups are the entire
         group, order <m>p</m>, or the trivial subgroup, order 1. 
       </p>
     </proof>
