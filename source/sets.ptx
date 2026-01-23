@@ -267,7 +267,7 @@
     To state the important fact about equivalence relations, I need
     one more set-theory definition.
   </p>
-  <definition>
+  <definition xml:id="definition-partition">
     <statement>
       <p>
         Let <m>A</m> be a set. A <term>partition</term> of the set

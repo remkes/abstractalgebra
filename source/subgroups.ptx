@@ -51,7 +51,8 @@
         <m>\{e\}</m> is always a subgroup. As usual, mathematicians
         love our trivial cases: feel three to check that all the
         requirements of the definition are certainly met by the set
-        that only contains the identity. 
+        that only contains the identity. This subgroup will be called
+        the <term>trivial subgroup</term>. 
       </p>
     </example>
     <p>
@@ -465,6 +466,335 @@
   <example>
     <p>
       These are the subgroups of <m>Q</m>.
+      <me>
+        \{\Id\}, \langle -1 \rangle, \langle i \rangle, \langle j
+        \rangle, \langle k \rangle. 
+      </me>
     </p>
   </example>
+  <p>
+    The first proposition I want to prove has to do with the relative
+    sizes of subgroup. In order to prove this proposition, I need a 
+    definition and another proposition first. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>G</m> be a group, let <m>H \subset G</m> be a
+        subgroup, and let <m>g \in G</m>. A <term>left coset</m> of
+        <m>H</m> is a subset <m>gH \subset G</m>. This notation means
+        <m>\{gh | h \in H</m>: it is one fixed group element <m>g</m>
+        multiplied by all of the elements of <m>H</m>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    I have a few notes about cosets. First, note that a coset is a
+    subset. Different group elements may lead to the same coset. As an
+    example, consider the subgroup <m>H = \langle 2 \rangle =
+    \{1,3,7,9} \subset \ZZ/20\ZZ^*</m>. The coset <m>7H</m> is the
+    classes of all four of these elements multiplied by 7: <m>7H =
+    \{7, 1, 9, 3\}</m>. This is the same as the coset <m>1H = \{1, 3,
+    7, 9\}</m> (recall that a set is not ordered <mdash/> these are
+    the same set. A coset is a subset, and there can be several ways
+    to define a coset using some group element <m>g</m>. 
+  </p>
+  <p> 
+    Also note that the definition, as usual, is written
+    multiplicative. If the group operation is some other binary
+    operation, the cosets will be written with that binary operation.
+    For example, I can define the multiples of 10, <m>10\ZZ</m>, as a
+    subgroup of the integers. A coset of this subgroup looks like
+    <m>(6 + 10\ZZ)</m>: it is some group element added to everything
+    in the subgroup, since addition is the group operation. 
+  </p>
+  <p>
+    Finally, I have defined <sq>left</sq> cosets: the multiplication
+    by the group element <m>g</m> is on the left. Since groups are
+    not, in general, commutative, being on the left is important. This
+    whole theory of cosets can be repeated with right cosets: cosets
+    of the form <m>Hg</m>. I'm not going to do that, and for the rest
+    of this course, when I say <sq>coset</sq>, I will always means
+    left cosets. But it is good to be aware that the other option was
+    possible. 
+  </p>
+  <p>
+    Now, to setup the next proposition, recall from <xref
+    ref="definition-partition"> the idea of a partition of a set. So
+    far, partitions have come from equivalence relation, but cosets
+    are also a path to a partition. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>G</m> be a finite group. Let <m>H \subset G</m> be a
+        subgroup. Then the left cosets of <m>H</m> form a partition of
+        <m>G</m>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        I need to prove that the cosets are disjoint and that all
+        elements of the group show in one of the cosets. I'll start
+        with the first part. 
+      </p>
+      <p>
+        To prove that the cosets are disjoint, I can argue that if two
+        cosets share a single element, then they must be exactly the
+        same coset. So let <m>g_1 H</m> and <m>g_2 H</m> be two cosets
+        that share an element <m>k</m>. (By definition, this means
+        that there exists <m>h_1 \in H</m> and <m>h_2 \in H</m> such
+        that <m>k = g_1h_1</m> and <m>k = g_2h_2</m>.) I need to prove
+        these two sets are the same. From <xref
+        ref="subsection-miscelaneous-proof">, the way to prove that
+        two sets are the same is to prove that each is a subset of the
+        other. 
+      </p>
+      <p>
+        So let <m>l \in g_1H</m>. This means, by definition, that
+        there exists an <m>h_3 \in H</m> such that <m>l = g_1h_3</m>.
+        Then consider this calculation
+        <me>
+          l = g_1h_3 = g_1 h_1 h_1^{-1} h_3 = k h_1^{-1} h_3 = g_2 h_2
+          h_1^{-1} h_3 
+        </me>
+        All of these equalities are justified: the first is just
+        multiplying by a subgroup element and it inverse; the second
+        is using the first expression for <m>k</m> from the previous
+        paragraph, and the third is using the second expression for
+        <m>k<m> from above. The result is <m>k = g_2 (h_2 h_1^{-1}
+        h_3)</m>; the element in brackets here is a product of things
+        in the subgroup <m>H</m>, so it is also in the subgroup.
+        Therefore, <m>l</m> is in the coset <m>g_2 H</m>. Since
+        <m>l</m> was chosen arbitrarily, this proves that <m>g_1H
+        \subset g_2H</m>. 
+      </p>
+      <p>
+        The proof of the reverse inclusion is identical with the
+        indices adjusted. This proves that if the two cosets share
+        even one element, they must be identital. I conclude, as sets,
+        the cosets are disjoint: two different cosets cannot share any
+        elements. 
+      </p>
+      <p>
+        Finally, to be a partition, the cosets have to cover <m>G</m>.
+        So take an arbitrary <m>g \in G</m>. I can write this as <m>g
+        = ge<m> (where <m>e</m> is the standard notation for an identity
+        element). But <m>H</m> is a subgroup, so <m>e \in H</m>. This
+        means that <m>g = ge \in gH</m>, and I have proved that
+        <m>g</m> is in a coset. Therefore, the cosets cover the whole
+        group, and I conclude they form a partition. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    Now I can get to an important definition for subgroups. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>H \subset G</m> be a subgroup of a group. Then the
+        <term>index of <m>H</m> i <m>G</m></term> is the number of
+        <m>H</m> cosets. It is written <m>[G:H]</m>. 
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <p>
+      <m>H = \{0, 5, 10, 15\}</m> is a subgroup of <m>\ZZ/20\ZZ<m>.
+      Here are the cosets of this subgroup:
+      <md>
+        <mrow>
+          0 + H = \{0, 5, 10, 15\}
+        </mrow>
+        <mrow>
+          1 + H = \{1, 6, 11, 16\}
+        </mrow>
+        <mrow>
+          2 + H = \{2, 7, 12, 17\}
+        </mrow>
+        <mrow>
+          3 + H = \{3, 8, 13, 18\}
+        </mrow>
+        <mrow>
+          4 + H = \{4, 9, 14, 19\}
+        </mrow>
+      </md>
+      There are five cosets, so the index is <m>[\ZZ/20\ZZ: H] =
+      5</m>. Note that the elements used to define the conset could
+      have be chosen differently: <m>1 + H</m> is the same coset at
+      <m>16 + H</m>.
+    </p>
+  </example>
+  <example>
+    <p>
+      The multiples of <m>7</m>, written <m>7\ZZ</m>  are a subgroup
+      of the integers. Here are the cosets. 
+      <md>
+        <mrow>
+          0 + 7\ZZ = \{ \ldots, -14, -7, 0, 7, 14, \ldots \}
+        </mrow>
+        <mrow>
+          1 + 7\ZZ = \{ \ldots, -13, -6, 1, 8, 15, \ldots \}
+        </mrow>
+        <mrow>
+          2 + 7\ZZ = \{ \ldots, -12, -5, 2, 9, 16, \ldots \}
+        </mrow>
+        <mrow>
+          3 + 7\ZZ = \{ \ldots, -11, -4, 3, 10, 17, \ldots \}
+        </mrow>
+        <mrow>
+          4 + 7\ZZ = \{ \ldots, -10, -3, 4, 11, 18, \ldots \}
+        </mrow>
+        <mrow>
+          5 + 7\ZZ = \{ \ldots, -9, -2, 5, 12, 19, \ldots \}
+        </mrow>
+        <mrow>
+          6 + 7\ZZ = \{ \ldots, -8, -1, 6, 13, 20, \ldots \}
+        </mrow>
+      </md>
+      There are seven cosets (each of them an infinite set).
+      Therefore, the index is <m>[\ZZ: 7\ZZ] = 7</m>. (Again,
+      different group elements should have been chosen: <m>4 + 7\ZZ =
+      74 + \ZZ</m>. Since these are infinite sets, there are in fact
+      infinitely many choices!
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>H = \langle R_2 \rangle = \{\Id, R_2\}</m> is a subgroup of
+      <m>D_4</m>. Here are its cosets.
+      <md>
+        <mrow>
+          \Id H = \{\Id, R_2}
+        </mrow>
+        <mrow>
+          R_1 H = \{R_1, R_3}
+        </mrow>
+        <mrow>
+          F_1H = \{F_1, F_3}
+        </mrow>
+        <mrow>
+          F_2H = \{F_2, F_4\}
+        </mrow>
+      </md>
+      There are four cosets, so the index is <m>[D_4: \langle R_2
+      \rangle] = 4</m>. 
+    </p>
+  </example>
+  <p>
+    Now I can get to a very valuable rest for understanding finite
+    groups. This is important enough to be a named theorem.
+  </p>
+  <theorem>
+    <title>Lagrange's Theorem</title>
+    <statement>
+      <p>
+        Let <m>H \subset G</m> be the subgroup of a finite group. The
+        the order of <m>H</m> divide the order of <m>G</m> and 
+        <me>
+          [H:G] = \dfarc{|G|}{|H|}
+        </me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        I use cosets to prove this theorem. Since this is a finite
+        group, all the cosets are finite sets. I am first going to
+        argue that they have the same cardinality. 
+      </p>
+      <p>
+        Let <m>gH</m> be a coset. Then I claim that the set function
+        <m>g: H \rigtharrow gH</m> is a bijection. I need to prove
+        surjective and injective. 
+      </p>
+      <p>
+        Surjective is basically by definition. Elements of the coset
+        are exactly <m>gh</m> for <m>h \in H</m>, which is exactly the
+        same as the outputs of this function. 
+      </p>
+      <p>
+        For injective, assume that <m>f(h_1) = f(h_2)</m>. That means
+        that <m>gh_1 = gh_2</m>. But we have cancellation in groups,
+        so this mean <m>h_1 = h_2</m>. This is the standard argument
+        for injectivity, so the function is injective.
+      </p>
+      <p>
+        Since the function is bijective, I conclude that all cosets
+        has the same cardinality as <m>H</m> istelf. 
+      </p>
+      <p>
+        So now I have a partition of <m>G</m> into pieces (the cosets)
+        and the pieces all have the same cardinality, which is
+        <m>|H|</m>. The number of cosets is, by definition,
+        <m>[G:H]</m>. I put this all together for this formula.
+        <me>
+          |G| = [G:H]|H|
+        </me>
+        This formula leads to both conclusions. The left is the order
+        of <m>G</m>, and the right shows that <m>|H|</m> is a factor.
+        Then dividing by <m>|H</m> gives the formula for the index. 
+      </p>
+    </proof>
+  </theorem>
+  <p>
+    This theorem tells us a lot about the subgroups of a finite group.
+    For example, if I have a finite group of order 195, then I
+    consider the factors of 195: <m>\{1, 3, 5, 13, 15, 39, 65\}</m>.
+    The only subsets that can possibly be subgroups are subsets of
+    this size. If I am looking for subgroups, I now have a much, much
+    narrower search. 
+  </p>
+  <p>
+    Lagrange's theorem also come nice subsequence result. Such results
+    are usually called <term>corollaries</term> of a theorem:
+    something that is only a small steps after a major result.
+  </p>
+  <corollary>
+    <statement>
+      <p>
+        Let <m>g \in G</m> be a member of a finite group. Then the
+        order of <m>g</m> divide the order of <m>G</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The order of <m>g</m> is the smallest <m>d</m> such that
+        <m>g^d = e</m>. Then consider the cyclic subgroup generated by
+        <m>g</m>. 
+        <me>
+          \langle g \rangle = \{e, g, g^2, g^3, g^4 \ldots g^{d-1} \}
+        </me>
+        This is precisely a subgroup of order <m>d</m>. Lagrange's
+        theorem says that the order of a subgroup divide the order of
+        the (finite) group, so <m>d</m> divides <m>|G|<m> and the
+        proof is completed. 
+      </p>
+    </proof>
+  </corollary>
+  <corollary>
+    <statement>
+      <p>
+        Any group with prime order <m>p</m> must be cyclic and has no
+        subgroups other than itself and the trivial subgroup. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Any element that is not the identity has to have order greater
+        than 1 (otherwise <m>g^1 = g = \Id</m>). But the order of an
+        element must divide the order of the group, and a prime has no
+        other divisors, so the order of <m>g</m> must be <m>p</m>.
+        Then again consider the subgroup generated by <m>g</m>.
+        <me>
+          \langle g \rangle = \{e, g, g^2, g^3, g^4 \ldots g^{p-1} \}
+        </me>
+        This has <m>p</m> elements, so this must be the whole group. I
+        conclude the group is cyclic. Similarly, since the order of
+        a subgroup must divide the order of the group and only 1 or
+        <m>p</m> divide <m>p</m>, the only subgroup are the entire
+        group, order <m>p</m>, or the trivial subgroup, order 1. 
+      </p>
+    </proof>
+  </corollary>
 </section>

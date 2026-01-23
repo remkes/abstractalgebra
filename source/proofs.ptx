@@ -251,7 +251,7 @@
       <m>B</m> and proceed to <m>A</m> in the same way.) 
     </p>
   </subsection>
-  <subsection>
+  <subsection xml:id="subsection-miscelaneous-proof">>
     <title>A Few Miscelaneous Proof Structures</title>
     <subsubsection>
       <title>Proving Set Equality</title>
