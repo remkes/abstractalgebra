@@ -50,7 +50,7 @@
     <proof>
       <p>
         Let <m>g \in G</m> be a group element. Assume that both
-        <m>h</m> and <m>k</m> are inverse elements go <m>g</m>. By
+        <m>h</m> and <m>k</m> are inverse elements of <m>g</m>. By
         definition, this means that multiplying <m>g</m> by either
         element (in either order) produces the identity. Using this
         fact, I can write the following equation. 
@@ -287,7 +287,7 @@
   <p>
     Other exponential ideas may or may not extend. If we have exponents,
     we can also ask about logarithms. Given group elements <m>g</m>
-    amd <m>h</m>, to solve the equation <m>g^n = m</m> is equivalent
+    and <m>h</m>, to solve the equation <m>g^n = m</m> is equivalent
     to a logarithm. For finite groups, this is often called a
     <term>discrete logarithm</term> and is quite important in
     cryptography. For a general group and general elements, there is
@@ -349,8 +349,8 @@
     </statement>
   </definition>
   <p>
-    That that conjugacy is only interesting for non-abelian groups. If
-    the group is abelian, then <m>ghg{-1} = gg^{-1}h = h</m>, so
+    That conjugacy is only interesting for non-abelian groups. If
+    the group is abelian, then <m>ghg^{-1} = gg^{-1}h = h</m>, so
     conjugation doesn't do anything, and only <m>h</m> itself is the only
     group element which is conjugate with <m>h</m>. However, for
     non-abelian groups, conjugacy leads to some pretty interesting
@@ -393,11 +393,11 @@
             g^{-1}hg = g^{-1}gkg^{-1}g 
           </mrow>
           <mrow>
-            g^{1}hg = \Id k \Id = k
+            g^{-1}hg = \Id k \Id = k
           </mrow>
         </md>
         This shows that <m>k</m> is also conjugate to <m>h</m> (via
-        conjugation by <m>h^{-1}</m>), finishing the proof of symmetry. 
+        conjugation by <m>g^{-1}</m>), finishing the proof of symmetry. 
       </p>
       <p>
         Finally, I need transitivity. Assume that <m>h</m> is

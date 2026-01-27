@@ -1,0 +1,8 @@
+      <figure xml:id="">>
+        <caption></caption>
+        <image xml:id="" width="80%">
+          <asymptote>
+            size(10cm);
+          </asymptote>
+        </image>
+      </figure>

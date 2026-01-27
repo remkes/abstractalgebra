@@ -746,7 +746,8 @@
     <statement>
       <p>
         Let <m>H \subset G</m> be the subgroup of a finite group. The
-        the order of <m>H</m> divides the order of <m>G</m> and 
+        the order of <m>H</m> divides the order of <m>G</m> and the
+        index satisfy this equation.
         <me>
           [H:G] = \frac{|G|}{|H|}
         </me>
@@ -856,4 +857,340 @@
       </p>
     </proof>
   </corollary>
+  <corollary>
+    <statement>
+      <p>
+        Let <m>H \subset G</m> be a subgroup, and let <m>K \subset
+        H</m> also be a subgroup (of a subgroup). Then <m>K</m> is
+        also a subgroup of <m>G</m> and the indices satisfy this
+        equation.
+        <me>
+          [G:K] = [G:H][H:K]
+        </me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The fact that <m>K</m> is also a subgroup of <m>G</m> is
+        almost immediate. The same binary operation applies to all
+        three, and since <m>K</m> is a subgroup of <m>H</m>, it has the
+        identity, inverses, and is closed under the binary operation.
+        That makes it a subgroup of <m>G</m> as well. 
+      </p>
+      <p>
+        I'll prove the equation for finite groups here. (There is a
+        reasoanble proof for general indices as well.) I can use
+        Lagrange's theorem to write the left side as
+        <m>\frac{|G|}{|K|}</m>.  I use the same result to write the
+        right side as <m>\frac{|G|}{|H|} \frac{||H|}{|K|}</m>. The
+        right side simplifies to the left and the proof is complete. 
+      </p>
+    </proof>
+  </corollary>
+  <p>
+    I said, at the start of this section, that I wanted to use
+    subgroups as the way to understand the structure of a group.
+    Having shown a bunch of examples and given a bunch of definitions,
+    let me return to the idea of structure. The last definition in
+    this section gives a way to display the subgroups of a group. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        A diagram that shows the subgroups of a group in relation to
+        each other is called a <term>subgroup lattice</term> of a
+        group. Often, the index of each subgroup is labeled on the
+        lattice as well. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    So let me return to some of the examples we've done so far and
+    draw their subgroup lattices. 
+  </p>
+  <example>
+    <p>
+      This is the subgroup lattice of <m>\ZZ/10\ZZ</m>.
+    </p>
+    <figure xml:id="figure-lattice1">
+      <caption>Subgroup Lattice for <m>\ZZ/10\ZZ</m></caption>
+      <image xml:id="image-lattice1" width="65%">
+        <asymptote>
+          size(10cm);
+          label("$\{\Id\}$", (0,0));
+          label("$\langle 2 \rangle$", (-2,2));
+          label("$\langle 5 \rangle$", (2,2));
+          label("$G$", (0,4));
+        
+          draw((-0,0.2)--(-2,1.8));
+          draw((0,0.2)--(2,1.8));
+          draw((2,2.2)--(0,3.8));
+          draw((-2,2.2)--(-0,3.8));
+
+          label("2",(-1,1),SW);
+          label("5",(1,1),SE);
+          label("5",(-1,3),NW);
+          label("2",(1,3),NE);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      The lattice shows that there are two non-trivial subgroups,
+      neither of which is a subgroup of the other. Both sit between
+      the whole group and the identity. The labels on the lines show
+      the indices of the subgroups. 
+    </p>
+  </example>
+  <example>
+    <p>
+      This is the subgroup lattice of <m>D_4</m>.
+    </p>
+    <figure xml:id="figure-lattice2">
+      <caption>Subgroup Lattice for <m>D_4</m></caption>
+      <image xml:id="image-lattice2" width="80%">
+        <asymptote>
+          size(14cm);
+          label("$\{\Id\}$", (0,0));
+          label("$\langle F_1 \rangle$", (-2,2));
+          label("$\langle F_2 \rangle$", (-4,2));
+          label("$\langle F_3 \rangle$", (-6,2));
+          label("$\langle F_4 \rangle$", (-8,2));
+          label("$\langle R_2 \rangle$", (2,2));
+
+          label("$\langle R_2, F_1 \rangle$", (-2,4));
+          label("$\langle R_2, F_2 \rangle$", (-6,4));
+          label("$\langle R_1 \rangle$", (2,4));
+          label("$D_4$", (-2,6));
+        
+          draw((-0,0.3)--(-2,1.7));
+          draw((-0,0.3)--(-4,1.7));
+          draw((-0,0.3)--(-6,1.7));
+          draw((-0,0.3)--(-8,1.7));
+          draw((0,0.3)--(2,1.7));
+
+          draw((-2,2.3)--(-2,3.7));
+          draw((-6,2.3)--(-2,3.7));
+
+          draw((-4,2.3)--(-6,3.7));
+          draw((-8,2.3)--(-6,3.7));
+
+          draw((2,2.3)--(-2,3.7));
+          draw((2,2.3)--(-6,3.7));
+          draw((2,2.3)--(2,3.7));
+
+          draw((-2,4.3)--(-2,5.7));
+          draw((-6,4.3)--(-2,5.7));
+          draw((2,4.3)--(-2,5.7));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      All the indices of these subgroups are 2; I've not labelled them
+      on this lattice. 
+    </p>
+  </example>
+  <example>
+    <p>
+      This is the subgroup lattice of <m>Q</m>.
+    </p>
+    <figure xml:id="figure-lattice3">
+      <caption>Subgroup Lattice for <m>Q</m></caption>
+      <image xml:id="image-lattice3" width="50%">
+        <asymptote>
+          size(13cm);
+          label("$\{\Id\}$", (0,0));
+          label("$\langle -1 \rangle$", (0,2));
+          label("$\langle i \rangle$", (-2,4));
+          label("$\langle j \rangle$", (0,4));
+          label("$\langle k \rangle$", (2,4));
+          label("$Q$", (0,6));
+       
+          draw((0,0.2)--(0,1.8));
+
+          draw((0,2.2)--(-2,3.8));
+          draw((0,2.2)--(0,3.8));
+          draw((0,2.2)--(2,3.8));
+
+          draw((2,4.2)--(0,5.8));
+          draw((0,4.2)--(0,5.8));
+          draw((-2,4.2)--(0,5.8));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      Again,for this group, all indices are 2. 
+    </p>
+  </example>
+  <example>
+    <p>
+      This is the subgroup lattice of <m>\ZZ/20\ZZ^*</m>.
+    </p>
+    <figure xml:id="figure-lattice4">
+      <caption>Subgroup Lattice for <m>\ZZ/20\ZZ^*</m></caption>
+      <image xml:id="image-lattice4" width="50%">
+        <asymptote>
+          size(13cm);
+          label("$\{\Id\}$", (0,0));
+          
+          label("$\langle 11 \rangle$", (0,2));
+          label("$\langle 9 \rangle$", (-2,2));
+          label("$\langle 19 \rangle$", (2,2));
+
+          label("$\langle 3 \rangle$", (-2,4));
+          label("$\langle 9,11,19 \rangle$", (0,4));
+          label("$\langle 13 \rangle$", (2,4));
+
+          label("$G$", (0,6));
+       
+          draw((0,0.2)--(-2,1.8));
+          draw((0,0.2)--(0,1.8));
+          draw((0,0.2)--(2,1.8));
+
+          draw((0,2.2)--(-2,3.8));
+          draw((0,2.2)--(0,3.8));
+          draw((0,2.2)--(2,3.8));
+
+          draw((-2,2.2)--(0,3.8));
+          draw((2,2.2)--(0,3.8));
+
+          draw((-2,4.2)--(0,5.8));
+          draw((0,4.2)--(0,5.8));
+          draw((2,4.2)--(0,5.8));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      Again,for this group, all indices are 2. 
+    </p>
+  </example>
+  <example>
+    <p>
+      This is the subgroup lattice of <m>S_3</m>.
+    </p>
+    <figure xml:id="figure-lattice5">
+      <caption>Subgroup Lattice for <m>S_3</m></caption>
+      <image xml:id="image-lattice5" width="70%">
+        <asymptote>
+          size(13cm);
+          label("$\{\Id\}$", (0,0));
+          
+          label("$\langle (12) \rangle$", (-6,2));
+          label("$\langle (13) \rangle$", (-4,2));
+          label("$\langle (23) \rangle$", (-2,2));
+          
+          label("$\langle (123) \rangle$", (2,3));
+
+          label("$S_3$", (0,5));
+       
+          draw((0,0.2)--(-2,1.8));
+          draw((0,0.2)--(-4,1.8));
+          draw((0,0.2)--(-6,1.8));
+          draw((0,0.2)--(2,2.8));
+
+          draw((-2,2.2)--(0,4.8));
+          draw((-4,2.2)--(0,4.8));
+          draw((-6,2.2)--(0,4.8));
+          draw((2,3.2)--(0,4.8));
+
+          label("$3$", (1,1.5),SE);
+
+          label("$2$", (-1,1),NE);
+          label("$2$", (-2.5,1.2),NE);
+          label("$2$", (-3,1),SW);
+
+          label("$3$", (-1,3.4),SE);
+          label("$3$", (-2,3.5),SE);
+          label("$3$", (-3,3.6),NW);
+
+          label("$2$", (1,4),NE);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      Since not all the indices are the same, I've labelled them again
+      here. 
+    </p>
+  </example>
+  <example>
+    <p>
+      This is the subgroup lattice of <m>A_4</m>.
+    </p>
+    <figure xml:id="figure-lattice6">
+      <caption>Subgroup Lattice for <m>A_4</m></caption>
+      <image xml:id="image-lattice6" width="90%">
+        <asymptote>
+          size(15cm);
+          label("$\{\Id\}$", (0,0));
+          
+          label("$\langle (12)(34) \rangle$", (-6,2));
+          label("$\langle (13)(24) \rangle$", (-4,2));
+          label("$\langle (14)(23) \rangle$", (-2,2));
+          
+          label("$\langle (123) \rangle$", (2,3));
+          label("$\langle (124) \rangle$", (4,3));
+          label("$\langle (134) \rangle$", (6,3));
+          label("$\langle (234) \rangle$", (8,3));
+
+          label("$\langle (12)(34), (13)(24) \rangle$", (-4,4));
+
+          label("$A_4$", (0,6));
+      
+          draw((0,0.3)--(-2,1.7));
+          draw((0,0.3)--(-4,1.7));
+          draw((0,0.3)--(-6,1.7));
+          
+          draw((0,0.3)--(2,2.7));
+          draw((0,0.3)--(4,2.7));
+          draw((0,0.3)--(6,2.7));
+          draw((0,0.3)--(8,2.7));
+
+          draw((-2,2.3)--(-4,3.7));
+          draw((-4,2.3)--(-4,3.7));
+          draw((-6,2.3)--(-4,3.7));
+          
+          draw((2,3.3)--(0,5.7));
+          draw((4,3.3)--(0,5.7));
+          draw((6,3.3)--(0,5.7));
+          draw((8,3.3)--(0,5.7));
+          
+          draw((-4,4.2)--(0,5.7));
+
+          label("$2$", (-1,1),NE);
+          label("$2$", (-2.5,1.2),NE);
+          label("$2$", (-3,1),SW);
+          
+          label("$3$", (1,1.5),NW);
+          label("$3$", (2,1.5),NW);
+          label("$3$", (4,1.8),NW);
+          label("$3$", (6,2),SE);
+
+          label("$2$", (-3,3),NE);
+          label("$2$", (-4,3),E);
+          label("$2$", (-5,3),NW);
+
+          label("$4$", (1,4.5),SW);
+          label("$4$", (2.5,4.3),SW);
+          label("$4$", (4.5,4),SW);
+          label("$4$", (6,3.8),NE);
+
+          label("$3$", (-2,5.1),NE);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      Since not all the indices are the same, I've labelled them again
+      here. Notice that this group has no subgroups of index two
+      (starting from the full group, that is). All the other groups
+      in these examples have had some somegroup which consists of
+      exactly half the elements, but <m>A_4</m> does not have such a
+      subgroup. This is interesting. 
+    </p>
+  </example>
+  <p>
+    Hopefully you find these diagrams pleasant. They are a third
+    way to understand the structure of a group (after Caley tables and
+    conjugacy classes). Of the three, they are the most visual and, as
+    such, I find them the most intuitive. A <sq>picture</sq> of the
+    group structure is really a valuable thing. 
+  </p>
 </section>
