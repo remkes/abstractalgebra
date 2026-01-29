@@ -50,7 +50,7 @@
             the set of integers. 
           </li>
           <li>
-            <m>\QQ = \{\frac{a}{b} | a, b \in \ZZ, a \neq 0 \} </m>
+            <m>\QQ = \{\frac{a}{b} | a, b \in \ZZ, b \neq 0 \} </m>
             is the set of rational numbers. (Technically, I should
             also identity equivalent fractions, but this
             definition will do for now.) 
@@ -196,7 +196,7 @@
           </li>
           <li>
             The relation is <term>anti-symmetric</term> if,
-            <m>\forall a,b \in A</m>,  <m>(a,b)
+            <m>\forall a,b \in A</m>, <m>(a,b)
             \in R</m> and <m>(b,a) \in R</m> imply that <m>a =
             b</m>.
           </li>
@@ -276,7 +276,7 @@
         two properties. 
         <ul>
           <li>
-            <m>\forall A</m>, <m>\exists i \in I</m> such that <m>a
+            <m>\forall a</m>, <m>\exists i \in I</m> such that <m>a
             \in A_i</m>. That is, the subsets cover the entire set
             <m>A</m>. 
           </li>

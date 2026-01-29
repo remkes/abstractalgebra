@@ -1,0 +1,528 @@
+<section xml:id="section-homomorphism">
+  <title>Homomorphisms</title>
+  <p>
+    Most of the previous university math courses you may have taken
+    have been about functions. The calculus courses are analyses of
+    the behaviour of functions. In linear algebra, understanding
+    linear transformations is one of the main goals of the course and
+    matrices are so vital precisely because they perfectly encode
+    linear transformation. Differential equations are explicity
+    questions that ask: what function satisfies this rule? Mathematics
+    is about functions.
+  </p>
+  <p>
+    This remains very true in abstract algebra. So far we have defined
+    the structure of a group and tried to understand that structure.
+    It turns out that one of the most important ways to understand
+    that structure is to understand the functions that cooperate with
+    that structure.
+  </p>
+  <p>
+    What do I mean by <sq>cooperate</sq>? Think back to linear algebra
+    again. A linear transformation was a function between vectors
+    spaces that satisfied two rules. Let <m>u</m> and <m>v</m> be
+    vectors, let <m>a</m> be a scalar, and let <m>M</m> be a linear
+    transformation (represented by a matrix, if you wish). These were
+    the rules.  <md>
+      <mrow>
+        M(u+v) = M(u) + M(v)
+      </mrow>
+      <mrow>
+        M(au) = aM(u)
+      </mrow>
+    </md>
+    <sq>Cooperate</sq> means that the two operations that define a
+    vector space<mdash/>vector addition and scalar
+    multiplication<mdash/>can be performed either before or after the
+    function. The function <emph>preserves</emph> those operations. 
+  </p>
+  <p>
+    Something similar can be said about limits and continuity. In
+    calculus, we work with continuous functions. The definition of
+    continuity may not have been stated this way in the calculus you
+    studied, but one valid way to define continuity is as follow. Let
+    <m>f</m> be a function and let <m>a</m> be a point in its domain.
+    Then the function is continuous at <m>a</m> if the following is
+    true. 
+    <me>
+      \lim_{x \rightarrow a} f(x) = f \left( \lim_{x \rightarrow a} x
+      \right)
+    </me>
+    A function is continuous if it cooperates with limits, if it
+    preserves limits. The important operation here, the limit, can be
+    done either before or after the function.
+  </p>
+  <p>
+    The same idea holds for groups, leading to the main definition of
+    this section.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>G</m> and <m>H</m> be groups (written multiplicatively
+        as usual) and let <m>phi: G \rightarrow H</m> be a function
+        beteween them. The <m>\phi</m> is a <term>homomorphism</term>
+        if, for all <m>g_1, g_2 \in G</m>, the following equation
+        holds.
+        <me>
+          \phi(g_1g_2) = \phi(g_1) \phi(g_2)
+        </me>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The definition relates the two binary operations of the two
+    groups. On the left, the binary operation is happening in
+    <m>G</m>, before the function acts. On the right, the binary
+    operation is happening in <m>H</m>, after the function acts. 
+  </p>
+  <p>
+    As usual, let me define some examples. 
+  </p>
+  <example>
+    <p>
+      I start this section talking about linear transformations. They
+      are homomorphisms. <m>\RR^n</m> and <m>\RR^m</m> are groups
+      under addition. A matrix, acting as a linear transformation,
+      satisfies this equation.
+      <me>
+        M(u+v) = M(u) + M(v)
+      </me>
+      This is precisely the definition of a homomorphism between these
+      two group.s
+    </p>
+  </example>
+  <example>
+    <p>
+      The function <m>\phi: \ZZ \rightarrow \ZZ</m> defined by
+      <m>\phi(n) = -n</m> is a homomorphism (with the understanding
+      that two negative signs cancel and that <m>-0 = 0</m>). Let me
+      verify the condition. Let <m>n</m> and <m>m</m> be integers.
+      <me>
+        \phi(n+m) = -(n+m) = (-n) + (-m) = \phi(n) + \phi(m) 
+      </me>
+      Here, the fact that a negative sign (or, equivalently,
+      multiplying by <m>-1</m>) distributes proves that this is a
+      homomorphism. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The function <m>\phi: \QQ^* \rightarrow \QQ^*</m> defined by
+      <m>\phi(r) = r^2</m> is a homomorphism. Again, let me verify the
+      required identity. LEt <m>r, s, \in \QQ^*</m>.
+      <me>
+        \phi (rs) = (rs)^2 = r^2 s^2 = \phi(r) \phi(s) 
+      </me>
+      Here, the rules of exponents prove that this is a homomorphism. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The function <m>e^x: \RR \rightarrow (0, \infty)</m> is a group
+      homomorphism. This one is more interesting: the domain is a
+      group under addition and the codomain is a group under
+      multiplciation. Let me verify the required identity.
+      <me>
+        e^{(x+y)} = e^x e^y
+      </me>
+      There's not much to actually do here: this equation is a law of
+      exponent. That law of exponents gives me exactly what I need:
+      addition before and multiplication after. 
+    </p>
+    <p>
+      The exponential is an important example of a group homomorphism
+      between different kinds of structures, addative and
+      multiplicative. The idea of an exponential like this shows up
+      all over mathematics, not just for real-valued functinos. 
+    </p>
+    <p>
+      If the exponential changes from addition to multiplciation, then
+      the logarithm show go the other way. Indeed, the logarithm is a
+      group homomorphism <m>\ln: (0, \infty) \rightarrow \RR</m> from
+      a multiplicative group to an addative group. Again, I verify the
+      required equation.
+      <me>
+        \ln(ab) = \ln a + \ln b 
+      </me>
+      Again, there isn't much to do here: the equation I need is
+      already just a law of logarithms. It's multiplication before and
+      addition afterwards. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The determinant <m>det: GL(n) \rightarrow \RR^*</m> is a
+      homomorphism from the group fo invertible matrices to the group
+      of non-zero real number under multiplication. Why is this true?
+      Well, here is one of the rules of determinants, where <m>M</m>
+      and <m>N</m> are matrices. 
+      <me>
+        \det(MN) = \det(M)\det(N)
+      </me>
+      This rule is precisely what is needed for the definition. On the
+      left, I have matrix multiplication. On the right I have the
+      ordinary real number multiplication of the two determinants. 
+    </p>
+    <p>
+      This is a good example of a homomorphism between very different
+      groups. Matrix and numbers are dissimilar mathematical objects,
+      but there is still a relationship between them given by this
+      homomophism. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>a \in RR</m>. Then the evaluation function at <m>a</m>,
+      <m>f_a: \RR[x] \rightarrow \RR</m> is a function which take a
+      polynomial <m>p(x)</m> and evaluates it to produce <m>p(a)</m>,
+      which is a real number. This is a homomorphism from the group of
+      polynomials under addition to the group of real number under
+      addition. Let me verify the required equation, using <m>p</m>
+      and <m>q</m> as two polynomials. 
+      <me>
+        f_a(p + q) = (p + q)(a) = p(a) + q(a) = f_a(p) + f_a(q)
+      </me>
+      What does this mean? Well, if I add two polynomials and
+      evaluate, that the same as evaluting and adding them. This is
+      certainly true for polynomials, making the evaluation function a
+      homomorphissm. 
+    </p>
+    <p>
+      Like the previous, this is a good example of a homomorphism
+      between different kinds of mathematical objects: this time,
+      numbers and polynmoials. Similar evaluation homomorphism can be
+      defined for groups of functions as well. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>n \in ZZ</m>. Then the map which is reduction modulo n is
+      a homomorphism <m>\pi_n: \ZZ \rightarrow \ZZ/n\ZZ</m>. This map
+      sense every integer to its class modulo n. The equation I want
+      is essentially the following statement, where the bar indicated
+      reduction modulo n. 
+      <me>
+        \overline{a+b} = \overline{a} + \overline{b}
+      </me>
+      This is true of the integers, basically by the simple fact that
+      arithmetic works modulo n. 
+    </p>
+    <p>
+      This is a good example of a homomorphism from an infinite group
+      to a finite group. As in the previous examples, homomorphism can
+      relate different kinds of groups, and it is good to notice that
+      they can go between groups of very different cardinalities as
+      well. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let me define a function <m>\phi: \ZZ/10\ZZ^* \rightarrow
+      \ZZ/4\ZZ</m>. I define this explicitly, term by term.
+      <md>
+        <mrow>
+          \phi(1) = 0
+        </mrow>
+        <mrow>
+          \phi(3) = 1
+        </mrow>
+        <mrow>
+          \phi(7) = 3
+        </mrow>
+        <mrow>
+          \phi(9) = 2
+        </mrow>
+      </md>
+      This is a homomorphism. How do I prove that? I don't have a nice
+      rool to use here, but these are small groups. I use just check
+      all the cases explicitly, perhaps using a predetermined Caley
+      table for the multiplication. For example, I can explicitly
+      check that <m>\phi(3\cdot 9) = \phi(7) = 3 = 1 + 2 = \phi(3) +
+      \phi(9)</m>, so the homomorphism equation works for these two
+      elements. In a group of four elements, there are only twelve
+      multiplications to check (6 pairs and, in general, checking both
+      orders of multiplications) For small groups, we can sometimes
+      work explicitly like this.
+    </p>
+  </example>
+  <example>
+    <p>
+      The notation <m>C^1(\RR)</m> is the set of continuously
+      differentiable functions with domain <m>\RR</m>. The derivative
+      <m>\frac{d}{dx}: C^1(\RR) \rightarrow C(\RR)</m> is a
+      homomorphism to the set of continuous function on <m>\RR</m>.
+      Why? Well, I have the linearity of the derivative.
+      <me>
+        \frac{d}{dx} (f + g) = \frac{df}{dx} + \frac{dg}{dx} 
+      </me>
+      This derivative rule is exactly the rule needed to show that
+      this is a homomorphism between two groups that use addition as
+      the binary operation. 
+    </p>
+    <p>
+      Similar homomorphisms can be made with other differential
+      operations, as well as with indefinite integrals, since they are
+      also linear. 
+    </p>
+    <p>
+      I can also use definite integrals. The notation <m>C([0,1])</m>
+      is the group (under addition) of continuous functions wtih
+      domain <m>[0,1]</m>. I can define a function using an indefinite
+      integral.
+      <md>
+        <mrow>
+          \phi: C([0,1]) \rightarrow \RR
+        </mrow>
+        <mrow>
+          \phi(f) = \int_0^1 f(x) dx 
+        </mrow>
+      </md>
+      Then I have the linearity rule for the integral. 
+      <me>
+        \int f(x) + g(x) dx = \int f(x) dx + \int g(x) dx 
+      </me>
+      Again, this rule precisely shows that <m>\phi</m> is a
+      homomorphism. 
+    </p>
+  </example>
+  <example>
+    <p>
+      I'll finish with some example that apply to many groups. As I've
+      said before, mathematicians really enjoy the special cases of
+      definitions at the margin. These are important, even if they
+      seem obvious or silly. 
+      <ul>
+        <li>
+          The identity function <m>\Id: G \rightarrow G</m> on any
+          group is a homomorphism. 
+        </li>
+        <li>
+          Let <m>e_h</m> be the identity of a group <m>H</m>. Then,
+          for any group, the map <m>\phi: G \rightarrow H</m> defined
+          by <m>\forall g \in G, \phi(g) = h_e</m> is a homomorphism.
+          It just sends everything to the identity, which makes
+          checking the condition no work at all. This is often called
+          the trivial homomorphism between two groups.
+        </li>
+        <li>
+          Let <m>H \subset G</m> be a subgroup of a group. The
+          inclusion function <m>i: H \rightarrow G</m> is the map
+          defined by <m>i(h) = h</m>. It just sends all elements of
+          the subgroup to themselves as elements of the larger group.
+          (This inclusion function exists for any subset in set throgy
+          -- it's not just defined for subgroups.) The inclusion of a
+          subgroup is always a homomorophism. Again, this is almost
+          nothing to check, but this is an important definition. 
+        </li>
+      </ul>
+    </p>
+  </example>
+  <p>
+    Now on to properties of homomorphisms.
+  </p>
+  <proposition xml:id="proposition-identity-to-identity">
+    <statement>
+      <p>
+        Let <m>\phi: G \rightarrow H</m> be a homomorphism between two
+        groups. The <m>\phi</m> sends the identity of the first group
+        to the identity of the second. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>e_g</m> be the identity of <m>G</m>, let <m>e_h</m> be
+        the identity of <m>H</m> and let <m>g \in
+        G</m> be any element. Then consider this calculation.
+        <me>
+          e_h \phi(e_g) = \phi(e_g) = \phi(e_g e_g) = \phi(e_g)
+          \phi(e_g) 
+        </me>
+        The first equality is the definition of the inverse in
+        <m>H</m>, the second equality is the definition of the inverse
+        in <m>G</m>, and the third is the group homomorphism property.
+        Then I can apply cancellation on the right. 
+        <me>
+          e_h = \phi(e_g)
+        </me>
+        This completes the proof. 
+      </p>
+    </proof>
+  </proposition>
+  <proposition xml:id="proposition-homomorphism-inverse">
+    <statement>
+      <p>
+        Let <m>\phi: G \rightarrow H</m> be a homomorphism of groups.
+        Then for any <m>g \in G</m>, <m>\phi(g^{-1}) = \left( \phi(g)
+        \right)^1</m>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Consider this calculation.
+        <me>
+          \phi(g^{-1}) \phi (g) = \phi(gg^{-1}) = \phi(e_g) = e_h
+        </me>
+        I can repeat this calculation in the opposite order.
+        <me>
+          \phi(g) \phi(g^{-1}) = \phi(g^{-1}g) = \phi(e_g) = e_h
+        </me>
+        This is the proof that <m>\phi(g^{-1})</m> is the inverse of
+        <m>\phi(g)</m> in the group <m>H</m>, which proves the
+        proposition. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    There are two very important subgroups associated to be
+    homomorphism. 
+  </p>
+  <definition>
+    <statement>
+      <p> 
+        Let <m>\phi: G \rightarrow H</m> be a homomorphism of groups.
+        The <term>kernel</term> of <m>\phi</m> is the subset of all elements
+        of <m>G</m> that are sent to the identity in <m>H</m>. The
+        <term>image</term> of <m>\phi</m> is the subset of all
+        elements of <m>H</m> which are outputs of the function.
+      </p>
+    </statement>
+  </definition>
+  <proposition xml:id="proposition-image-kernel">
+    <statement>
+      <p>
+        Let <m>\phi: G \rightarrow H</m> be a homomorphism of groups.
+        Then the kernel is a subgroup of <m>G</m> and the image is a
+        subgroup of <m>H</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        I'll start with the kernel. I know from <xref
+        ref="proposition-identity-to-identity"/> that the identity is
+        sent to the identity, so <m>e_g</m> is in the kernel. Then if
+        <m>g_1, g_2</m> are both in the kernel, I can calculate
+        <me>
+          \phi(g_1 g_2) = \phi(g_1) \phi(g_2) = e_h e_h =e_h 
+        </me> 
+        showing that the product is also in the kernel.
+        Finally, if <m>g</m> is in the kernel, then using <xref
+        ref="proposition-homomorphism-inverse"/>, I can calculate
+        <me>
+          \phi(g^{-1}) = \left( \phi(g) \right)^{-1} = e_h^{-1} = e_h 
+        </me>
+        showing that the inverse is also in the kernel. This proves
+        that the kernel is a group. 
+      </p>
+      <p>
+        Now for the image. The identity is always in the image
+        according to <xref ref="proposition-identity-to-identity"/>.
+        If <m>h_1, h_2</m> are in the image, then there exist <m>g_1,
+        g_2</m> such that <m>\phi(g_1) = h_2</m> and <m>\phi(g_2) =
+        h_2</m>. Then I can calculate
+        <me>
+          h_1h_2 = \phi(g_1) \phi(g_2) = \phi(g_1 g_2)
+        </me>
+        showing that the product is in the image. Finally, using <xref
+        ref="proposition-homomorphism-inverse"/> I can also
+        calculate
+        <me>
+          h_1^{-1} = \left( \phi(g_1) \right)^1 = \phi(g_1^{-1})
+        </me>
+        showing that inverses are also in the image. I conclude that
+        the image is a subgroup. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    Kernels are, in particular, useful for properties of
+    homomorphisms. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>\phi: G \rightarrow H</m> be a homomorphism of groups.
+        Then <m>\phi</m> is injective if and only if <m>\Ker(\phi)</m>
+        is <m>\{e_g\}</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        This is an if and only if proof. The forward implication is
+        very short: if the function is injective and the identity goes
+        to the identity by <xref
+        ref="proposition-identity-to-identity"/>, then nothing else
+        can be sent to the identity, so the kernel is <m>\{e_g\}</m>.
+      </p>
+      <p>
+        For the reverse implication, assume the kernel is
+        <m>\{e_g\}</m>. Then, in the standard setup for an injectivity
+        proof, assume that <m>\phi(g_1) = \phi(g_2)</m>. I can do this
+        calculation, using the homomorphism property and <xref
+        ref="proposition-homomorphism-inverse"/>. 
+        <me>
+          \phi(g_1g_2^{-1}) = \phi(g_1) \left(\phi(g_2) \right)^{-1} =
+          \phi(g_2) \left( \phi(g_2) \right)^{-1} = e_h
+        </me>
+        Since the kernel is only <m>e_g</m>, this mean that 
+        <me>
+          g_1 g_2^{-1} = e_g 
+        </me>
+        and by multiplying on the right by <m>g_2</m>, I conclude
+        <me>
+          g_1 = g_2
+        </me>
+        This shows that the function is injective, completing the
+        if-and-only-if proof. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    Let me get down some more basic properties of homomorphisms
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>\phi: G \rightarrow H</m> and <m>\psi: H \rightarrow
+        K</m> be homomorphisms of groups. Then <m>\psi \circ \phi: G
+        \rightarrow k</m> is also a homomorphism of groups. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        This is just a calculation using the homomorphism properties
+        of the two pieces of the composition.
+        <md>
+          <mrow>
+            \psi \circ \phi (g_1g_2) = \psi(\phi(g_1g_2)) =
+            \psi(\phi(g_1) \phi(g_2)) = \psi\phi(g_1)) \psi\phi(g_2)
+          </mrow>
+          <mrow>
+            = (\psi \circ \phi (g_1)) (\psi \circ \phi (g_2)) 
+          </mrow>
+        </md>
+        This is precisely the desired homomorphism property of the
+        composition. 
+      </p>
+    </proof>
+  </proposition>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>\phi:G \rightarrow H</m> be a homomorphism of groups.
+        If <m>K \subset G</m> is a subgroup of <m>G</m>, then
+        <m>\phi(K)</m> is a subgroup of <m>H</m>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        <m>K</m> is a group and <m>\phi</m> acting on the group
+        preserves the binary operation. Therefore, <m>\phi \big|_{K}:
+        K \rightarrow H</m> is also a homomorphism of groups. This
+        means that, according to <xref
+        ref="proposition-image-kernel"/>, the image, <m>\phi(K)</m> is
+        a subgroup of <m>H</m>. This completes the proof. 
+      </p>
+    </proof>
+  </proposition>
+</section>

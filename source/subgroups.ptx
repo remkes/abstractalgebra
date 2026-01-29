@@ -60,7 +60,7 @@
       Many of the number sets were groups under addition. Since
       smaller numbers sets subsets of the larger number sets, I can
       identify subgroups. <m>\ZZ</m> is a subgroup of <m>\QQ</m>,
-      which is a subgroup of <m>\RR</m>, which is a subroup of
+      which is a subgroup of <m>\RR</m>, which is a subgroup of
       <m>\CC</m>. 
     </p>
   </example>
@@ -133,7 +133,7 @@
     </p>
     <p>
       There was nothing special about 2 in the previous paragraph. The
-      set of real-coefficient polynomials od degree at most <m>n</m>,
+      set of real-coefficient polynomials of degree at most <m>n</m>,
       for any <m>n \in \NN</m>, is a subgroup of <m>\RR[x]</m>. 
     </p>
     <p>
@@ -292,8 +292,7 @@
           SO(n) \subset O(n) \subset GL(n) 
         </mrow>
         <mrow>
-          GL(\ZZ,n) \subset GL(\QQ,n) \subset GL(\RR,n) \subset
-          GL(\CC,n) 
+          GL(\QQ,n) \subset GL(\RR,n) \subset GL(\CC,n) 
         </mrow>
       </md>
       All of these subsets are subgroups. The identity is matrix is
@@ -304,7 +303,7 @@
       The different between the first and second chains of subgroups
       is interesting. <m>SO(n)</m> is a subgroup of both <m>SL(n)</m>
       and <m>O(n)</m>. But there is no subgroup relationship between
-      <m>SL(n)</m> and <m>O(0n)</m>. Neither is a subset of the
+      <m>SL(n)</m> and <m>O(n)</m>. Neither is a subset of the
       either, even though they both lie in <m>GL(n)</m>. 
     </p>
   </example>
@@ -519,7 +518,7 @@
       These are the subgroups of <m>Q</m>.
       <me>
         \{\Id\}, \langle -1 \rangle, \langle i \rangle, \langle j
-        \rangle, \langle k \rangle 
+        \rangle, \langle k \rangle, Q
       </me>
     </p>
   </example>
@@ -675,7 +674,7 @@
       </md>
       There are five cosets, so the index is <m>[\ZZ/20\ZZ: H] =
       5</m>. Note that the elements used to define the coset could
-      have be chosen differently: <m>1 + H</m> is the same coset at
+      have be chosen differently: <m>1 + H</m> is the same coset as
       <m>16 + H</m>.
     </p>
   </example>
@@ -709,7 +708,7 @@
       There are seven cosets (each of them an infinite set).
       Therefore, the index is <m>[\ZZ: 7\ZZ] = 7</m>. Again,
       different group elements should have been chosen: <m>4 + 7\ZZ =
-      74 + \ZZ</m>. Since these are infinite sets, there are in fact
+      74 + 7\ZZ</m>. Since these are infinite sets, there are in fact
       infinitely many choices! This example also points out that
       infinite groups can have subgroups of finite index, which is
       nice to notice. 
@@ -749,7 +748,7 @@
         the order of <m>H</m> divides the order of <m>G</m> and the
         index satisfy this equation.
         <me>
-          [H:G] = \frac{|G|}{|H|}
+          [G:H] = \frac{|G|}{|H|}
         </me>
       </p>
     </statement>
