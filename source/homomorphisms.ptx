@@ -1,19 +1,19 @@
 <section xml:id="section-homomorphism">
   <title>Homomorphisms</title>
   <p>
-    Most of the previous university math courses you may have taken
-    have been about functions. The calculus courses are analyses of
-    the behaviour of functions. In linear algebra, understanding
-    linear transformations is one of the main goals of the course and
-    matrices are so vital precisely because they perfectly encode
-    linear transformation. Differential equations are explicity
-    questions that ask: what function satisfies this rule? Mathematics
-    is about functions.
+    Many university math courses are about functions. The calculus
+    courses are essentially about the behaviour of real-valued
+    functions, either single or multiple variable. In linear algebra,
+    understanding linear transformations is one of the main goals of
+    the course and matrices are so vital precisely because they
+    perfectly encode linear transformations. Differential equations are
+    explicity questions that ask: what function satisfies this rule?
+    Mathematics is about functions.
   </p>
   <p>
     This remains very true in abstract algebra. So far we have defined
     the structure of a group and tried to understand that structure.
-    It turns out that one of the most important ways to understand
+    One of the most important ways to understand
     that structure is to understand the functions that cooperate with
     that structure.
   </p>
@@ -38,12 +38,11 @@
   </p>
   <p>
     Something similar can be said about limits and continuity. In
-    calculus, we work with continuous functions. The definition of
-    continuity may not have been stated this way in the calculus you
-    studied, but one valid way to define continuity is as follow. Let
-    <m>f</m> be a function and let <m>a</m> be a point in its domain.
-    Then the function is continuous at <m>a</m> if the following is
-    true. 
+    calculus, we work with continuous functions. There are a number of
+    ways to state the definition of continuity, but let me give you a
+    new one. Let <m>f</m> be a function and let <m>a</m> be a point in
+    its domain. Then the function is continuous at <m>a</m> if the
+    following is true. 
     <me>
       \lim_{x \rightarrow a} f(x) = f \left( \lim_{x \rightarrow a} x
       \right)
@@ -60,8 +59,8 @@
     <statement>
       <p>
         Let <m>G</m> and <m>H</m> be groups (written multiplicatively
-        as usual) and let <m>phi: G \rightarrow H</m> be a function
-        beteween them. The <m>\phi</m> is a <term>homomorphism</term>
+        as usual) and let <m>\phi: G \rightarrow H</m> be a function
+        beteween them. Then <m>\phi</m> is a <term>homomorphism</term>
         if, for all <m>g_1, g_2 \in G</m>, the following equation
         holds.
         <me>
@@ -74,22 +73,26 @@
     The definition relates the two binary operations of the two
     groups. On the left, the binary operation is happening in
     <m>G</m>, before the function acts. On the right, the binary
-    operation is happening in <m>H</m>, after the function acts. 
+    operation is happening in <m>H</m>, after the function acts. The
+    equation says that the binary operation can happen before or after
+    with the same result. The function cooperates with the group
+    structure. 
   </p>
   <p>
     As usual, let me define some examples. 
   </p>
   <example>
     <p>
-      I start this section talking about linear transformations. They
-      are homomorphisms. <m>\RR^n</m> and <m>\RR^m</m> are groups
+      I started this section talking about linear transformations.
+      They are also the first example of homomorphisms.
+      <m>\RR^n</m> and <m>\RR^m</m> are groups
       under addition. A matrix, acting as a linear transformation,
       satisfies this equation.
       <me>
         M(u+v) = M(u) + M(v)
       </me>
       This is precisely the definition of a homomorphism between these
-      two group.s
+      two groups.
     </p>
   </example>
   <example>
@@ -97,24 +100,25 @@
       The function <m>\phi: \ZZ \rightarrow \ZZ</m> defined by
       <m>\phi(n) = -n</m> is a homomorphism (with the understanding
       that two negative signs cancel and that <m>-0 = 0</m>). Let me
-      verify the condition. Let <m>n</m> and <m>m</m> be integers.
+      verify the condition; to that end, let <m>n</m> and <m>m</m> be
+      integers.  
       <me>
         \phi(n+m) = -(n+m) = (-n) + (-m) = \phi(n) + \phi(m) 
       </me>
-      Here, the fact that a negative sign (or, equivalently,
-      multiplying by <m>-1</m>) distributes proves that this is a
-      homomorphism. 
+      Here, the fact that a negative sign distributes (or,
+      equivalently, multiplying by <m>-1</m> distributes) proves that
+      this function is a homomorphism. 
     </p>
   </example>
   <example>
     <p>
       The function <m>\phi: \QQ^* \rightarrow \QQ^*</m> defined by
-      <m>\phi(r) = r^2</m> is a homomorphism. Again, let me verify the
-      required identity. LEt <m>r, s, \in \QQ^*</m>.
+      <m>\phi(r) = r^2</m> is a homomorphism. Again, I will verify the
+      required identity. Let <m>r, s, \in \QQ^*</m>.
       <me>
         \phi (rs) = (rs)^2 = r^2 s^2 = \phi(r) \phi(s) 
       </me>
-      Here, the rules of exponents prove that this is a homomorphism. 
+      This time, the rules of exponents prove that this is a homomorphism. 
     </p>
   </example>
   <example>
@@ -127,19 +131,23 @@
         e^{(x+y)} = e^x e^y
       </me>
       There's not much to actually do here: this equation is a law of
-      exponent. That law of exponents gives me exactly what I need:
-      addition before and multiplication after. 
+      exponent. This law of exponents gives me exactly what I need:
+      addition before and multiplication after. The function
+      cooperates with the group structures. 
     </p>
     <p>
       The exponential is an important example of a group homomorphism
       between different kinds of structures, addative and
       multiplicative. The idea of an exponential like this shows up
-      all over mathematics, not just for real-valued functinos. 
+      all over mathematics, not just for real-valued functions.
+      Almost any time we need to relate a multiplicative structure to
+      an addative structure, there is probably an exponential
+      involved. 
     </p>
     <p>
       If the exponential changes from addition to multiplciation, then
       the logarithm show go the other way. Indeed, the logarithm is a
-      group homomorphism <m>\ln: (0, \infty) \rightarrow \RR</m> from
+      group homomorphism (<m>\ln: (0, \infty) \rightarrow \RR</m>) from
       a multiplicative group to an addative group. Again, I verify the
       required equation.
       <me>
@@ -152,11 +160,11 @@
   </example>
   <example>
     <p>
-      The determinant <m>det: GL(n) \rightarrow \RR^*</m> is a
-      homomorphism from the group fo invertible matrices to the group
-      of non-zero real number under multiplication. Why is this true?
-      Well, here is one of the rules of determinants, where <m>M</m>
-      and <m>N</m> are matrices. 
+      The determinant <m>\det: GL(n) \rightarrow \RR^*</m> is a
+      homomorphism from the group of invertible matrices (with real
+      coefficients) to the group of non-zero real numbers under
+      multiplication. Why is this true?  Well, here is one of the
+      rules of determinants, where <m>M</m> and <m>N</m> are matrices.
       <me>
         \det(MN) = \det(M)\det(N)
       </me>
@@ -173,8 +181,8 @@
   </example>
   <example>
     <p>
-      Let <m>a \in RR</m>. Then the evaluation function at <m>a</m>,
-      <m>f_a: \RR[x] \rightarrow \RR</m> is a function which take a
+      Let <m>a \in \RR</m>. Then the evaluation function at <m>a</m>,
+      <m>f_a: \RR[x] \rightarrow \RR</m>, is a function which takes a
       polynomial <m>p(x)</m> and evaluates it to produce <m>p(a)</m>,
       which is a real number. This is a homomorphism from the group of
       polynomials under addition to the group of real number under
@@ -184,33 +192,33 @@
         f_a(p + q) = (p + q)(a) = p(a) + q(a) = f_a(p) + f_a(q)
       </me>
       What does this mean? Well, if I add two polynomials and
-      evaluate, that the same as evaluting and adding them. This is
-      certainly true for polynomials, making the evaluation function a
-      homomorphissm. 
+      evaluate, the result is the same as evaluting and adding them.
+      This is certainly true for polynomials, making the evaluation
+      function a homomorphism. 
     </p>
     <p>
-      Like the previous, this is a good example of a homomorphism
+      Like the previous example, this is a good example of a homomorphism
       between different kinds of mathematical objects: this time,
-      numbers and polynmoials. Similar evaluation homomorphism can be
+      numbers and polynomials. Similar evaluation homomorphism can be
       defined for groups of functions as well. 
     </p>
   </example>
   <example>
     <p>
-      Let <m>n \in ZZ</m>. Then the map which is reduction modulo n is
+      Let <m>n \in \ZZ</m>. Then the map which is reduction modulo n is
       a homomorphism <m>\pi_n: \ZZ \rightarrow \ZZ/n\ZZ</m>. This map
-      sense every integer to its class modulo n. The equation I want
+      sends every integer to its class modulo n. The equation I want
       is essentially the following statement, where the bar indicated
       reduction modulo n. 
       <me>
         \overline{a+b} = \overline{a} + \overline{b}
       </me>
-      This is true of the integers, basically by the simple fact that
-      arithmetic works modulo n. 
+      This is true of the integers, basically due to the simple fact
+      that arithmetic works modulo n. 
     </p>
     <p>
       This is a good example of a homomorphism from an infinite group
-      to a finite group. As in the previous examples, homomorphism can
+      to a finite group. As in the previous examples, homomorphisms can
       relate different kinds of groups, and it is good to notice that
       they can go between groups of very different cardinalities as
       well. 
@@ -248,7 +256,7 @@
   </example>
   <example>
     <p>
-      The notation <m>C^1(\RR)</m> is the set of continuously
+      The notation <m>C^1(\RR)</m> describes the set of continuously
       differentiable functions with domain <m>\RR</m>. The derivative
       <m>\frac{d}{dx}: C^1(\RR) \rightarrow C(\RR)</m> is a
       homomorphism to the set of continuous function on <m>\RR</m>.
@@ -267,7 +275,7 @@
     </p>
     <p>
       I can also use definite integrals. The notation <m>C([0,1])</m>
-      is the group (under addition) of continuous functions wtih
+      describes the group (under addition) of continuous functions wtih
       domain <m>[0,1]</m>. I can define a function using an indefinite
       integral.
       <md>
@@ -288,10 +296,10 @@
   </example>
   <example>
     <p>
-      I'll finish with some example that apply to many groups. As I've
+      I'll finish with some examples that apply to many groups. As I've
       said before, mathematicians really enjoy the special cases of
-      definitions at the margin. These are important, even if they
-      seem obvious or silly. 
+      definitions, the trival cases. These cases are important, even
+      if they seem obvious or silly. 
       <ul>
         <li>
           The identity function <m>\Id: G \rightarrow G</m> on any
@@ -310,22 +318,26 @@
           inclusion function <m>i: H \rightarrow G</m> is the map
           defined by <m>i(h) = h</m>. It just sends all elements of
           the subgroup to themselves as elements of the larger group.
-          (This inclusion function exists for any subset in set throgy
-          -- it's not just defined for subgroups.) The inclusion of a
-          subgroup is always a homomorophism. Again, this is almost
-          nothing to check, but this is an important definition. 
+          (This inclusion function exists for any subset in set theory
+          <mdash/>it's not just defined for subgroups.) The inclusion
+          of a subgroup is always a homomorphism. Again, there is
+          almost nothing to check, but this is an important
+          definition. 
         </li>
       </ul>
     </p>
   </example>
   <p>
-    Now on to properties of homomorphisms.
+    Now on to properties of homomorphisms. First, since homomorphism
+    respect the structure of the binary operation, it will not come as
+    a surprise that they also respect the other group structures:
+    identity and inverses.
   </p>
   <proposition xml:id="proposition-identity-to-identity">
     <statement>
       <p>
         Let <m>\phi: G \rightarrow H</m> be a homomorphism between two
-        groups. The <m>\phi</m> sends the identity of the first group
+        groups. Then <m>\phi</m> sends the identity of the first group
         to the identity of the second. 
       </p>
     </statement>
@@ -338,10 +350,10 @@
           e_h \phi(e_g) = \phi(e_g) = \phi(e_g e_g) = \phi(e_g)
           \phi(e_g) 
         </me>
-        The first equality is the definition of the inverse in
-        <m>H</m>, the second equality is the definition of the inverse
-        in <m>G</m>, and the third is the group homomorphism property.
-        Then I can apply cancellation on the right. 
+        The first equality is the definition of the identity in
+        <m>H</m>, the second equality is the definition of the
+        identity in <m>G</m>, and the third is the group homomorphism
+        property. Then I can apply cancellation on the right. 
         <me>
           e_h = \phi(e_g)
         </me>
@@ -354,7 +366,7 @@
       <p>
         Let <m>\phi: G \rightarrow H</m> be a homomorphism of groups.
         Then for any <m>g \in G</m>, <m>\phi(g^{-1}) = \left( \phi(g)
-        \right)^1</m>
+        \right)^{-1}</m>.
       </p>
     </statement>
     <proof>
@@ -367,9 +379,10 @@
         <me>
           \phi(g) \phi(g^{-1}) = \phi(g^{-1}g) = \phi(e_g) = e_h
         </me>
-        This is the proof that <m>\phi(g^{-1})</m> is the inverse of
-        <m>\phi(g)</m> in the group <m>H</m>, which proves the
-        proposition. 
+        These two calculations are the definition of an inverse
+        element: <m>\phi(g^{-1})</m> is the inverse of
+        <m>\phi(g)</m> in the group <m>H</m>. This observation proves
+        the proposition. 
       </p>
     </proof>
   </proposition>
@@ -384,7 +397,9 @@
         The <term>kernel</term> of <m>\phi</m> is the subset of all elements
         of <m>G</m> that are sent to the identity in <m>H</m>. The
         <term>image</term> of <m>\phi</m> is the subset of all
-        elements of <m>H</m> which are outputs of the function.
+        elements of <m>H</m> which are outputs of the function. The
+        notations for these, respectively, are <m>\Ker(\phi)</m> and
+        <m>\Image(\phi)</m>.
       </p>
     </statement>
   </definition>
@@ -435,8 +450,8 @@
     </proof>
   </proposition>
   <p>
-    Kernels are, in particular, useful for properties of
-    homomorphisms. 
+    I can use the kernel to extract some valuable information about a
+    homomorphism. 
   </p>
   <proposition>
     <statement>
@@ -457,14 +472,17 @@
       <p>
         For the reverse implication, assume the kernel is
         <m>\{e_g\}</m>. Then, in the standard setup for an injectivity
-        proof, assume that <m>\phi(g_1) = \phi(g_2)</m>. I can do this
-        calculation, using the homomorphism property and <xref
-        ref="proposition-homomorphism-inverse"/>. 
+        proof, assume that <m>\phi(g_1) = \phi(g_2)</m>. I can do the
+        following calculation, using the homomorphism property and
+        <xref ref="proposition-homomorphism-inverse"/>. 
         <me>
           \phi(g_1g_2^{-1}) = \phi(g_1) \left(\phi(g_2) \right)^{-1} =
           \phi(g_2) \left( \phi(g_2) \right)^{-1} = e_h
         </me>
-        Since the kernel is only <m>e_g</m>, this mean that 
+        The kernel is only <m>e_g</m>, by assumption. The calculation
+        shows an element which is sent to <m>e_h</m>, so that element
+        is in the kernel, meaning that the element must be the
+        identity of <m>G</m>. 
         <me>
           g_1 g_2^{-1} = e_g 
         </me>
@@ -473,19 +491,20 @@
           g_1 = g_2
         </me>
         This shows that the function is injective, completing the
-        if-and-only-if proof. 
+        second implication of the if-and-only-if proof. 
       </p>
     </proof>
   </proposition>
   <p>
-    Let me get down some more basic properties of homomorphisms
+    Finally let me get down a couple more basic properties of
+    homomorphisms.
   </p>
   <proposition>
     <statement>
       <p>
         Let <m>\phi: G \rightarrow H</m> and <m>\psi: H \rightarrow
         K</m> be homomorphisms of groups. Then <m>\psi \circ \phi: G
-        \rightarrow k</m> is also a homomorphism of groups. 
+        \rightarrow K</m> is also a homomorphism of groups. 
       </p>
     </statement>
     <proof>
@@ -511,7 +530,7 @@
       <p>
         Let <m>\phi:G \rightarrow H</m> be a homomorphism of groups.
         If <m>K \subset G</m> is a subgroup of <m>G</m>, then
-        <m>\phi(K)</m> is a subgroup of <m>H</m>
+        <m>\phi(K)</m> is a subgroup of <m>H</m>.
       </p>
     </statement>
     <proof>
