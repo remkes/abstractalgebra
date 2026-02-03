@@ -1,0 +1,345 @@
+<section xml:id="section-isomorphisms">
+  <title>Isomorphisms and the Major Theme</title>
+  <subsection xml:id="subsection-isomorphism">
+    <title>Isomorphism</title>
+    <p>
+      In <xref ref="definition-homomorphism"/>, I defined a
+      homonomorphism, which is a function that preserves group
+      structure. Homomorphisms relate groups to each other and tie
+      them together: a group can very much be understood by its
+      homomorphisms to other groups. Now, in this section, I want to
+      narrow to a special class of homomorphisms.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          An bijective homomorphism is called an
+          <term>isomorphism</term>. Is there is an isomorphism between
+          groups <m>G</m> and <m>H</m>, we will often write <m>H cong
+          G</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The greek roots of both of these word point at their use. The
+      root <sq>morph</sq> means <sq>form</sq> or <sq>shape</sq>.
+      Mathematicians use this root, in this context, to mean the
+      structure of a group. Both of the roots <sq>homo</sq> and
+      <sq>iso</sq> carry meaning of similarity or equality. In the
+      mathematical useage, homomorphism means that the structure of
+      the binary operation, specifically, is the same. In the result
+      of <xref ref="section-homomorphism"/>, this also means that the
+      identity and inverses were the same. This new word,
+      isomorphism, is used more strongly. An isomorphism means that
+      the entire group structure is the same, including the order of
+      the group (the cardinal of the group as a set). 
+    </p>
+    <p>
+      This is the big idea: two groups which have an isomophism
+      between them are the same size and the group operation is
+      preseved. This means that the two groups are, in some way,
+      identity. If the groups are finite, then they will have
+      equvalent Caley tables: just the names of the elements are
+      changed. They will have the same subgroups with the same
+      indices, the same conjugacy classes, and so on. This explains
+      the notation <m>H \equiv G</m>: this is a kind of equality
+      between groups.
+    </p>
+    <p>
+      I'll say more in this in the next section, but now let me give
+      some examples. 
+    </p>
+    <example>
+      <p>
+        Consider the function <m>D_4 \rightarrow S_4</m> defined
+        explicilty by this table. 
+        <me>
+          \begin{array}{c|cccccccc}
+            g \amp \Id \amp R_1 \amp R_2 \amp R_3 
+              \amp F_1 \amp F_2 \amp F_3 \amp F_4 \\
+            \phi(g) \amp \Id \amp (1234) \amp (13)(24) \amp (1432) 
+              \amp (24) \amp (12)(34) \amp (13) \amp (14)(23) 
+          \end{array}
+        </me>
+        This explicit definition sends each symmetry of the square to
+        the matching permutation of the vertices. For example,
+        <m>F_2</m> switces vertices 1 and 2, and switches vertices 3
+        and 4, so it is sent to the cycle which does the same, as a
+        permutation: <m>(12)(34)</m>. 
+      </p>
+      <p>
+        This is homomorphism. I'm not going to prove it, but you can
+        check all the pair explicitly to verify it if you wish. It is
+        not an isomorphism because <m>D_4</m> has eight element snad
+        <m>S_4</m> has twenty-four; no bijecton can exist between
+        these two sets. However, it is a bijection onto the subgroup
+        <m>\langle (1234), (13) \rangle</m>. Again, I'm not going to
+        prove this, but if you want, you can exhaustively verify that
+        these two elements generate exactly the either elements which
+        are the output of this function. Then <m>\phi</m> is a
+        homomorhpism which is also a bijection, so it is an
+        isomophisnm. I can write <m>D_4 \cong \langle (1234), (12)
+        \rangle</m>, and I can say that <m>D_4</m> is isomorphic to a
+        subgroup of <m>S_4</m>
+      </p>
+      <p>
+        A similar isomorphism can be setup from <m>D_n</m> to an
+        appropriate subgroup of <m>S_n</m> by looking at the elements
+        of the dihedral group as permutation of the vertices. This
+        also works for higher-dimensional symmetry groups. The cube in
+        <m>\RR^3</m> has eight vertices, so the symmetries of the
+        cube, by thinking about them as permutations of the vertices,
+        are isomorphic to a subgroup of <m>S_8</m>. The dodecahedron
+        has twenty vertices, so the symmetries of the dodecahedron are
+        isomorphism to a subgroup of <m>S_{20}</m>. This just
+        continues with more and more interesting symmetry groups in
+        higher and higher dimensions. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Define a function <m>\phi: \ZZ/10/ZZ^* \rightarrow
+        \ZZ/4\ZZ</m> by the discrete logarithm <m>\phi(n) = \ind_3
+        n \mod 10</m>. (This is not the normal logarithm; the
+        <sq>ind</sq> notation, instead of the normal <sq>log</sq>
+        notation, it usual for these discrete logarithm. Explicity,
+        the function is given by this table. 
+        <me>
+          \begin{array}{c|cccc}
+            n \amp 1 \amp 3 \amp 7 \amp 9 \\
+            \phi(n) \amp 0 \amp 1 \amp 3 \amp 2
+          \end{array}
+        </me>
+        This is easy to verify: <m>3^2 = 9</m> and <m>3^3 = 7 \mod 10
+        </m>. This is a logarithm, which means that the rules of
+        logarithms do apply. In particular, <m>\ind_3 (mn) = \ind_3 m
+        + \ind_3 n</m>. This is precisely the condition that make the
+        map a homomorphisms. After this, I can see from the table that
+        the function is bijective, so it is an isomorphism. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Consider this set of matrices.
+        <me>
+          G = \left\{ \begin{pmatrix} a \amp 0 \\ 0 \amp 1
+          \end{pmatrix} \Bigg| a \in \RR^* \right\}.
+        </me>
+        This is a group under matrix multiplication, and a subgroup of
+        <m>GL(n)</m>. Then consider the function <m>\phi: G
+        \rightarrow \RR^*</m> defined by 
+        <me>
+          \phi \left( \begin{pmatrix} a \amp 0 \\ 0 \amp 1
+          \end{pmatrix} \right) = a 
+        </me>
+        I claim that this function is an isomorphism. First, I need to
+        check the homomorphism condition. Let <m>a,b \in \RR^*</m>. 
+        <me>
+          \phi \left( \begin{pmatrix} a \amp 0 \\ 0 \amp 1
+          \end{pmatrix} 
+          \begin{pmatrix} b \amp 0 \\ 0 \amp 1
+          \end{pmatrix} \right) = 
+          \phi \left( \begin{pmatrix} ab \amp 0 \\ 0 \amp 1
+          \end{pmatrix} \right) = ab = 
+          \phi \left( \begin{pmatrix} a \amp 0 \\ 0 \amp 1
+          \end{pmatrix} \right) 
+          \phi \left( \begin{pmatrix} b \amp 0 \\ 0 \amp 1
+          \end{pmatrix} \right)
+        </me>
+        The steps here are just doing the matrix multiplication in the
+        first step, applying the function, and then realizing that the
+        two numbers are the outputs of the function for the two
+        individual matrices. This is a homomorphism. 
+      </p>
+      <p>
+        Then I need to prove this is a bijection. Surjectivity is
+        pretty easy: for any non-zero real number <m>a \in \RR^*</m>,
+        I can build the matrix with that entry in the upper left and
+        then <m>\phi</m> sends this matrix to <m>a</m>, proving that
+        all of <m>\RR^*</m> is in the output of the function.
+      </p>
+      <p>
+        For injectivity, I'll use <xref
+        ref="proposition-injective-kernel"/>. The identity element of
+        <m>\RR^*</m> is 1. What matrices are sent to this identity?
+        Well, to be sent to 1, the upper right corner of the matrix
+        must be 1, which means that only the identity matrix is sent
+        to 1. This means the kernel is only the identity in <m>G</m>,
+        proving the function is injective. Since it is both injective
+        and surjective, the function is a isomorphism. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Let <m>G</m> be the group of real-coefficient polynomial of
+        degree at most 4. Define a function <m>\phi: G \rightarrow
+        \RR^5</m> by the following equation (where I am writing
+        vectors in horizontal notation).
+        <me>
+          \phi(ax^4 + bx^3 + cx^2 + dx + e) = (a,b,c,d,e)
+        </me>
+        I claim that this is an isomorphism. First, let me prove the
+        homomorphism condition (the operation is addition for both
+        grous).
+        <md>
+          <mrow>
+            \phi( p_1 + p_2) \amp = 
+            \phi( (a_1x^4 + b_11^3 + c_1x^2 + d_1x + e_1)  + 
+            (a_2x^4 + b_2x^3 + c_2x^2 + d_2x + e_2)) 
+          </mrow>
+          <mrow>
+            \amp = \phi ( (a_1 + a_2)x^4 + (b_1 + b_2)x^3 + (c_1 +
+            c_2)x^2 + (d_1 + d_2) x + (e_1 + e_2)) = (a_1 + a_2, b_1 +
+            b_2, c_1 + c_2, d_1 + d_2, e_1 + e_2) 
+          </mrow>
+          <mrow>
+            \amp (a_1, b_1, c_1, d_1, e_1) + (a_2, b_2, c_2, d_2, e_2)
+            = \phi(p_1) + \phi(p_2)
+          </mrow>
+        </md>
+        The steps here are: doing the polynomial addition; applying
+        the function, pulling apart the vector into the addition of
+        two vectors with ordinary vector addition; and then realizing
+        the two pieces are just the image of the function on the two
+        polynomials. This prove the homomorphism condition.
+      </p>
+      <p>
+        Now I need to prove bijectivity. For sujectivity, let
+        <m>(a,b,c,d,e)</m> be any vector in <m>\RR^5</m>. Then <m>ax^4
+        + bx^3 + cx^2 + dx + e</m> is a polynomial of degree at most
+        4 and the function applied to this polynomial is precisely the
+        vector <m>(a,b,c,d,e)</m>. This proves that any vector in
+        <m>\RR^5</m> is in the image of the function, so the function
+        is surjective. 
+      </p>
+      <p>
+        For injectivity, again I'll use <xref
+        ref="proposition-injective-kernel"/>. What is the kernel of
+        this homomorphism? The identity element of <m>\RR^5</m> is the
+        zero vector <m>(0,0,0,0,0)</m>. For a polynomial <m>p</m> to
+        be sent the zero vector, all coefficient of the polynomial
+        must also be zero. Only the zero polynomial has this property,
+        so the kernel is only the zero polynomial, the identity of
+        <m>G</m>. This prove that the function is injective. Since I
+        have both injectivity and surjectivity, the function is an
+        isomophism and the two groups are isomorphic.
+      </p>
+    </example>
+    <example>
+      <p>
+        Consider the function <m>\phi:Q \rightarrow S_8</m> defined by
+        this table.
+        <me>
+          \begin{array}{c|cccc}
+            n \amp 1 \amp -1 \amp i \amp -i \amp j \amp -j \amp k \amp
+            -k \\
+            \phi(n) \amp \Id \amp (12)(34)(56)(78) \amp (1324)(5768)
+            \amp (5867)(1423) \amp (1526)(3847) \amp (3748)(1625) \amp
+            (1768)(3546) \amp (3645)(1867) 
+          \end{array}
+        </me>
+        The quaterions are determined by the relations between
+        <m>i</m>, <m>j</m> and <m>k</m>. From <xref
+        ref="definition-quaternions"/>, let me restate those
+        relations.
+        <md>
+          <mrow>
+            i^2 = j^2 = k^2 = -1 
+          </mrow>
+          <mrow>
+            ij = k \hspace{1cm} jk = i \hspace{1cm} ki = j 
+          </mrow>
+          <mrow>
+            ji = -k \hspace{1cm} kj = -i \hspace{1cm} ik = -j 
+          </mrow>
+        </md>
+        If you check how the images <m>\phi(i)</m>, <m>\phi(j)</m> and
+        <m>\phi(k)</m> behave, you will recover exactly these
+        relations. I'm being a bit informal here, but doing so does
+        verify that this is a homomorphism. For bijective, this is a
+        perfect matching between two sets of cardinality eight, so it
+        is a bijection. Therefore, this is an isomorphims. In this
+        way, the quaternions are also isomorphic to a subgroup of a
+        permutation group. 
+      </p>
+    </example>
+  </subsection>
+  <subsection>
+    <title>A Major Theme</title>
+    <p>
+      We've been talking about structure all through these notes.
+      Isomorphism now finally gives us the language to clarify the
+      discussion of structure. Two groups are <sq>the same group</sq>
+      if their is an isomorphism between them: they have the same
+      subgroups, same Caley tables, and so on. Therefore, to
+      understand groups, we really only need to understand groups up
+      to isomorphism. That is, it we know all the groups of a
+      particular type up to isomorphism, then any new instance of a
+      group of that type might be novel (it might be a matrix group
+      where no previous instances involved matrices), but it's not
+      actually new. It will be isomorphism to an existing group, its
+      structure will be known, even if the particular of its
+      definition are new. 
+    </p>
+    <p>
+      Abstract algebra (and many part of pure mathematics) are
+      motivated by holistic classification project. We have the
+      definition of a group. What are all the groups? Asked naively,
+      this become basically an impossible question. I can always
+      invent new setting and new ways to define groups. However, if I
+      ask the question only up to isomorphism, then the question is
+      actually answerable. So all of group theory can be thought of as
+      one enormous project: what are all the groups, up to
+      isomorphism? 
+    </p>
+    <p>
+      The example, already mentioned a couple time, of the dihedral
+      groups is instructive. The dihedral groups are symmetries of
+      polygons. However, they can also been seen as permutation of the
+      vertices of the polygons and, as such, are isomorphic to
+      subgroups of the permutation groups. They arise in their own
+      unique way, from a reasonable and important geometric problem
+      about shapes. But, if I want to just study their group
+      structure, I can use the mechanics of cycles and transpositions
+      from permutation groups if I wish. The permutation groups
+      provide a way to capture the structure of dihedral groups. 
+    </p>
+    <p>
+      The dihedral/permutation example is archetypical. When a new
+      kind of group arises, I will always ask: what is this isomorphic
+      to? If it is isomorphic to something familiar, then I already
+      understand its structure and I use the familiar tools to work
+      with that structure. If the new group is not isomorphic to any
+      existing group, then I can celebrate because I have found
+      something actually new: something with really novel structure
+      not capture by anything I already know. 
+    </p>
+    <p>
+      Consider also the groups <m>\ZZ/8\ZZ</m>, <m>D_4</m>, <m>Q</m>
+      and <m>(\ZZ/20\ZZ)^*</m>. None of these four groups have
+      equivalent subgroup lattices. If two groups are isomorphic, then
+      all of their structure must be identical up to re-naming the
+      elements: same Caley table, same subgroup lattice, so on.
+      Therefore, I know that all four of these groups are
+      fundamentally different structures. 
+    </p>
+    <p>
+      Form this point, I want to know how much classification up to
+      isomorphism actually can be accomplished. Much of the rest of
+      the group theory section of this course will be devoted to
+      showing you what structure and isomorphism theorems we can
+      access. Group theory remains an active area of mathematical
+      research and mathematicians keep working on precisely these kind
+      of classification projects, so our knowledge of what groups
+      exist, up to isomophism, continue to expand. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>Products of Groups</title>
+    <p>
+      I want to spend the rest of this section talking about
+      isomorphisms of abelian groups. But before I do that, I need a
+      new construction. 
+    </p>
+  </subsection>
+</section>

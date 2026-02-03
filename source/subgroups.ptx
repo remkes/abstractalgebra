@@ -456,7 +456,7 @@
     I want to define a new group to use for examples, in this and in
     future sections of the course.  
   </p>
-  <definition>
+  <definition xml:id="definition-quaternions">
     <statement>
       <p>
         The <term>quaternion group</term> is the set

@@ -55,7 +55,7 @@
     The same idea holds for groups, leading to the main definition of
     this section.
   </p>
-  <definition>
+  <definition xml:id="definition-homomorphism">
     <statement>
       <p>
         Let <m>G</m> and <m>H</m> be groups (written multiplicatively
@@ -243,7 +243,7 @@
         </mrow>
       </md>
       This is a homomorphism. How do I prove that? I don't have a nice
-      rool to use here, but these are small groups. I use just check
+      rule to use here, but these are small groups. I use just check
       all the cases explicitly, perhaps using a predetermined Caley
       table for the multiplication. For example, I can explicitly
       check that <m>\phi(3\cdot 9) = \phi(7) = 3 = 1 + 2 = \phi(3) +
@@ -306,7 +306,7 @@
           group is a homomorphism. 
         </li>
         <li>
-          Let <m>e_h</m> be the identity of a group <m>H</m>. Then,
+          Let <m>h_e</m> be the identity of a group <m>H</m>. Then,
           for any group, the map <m>\phi: G \rightarrow H</m> defined
           by <m>\forall g \in G, \phi(g) = h_e</m> is a homomorphism.
           It just sends everything to the identity, which makes
@@ -453,7 +453,7 @@
     I can use the kernel to extract some valuable information about a
     homomorphism. 
   </p>
-  <proposition>
+  <proposition xml:id="proposition-injective-kernel">
     <statement>
       <p>
         Let <m>\phi: G \rightarrow H</m> be a homomorphism of groups.
