@@ -4,7 +4,7 @@
     <title>Isomorphism</title>
     <p>
       In <xref ref="definition-homomorphism"/>, I defined a
-      homonomorphism, which is a function that preserves group
+      homomorphism, which is a function that preserves group
       structure. Homomorphisms relate groups to each other and tie
       them together: a group can very much be understood by its
       homomorphisms to other groups. Now, in this section, I want to
@@ -14,9 +14,9 @@
       <statement>
         <p>
           An bijective homomorphism is called an
-          <term>isomorphism</term>. Is there is an isomorphism between
-          groups <m>G</m> and <m>H</m>, we will often write <m>H cong
-          G</m>. 
+          <term>isomorphism</term>. If there is an isomorphism between
+          groups <m>G</m> and <m>H</m>, we will often write <m>H \cong
+          G</m>.
         </p>
       </statement>
     </definition>
@@ -27,27 +27,26 @@
       structure of a group. Both of the roots <sq>homo</sq> and
       <sq>iso</sq> carry meaning of similarity or equality. In the
       mathematical useage, homomorphism means that the structure of
-      the binary operation, specifically, is the same. In the result
+      the binary operation, specifically, is the same. In the results
       of <xref ref="section-homomorphism"/>, this also means that the
       identity and inverses were the same. This new word,
       isomorphism, is used more strongly. An isomorphism means that
-      the entire group structure is the same, including the order of
-      the group (the cardinal of the group as a set). 
+      the entire group structure is identical, including the order of
+      the group (the cardinality of the group as a set). 
     </p>
     <p>
-      This is the big idea: two groups which have an isomophism
+      Two groups which have an isomophism
       between them are the same size and the group operation is
       preseved. This means that the two groups are, in some way,
-      identity. If the groups are finite, then they will have
+      the same group. If the groups are finite, then they will have
       equvalent Caley tables: just the names of the elements are
       changed. They will have the same subgroups with the same
       indices, the same conjugacy classes, and so on. This explains
-      the notation <m>H \equiv G</m>: this is a kind of equality
+      the notation <m>H \cong G</m>: this is a kind of equality
       between groups.
     </p>
     <p>
-      I'll say more in this in the next section, but now let me give
-      some examples. 
+      Let me give some examples. 
     </p>
     <example>
       <p>
@@ -69,14 +68,14 @@
       </p>
       <p>
         This is homomorphism. I'm not going to prove it, but you can
-        check all the pair explicitly to verify it if you wish. It is
+        check all the pairs explicitly to verify it if you wish. It is
         not an isomorphism because <m>D_4</m> has eight element snad
         <m>S_4</m> has twenty-four; no bijecton can exist between
         these two sets. However, it is a bijection onto the subgroup
         <m>\langle (1234), (13) \rangle</m>. Again, I'm not going to
         prove this, but if you want, you can exhaustively verify that
-        these two elements generate exactly the either elements which
-        are the output of this function. Then <m>\phi</m> is a
+        these two elements generate exactly the eight elements which
+        are the image of this function. Then <m>\phi</m> is a
         homomorhpism which is also a bijection, so it is an
         isomophisnm. I can write <m>D_4 \cong \langle (1234), (12)
         \rangle</m>, and I can say that <m>D_4</m> is isomorphic to a
@@ -98,16 +97,16 @@
     </example>
     <example>
       <p>
-        Define a function <m>\phi: \ZZ/10/ZZ^* \rightarrow
+        Define a function <m>\phi: \ZZ/10\ZZ^* \rightarrow
         \ZZ/4\ZZ</m> by the discrete logarithm <m>\phi(n) = \ind_3
         n \mod 10</m>. (This is not the normal logarithm; the
         <sq>ind</sq> notation, instead of the normal <sq>log</sq>
-        notation, it usual for these discrete logarithm. Explicity,
+        notation, it usual for these discrete logarithms.) Explicity,
         the function is given by this table. 
         <me>
           \begin{array}{c|cccc}
             n \amp 1 \amp 3 \amp 7 \amp 9 \\
-            \phi(n) \amp 0 \amp 1 \amp 3 \amp 2
+            \ind_3 n \amp 0 \amp 1 \amp 3 \amp 2
           \end{array}
         </me>
         This is easy to verify: <m>3^2 = 9</m> and <m>3^3 = 7 \mod 10
@@ -171,7 +170,7 @@
     </example>
     <example>
       <p>
-        Let <m>G</m> be the group of real-coefficient polynomial of
+        Let <m>G</m> be the group of real-coefficient polynomials of
         degree at most 4. Define a function <m>\phi: G \rightarrow
         \RR^5</m> by the following equation (where I am writing
         vectors in horizontal notation).
@@ -184,24 +183,35 @@
         <md>
           <mrow>
             \phi( p_1 + p_2) \amp = 
-            \phi( (a_1x^4 + b_11^3 + c_1x^2 + d_1x + e_1)  + 
-            (a_2x^4 + b_2x^3 + c_2x^2 + d_2x + e_2)) 
+            \phi( (a_1x^4 + b_11^3 + c_1x^2 + d_1x + e_1) 
+          </mrow>
+          <mrow>
+            \amp \hspace{1cm} + (a_2x^4 + b_2x^3 + c_2x^2 + d_2x +
+            e_2)) 
           </mrow>
           <mrow>
             \amp = \phi ( (a_1 + a_2)x^4 + (b_1 + b_2)x^3 + (c_1 +
-            c_2)x^2 + (d_1 + d_2) x + (e_1 + e_2)) = (a_1 + a_2, b_1 +
-            b_2, c_1 + c_2, d_1 + d_2, e_1 + e_2) 
+            c_2)x^2 
+          </mrow>
+          <mrow>
+            \amp \hspace{1cm} + (d_1 + d_2) + (e_1 + e_2)) 
+          </mrow>
+          <mrow>
+            \amp = (a_1 + a_2, b_1 + b_2, c_1 + c_2, d_1 + d_2, e_1 +
+            e_2) 
           </mrow>
           <mrow>
             \amp (a_1, b_1, c_1, d_1, e_1) + (a_2, b_2, c_2, d_2, e_2)
-            = \phi(p_1) + \phi(p_2)
+          </mrow>
+          <mrow>
+            \amp = \phi(p_1) + \phi(p_2)
           </mrow>
         </md>
         The steps here are: doing the polynomial addition; applying
         the function, pulling apart the vector into the addition of
         two vectors with ordinary vector addition; and then realizing
         the two pieces are just the image of the function on the two
-        polynomials. This prove the homomorphism condition.
+        polynomials. This proves the homomorphism condition.
       </p>
       <p>
         Now I need to prove bijectivity. For sujectivity, let
@@ -217,10 +227,10 @@
         ref="proposition-injective-kernel"/>. What is the kernel of
         this homomorphism? The identity element of <m>\RR^5</m> is the
         zero vector <m>(0,0,0,0,0)</m>. For a polynomial <m>p</m> to
-        be sent the zero vector, all coefficient of the polynomial
+        be sent the zero vector, all coefficients of the polynomial
         must also be zero. Only the zero polynomial has this property,
         so the kernel is only the zero polynomial, the identity of
-        <m>G</m>. This prove that the function is injective. Since I
+        <m>G</m>. This proves that the function is injective. Since I
         have both injectivity and surjectivity, the function is an
         isomophism and the two groups are isomorphic.
       </p>
@@ -230,12 +240,17 @@
         Consider the function <m>\phi:Q \rightarrow S_8</m> defined by
         this table.
         <me>
-          \begin{array}{c|cccc}
-            n \amp 1 \amp -1 \amp i \amp -i \amp j \amp -j \amp k \amp
-            -k \\
-            \phi(n) \amp \Id \amp (12)(34)(56)(78) \amp (1324)(5768)
-            \amp (5867)(1423) \amp (1526)(3847) \amp (3748)(1625) \amp
-            (1768)(3546) \amp (3645)(1867) 
+          \begin{array}{c|c}
+            n \amp \phi(n) \\
+            \hline
+            1 \amp \Id \\
+            -1 \amp (12)(34)(56)(78) \\
+            i \amp (1324)(5768) \\
+            -i \amp (5867)(1423) \\
+            j \amp (1526)(3847) \\
+            -j \amp (3748)(1625) \\
+            k \amp (1768)(3546) \\
+            -k \amp (3645)(1867) 
           \end{array}
         </me>
         The quaterions are determined by the relations between
@@ -256,9 +271,9 @@
         If you check how the images <m>\phi(i)</m>, <m>\phi(j)</m> and
         <m>\phi(k)</m> behave, you will recover exactly these
         relations. I'm being a bit informal here, but doing so does
-        verify that this is a homomorphism. For bijective, this is a
+        verify that this is a homomorphism. For bijectivity, this is a
         perfect matching between two sets of cardinality eight, so it
-        is a bijection. Therefore, this is an isomorphims. In this
+        is a bijection. Therefore, this is an isomorphim. In this
         way, the quaternions are also isomorphic to a subgroup of a
         permutation group. 
       </p>
@@ -267,52 +282,52 @@
   <subsection>
     <title>A Major Theme</title>
     <p>
-      We've been talking about structure all through these notes.
-      Isomorphism now finally gives us the language to clarify the
+      I've been talking about structure all through these notes.
+      Isomorphism now finally gives the language to clarify the
       discussion of structure. Two groups are <sq>the same group</sq>
       if their is an isomorphism between them: they have the same
       subgroups, same Caley tables, and so on. Therefore, to
       understand groups, we really only need to understand groups up
-      to isomorphism. That is, it we know all the groups of a
+      to isomorphism. That is, if we know all the groups of a
       particular type up to isomorphism, then any new instance of a
       group of that type might be novel (it might be a matrix group
       where no previous instances involved matrices), but it's not
-      actually new. It will be isomorphism to an existing group, its
-      structure will be known, even if the particular of its
+      actually new. It will be isomorphic to an existing group, its
+      structure will be known, even if the particulars of its
       definition are new. 
     </p>
     <p>
       Abstract algebra (and many part of pure mathematics) are
-      motivated by holistic classification project. We have the
+      motivated by holistic classification projects. We have the
       definition of a group. What are all the groups? Asked naively,
       this become basically an impossible question. I can always
-      invent new setting and new ways to define groups. However, if I
+      invent new settings and new ways to define groups. However, if I
       ask the question only up to isomorphism, then the question is
       actually answerable. So all of group theory can be thought of as
       one enormous project: what are all the groups, up to
       isomorphism? 
     </p>
     <p>
-      The example, already mentioned a couple time, of the dihedral
+      The example, already mentioned a couple times, of the dihedral
       groups is instructive. The dihedral groups are symmetries of
-      polygons. However, they can also been seen as permutation of the
+      polygons. However, they can also been seen as permutations of the
       vertices of the polygons and, as such, are isomorphic to
       subgroups of the permutation groups. They arise in their own
       unique way, from a reasonable and important geometric problem
-      about shapes. But, if I want to just study their group
+      about shapes. But if I want to just study their group
       structure, I can use the mechanics of cycles and transpositions
       from permutation groups if I wish. The permutation groups
       provide a way to capture the structure of dihedral groups. 
     </p>
     <p>
       The dihedral/permutation example is archetypical. When a new
-      kind of group arises, I will always ask: what is this isomorphic
-      to? If it is isomorphic to something familiar, then I already
-      understand its structure and I use the familiar tools to work
-      with that structure. If the new group is not isomorphic to any
-      existing group, then I can celebrate because I have found
+      presentation of a group arises, I will always ask: what is this
+      isomorphic to? If it is isomorphic to something familiar, then I
+      already understand its structure and I use the familiar tools to
+      work with that structure. If the new group is not isomorphic to
+      any existing group, then I can celebrate because I have found
       something actually new: something with really novel structure
-      not capture by anything I already know. 
+      not captured by anything I already know. 
     </p>
     <p>
       Consider also the groups <m>\ZZ/8\ZZ</m>, <m>D_4</m>, <m>Q</m>
@@ -324,21 +339,21 @@
       fundamentally different structures. 
     </p>
     <p>
-      Form this point, I want to know how much classification up to
+      From this point on, I want to know how much classification up to
       isomorphism actually can be accomplished. Much of the rest of
       the group theory section of this course will be devoted to
-      showing you what structure and isomorphism theorems we can
+      showing you what structures and isomorphism theorems we can
       access. Group theory remains an active area of mathematical
       research and mathematicians keep working on precisely these kind
       of classification projects, so our knowledge of what groups
-      exist, up to isomophism, continue to expand. 
+      exist, up to isomophism, continues to expand.  
     </p>
   </subsection>
   <subsection>
     <title>Products of Groups</title>
     <p>
       I want to spend the rest of this section talking about
-      isomorphisms of abelian groups. But before I do that, I need a
+      isomorphisms of cyclic groups. But before I do that, I need a
       new construction. 
     </p>
     <definition>
@@ -348,8 +363,8 @@
           of groups, <m>G \times H</m> is defined as follows.
           <ul>
             <li>
-              As a set, <m>G times <m>H</m> is the usual set cartesian
-              product. 
+              As a set, <m>G \times H</m> is the usual cartesian
+              product of sets. 
             </li>
             <li>
               The binary operation is defined componentwise. 
@@ -388,7 +403,7 @@
             </li>
             <li>
               The inverse of <m>(g,h)</m> is <m>(g^{-1},
-              h^{-1})))</m>. I can check this with the component-wise
+              h^{-1})</m>. I can check this with the component-wise
               product: multiplication by this proposed inverse, both
               on the right and the left, gives the identity. 
             </li>
@@ -397,15 +412,15 @@
       </proof>
     </proposition>
     <p>
-      The set product from <xref ref="definition-set-product"> and the
+      The set product from <xref ref="definition-set-product"/> and the
       group product share the same notation, <m>G \times H</m>. This
       is conventional, but it risks some confusion. The set product
-      doesn't define a binary operation: it just defined ordered pairs
-      of elements of the set. The group product add the binary
+      doesn't define a binary operation: it just defines ordered pairs
+      of elements of the set. The group product also defines the binary
       operation, and is only defined, of course, if both pieces are
       already groups. Even so, most of the time the notation works
       relatively well, since the group product, when thought as just a
-      set, is still the ordered pair: the set product. When I need to
+      set, is still the ordered pairs: the set product. When I need to
       distinguish between the two product, I will do what I've already
       done in this paragraph<mdash/>use the phrases <sq>set
       product</sq> and <sq>group product</sq> to make it clear which
@@ -420,13 +435,47 @@
       groups.
     </p>
     <p>
-      As with the set product <xref ref="definition-set-product">, the
+      As with the set product <xref ref="definition-set-product"/>, the
       group product can be iterated. <m>G \times H \times K</m>
       consists of triples of elements, one from each groups, with
       componentwise multiplication. <m>G^n</m> is the product of a
       group with itself <m>n</m> times. This makes <m>\RR^n</m> also a
       group product. 
     </p>
+    <p>
+      Here is a small fact about products that will be useful later.
+    </p>
+    <proposition xml:id="proposition-product-order">
+      <statement>
+        <p>
+          Let <m>G \times H</m> be a group product. Then the order of
+          <m>(g, h) \in G \times H</m> is infinite if the order of
+          either <m>g</m> or <m>h</m> is infinite; otherwise, the
+          order of <m>(g,h)</m> is the lowest common multiple of the
+          order of <m>g</m> and <m>h</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If the order of <m>g</m> is infinite, the no positive
+          exponent exists with <m>g^d = e_g</m>. This means that in
+          all positive exponent of <m>(g,h)^d = (g^d, h^d)</m>, the
+          first component is never <m>e_g</m>. Since the identity in
+          the product is <m>(e_g,e_h)</m>, no positive exponent of
+          <m>(g,h)</m> is the identity, so <m>(g,h)</m> has infinite
+          order. The same argument works for the second component.
+        </p>
+        <p>
+          If both orders are finite, let <m>(g,h)^d = (e_g, e_h)</m>.
+          This means that <m>g^d = e^g</m>, so, by the laws of
+          exponents, <m>d</m> must be a multiple of the order of
+          <m>g</m>. The same holds for <m>h^d</m>, so <m>d</m> must be
+          a common multiple of both orders. By definition, order is
+          the smallest exponent that produces the identity, so the
+          least common multiple must be the order of <m>(g,h)</m>.
+        </p>
+      </proof>
+    </proposition>
     <p>
       The cartesian product comes with four important homomorphisms. 
     </p>
@@ -456,7 +505,7 @@
               a surjective homomorphism <m>\pi_1: G \times H
               \rightarrow G </m> defined as follows. 
               <me>
-                \pi (g, h) = g
+                \pi_1 (g, h) = g
               </me>
             </li>
             <li>
@@ -464,7 +513,7 @@
               a surjective homomorphism <m>\pi_2: G \times H
               \rightarrow H </m> defined as follows. 
               <me>
-                \pi (g, h) = H
+                \pi_2 (g, h) = h
               </me>
             </li>
           </ul>
@@ -478,12 +527,14 @@
     </p>
     <p>
       The cartesian product is a way to build a larger group out of
-      two smaller groups, <m>G</m> and <m>H</m>. However, it is not th
-      only way to do such a thing. There are other products, and other
-      understanding of how to put two groups together. In this course,
-      we'll stick to the cartesian product, but I wanted to give you a
-      very brief idea of how more general constructions are treated in
-      group theory. The next definition is the main idea. 
+      two smaller groups, <m>G</m> and <m>H</m>. However, it is not
+      the only way to do such a thing. There are other products, and
+      other understandings of how to put two groups together. In this
+      course, we'll stick to the cartesian product, but I wanted to
+      give you a very brief idea of how more general constructions are
+      treated in group theory. The next definition is the main idea.
+      (Since this is mostly a glimpse into the rest of group theory, I
+      won't ask you to work with this construction on assignments.) 
     </p>
     <definition>
       <statement>
@@ -501,12 +552,12 @@
             <li>
               There exist a surjective homomorphism:
               <me>
-                \pi K \rightarrow H
+                \pi: K \rightarrow H
               </me>
             </li>
             <li>
               The kernel of <m>\pi</m> is equal to the image of
-              <m>i</m> 
+              <m>i</m>.
             </li>
           </ul>
         </p>
@@ -522,12 +573,12 @@
       second component is the identity of <m>H</m>.
     </p>
     <p>
-      The reason we need this extra machinery of extension is that
+      The reason I need this extra machinery of extensions is that
       many more groups other than the cartesian product can play the
       extension role of <m>K</m>. Each of them is essentially a way to
       put the two components together. I won't prove it here, but you
       can prove, for finite groups, that the cardinality of <m>K</m>
-      is always </m>|G||H|</m>. As a set, <m>K</m> is always bijective
+      is always <m>|G||H|</m>. As a set, <m>K</m> is always bijective
       to the set product <m>G \times H</m>. As a group, though, it can
       have a number of different and interesting groups structures,
       only one of which is the group product. I'll give one example.
@@ -539,13 +590,12 @@
         injective, and that the second is surjective.) 
         <ul>
           <li>
-            Define <m>i: ZZ/4\ZZ \rightarrow D_4</m> by explicitly
+            Define <m>i: \ZZ/4\ZZ \rightarrow D_4</m> by explicitly
             defining <m>i(0) = \Id</m> and otherwise <m>i(n) = R_n</m>
             for <m>n \in \{1,2,3\}</m>. 
           </li>
           <li>
-            Define <m>\pi: D_4 \rightarrow ZZ/2\ZZ \rightarrow D_4</m>
-            by this table.
+            Define <m>\pi: D_4 \rightarrow \ZZ/2\ZZ</m> by this table.
             <me>
               \begin{array}{c|cccccccc}
                 g \amp \Id \amp R_1 \amp R_2 \amp R_3 
@@ -562,7 +612,7 @@
             extension condition is satisfied. 
           </li>
         </ul>
-        <m>D_4</m> is, however, not isomorphic to <m>\ZZ/2ZZ \times
+        <m>D_4</m> is, however, not isomorphic to <m>\ZZ/2\ZZ \times
         \ZZ/4\ZZ</m>. One easy way to tell is that <m>D_4</m> is not
         abelian, and the product of two abelian groups will always be
         abelian, so <m>\ZZ/2\ZZ \times \ZZ/4\ZZ</m> is abelian.
@@ -571,7 +621,7 @@
       </p>
       <p>
         In conclusion, <m>D_4</m> is some kind of combination of
-        <m>\ZZ/2\ZZZ</m> and <m>\ZZ/4\ZZ</m>, but a stranger and more
+        <m>\ZZ/2\ZZ</m> and <m>\ZZ/4\ZZ</m>, but a stranger and more
         complicated combination than the group product. It is an
         extension. 
       </p>
@@ -587,24 +637,70 @@
       the other. There are equivalent ways to do this
       construction<mdash/>in fact, many group theory books will talk
       about the slightly more concrete idea of semi-direct products
-      instead of the very abstract extensions. But I've chosen to do
-      it this way because extensions are the way in which such
-      constructions are actually talked about by working
-      mathematicians, and to demonstrate how the language of
+      instead of the these very abstract extensions. But I've chosen
+      to do it this way because group extensions are frequently use by
+      working mathematicians, and to demonstrate how the language of
       homomorphisms makes it all possible. 
     </p>
     <p>
-      As I said, this last definition and the last few paragraphs of
-      discussion are more than we will cover in detail in this course.
-      I'm not going to give any more examples of extensions and I'm
-      not going to ask you to work with them in the assignments. But I
-      hope you found this interesting. 
+      As I said, the definition and example of extensions, and the
+      last few paragraphs of discussion, are beyond the core material
+      of this course.  I'm not going to give any more examples of
+      extensions and I'm not going to ask you to work with them in the
+      assignments. But I hope you found this interesting. 
     </p>
   </subsection>
   <subsection>
     <title>First Results about Isomorphisms</title>
     <p>
       Now I want to prove a couple results about isomorphismss. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>i: G \rightarrow H</m> be an injective homomorphism
+          of groups. Then <m>G</m> is isomorphic to its image (which
+          is a subgroup of <m>H</m>). 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          There is not actually much to verify here. The function
+          <m>i</m> is already a homomorphism and injective by
+          definition. The image is precisely the output of the
+          function, to restricting the codomain from <m>H</m> to the
+          image makes it surjective. Therefore, the map <m>i</m> is a
+          bijective homomorphism from <m>G</m> onto its image,
+          which is precisely an isomorphism. 
+        </p>
+      </proof>
+    </proposition>
+    <proposition>
+      <statement>
+        <p>
+          The composition of two isomorphsisms is also an
+          isomorphism. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I know from <xref
+          ref="proposition-composition-homomorphism"/> that the
+          composition of homomorphisms is also a homomorphism. I know
+          from set theory that the composition of bijections is still
+          a bijection. That's all that needs to be said for the proof. 
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+  <subsection xml:id="subsection-cyclic-structure">
+    <title>The Structure of Cyclic Groups</title>
+    <p>
+      Now that we have isomorphisms, I can use this language to prove
+      a structure theorem. I want to entirely understand cyclic groups
+      up to isomorphism. This is something I can do with the
+      machinery currently covered in the course. First, let me look at
+      prime order groups. 
     </p>
     <proposition>
       <statement>
@@ -629,14 +725,14 @@
           <me>
             \phi(g^k) = k
           </me>
-          First, this, is a homomorphism. 
+          First, this is a homomorphism. 
           <me>
-            \phi(g^k g^l) = kl = \phi(g^k) \phi(g^l
+            \phi(g^k g^l) = kl = \phi(g^k) \phi(g^l)
           </me>
           Second, the exponents in the group are <m>0</m> to
-          <m>p-1</m>. The perfectly match up with the standard
-          representations of the integers moduloa <m>p</m>, so the
-          function is bijective. Therefore, the function is an
+          <m>(p-1)</m>. These exponents perfectly match up with the
+          standard representations of the integers modulo <m>p</m>,
+          so the function is bijective. Therefore, the function is an
           isomorphism. 
         </p>
       </proof>
@@ -649,62 +745,115 @@
       abelian. Non-cyclic and non-abelian groups can only occur for
       groups with composite order. 
     </p>
-    <proposition>
-      <statement>
-        <p>
-          Let <m>i: G \rightarrow H</m> be an injective homomorphism
-          of groups. Then <m>G</m> is isomorphis to its image (which
-          is a subgroup of <m>H</m>. 
-        </p>
-      </statement>
-      <proof>
-        <p>
-          There is not actually much to verify here. The function
-          <m>i</m> is already a homomorphism and injective by
-          definition. The image is precisely the outputs of the
-          function, to resricting the codomain from <m>H</m> to the
-          image makes it surjective. Therefore, the map <m>i</m> is a
-          bijective homomorphism from <m>G</m> onto its image,
-          therefore an isomorphism. 
-        </p>
-      </proof>
-    </proposition>
-    <proposition>
-      <statement>
-        <p>
-          The composition of two isomorphsisms is also an
-          isomorphisms. 
-        </p>
-      </statement>
-      <proof>
-        <p>
-          I know from <xref
-          ref="proposition-composition-homomorphism"/> that the
-          composition of homomorphisms is also a homomorphism. I know
-          from set theory that the composition of bijections is still
-          a bijection. That's all that needs to be said for the proof. 
-        </p>
-      </proof>
-    </proposition>
-  </subsection>
-</section>
-
-<comment>
-  <subsection>
-    <title>The Structure of Finitely-Generated Abelian Groups</title>
     <p>
-      Now I want to put all this theory into practice and prove a
-      major structural theorem. In this section, we can completely
-      classify all finitely-generated abelian groups. We do this using
-      isomorphisms to the most familiar abelian groups: the integers
-      and the integers modulo n. I'll structure this section with two
-      substantial lemmas followed by the main theorem. 
+      Now let me consider a general cyclic group. 
     </p>
-    <lemma>
+    <proposition>
+      <statement>
+        <p> 
+          Let <m>G</m> be a cyclic group. Then <m>G</m> is either
+          isomorphic to <m>\ZZ</m> or <m>\ZZ/n\ZZ</m> for some
+          <m>n</m>. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>g \in G</m> be a generator, so that all group
+          elements can be written as <m>g^k</m> for some integer
+          <m>k</m>. I work in cases. In the first case, the order of
+          <m>g</m> is infinite. Then consider this function: <m>\phi: G
+          \rightarrow \ZZ</m>.  <me>
+            \phi(g^k) = k 
+          </me>
+          I claim this is an isomophism. Before anything else, let me
+          argue that this function is well defined. A group element
+          might be  expressed as two different powers<mdash/> that
+          would lead to that element being sent to two values, which
+          is not allowed in the definition of a function. So assume
+          <m>g^k = g^l</m>. Without loss of generality assume <m>k
+          \geq l</m>.  The previous equation is equivalent to
+          <m>g^{k-l} = g^0 \Id</m>. But I know the order of <m>g</m>
+          is infinite, which means that no positive exponent gives the
+          identity.  This exponent is either zero or positive. I
+          conclude <m>k-l =0</m> or <m>k=l</m>.  Therefore, each group
+          element only correspondonds to one exponent and the
+          function, which uses that exponent, is well-defined.
+        </p>
+        <p>
+          Now I need to prove the homomorphism property. 
+          <me>
+            \phi(g^kg^l) = \phi(g^{k+l}) = k + l = \phi(g) + \phi(l)
+          </me>
+          This is just using the laws of exponents and recognizing
+          the individual outputs. The map is a homomorphism. Next, I
+          use <xref ref="proposition-injective-kernel"/> to prove
+          injectivity. The kernel consists of all groups elements that
+          are sent to 0. Consider the function again. 
+          <me>
+            \phi(g^k) = k 
+          </me>
+          The only element that is sent to 0 is <m>g^0 = \Id</m>. The
+          kernel is trivial, so this function is injective. 
+        </p>
+        <p>
+          Finally, I need surjectivity. For any <m>k \in \ZZ</m>, I can
+          send <m>\phi(g^k) = k</m>, showing that the image of the
+          function is all of <m>\ZZ</m>. The function is sujective. I
+          conclude that the function is an isomorphism. 
+        </p>
+        <p>
+          Then I move on to the second case where <m>g</m> has finite
+          order. I assume the order of <m>g</m> is <m>d</m>. Then
+          the group can be expressed as follows. 
+          <me>
+            G = \{e = g^0, g^1, g^2, \ldots g^{d-1} \}
+          </me>
+          Then define the function <m>\phi: G \rightarrow
+          \ZZ/d\ZZ</m>. 
+          <me>
+            \phi(g^k) = k \mod d
+          </me>
+          I need to check the conditions of an isomorphism. The
+          homomorphism property calculation is identical to the
+          previous case, so I won't repeat it. The bijectivity can be
+          done quite directly: these exponents match up perfectly with
+          the standard way to write classes modulo <m>d</m>. As a
+          perfect matching, this is bijective. I conclude an
+          isomorphism for the second case as well and the proof is
+          finished. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      Now I know that I can treat all cyclic groups as integers or
+      integers modulo <m>n</m>. For the infinite cyclic groups, there
+      is only one: the integers. There isn't much more to say about
+      the integers at this point (though we will return, since the
+      structure of the integer remains rich and worthwhile). For the
+      rest of this section, I want to understand finite cyclic groups.
+      By way of isomorphism, that is just understanding
+      <m>\ZZ/n\ZZ</m>. 
+    </p>
+    <p>
+      The prime order groups are important building blocks for the
+      rest of this section. They are, in some way, the smallest kind
+      of cyclic group I can consider. They have no non-trivial
+      subgroups.  Lagrange's theorem tells me this: the order of a
+      subgroup must divide the order of a group and a prime number has
+      no divisors but itself. Therefore, the only subgroups of a group
+      of prime order are the trivial subgroup and the whole group.
+    </p>
+    <p>
+      However, the prime order groups are not quite enough to capture
+      all the possibilities. I actually need cyclic groups where the
+      order is a power of a prime. Here is the main result for this
+      section. 
+    </p>
+    <proposition xml:id="proposition-cyclic-structure">
       <statement>
         <p>
           Let <m>n \in \NN</m> with <m> n \geq 2</m>. By <xref
-          ref="theorem-fundamental-arithmetic">, I can write <m>n</m>
+          ref="theorem-fundamental-arithmetic"/>, I can write <m>n</m>
           as its unique prime decomposition. 
           <me>
             n = p_1^{m_1} p_2^{m_2}\ldots p_k^{m_k}
@@ -712,7 +861,7 @@
           Then there exists an isomorphism of groups. 
           <me>
             \ZZ/n\ZZ \cong \left( \ZZ/p_1^{m_1}\ZZ \right) \times \left(
-            \ZZ p_2^{m_2} \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
+            \ZZ p_2^{m_2}\ZZ \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
             \right) 
           </me>
         </p>
@@ -725,32 +874,42 @@
             \ZZ p_2^{m_2} \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
             \right) \rightarrow \ZZ/n\ZZ
           </me>
-          This is the definition. In the right side, the symbol
-          <m>\hat{p_i}</m> will stand for the product of all primes
-          <m>p_1^{m_1} p_2^{m_1} \ldots p_k^{m_k}</m> except
+          In the following, I will us the symbol
+          <m>\hat{p_i}</m> to stand for the product of all primes
+          <m>p_1^{m_1} p_2^{m_1} \ldots p_k^{m_k}</m>
+          <emph>except</emph> 
           <m>p_i^{m_k}</m>. Equivalently, <m>\hat{p_i} =
-          \frac{n}{p_i^{m_i}}</m>. 
+          \frac{n}{p_i^{m_i}}</m>. Then here is the definition of the
+          function. 
           <me>
             \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
             + \ldots + \hat{p_k} a_k \mod n
           </me>
           Now I need to prove the properties. I'll start with
           homomorphism. I consider this calculation.
-          <me>
-            \phi(a_1 + b_1, a_2 + b_2, \ldots a_m + b_m) = \hat{p_1}
-            (a_1 + b_1) + \hat{p_2} (a_2 + b_2) + \ldots \hat{{p_k}
-            a_k + b_k = 
-            = (\hat{p_1}a_1 + \hat{p_2}a_2 + \ldots + \hat{p_k}a_k) +
-            (\hat{p_1}b_1 + \hat{p_2}b_2 + \ldots + \ha{p_k}b_k)
-            = \phi (a_1, a_2, \ldots a_k) + \phi(b_1, b_2, \ldots b_k) 
-          </me>
+          <md>
+            <mrow>
+              \amp \phi(a_1 + b_1, a_2 + b_2, \ldots, a_m + b_m) 
+            </mrow>
+            <mrow>
+              \amp = \hat{p_1} (a_1 + b_1) + \hat{p_2} (a_2 + b_2) + \ldots
+              \hat{p_k} a_k + b_k
+            </mrow>
+            <mrow>
+              \amp = (\hat{p_1}a_1 + \hat{p_2}a_2 + \ldots + \hat{p_k}a_k)
+              + (\hat{p_1}b_1 + \hat{p_2}b_2 + \ldots + \hat{p_k}b_k)
+            </mrow>
+            <mrow>
+              \amp = \phi (a_1, a_2, \ldots a_k) + \phi(b_1, b_2, \ldots b_k) 
+            </mrow>
+          </md>
           This works, so <m>\phi</m> is a homomorphism. 
         </p>
         <p>
           Next, I need injectivity. Again, I use <xref
           ref="proposition-injective-kernel"/>. What is the kernel of
           this homomorphism? I need to consider all elements of the
-          product group wuth that 
+          product group which satisfy this equation.
           <me>
             \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
             + \ldots + \hat{p_k} a_k = 0 \mod n
@@ -760,14 +919,15 @@
           contradiction, assume there is another combination that
           works, where at least one of the <m>a_i</m> is non-zero.
           Being equal to zero modulo <m>n</m> means that, as integers,
-          the left side is a positive multiple of n. 
+          the left side is a positive multiple of n (which I write as
+          its prime decomposition). 
           <me>
             \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
             + \ldots + \hat{p_k} a_k = k(p_1^{m_1} p_2^{m_2} \ldots
             p_k^{m_k}) 
           </me>
           Now one of the <m>a_i</m> is non-zero. I haven't ordered the
-          primes at all, so without loss of generalization, I can let
+          primes at all, so without loss of generality, I can let
           <m>a_1</m> be a non-zero element. Then I re-arrange the
           equation. 
           <me>
@@ -777,22 +937,22 @@
           Now think about the prime <m>p_1</m>. <m>p_1</m> does not divide
           the right side: <m>\hat{p_1}</m> explicitly excludes any
           power of <m>p_1</m>, and <m>a_1</m> is some number in
-          <m>\{1, 2, \ldots, p_1-1</m>, a list which cannot include any
+          <m>\{1, 2, \ldots, p_1-1\}</m>, a list which cannot include any
           multiples of <m>p_1</m>. But <m>p_1</m> does divide the
           right side: all of these terms include <m>\hat{p_k}</m> for
           <m>k \geq 2</m>; these all include powers of <m>p_1</m>. The
           final term explicitly includes powers of <m>p_1</m>. This is
           a contradiction: I can't have an equation of whole numbers
           where a prime divides the right but not the left. Therefore,
-          by contradiction, I assume that <m>a_i = 0</m> for all
+          by contradiction, I conclude that <m>a_i = 0</m> for all
           <m>i</m> is the only solution, which means that the kernel
-          is just the element <m>(0, 0, \ldots, 0</m>, which means
+          is just the element <m>(0, 0, \ldots, 0)</m>, which means
           that the function is injective. 
         </p>
         <p>
           Finally, surjective follows from the size of the sets. Both
           sets have cardinality <m>n</m>. This is by definition for
-          <m>\ZZ/n\zZ</m>. For the product, the cardinality of the
+          <m>\ZZ/n\ZZ</m>. For the product, the cardinality of the
           product is the product of the cardinalities, which is
           <m>p_1^{m_1} p_2^{m_2} \ldots p_k^{m_k} = n</m>. An
           injective function between two sets of the same size must be
@@ -801,112 +961,157 @@
           concludes the proof. 
         </p>
       </proof>
-    </lemma>
+    </proposition>
     <p>
-      This is the first lemma. It tells me how to deal with finite
-      cyclic groups. The second lemma start to deal with more
-      arbitrary groups. It guarantees that there is a particular way
-      to write elements of a finitely generate abelian group. 
+      This is a complete structure theorem for cyclic groups. The
+      groups where the order is a power of a prime are the building
+      blocks, and all possible combinations of these building blocks,
+      through the cartesian group product, create unique groups. 
     </p>
-    <lemma>
+    <p>
+      Let me give a corollary here, which clarifies the situation with
+      products of cyclic groups. 
+    </p>
+    <corollary>
       <statement>
         <p>
-          Let <m>A</m> be a finitely generated abelian group. 
-          Let <m>\{a_1, a_2, \ldots a_m\}</m> be a minimal set of
-          generators. (Minimal means that if I remove an element, the
-          remaining generator cannot generate all of <m>A</m>, and that
-          <m>m</m> is the smallest size possible for a list of
-          generators.) Let <m>a \in A</m>. Then there is a unique set
-          of integer exponents <m>\{r_1, r_2, \ldots r_m\}</m> such
-          that 
+          Let <m>n,m \in \NN</m>. Consider the product group
           <me>
-            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m}
+            \ZZ/n\ZZ \times \ZZ/m\ZZ
           </me>
-          and, for any <m>i</m> such that <m>a_i</m> has finite order
-          <m>d_i</m>, <m>r_i \in {0, 1, \ldots d_i -1 \}</m>. 
+          Then this product group is cyclic and isomorphic to
+          <m>\ZZ/mn\ZZ</m> if and only if <m>\gcd(m,n) = 1</m>.
         </p>
       </statement>
       <proof>
         <p>
-          First, let me show that any element can be written in the
-          desired form. The <m>a_i</m> being generators means that any
-          group element is a finite product of the <m>a_i</m> and
-          their inverses. However, this is an abelian group, so I can
-          reorder any product as I wish. This lets me groups all the
-          <m>a_1</m>s and their inverses together, and likewise for
-          all the other <m>a_i</m>. Some product of <m>a_i</m> and its
-          inverses can be described by an integer exponent
-          <m>a_i^{r_i}</m>. I conclude that any element has the
-          desired form. 
+          This is an if and only if proof, so I need to prove both
+          directions. For both directions, I look at the two sides of
+          this potential isomorphism. 
           <me>
-            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m}
+            \ZZ/n\ZZ \times \ZZ/m\ZZ \stackrel{?}{\cong} \ZZ/mn\ZZ
           </me>
-          I also know that the <m>r_i</m> satisfy the conditions
-          for the finite order generators, since the list <m>r_i \in
-          \{ 0, 1, 2, \ldots d_i - 1\}</m> cover all the possible
-          power of <m>r_i</m>.
+          I can then apply <xref ref="proposition-cyclic-structure"/> to
+          both sides. I get group products on both side. Let
+          <m>p_i</m> be the prime factors of <m>n</m> and <m>q_i</m>
+          be the prime factors of <m>m</m>. This is what the
+          left side of the isomorphism now looks like. 
+          <me>
+            \left( \ZZ/p_1^{r_1}\ZZ \times \ldots \ZZ/p_k^{r_k}
+            \ZZ\right) \times \left( \ZZ/q_1^{s_1}\ZZ \times \ldots
+            \ZZ/q_l^{s_l} \ZZ \right) 
+          </me>
+          For one of the two directions, if I assume <m>gcd(m,n) =
+          1</m>, then the two list of prime factors are distinct. This
+          means the prime factors of <m>mn</m> are precisely these.
+          <me>
+            mn = p_1^{r_1} p_2^{r_2} \ldots p_k^{r_k} q_1^{s_1}
+            q_2^{s_2} \ldots q_l^{s_l}
+          </me>
+          Then applying the structure theorem again to the right side
+          produces exactly the same product of groups, proving the
+          isomorphism.
+        </p>
         <p>
-          Now I need to argue that this way of writing a is
-          <emph>unique<emph>: there is only one set of such exponents
-          <m>\{r_1, r_2, \ldots r_m\}</m> for each element <m>a</m>.
-          For the sake of contradiction, say there are two ways to
-          write a group element. 
-          <me>
-            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m} = 
-            a_1^s_1 a_2^s_2 \ldots a_m{s_m}  
-          </me>
-          This is actually different, so at least for one index,
-          <m>r_i \neq s_i</m>. (The <m>s_i</m> also satisfy the
-          condition for the finite order generators.) Without loss of
-          generalization (since I can order the generators as I wish),
-          I will assume <m>r_1 \neq s_1</m>. But then I can
-          manipulate this equation by leaving <m>a_1</m> on the left
-          and taking all the other generators to the right. 
-          <me>
-            a_1^{r_1-s_1} = a_2^{s_2 - r_2} \ldots a_m{s_m - r_m} 
-          </me>
-          Again without loss of generality, since the two sets of
-          exponents were labels <sq>r</sq> and <sq>s</sq> arbitrarily,
-          I can assume <m>r_1 - s_1</m> is positive. So I have a
-          positive exponent of <m>a_1</m> which can be expressed in
-          terms of the other generators.
+          For the second of the two direction, I need to assume the
+          isormophism. Then, for the sake of contradition, assume
+          <m>\gcd(m,n) \neq 1</m>. This means that <m>m</m> and
+          <m>n</m> share at least one prime factor. Call that factor
+          <m>p_1 = q_1</m>, without loss of generality. But then the
+          right side of the isomorphism will have a factor
+          <m>\ZZ/p_1^{r_1 + s_1}\ZZ</m> and the left side will have a
+          factor <m>\ZZ/p_1^{r_1}\ZZ \times \ZZ/p_1^{s_1}\ZZ</m>.
+        </p>
+        <p>
+          I argue that this difference means the two products cannot
+          be isomorphic. Why is this so? Well, the right side has a
+          product which includes is a cyclic group of order <m>p_1^{r_1 +
+          s_1}</m>. If I take the identity in all other components of
+          the product, this gives an element of order <m>p_1^{r_1 +
+          s_1}</m> in the product on the right. 
+        <p>
+        </p>
+          But on the left, I can
+          use <xref ref="proposition-product-order"/>, which says that
+          the order of the product of generators in
+          <m>\ZZ/p_1^{r_1}\ZZ \times \ZZ/p_1^{s_1}\ZZ</m> is the lcm
+          of the two orders. That lcm is <m>p_1^{t_1}</m> where
+          <m>t_1</m> is the maximum of <m>r_1</m> and <m>s_1</m>. No
+          larger power of p can be produced as the order of an element
+          here. 
+        </p>
+        <p>
+          Since both exponents (<m>s_1</m> and <m>r_1</m>) are
+          non-zero, the sum is larger than the maximum. Finally,
+          <m>p_1</m> doesn't show up in any other components, so these
+          pieces are the only way to produce an element with an order
+          a power of <m>p_1</m>. I conlude that the two sides of the
+          isomorphism are products which produce elements of different
+          orders, so they cannot be isomorphic.  By contradition, I
+          conclude that the assumption was false and it must be true
+          that <m>\gcd(m,n) = 1</m>. This completes the proof. 
         </p>
       </proof>
-    </lemma>
-    <lemma>
-      <statement>
-        <p>
-          Let <m>A</m> be a finitely generated abelian group. Then
-          there exists the following isomorphism of groups. 
-          <me>
-            A \cong \ZZ^d \times \ZZ/n_1\ZZ \times \ZZ/n_2\ZZ \times
-            \ldots \times \ZZ/n_k\ZZ
-          </me>
-        </p>
-      </statement>
-      <proof>
-        <p>
-          <m>A</m> is finitely generated, so there exists a finite set
-          of generated <m>\{a_1, a_2, \ldots a_m\}</m>. I can assume
-          this list is minimal: if I can remove an elemenet and still
-          generate <m>A</m>, I will do so. 
-        </p>
-        <p>
-          Then any element of <m>A</m> can be written as follows.
-          <me>
-            a = a_1^r_1 a_2^r_2 \ldots a_m{r^m}
-          </me>
-          I need the assumption that <m>A</m> is abelian for this to
-          be valid: I need to move all the product of <m>a_1</m> to
-          the front of this product to gather them together, and
-          likewise for the other generators. 
-        </p>
-        <p>
-          Now I claim that this way of writing a is
-          <emph>unique<emph>: there is only one set of exponents
-          <m>\{r_1, r_2, \ldots r_m\}</m> for each element <m>a</m>. 
-        </p>
-      </proof>
-    </lemma>
+    </corollary>
+    <p>
+      This corollary gives a lot of information about which products
+      of cyclic groups are cyclic and which are not. I just have to
+      check the common factors of the orders. All of these groups are
+      cyclic since the two (or more) pieces of the product have orders
+      which do not share any factors. 
+      <md>
+        <mrow>
+          \ZZ/7\ZZ \times \ZZ/13\ZZ 
+        </mrow>
+        <mrow>
+          \ZZ/12\ZZ \times \ZZ/55\ZZ 
+        </mrow>
+        <mrow>
+          \ZZ/100\ZZ \times \ZZ/91\ZZ 
+        </mrow>
+        <mrow>
+          \ZZ/1000\ZZ \times \ZZ/31\ZZ \times \ZZ/51\ZZ
+        </mrow>
+      </md>
+      Similarly, all of these groups are not cyclic, since the orders
+      of the pieces of the product share a factor. 
+      <md>
+        <mrow>
+          \ZZ/100\ZZ \times \ZZ/225\ZZ 
+        </mrow>
+        <mrow>
+          \ZZ/91\ZZ \times \ZZ/147\ZZ 
+        </mrow>
+        <mrow>
+          \ZZ/256\ZZ \times \ZZ/1024\ZZ 
+        </mrow>
+      </md>
+    </p>
+    <p>
+      Finally, I can use this information to start making list of
+      products of cyclic groups. Here are all the possibilities for
+      products of cyclic groups (up to isomorphism) for groups or
+      order up to twelve. To make this table, I just apply the
+      corollary to know which product are not cyclic and therefore
+      are something new. 
+      <me>
+        \begin{array}{c|c}
+          \text{Order} \amp \text{Groups} \\
+          1 \amp \{e\} \\
+          2 \amp \ZZ/2\ZZ \\
+          3 \amp \ZZ/3\ZZ \\
+          4 \amp \ZZ/4\ZZ, \ZZ/2\ZZ \times \ZZ/2\ZZ \\
+          5 \amp \ZZ/5\ZZ \\
+          6 \amp \ZZ/6\ZZ \\
+          7 \amp \ZZ/7\ZZ\\
+          8 \amp \ZZ/8\ZZ, \ZZ/2\ZZ \times \ZZ/4\ZZ, \ZZ/2\ZZ \times
+          \ZZ/2\ZZ \times \ZZ/2\ZZ \\
+          9 \amp \ZZ/9\ZZ, \ZZ/3\ZZ \times \ZZ/3\ZZ \\
+          10 \amp \ZZ/10\ZZ \\
+          11 \amp \ZZ/11\ZZ \\
+          12 \amp \ZZ/12\ZZ, \ZZ/6\ZZ \times \ZZ/2\ZZ
+        \end{array}
+      </me>
+    </p>
   </subsection>
-</comment>
+</section>

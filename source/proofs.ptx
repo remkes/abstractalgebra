@@ -423,8 +423,8 @@
         numbers, I might as well call <m>n_1</m> the even one. If it
         isn't, I can just re-number them: the numbering was my own
         notation, after all. When this happens, I will say <sq>without
-        loss of generalization, let <m>n_1</m> be the even number<sq>.
-        <sq>Without loss of generalization<sq> means that this choice
+        loss of generalization, let <m>n_1</m> be the even number</sq>.
+        <sq>Without loss of generalization</sq> means that this choice
         doesn't actually restrict the proof: all possible situations
         are still under consideration. I've just reordered or
         renumbered something to make the notation more convenient. 

@@ -1,0 +1,103 @@
+    <lemma>
+      <statement>
+        <p>
+          Let <m>A</m> be a finitely generated abelian group. 
+          Let <m>\{a_1, a_2, \ldots a_m\}</m> be a minimal set of
+          generators. (Minimal means that if I remove an element, the
+          remaining generator cannot generate all of <m>A</m>, and that
+          <m>m</m> is the smallest size possible for a list of
+          generators.) Let <m>a \in A</m>. Then there is a unique set
+          of integer exponents <m>\{r_1, r_2, \ldots r_m\}</m> such
+          that 
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m}
+          </me>
+          and, for any <m>i</m> such that <m>a_i</m> has finite order
+          <m>d_i</m>, <m>r_i \in {0, 1, \ldots d_i -1 \}</m>. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First, let me show that any element can be written in the
+          desired form. The <m>a_i</m> being generators means that any
+          group element is a finite product of the <m>a_i</m> and
+          their inverses. However, this is an abelian group, so I can
+          reorder any product as I wish. This lets me groups all the
+          <m>a_1</m>s and their inverses together, and likewise for
+          all the other <m>a_i</m>. Some product of <m>a_i</m> and its
+          inverses can be described by an integer exponent
+          <m>a_i^{r_i}</m>. I conclude that any element has the
+          desired form. 
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m}
+          </me>
+          I also know that the <m>r_i</m> satisfy the conditions
+          for the finite order generators, since the list <m>r_i \in
+          \{ 0, 1, 2, \ldots d_i - 1\}</m> cover all the possible
+          power of <m>r_i</m>.
+        </p>
+        <p>
+          Now I need to argue that this way of writing a is
+          <emph>unique</emph>: there is only one set of such exponents
+          <m>\{r_1, r_2, \ldots r_m\}</m> for each element <m>a</m>.
+          For the sake of contradiction, say there are two ways to
+          write a group element. 
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m} = 
+            a_1^s_1 a_2^s_2 \ldots a_m{s_m}  
+          </me>
+          This is actually different, so at least for one index,
+          <m>r_i \neq s_i</m>. (The <m>s_i</m> also satisfy the
+          condition for the finite order generators.) Without loss of
+          generalization (since I can order the generators as I wish),
+          I will assume <m>r_1 \neq s_1</m>. But then I can
+          manipulate this equation by leaving <m>a_1</m> on the left
+          and taking all the other generators to the right. 
+          <me>
+            a_1^{r_1-s_1} = a_2^{s_2 - r_2} \ldots a_m{s_m - r_m} 
+          </me>
+          Again without loss of generality, since the two sets of
+          exponents were labels <sq>r</sq> and <sq>s</sq> arbitrarily,
+          I can assume <m>r_1 - s_1</m> is positive. So I have a
+          positive exponent of <m>a_1</m> which can be expressed in
+          terms of the other generators.
+        </p>
+      </proof>
+    </lemma>
+    <lemma>
+      <statement>
+        <p>
+          Let <m>A</m> be a finitely generated abelian group. Then
+          there exists the following isomorphism of groups. 
+          <me>
+            A \cong \ZZ^d \times \ZZ/n_1\ZZ \times \ZZ/n_2\ZZ \times
+            \ldots \times \ZZ/n_k\ZZ
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          <m>A</m> is finitely generated, so there exists a finite set
+          of generated <m>\{a_1, a_2, \ldots a_m\}</m>. I can assume
+          this list is minimal: if I can remove an elemenet and still
+          generate <m>A</m>, I will do so. 
+        </p>
+        <p>
+          Then any element of <m>A</m> can be written as follows.
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r^m}
+          </me>
+          I need the assumption that <m>A</m> is abelian for this to
+          be valid: I need to move all the product of <m>a_1</m> to
+          the front of this product to gather them together, and
+          likewise for the other generators. 
+        </p>
+        <p>
+          Now I claim that this way of writing a is
+          <emph>unique</emph>: there is only one set of exponents
+          <m>\{r_1, r_2, \ldots r_m\}</m> for each element <m>a</m>. 
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+</comment>
