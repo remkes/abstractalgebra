@@ -121,7 +121,7 @@
     constructions from sets. All of these will be important for
     buildings the objects of abstract algebra. 
   </p>
-  <definition>
+  <definition xml:id="definition-set-product">
     <statement>
       <p>
         The <term>cartesian product</term> of two sets <m>A</m> amd

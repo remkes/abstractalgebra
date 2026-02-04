@@ -499,7 +499,7 @@
     Finally let me get down a couple more basic properties of
     homomorphisms.
   </p>
-  <proposition>
+  <proposition xml:id="proposition-composition-homomorphism">
     <statement>
       <p>
         Let <m>\phi: G \rightarrow H</m> and <m>\psi: H \rightarrow

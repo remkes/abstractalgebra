@@ -809,7 +809,7 @@
     something that is only a small step after a major result and is
     considered, in some sense, a special case of the major result. 
   </p>
-  <corollary>
+  <corollary xml:id="corollary-order-divides">
     <statement>
       <p>
         Let <m>g \in G</m> be a member of a finite group. Then the

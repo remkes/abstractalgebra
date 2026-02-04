@@ -82,7 +82,7 @@
     versions of the proofs of this will show up later when we get
     into similar concpets in ring theory.  
   </p>
-  <theorem>
+  <theorem xml:id="theorem-fundamental-arithmetic">
     <title>Fundamental Theorem of Arithmetic</title>
     <statement>
       <p>

@@ -409,6 +409,34 @@
         function, which means that it is surjective. 
       </p>
     </subsubsection>
+    <subsubsection>
+      <title>Without Loss Of Generalization</title>
+      <p>
+        The phrase <sq>without loss of generalization</sq> shows up
+        commonly in mathematical proof. It always shows up when there
+        is some amount of choice in setup or organization of a proof.
+        Say a certain proof needs to talk about four natural numbers:
+        <m>n_1, n_2, n_3, n_4</m>. Say also that, at some point in the
+        proof, it matters if even one of them is even. I want to
+        investigate what happens in this case, when one is even. 
+        Assuming that I don't know anything else about any of the
+        numbers, I might as well call <m>n_1</m> the even one. If it
+        isn't, I can just re-number them: the numbering was my own
+        notation, after all. When this happens, I will say <sq>without
+        loss of generalization, let <m>n_1</m> be the even number<sq>.
+        <sq>Without loss of generalization<sq> means that this choice
+        doesn't actually restrict the proof: all possible situations
+        are still under consideration. I've just reordered or
+        renumbered something to make the notation more convenient. 
+      </p>
+      <p>
+        This situation is common enough that many proofs will simply
+        write <sq>WOLG</sq> to stand for <sq>without loss of
+        generalization</sq>. I won't use the acronym, but if you end
+        up reading more abstract mathematics, there is a good chance
+        you will see this. 
+      </p>
+    </subsubsection>
   </subsection>
   <subsection>
     <title>Proof Writing</title>

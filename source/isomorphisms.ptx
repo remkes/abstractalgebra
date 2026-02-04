@@ -341,5 +341,572 @@
       isomorphisms of abelian groups. But before I do that, I need a
       new construction. 
     </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> and <m>H</m> be groups. The (cartesian) product
+          of groups, <m>G \times H</m> is defined as follows.
+          <ul>
+            <li>
+              As a set, <m>G times <m>H</m> is the usual set cartesian
+              product. 
+            </li>
+            <li>
+              The binary operation is defined componentwise. 
+              <me>
+                (g_1, h_1) (g_2, h_2) = (g_1g_2,h_1h_2)
+              </me>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>
+          The cartesian product of two groups is also a group. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I need to check the group axioms. 
+          <ul>
+            <li>
+              Since the binary operation is component-wise,
+              associativity is inherited from the associativity of the
+              two operation. I can move the brackets in each component
+              as necesary to prove associativity.
+            </li>
+            <li>
+              The element <m>(e_g, e_h)</m> is the identity. I can
+              check:
+              <me>
+                (e_g, e_h) (g,h) = (e_g g, e_h h) = (g,h)
+              </me>
+              A similar calculation works with multiplication on the
+              right as well. 
+            </li>
+            <li>
+              The inverse of <m>(g,h)</m> is <m>(g^{-1},
+              h^{-1})))</m>. I can check this with the component-wise
+              product: multiplication by this proposed inverse, both
+              on the right and the left, gives the identity. 
+            </li>
+          </ul>
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      The set product from <xref ref="definition-set-product"> and the
+      group product share the same notation, <m>G \times H</m>. This
+      is conventional, but it risks some confusion. The set product
+      doesn't define a binary operation: it just defined ordered pairs
+      of elements of the set. The group product add the binary
+      operation, and is only defined, of course, if both pieces are
+      already groups. Even so, most of the time the notation works
+      relatively well, since the group product, when thought as just a
+      set, is still the ordered pair: the set product. When I need to
+      distinguish between the two product, I will do what I've already
+      done in this paragraph<mdash/>use the phrases <sq>set
+      product</sq> and <sq>group product</sq> to make it clear which
+      product I want to talk about. 
+    </p>
+    <p>
+      The group product is a way to put two groups together to make a
+      new group. This is, obviously, an important piece of
+      understanding the structures of group. Some cartesian products
+      are familiar: <m>\RR^2</m> is the product <m>\RR \times \RR</m>.
+      This was known as sets before, but this also works as additive
+      groups.
+    </p>
+    <p>
+      As with the set product <xref ref="definition-set-product">, the
+      group product can be iterated. <m>G \times H \times K</m>
+      consists of triples of elements, one from each groups, with
+      componentwise multiplication. <m>G^n</m> is the product of a
+      group with itself <m>n</m> times. This makes <m>\RR^n</m> also a
+      group product. 
+    </p>
+    <p>
+      The cartesian product comes with four important homomorphisms. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> and <m>H</m> be groups.
+          <ul>
+            <li>
+              The inclusion on the first component, <m>i_1</m>, is an
+              injective homomorphism <m>i_1: G \rightarrow G \times
+              H</m> defined as follows. 
+              <me>
+                i_1 (g) = (g, e_h)
+              </me>
+            </li>
+            <li>
+              The inclusion on the second component, <m>i_2</m>, is an
+              injective homomorphism <m>i_2: H \rightarrow G \times
+              H</m> defined as follows. 
+              <me>
+                i_1 (h) = (e_g, h)
+              </me>
+            </li>
+            <li>
+              The projection onto the first component, <m>\pi_1</m>, is 
+              a surjective homomorphism <m>\pi_1: G \times H
+              \rightarrow G </m> defined as follows. 
+              <me>
+                \pi (g, h) = g
+              </me>
+            </li>
+            <li>
+              The projection onto the second component, <m>\pi_2</m>, is 
+              a surjective homomorphism <m>\pi_2: G \times H
+              \rightarrow H </m> defined as follows. 
+              <me>
+                \pi (g, h) = H
+              </me>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I'll leave the claims in the previous definition (that these are
+      homomorphisms, that they are injective or surjective) up to you
+      to verify if you wish. 
+    </p>
+    <p>
+      The cartesian product is a way to build a larger group out of
+      two smaller groups, <m>G</m> and <m>H</m>. However, it is not th
+      only way to do such a thing. There are other products, and other
+      understanding of how to put two groups together. In this course,
+      we'll stick to the cartesian product, but I wanted to give you a
+      very brief idea of how more general constructions are treated in
+      group theory. The next definition is the main idea. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> and <m>H</m> be groups. An
+          <term>extension</term> of <m>H</m> by <m>G</m> is any group
+          <m>K</m> such that three things are true. 
+          <ul>
+            <li>
+              There exist an injective homomorphism:
+              <me>
+                i: G \rightarrow K
+              </me>
+            </li>
+            <li>
+              There exist a surjective homomorphism:
+              <me>
+                \pi K \rightarrow H
+              </me>
+            </li>
+            <li>
+              The kernel of <m>\pi</m> is equal to the image of
+              <m>i</m> 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The cartesian product satisfies the condition. The inclusion of
+      the first component is the injective homomorphism, and the
+      projection onto the second component is the surjective
+      homomorphism. The image of the inclusion if <m>\{(g, e_h) | g
+      \in G</m>. This is precisely the same as the kernel of the
+      second project, since it is all elements of the product where the
+      second component is the identity of <m>H</m>.
+    </p>
+    <p>
+      The reason we need this extra machinery of extension is that
+      many more groups other than the cartesian product can play the
+      extension role of <m>K</m>. Each of them is essentially a way to
+      put the two components together. I won't prove it here, but you
+      can prove, for finite groups, that the cardinality of <m>K</m>
+      is always </m>|G||H|</m>. As a set, <m>K</m> is always bijective
+      to the set product <m>G \times H</m>. As a group, though, it can
+      have a number of different and interesting groups structures,
+      only one of which is the group product. I'll give one example.
+    </p>
+    <example>
+      <p>
+        I'll explicitly defined two functions. (I'll leave it to you
+        to verify that these are homomorphisms, that the first in
+        injective, and that the second is surjective.) 
+        <ul>
+          <li>
+            Define <m>i: ZZ/4\ZZ \rightarrow D_4</m> by explicitly
+            defining <m>i(0) = \Id</m> and otherwise <m>i(n) = R_n</m>
+            for <m>n \in \{1,2,3\}</m>. 
+          </li>
+          <li>
+            Define <m>\pi: D_4 \rightarrow ZZ/2\ZZ \rightarrow D_4</m>
+            by this table.
+            <me>
+              \begin{array}{c|cccccccc}
+                g \amp \Id \amp R_1 \amp R_2 \amp R_3 
+                \amp F_1 \amp F_2 \amp F_3 \amp F_4 \\
+                \pi(g) \amp 0 \amp 0 \amp 0 \amp 0 
+                \amp 1 \amp 1 \amp 1 \amp 1 
+              \end{array}
+            </me>
+          </li>
+          <li>
+            The image of <m>i</m> is the subgroup <m>\{ \Id, R_1, R_2,
+            R_3 \}</m>. By looking at the table for <m>\pi</m>, this
+            is precisely the kernel of <m>\pi</m>, so the third
+            extension condition is satisfied. 
+          </li>
+        </ul>
+        <m>D_4</m> is, however, not isomorphic to <m>\ZZ/2ZZ \times
+        \ZZ/4\ZZ</m>. One easy way to tell is that <m>D_4</m> is not
+        abelian, and the product of two abelian groups will always be
+        abelian, so <m>\ZZ/2\ZZ \times \ZZ/4\ZZ</m> is abelian.
+        Isomorphic groups have the same group structure, so a
+        non-abelian group can never be isomorphic to an abelian group.
+      </p>
+      <p>
+        In conclusion, <m>D_4</m> is some kind of combination of
+        <m>\ZZ/2\ZZZ</m> and <m>\ZZ/4\ZZ</m>, but a stranger and more
+        complicated combination than the group product. It is an
+        extension. 
+      </p>
+    </example>
+    <p>
+      Extensions are also a great example of the central role that
+      homomorphisms play in group theory. An extension is a way of
+      gluing two groups toegether into a larger group. The most useful
+      and general way of describing that construction turns out to be
+      using homomorphisms: the extension is defined by its two
+      homomorphisms, one of them injective and one of them surjective,
+      along with the alignment of the image of one with the kernel of
+      the other. There are equivalent ways to do this
+      construction<mdash/>in fact, many group theory books will talk
+      about the slightly more concrete idea of semi-direct products
+      instead of the very abstract extensions. But I've chosen to do
+      it this way because extensions are the way in which such
+      constructions are actually talked about by working
+      mathematicians, and to demonstrate how the language of
+      homomorphisms makes it all possible. 
+    </p>
+    <p>
+      As I said, this last definition and the last few paragraphs of
+      discussion are more than we will cover in detail in this course.
+      I'm not going to give any more examples of extensions and I'm
+      not going to ask you to work with them in the assignments. But I
+      hope you found this interesting. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>First Results about Isomorphisms</title>
+    <p>
+      Now I want to prove a couple results about isomorphismss. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Any group of a prime order <m>|G| = p</m> is isomorphic to
+          <m>\ZZ/p\ZZ</m>. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>g \in G</m> be any non-identity element. By <xref
+          ref="corollary-order-divides"/>, the order of <m>g</m> must
+          be a factor of <m>p</m>. The only factors are <m>p</m> and
+          1, and order 1 only happens for the identity, so the order
+          of <m>g</m> must be <m>p</m>. This means that <m>g</m> is a
+          generator, and the group can be written as follows 
+          <me>
+            G = \{e, g, g^2, g^3, \ldots, g^{p-1} \}
+          </me>
+          If I write <m>e = g^0</m>, then I can use this to defined a
+          function <m>\phi: G \rightarrow \ZZ/p\ZZ</m>. 
+          <me>
+            \phi(g^k) = k
+          </me>
+          First, this, is a homomorphism. 
+          <me>
+            \phi(g^k g^l) = kl = \phi(g^k) \phi(g^l
+          </me>
+          Second, the exponents in the group are <m>0</m> to
+          <m>p-1</m>. The perfectly match up with the standard
+          representations of the integers moduloa <m>p</m>, so the
+          function is bijective. Therefore, the function is an
+          isomorphism. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      This is already a pretty significant result. I know now all of
+      the possible structures of groups of prime order. For each
+      prime, there is only one possible group: the cyclic group of
+      that order. All prime order groups are cyclic and, therefore,
+      abelian. Non-cyclic and non-abelian groups can only occur for
+      groups with composite order. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>i: G \rightarrow H</m> be an injective homomorphism
+          of groups. Then <m>G</m> is isomorphis to its image (which
+          is a subgroup of <m>H</m>. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          There is not actually much to verify here. The function
+          <m>i</m> is already a homomorphism and injective by
+          definition. The image is precisely the outputs of the
+          function, to resricting the codomain from <m>H</m> to the
+          image makes it surjective. Therefore, the map <m>i</m> is a
+          bijective homomorphism from <m>G</m> onto its image,
+          therefore an isomorphism. 
+        </p>
+      </proof>
+    </proposition>
+    <proposition>
+      <statement>
+        <p>
+          The composition of two isomorphsisms is also an
+          isomorphisms. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I know from <xref
+          ref="proposition-composition-homomorphism"/> that the
+          composition of homomorphisms is also a homomorphism. I know
+          from set theory that the composition of bijections is still
+          a bijection. That's all that needs to be said for the proof. 
+        </p>
+      </proof>
+    </proposition>
   </subsection>
 </section>
+
+<comment>
+  <subsection>
+    <title>The Structure of Finitely-Generated Abelian Groups</title>
+    <p>
+      Now I want to put all this theory into practice and prove a
+      major structural theorem. In this section, we can completely
+      classify all finitely-generated abelian groups. We do this using
+      isomorphisms to the most familiar abelian groups: the integers
+      and the integers modulo n. I'll structure this section with two
+      substantial lemmas followed by the main theorem. 
+    </p>
+    <lemma>
+      <statement>
+        <p>
+          Let <m>n \in \NN</m> with <m> n \geq 2</m>. By <xref
+          ref="theorem-fundamental-arithmetic">, I can write <m>n</m>
+          as its unique prime decomposition. 
+          <me>
+            n = p_1^{m_1} p_2^{m_2}\ldots p_k^{m_k}
+          </me>
+          Then there exists an isomorphism of groups. 
+          <me>
+            \ZZ/n\ZZ \cong \left( \ZZ/p_1^{m_1}\ZZ \right) \times \left(
+            \ZZ p_2^{m_2} \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
+            \right) 
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I need to define the isomorphism
+          <me>
+            \phi: \left( \ZZ/p_1^{m_1}\ZZ \right) \times \left(
+            \ZZ p_2^{m_2} \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
+            \right) \rightarrow \ZZ/n\ZZ
+          </me>
+          This is the definition. In the right side, the symbol
+          <m>\hat{p_i}</m> will stand for the product of all primes
+          <m>p_1^{m_1} p_2^{m_1} \ldots p_k^{m_k}</m> except
+          <m>p_i^{m_k}</m>. Equivalently, <m>\hat{p_i} =
+          \frac{n}{p_i^{m_i}}</m>. 
+          <me>
+            \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
+            + \ldots + \hat{p_k} a_k \mod n
+          </me>
+          Now I need to prove the properties. I'll start with
+          homomorphism. I consider this calculation.
+          <me>
+            \phi(a_1 + b_1, a_2 + b_2, \ldots a_m + b_m) = \hat{p_1}
+            (a_1 + b_1) + \hat{p_2} (a_2 + b_2) + \ldots \hat{{p_k}
+            a_k + b_k = 
+            = (\hat{p_1}a_1 + \hat{p_2}a_2 + \ldots + \hat{p_k}a_k) +
+            (\hat{p_1}b_1 + \hat{p_2}b_2 + \ldots + \ha{p_k}b_k)
+            = \phi (a_1, a_2, \ldots a_k) + \phi(b_1, b_2, \ldots b_k) 
+          </me>
+          This works, so <m>\phi</m> is a homomorphism. 
+        </p>
+        <p>
+          Next, I need injectivity. Again, I use <xref
+          ref="proposition-injective-kernel"/>. What is the kernel of
+          this homomorphism? I need to consider all elements of the
+          product group wuth that 
+          <me>
+            \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
+            + \ldots + \hat{p_k} a_k = 0 \mod n
+          </me>
+          Obviously, setting all <m>a_i = 0</m> works. But are there
+          any other possibilites that also work? For the sake of
+          contradiction, assume there is another combination that
+          works, where at least one of the <m>a_i</m> is non-zero.
+          Being equal to zero modulo <m>n</m> means that, as integers,
+          the left side is a positive multiple of n. 
+          <me>
+            \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
+            + \ldots + \hat{p_k} a_k = k(p_1^{m_1} p_2^{m_2} \ldots
+            p_k^{m_k}) 
+          </me>
+          Now one of the <m>a_i</m> is non-zero. I haven't ordered the
+          primes at all, so without loss of generalization, I can let
+          <m>a_1</m> be a non-zero element. Then I re-arrange the
+          equation. 
+          <me>
+            \hat{p_1} a_1 = - \hat{p_2} a_2 - \ldots - \hat{p_k} a_k +
+            k(p_1^{m_1} p_2^{m_2} \ldots p_k^{m_k}) 
+          </me>
+          Now think about the prime <m>p_1</m>. <m>p_1</m> does not divide
+          the right side: <m>\hat{p_1}</m> explicitly excludes any
+          power of <m>p_1</m>, and <m>a_1</m> is some number in
+          <m>\{1, 2, \ldots, p_1-1</m>, a list which cannot include any
+          multiples of <m>p_1</m>. But <m>p_1</m> does divide the
+          right side: all of these terms include <m>\hat{p_k}</m> for
+          <m>k \geq 2</m>; these all include powers of <m>p_1</m>. The
+          final term explicitly includes powers of <m>p_1</m>. This is
+          a contradiction: I can't have an equation of whole numbers
+          where a prime divides the right but not the left. Therefore,
+          by contradiction, I assume that <m>a_i = 0</m> for all
+          <m>i</m> is the only solution, which means that the kernel
+          is just the element <m>(0, 0, \ldots, 0</m>, which means
+          that the function is injective. 
+        </p>
+        <p>
+          Finally, surjective follows from the size of the sets. Both
+          sets have cardinality <m>n</m>. This is by definition for
+          <m>\ZZ/n\zZ</m>. For the product, the cardinality of the
+          product is the product of the cardinalities, which is
+          <m>p_1^{m_1} p_2^{m_2} \ldots p_k^{m_k} = n</m>. An
+          injective function between two sets of the same size must be
+          also surjective: everything is sent somewhere unique, so I
+          get a perfect matching. This function is bijective. This
+          concludes the proof. 
+        </p>
+      </proof>
+    </lemma>
+    <p>
+      This is the first lemma. It tells me how to deal with finite
+      cyclic groups. The second lemma start to deal with more
+      arbitrary groups. It guarantees that there is a particular way
+      to write elements of a finitely generate abelian group. 
+    </p>
+    <lemma>
+      <statement>
+        <p>
+          Let <m>A</m> be a finitely generated abelian group. 
+          Let <m>\{a_1, a_2, \ldots a_m\}</m> be a minimal set of
+          generators. (Minimal means that if I remove an element, the
+          remaining generator cannot generate all of <m>A</m>, and that
+          <m>m</m> is the smallest size possible for a list of
+          generators.) Let <m>a \in A</m>. Then there is a unique set
+          of integer exponents <m>\{r_1, r_2, \ldots r_m\}</m> such
+          that 
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m}
+          </me>
+          and, for any <m>i</m> such that <m>a_i</m> has finite order
+          <m>d_i</m>, <m>r_i \in {0, 1, \ldots d_i -1 \}</m>. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First, let me show that any element can be written in the
+          desired form. The <m>a_i</m> being generators means that any
+          group element is a finite product of the <m>a_i</m> and
+          their inverses. However, this is an abelian group, so I can
+          reorder any product as I wish. This lets me groups all the
+          <m>a_1</m>s and their inverses together, and likewise for
+          all the other <m>a_i</m>. Some product of <m>a_i</m> and its
+          inverses can be described by an integer exponent
+          <m>a_i^{r_i}</m>. I conclude that any element has the
+          desired form. 
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m}
+          </me>
+          I also know that the <m>r_i</m> satisfy the conditions
+          for the finite order generators, since the list <m>r_i \in
+          \{ 0, 1, 2, \ldots d_i - 1\}</m> cover all the possible
+          power of <m>r_i</m>.
+        <p>
+          Now I need to argue that this way of writing a is
+          <emph>unique<emph>: there is only one set of such exponents
+          <m>\{r_1, r_2, \ldots r_m\}</m> for each element <m>a</m>.
+          For the sake of contradiction, say there are two ways to
+          write a group element. 
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r_m} = 
+            a_1^s_1 a_2^s_2 \ldots a_m{s_m}  
+          </me>
+          This is actually different, so at least for one index,
+          <m>r_i \neq s_i</m>. (The <m>s_i</m> also satisfy the
+          condition for the finite order generators.) Without loss of
+          generalization (since I can order the generators as I wish),
+          I will assume <m>r_1 \neq s_1</m>. But then I can
+          manipulate this equation by leaving <m>a_1</m> on the left
+          and taking all the other generators to the right. 
+          <me>
+            a_1^{r_1-s_1} = a_2^{s_2 - r_2} \ldots a_m{s_m - r_m} 
+          </me>
+          Again without loss of generality, since the two sets of
+          exponents were labels <sq>r</sq> and <sq>s</sq> arbitrarily,
+          I can assume <m>r_1 - s_1</m> is positive. So I have a
+          positive exponent of <m>a_1</m> which can be expressed in
+          terms of the other generators.
+        </p>
+      </proof>
+    </lemma>
+    <lemma>
+      <statement>
+        <p>
+          Let <m>A</m> be a finitely generated abelian group. Then
+          there exists the following isomorphism of groups. 
+          <me>
+            A \cong \ZZ^d \times \ZZ/n_1\ZZ \times \ZZ/n_2\ZZ \times
+            \ldots \times \ZZ/n_k\ZZ
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          <m>A</m> is finitely generated, so there exists a finite set
+          of generated <m>\{a_1, a_2, \ldots a_m\}</m>. I can assume
+          this list is minimal: if I can remove an elemenet and still
+          generate <m>A</m>, I will do so. 
+        </p>
+        <p>
+          Then any element of <m>A</m> can be written as follows.
+          <me>
+            a = a_1^r_1 a_2^r_2 \ldots a_m{r^m}
+          </me>
+          I need the assumption that <m>A</m> is abelian for this to
+          be valid: I need to move all the product of <m>a_1</m> to
+          the front of this product to gather them together, and
+          likewise for the other generators. 
+        </p>
+        <p>
+          Now I claim that this way of writing a is
+          <emph>unique<emph>: there is only one set of exponents
+          <m>\{r_1, r_2, \ldots r_m\}</m> for each element <m>a</m>. 
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+</comment>

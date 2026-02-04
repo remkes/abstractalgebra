@@ -9,6 +9,7 @@
   <xi:include href="homomorphisms.ptx" />
   <xi:include href="isomorphisms.ptx" />
   <!--
+  <xi:include href="quotients.ptx" />
   <xi:include href="generator-and-relations.ptx" />
   <xi:include href="group-actions.ptx" />
   -->
