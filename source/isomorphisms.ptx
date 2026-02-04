@@ -1,5 +1,5 @@
 <section xml:id="section-isomorphisms">
-  <title>Isomorphisms and the Major Theme</title>
+  <title>Isomorphisms and Classification</title>
   <subsection xml:id="subsection-isomorphism">
     <title>Isomorphism</title>
     <p>
@@ -246,11 +246,11 @@
             1 \amp \Id \\
             -1 \amp (12)(34)(56)(78) \\
             i \amp (1324)(5768) \\
-            -i \amp (5867)(1423) \\
+            -i \amp (1423)(5867) \\
             j \amp (1526)(3847) \\
-            -j \amp (3748)(1625) \\
-            k \amp (1768)(3546) \\
-            -k \amp (3645)(1867) 
+            -j \amp (1625)(3748) \\
+            k \amp (1728)(3546) \\
+            -k \amp (1827)(3645)
           \end{array}
         </me>
         The quaterions are determined by the relations between
@@ -280,7 +280,7 @@
     </example>
   </subsection>
   <subsection>
-    <title>A Major Theme</title>
+    <title>Classification: A Major Theme</title>
     <p>
       I've been talking about structure all through these notes.
       Isomorphism now finally gives the language to clarify the
@@ -1061,16 +1061,17 @@
       which do not share any factors. 
       <md>
         <mrow>
-          \ZZ/7\ZZ \times \ZZ/13\ZZ 
+          \ZZ/7\ZZ \times \ZZ/13\ZZ \cong \ZZ/91\ZZ
         </mrow>
         <mrow>
-          \ZZ/12\ZZ \times \ZZ/55\ZZ 
+          \ZZ/12\ZZ \times \ZZ/55\ZZ \cong \ZZ/660/\ZZ
         </mrow>
         <mrow>
-          \ZZ/100\ZZ \times \ZZ/91\ZZ 
+          \ZZ/100\ZZ \times \ZZ/91\ZZ \cong \ZZ/9100\ZZ
         </mrow>
         <mrow>
-          \ZZ/1000\ZZ \times \ZZ/31\ZZ \times \ZZ/51\ZZ
+          \ZZ/1000\ZZ \times \ZZ/31\ZZ \times \ZZ/51\ZZ \cong
+          \ZZ/51000\ZZ 
         </mrow>
       </md>
       Similarly, all of these groups are not cyclic, since the orders
@@ -1091,9 +1092,9 @@
       Finally, I can use this information to start making list of
       products of cyclic groups. Here are all the possibilities for
       products of cyclic groups (up to isomorphism) for groups or
-      order up to twelve. To make this table, I just apply the
-      corollary to know which product are not cyclic and therefore
-      are something new. 
+      order up to twelve. In this table, the groups which are products
+      are not cyclic and the other groups all are: I know this due to
+      the corollary.
       <me>
         \begin{array}{c|c}
           \text{Order} \amp \text{Groups} \\
