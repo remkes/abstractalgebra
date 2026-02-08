@@ -1,0 +1,746 @@
+<section xml:id="section-quotients">
+  <title>Quotients</title>
+  <subsection>
+    <title>Group Quotients</title>
+    <p>
+      I've talked about group products and extension: ways of putting
+      smaller groups together to build larger groups. I want to do the
+      opposite here and talk about how to break groups apart into
+      smaller pieces. You may think we've already done this with
+      subgroups, but this section is going to introduce a new kind of
+      subgroup. It turns out, for the structure of groups, not all
+      subgroups are equally useful.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>N \subset G</m> be a subgroup. Then <m>N</m> is
+          called a <term>normal subgroup</term> if <m>N</m> is the
+          kernel of some homomorphism with domain <m>G</m>. The
+          notation for a normal subgroup is <m>N \triangleleft G</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I am again developing a theme I introduced a couple sections ago:
+      homomorphisms are the main tool to understand groups. In <xref
+      ref="section-homomorphism"/> I defined kernels and images and
+      proved that both are subgroups. This new definition of normal
+      subgroups is important because not every subgroup can be a kernel
+      and being a kernel leads to some very important construction.
+    </p>
+    <example>
+      <p>
+        The determinant map <m>\det: GL(n) \rightarrow \RR^*</m> is a
+        homomorphism. Its kernel is all matrices with determinant
+        <m>1</m>: this is precisely <m>SL(n)</m>. Therefore,
+        <m>SL(n)</m> is a normal subgroup. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Reduction modulo <m>n</m> is a homomorphism: <m>\pi_n \ZZ
+        \rightarrow \ZZ/n\ZZ</m>. Its kernel is the subgroup of all
+        integers which are multiples of <m>n</m>, which is written
+        <m>n\ZZ</m>. This is a normal subgroup of <m>\ZZ</m> for any
+        <m>n \in \NN</m>. 
+      </p>
+    </example>
+    <p>
+      The definition I have given is a good definition and relates to
+      homomorphisms. However, it is not the only definition. (In fact,
+      I'm being a bit unusual here: most group theory texts will give
+      an alternative definition and later prove that normal subgroups
+      are exactly the kernels of homomorphisms. I'm doing the
+      opposite, but I think it is the more sensible approach). In
+      particluar, I gave a conceptually good definition, but it is not
+      the easiest definition to work with. If I have a particular
+      subgroup, it may not be easy to find a homomorphism witht the
+      appropriate kernel to prove that it is normal. If it is not
+      normal, it may be very difficult to prove that no such
+      homomorphism exists. Therefore, I can give some other
+      conditions. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>N \subset G</m> be a subgroup. The following are all
+          equivalent conditions for <m>N</m> to be a normal subgroup.
+          (Equilvalent means that any of these conditions implies all
+          the others.) 
+          <ul>
+            <li>
+              <m>N</m> is the kernel of some homomorphism with domain
+              <m>G</m>. 
+            </li>
+            <li>
+              For all <m>n \in \NN</m> and <m>g \in G</m>, <m>gng^{-1}
+              \in \NN</m>. In this case, we say that <m>N</m> is
+              invariant under conjugation. 
+            </li>
+            <li>
+              The left cosets of <m>N</m> are the same as the right
+              cosets of <m>N</m>. 
+            </li>
+            <li>
+              The (left) cosets of <m>N</m> form a group under the
+              binary operation applied to the representative of the
+              coset. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I'm not going to prove all of these equivalence, for the sake
+          of detail and time. However, I will prove the most importnat
+          one: the fact that the last statement of the proof implies the
+          first statement. 
+        </p>
+        <p>
+          So assume that the left cosets of <m>N</m> form a group. A
+          coset is written <m>gN</m>, so the binary operation on two
+          cosets is 
+          <me>
+            (g_1N) (g_2N) = (g_1g_2N)
+          </me>
+          The identity elements in this group of cosets is <m>eN = N</m>
+          and the inverse of a coset <m>gN</m> is <m>g^{-1}N</m>. This
+          binary operation does not always produce a group, hence the
+          definition of a normal subgroup: if this operation on cosets
+          works consistently, the subgroup is normal. To prove this,
+          using the defintiion I gave, I need to show that, under the
+          assumption that the cosests form a group, <m>N</m> is the
+          kernel of some homomorphism.
+        </p>
+        <p>
+          I define a homomorphism <m>\pi_N</m> which goes from <m>G</m>
+          to this new group forms of the cosets of <m>N</m>. The
+          function is defined as 
+          <me>
+            \phi(g) = gN
+          </me>
+          The function just sends every element to its cosets. Then the
+          homomorphism condition is immediate from the definition of the
+          binary operation on cosets: I'm just doing the operation of
+          the group on the coset representatives. 
+        </p>
+        <p>
+          What is the kernel of this map? Well, it is everything that is
+          sent to the identity, which is the coset <m>eN = N</m>. What
+          happens if <m>gN = N</m> for some arbitrary group element? The
+          left side includes <m>ge = g</m>, since the identity is always a
+          member of any subgroup, so <m>g \in N</m>. And for anything in
+          the subgroup, <m>nN = N</m>. Therefore, the kernel is exactly
+          the group <m>N</m>.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      In this proof, I have already implicitly defined the major
+      construction of this section.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>N \triangleleft G</m> be a normal subgroup. Then the
+          group of cosets of <m>N</m> is called the <term>quotient
+          group</term> of <m>G</m> by <m>N</m>. The notation for a quotient
+          group is <m>G/N</m>. 
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <p>
+        There is a very important example that we've already spend a lot
+        of time with: <m>\ZZ/n\ZZ</m>. <m>n\ZZ</m> is a normal subgroup,
+        so this quotient exists. This notation is also finally
+        explained: this was always the notation for a quotient group.
+      </p>
+      <p>
+        It's worthwhile to talk through this example in detail. What is
+        happening in general in a quotient group is very much a general
+        extension of the idea of the integers modulo <m>n</m>. This is
+        the conceptual archetype.
+      </p>
+      <p>
+        So what is really happening in the integers modulo <m>n</m>?
+        There are several equivalent ways to understand what is going
+        on.
+        <ul>
+          <li>
+            By moving to modular arithmetic, I take any integer <m>k</m>
+            and consider it only up to addition or subtration by a
+            multiple of <m>n</m>. Well, <m>n\ZZ</m> is a normal
+            subgroup, so I am identifying <m>k</m> with any other
+            integer that differs by an element of a normal subgroup. 
+          </li>
+          <li>
+            Alternatively, I can think of modular arithmetic as
+            identifying <m>k</m> with the entire set <m>\bar{k}</m> plus
+            all multiples of <m>n</m>. That's the set 
+            <me>
+              \{k + in | i \in \ZZ\}
+            </me>
+            But this set is exactly a coset: <m>k + n\ZZ</m> (written
+            with addition now since that is the group operation in the
+            integers modulo n). 
+          </li>
+          <li>
+            I can understand modular arithmetic as an equivalent
+            relation: two integers are equivalent if 
+            <me>
+              k = l \mod n
+            </me>
+            Then the intergers modulo <m>n</m> are the equivalence
+            classes of this equivalence relation. The equivalence
+            relation is defined by the subgroup <m>n\ZZ</m>: things are
+            equivalent if and only if they differ by a multiple of
+            <m>n</m>. 
+          </li>
+        </ul>
+        In any way to understand modular arithmetic, I am using a normal
+        subgroup to make identifications and working with the resulting
+        new set that incorportates the identifications. This is exactly
+        what is happening in a group quotient.
+      </p>
+      <p>
+        In the general case, <m>N \triangleleft G</m>, instead of
+        working modulo <m>n</m>, I now work modulo <m>N</m>. In the
+        quotient, the new elements are the <sq>same</sq> only if they
+        differ by something in <m>N</m>. I can treat the new elements as
+        cosets <m>gN</m>. It's exactly the same idea of modular
+        arithemtic, but must more abstract. 
+      </p>
+    </example>
+    <p>
+      I previously defined the projection function <m>\pi_n: \ZZ
+      \rightarrow \ZZ/n\ZZ</m>. This also extends to the general case. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>N \triangleleft G</m> be a normal subgroup. The
+          projection homomorphism 
+          <me>
+            \pi_N: G \rightarrow G/N
+          </me>
+          is the homomorphism defined by <m>\phi(g) = gN</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This was the homormophism I already used in the previous proof:
+      the normal subgroup is precisely the kernel of its projection
+      homomorphism. 
+    </p>
+    <p>
+      Let me get into some more examples. Quotients are a strange idea,
+      so more practice with specific groups is time well spent.
+      However, before I get into examples, I'll prove one useful
+      proposition.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Any subgroup of an abelian group is normal. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Here I can use the other equivalent definition of a normal
+          subgroup. The second statment said that a group is normal if
+          it is invariant under conjugation. In an abelian group,
+          conjugation does nothing, so all subgroups are invariant
+          under conjugation. Therefore, all subgroups are normal.
+        </p>
+      </proof>
+    </proposition>
+    <example>
+      <p>
+        Consider the subbroup <m>\ZZ \subset \RR</m>. Since these are
+        abelian groups (under addition), this is a normal subgroup,
+        <m>\ZZ \triangleleft \RR</m>. Therefore, I can define the
+        group quotient <m>\RR/\ZZ</m>.
+      </p>
+      <p>
+        What is the structure of this group? It is all real numbers
+        where any two numbers that differ by an integer are identified
+        as the <sq>same</sq>. So all of the real numbers
+        <m>\frac{1}{2}</m>, <m>\frac{9}{2}</m>, <m>\frac{-13}{2}</m>,
+        <m>\frac{141}{2}</m>, and <m>\frac{3105}{2}</m> are consider the
+        same in this quotient group because they differ by some whole
+        number. 
+      </p>
+      <p>
+        Since I can add or subtract any whole number, I can write any
+        element of this quotient as the coset <m>r + \ZZ</m> for <m>r
+        \in [0,1)</m>. This is like choosing number is <m>\{0, 1, 2,
+        \ldots, n-1\}</m> to represent integers modulo n: I am choosing
+        a simple set of representatives. So <m>\RR/\ZZ</m> is
+        something like the interval <m>[0,1)</m>. But what happens if
+        I add together two of these cosets? Take this, for example.
+        <me>
+          \left( \frac{4}{5} + \ZZ \right) + \left( \frac{5}{7} + \ZZ
+          \right) = \left(\frac{4}{5} + \frac{5}{7} \right) + \ZZ =
+          \left( \frac{28 + 25}{35} \right) + \ZZ = \frac{53}{35} +
+          \ZZ
+        </me>
+        Then I can reduce this by subtracting 1: any adjustment by a
+        whole number doesn't change the set. 
+        <me>
+          \frac{53}{35} + \ZZ = \frac{53 - 35}{35} + \ZZ =
+          \frac{18}{35} + \ZZ
+        </me>
+        This gives me a representative in <m>[0,1)</m>. What I have
+        done here is essentially looped around: when I go past
+        <m>1</m> in this inteval, I subtract <m>1</m> and start again
+        at <m>0</m>. 
+      </p>
+      <p>
+        So this quotient group is something like the interval
+        <m>[0,1)</m> where, when I go past the end of the interval, I
+        loop around to the start. If I were to do this visually, I
+        would take the interval, curve is around an attach <m>0</m> to
+        <m>1</m>. I would get a circle.
+      </p>
+      <p>
+        And, indeed, this is called the <term>cicle group</term> in
+        group theory. It is the standard group structure on a circle. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Consdier the subgroup <m>\langle F_1 \rangle = \{\Id, F_1\}
+        \subset D_4</m>.  I calculated the conjugacy classes of
+        <m>D_4</m> in <xref ref="example-d4-conjugacy-classes"/>.
+        <m>\{F_1, F_3\}</m> was a conjugacy classes: some of the
+        conjugates of <m>F_1</m> are <m>F_3</m>. But <m>F_3</m> is not
+        in the subgroup; therefore, this subgroup is not invariant
+        under conjugation. This is not a normal subgroup so I cannot
+        make a group quotient. If I tried, the cosets would fail to
+        produce a group structure: the binary operation would not
+        work. 
+      </p>
+      <p>
+        Now consdier the subgroup <m>\langle R_2 \rangle = \{\Id,
+        R_2\} \subset D_4</m>.  <m>\{R_2\}</m> was a conjugacy class
+        of <m>D_4</m>, so all conjugates of <m>R_2</m> are just
+        <m>R_2</m>. This means that the subgroup <m>\langle R_2
+        \rangle</m> is invariant under conjugation, so it is a normal
+        subgroup. I can form the group quotient <m>D_4/\langle R_2
+        \rangle</m>. It consists of these four cosets (which I
+        calculate via the Caley table.) 
+        <md>
+          <mrow>
+            \Id \langle R_2 \rangle = \{ \Id, R_2 \}
+          </mrow>
+          <mrow>
+            R_1 \langle R_2 \rangle = \{ R_1, R_3 \}
+          </mrow>
+          <mrow>
+            F_1 \langle R_2 \rangle = \{ F_1, F_3 \}
+          </mrow>
+          <mrow>
+            F_2 \langle R_2 \rangle = \{ F_2, F_4 \}
+          </mrow>
+        </md>
+        I can perform arithmetic on these cosets. For example. 
+        <me>
+          \left( F_2 \langle R_2 \rangle \right) 
+          \left( F_1 \langle R_2 \rangle \right) =  
+          \left( F_2F_1 \langle R_2 \rangle \right) = 
+          \left( R_1 \langle R_2 \rangle \right) 
+        </me>
+        What I produce is a new group of order 4.
+      </p>
+      <p>
+        What is this group
+        structure, you might ask? It is isomorphic to <m>\ZZ/2\ZZ
+        \times \ZZ/2\ZZ</m>, which means it is not cyclic but it is
+        abelian. The isomorphism is given by this table, which you are
+        free to verify if you wish.
+        <me>
+          \begin{array}{c|cccc}
+            g \amp \Id \langle R_2 \rangle \amp R_2 \langle R_2
+            \rangle \amp F_1 \langle R_2 \rangle \amp F_2 \langle R_2
+            \rangle \\
+            \phi(g) \amp (0,0) \amp (1,0) \amp (0,1) \amp (1,1)
+          \end{array}
+        </me>
+      </p>
+    </example>
+    <example>
+      <p>
+        Consider <m>\ZZ/25\ZZ = \{0, 1, 2, \ldots 24\}</m> expressed
+        as numbers modulo <m>25</m>. <m>\langle 5 \rangle = \{0, 5,
+        10, 15, 20\}</m> is a subgroup. It is a normal subgroup since
+        this is an abelian, where everything is normal. Therefore, the
+        cosets for a quotient group. Here are those cosets.
+        <md>
+          <mrow>
+            0 + \langle r \rangle 
+          </mrow>
+          <mrow>
+            1 + \langle r \rangle 
+          </mrow>
+          <mrow>
+            2 + \langle r \rangle 
+          </mrow>
+          <mrow>
+            3 + \langle r \rangle 
+          </mrow>
+          <mrow>
+            4 + \langle r \rangle 
+          </mrow>
+        </md>
+        This quotient acts excatly like the integers modulo 5, even
+        though it sits inside the integers modulo 25. 
+      </p>
+    </example>
+    <proposition>
+      <statement>
+        <p>
+          I can generalize the previous examples. Let <m>n,m \in
+          \ZZ</m> and assume that <m>m</m> is a factor of <m>n</m>.
+          Then <m>\langle m \rangle</m> is a normal subgroup of
+          <m>\ZZ/n\ZZ</m> and the following isormorphism exists.
+          <me>
+            \left( \ZZ/nZZ \right) / \langle m \rangle \cong
+            \ZZ/\frac{n}{m}\ZZ
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I'll only give the sketch of the proof here. Lagrange's
+          theorem says that the quotient group here must have size
+          <m>\frac{n}{m}</m> and the cosets are represented by the
+          numbers from 0 to <m>\frac{n}{m} - 1</m>. The isomorphism
+          sends these cosets to the matching element of the integers
+          modulo <m>\frac{n}{m}</m>. 
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+  <subsection>
+    <title>Properties of Quotient</title>
+  </subsection>
+  <subsection>
+    <title>Structure of Abelian Groups</title>
+    <p>
+      In <xref ref="proposition-cyclic-structure"/>, I proved a
+      structure theorem for cyclic groups. I want to expand that
+      theorem to all finitely generated abelian groups. For some
+      reason, this result gets referred to as a <sq>fundamental
+      theorem</sq>. 
+    </p>
+    <theorem>
+      <title>The Fundamental Theorem of Finitely-Generated Abelian
+      Group</title>
+      <statement>
+        <p>
+          Let <m>G</m> be a finitely generated abelian group. Then
+          there is a natural numbers <m>d, k_i \in \NN</m> and prime
+          numbers (not necessarily distinct) <m>p_i</m> for some
+          finite index set <m>i \in I</m> such that the following
+          isomorphism exists. 
+          <me>
+            G \cong \ZZ^d \times \ZZ/p_1^{k_1} \times \ldots \times
+            \ZZ/p_n^{k_n}
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          There are finitely many generators for the groups, so I will
+          use induction on the number of generators. If there is one
+          generator, then the group is cyclic and <xref
+          ref="proposition-cyclic-structure"/> gives the required
+          structure. 
+        </p>
+        <p>
+          Now assume that the desired isomorphism exists for a group
+          with up to <m>n</m> generators. I need to prove the
+          isomorphism works for <m>n+1</m> generators. Let <m>g \in
+          G</m> be one of the generator. Then consider the subgroup
+          <m>\langle g \rangle</m>. This is a cyclic subgroup, either
+          finite or infinite. Since <m>G</m> is abelian, all subgroups
+          are normal. This means I can consider the quotient group
+          <m>G/\langle g \rangle</m>. 
+        </p>
+        <p>
+          I claim that this quotient group has <m>n</m> generators,
+          which are precisely the remaining generators of <m>G</m>.
+          Any element of <m>G</m> is a product of the generator, and
+          in the quotient, all powers of <m>g</m> are sent to the
+          identity; so the remaining generators create all the coset
+          representatives.
+        </p>
+        <p>
+          Since the qoutient group has <m>n</m> generators, I can
+          assume that it has the desired isomorophism by the induction
+          assumption. Then I claim the following isomorphism.
+          <me>
+            G \cong \langle g \rangle \times \left( G/\langle g
+            \rangle \right) 
+          </me>
+          Any element of <m>G</m> can be written as <m>g^r h</m> where
+          <m>h</m> is generated by the remaining generators. The the
+          isomorphism is <m>\phi(g^rh) = (g^r, h)</m>. This is a
+          homormophism because the group is abelian and I can always
+          move the powers of g to the start of the product. (This 
+          isomorphism is not necessarily true in general for
+          non-abelian groups). The map is surjective by construction,
+          and its kernel is only the identity of g, so it is also
+          injective. Therefore, this is an isormophism.
+        </p>
+        <p>
+          Then I combine this isormophism with the induction
+          assumption. The quotient group is already of the desired
+          form, and the new group is a cyclic group, so it is also
+          like one of the factors of the desired form. I conclude that
+          <m>G</m> has the desired form and the proof is completed. 
+        </p>
+      </proof>
+    </theorem>
+    <p>
+      Now I've proved a very nice structure theorem. I understand the
+      structure of most commonly encountered abelian groups.
+      (Infinitely generated abelian groups exists, and we even know
+      some of them: <m>\QQ</m>, <m>\RR</m> and most of the function
+      groups under addition qualify.) But understanding complete the
+      finitely generated abelian groups is a really nice result, and a
+      good example of what progress and major results look like in
+      group theory.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Simple Groups</title>
+    <p>
+      I prove a pretty substantial structure theorem in the previous
+      section. Now let me define some terms to state (but certainly
+      not prove) a much more important and substantial structure
+      theorem. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A group which contains no normal subgroup (other than the
+          trivial subgroup and the group itself) is called a
+          <term>simple</term> group. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Why are these called simple group? The following proposition
+      shows why. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>G</m> be a simple group. Then the only extension of
+          <m>G</m> is the extension formed from the maps
+          <md>
+            <mrow>
+              \Id: G \rightarrow G
+            </mrow>
+            <mrow>
+              \pi_G: G \rightarrow \{e_g\}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If there were any other extension, then the extension would
+          have defined a kernel in <m>G</m>. That kernel would have
+          been a normal subgroup. But normal subgroups don't exist in
+          simple groups, so the kernel must be all of <m>G</m> or the
+          trivial subgroup. This means that the only maps that can
+          exist are the two that I have stated. (Technically, this is
+          only true up to isomorphism, but that is enough for the
+          result to make sense.) 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      Simple groups can't be broken apart into smaller groups. They
+      are not products of smaller group. Extensions are the general
+      way to put groups together adn the proposition shows that simple
+      groups don't have any non-trivial extensions. 
+    </p>
+    <p>
+      If we think about the structure of groups, we can now ask this
+      question in a new way.
+      <ul>
+        <li>
+          What are all the simple groups?
+        </li>
+        <li>
+          What are all the ways of putting simple groups together to
+          make other groups? 
+        </li>
+      </ul>
+      For finite groups, this is exactly how group theory developed in
+      the 20th century. (For infinite groups, the classification
+      problem in general is completely intractable, but classification
+      of various types of infinite groups typically have very
+      different flavours and ideas.) I can now state the major
+      theorem. 
+    </p>
+    <proposition>
+      <title>The Classification of Finite Simple Groups</title>
+      <statement>
+        <p>
+          Let <m>G</m> be a finite simple group. Then <m>G</m> must be
+          one of the following types.
+          <ul>
+            <li>
+              <m>G \cong \ZZ/p\ZZ</m> for <m>p</m> some prime number.
+              (These are the only abelian finite groups).
+            </li>
+            <li>
+              <m>G \cong A_n</m> for <m>n \geq 5</m>.
+            </li>
+            <li>
+              <m>G</m> is a <term>simple group of Lie type</term>.
+              There are 16 infinite families of these groups. 
+            </li>
+            <li>
+              <m>G</m> is one of the 26 <term>sporadic groups</term>, a
+              selection of groups that don't fit into the infinite
+              families.
+            </li>
+          </ul>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This proof is a major accomplishment of 20th century
+          mathematics. It was almost entirely completed in 1983, when
+          it was announced. (Several small errors were found and fixed
+          over the next 30 years). A reasonable estimate guesses that
+          this proof is spread out over 10,000 pages of mathematical
+          papers. There is a project to make a more concise version of
+          the proof, but even that project is already several books
+          long. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      There is a lot to say here. First, let me talk about the
+      alternating groups. These are simple for <m>n \geq 5</m>. There
+      is a long history behind this result. I'm not going to get into
+      any details, but this relates deeply to solving polynomial
+      equations. You all know the quadratic equation: it solves any
+      quadratic (at least if complex numbers are allow for negative
+      discriminant). There is a similar equation for cubic and
+      quartics. However, no such formula exist for polynomials of
+      degree 5.
+    </p>
+    <p>
+      How to mathematicians find these general formulae? There are
+      many ways, but one of the ways is by looking at permutations of
+      the roots of a polynomial. That brings in the symmetric groups,
+      and it turns out that even premutations are important. So the
+      sturcture of <m>A_n</m> is somehow important to the roots of
+      polynomials. Finally, after a bunch of very strange mathematics,
+      its turns out that solving with roots (like in the quadratic
+      formula) relies on normal subgroups of <m>A_n</m>. Since
+      <m>A_n</m> is simple for <m>n \geq 5</m>, there are no normal
+      subgroups. This means there is not equation for polynomial
+      roots, no solution by roots. Very strange.
+    </p>
+    <p>
+      Next, let me briefly mention the <sq>groups of lie type</sq>.
+      These families all come from Lie theory, which is a branch of
+      group theory that deals with groups which are also interesting
+      geometric shapes. It's a deep and complex area of mathematics in
+      itself. It's not easy to same much more about it at this point,
+      but it's a broad and active part of research mathematics. 
+    </p>
+    <p>
+      Finally, we have the sporadic groups. These are fascinating: 26
+      special groups which are simple but don't fit into any of the
+      infinite families. These come from a variety of different places
+      in mathematics<mdash/>there is no unifying structure of idea
+      behind all 26. Let me briefly giv you their common notations and
+      their orders. 
+      <me>
+        \begin{array}{l|l}
+          \text{Notation} \amp \text{Order} \\
+          \hline
+          M_{11} \amp 7,920 \\
+          M_{12} \amp 95,040 \\
+          J_1 \amp 175,560 \\
+          M_{22} \amp 443,520 \\
+          J_2 \amp 604,800 \\
+          M_{23} \amp 10,200,960 \\
+          T \amp 17,971,200 \\
+          HS \amp 44,342,000 \\
+          J_3 \amp 50,232,960 \\
+          M_{24} \amp 244,823,040  \\
+          McL \amp 898,128,000 \\
+          F_7 \amp 4,030,387,200 \\
+          Ru \amp 145,926,144,000 \\
+          Suz \amp 448,345,487,600 \\
+          ON \amp 460,815,505,920 \\
+          Co_3 \amp 495,766,656,000 \\
+          Co_2 \amp 42,305,421,312,000 \\
+          Fi_{22} \amp 64,561,751,654,400 \\
+          F_5 \amp 273,030,912,000,000 \\
+          Ly \amp 51,765,179,004,000,000 \\
+          F_3 \amp 90,745,943,887,872,000 \\
+          Fi_{23} \amp 4,089,470,473,293,004,800 \\
+          Co_1 \amp 4,157,776,806,543,360,000 \\
+          J_4 \amp 86,775,571,046,007,562,880  \\
+          Fi_{24} \amp 1,255,205,709,190,661,721,292,800 \\
+          F_2 \amp 4,154,781,481,226,426,191,117,580,544,000,000 \\
+          M \amp
+          808,017,424,794,512,875,886,459,904,761,710,757,004,754,368,000,000,000
+        \end{array}
+      </me>
+    </p>
+    <p>
+      This last group is called, rather dramatically, <term>the
+      Monster</term>. Its existence was first proved in a paper
+      published in 1980. In that paper, the only way to talk about
+      this group is as a subgroup of <m>GL(196,883)</m>. Let me make it
+      clear what is being said here: each element of the group is an
+      invertible <m>196,883 \times 196,833</m> matrix and a
+      transformation of the vector space <m>\RR^{196883}</m>. So each
+      element is a matrix with <m>196,883^2 = 38,762,915,689</m>
+      coefficients. Then there are approximately <m>8 \times
+      10^{53}</m> of these matrices. This is, apparently a group and,
+      even with all these elements, it has no normal subgroups. 
+    </p>
+    <p>
+      This is wild, but even more can be said about the monster. It
+      can be proved that <m>196,883</m> is, indeed, the smallest
+      possible dimension for which you can realize the Monster group
+      as a group of matrices. So this number is somehow interesting.
+      Over a decade after the construction of the Monster was
+      published, other mathematician were working in a completely
+      distinct part of mathematics: modular functions. This is a part
+      of (very advanced) calculus and geometry, and not at all related
+      to group theory. The mathematicians were working with a
+      function and, at one point, they calculated its Taylor
+      expansion. This is what they wrote down.
+      <me>
+        J(q) = \frac{1}{q} + 744 + 196884q + \ldots 
+      </me>
+      Now, <m>196,883</m> is only one different from <m>196,883</m>
+      and they are both large enough numbers that this might be
+      notable. After a great deal of work, a very mysterious and deep
+      connection was discovered. This was not a coincidence: there was
+      a mathematical connection between the Monster and these modular
+      functions. This is a very celebrated example of uncanny and
+      unexpected conections in mathematics. It is ofte referred to as
+      <term>monstrous moonshie</term>. You can even read the book on
+      the subject: Moonshine beyond the Monster by Terry Gannon, a
+      professor at the University of Alberta here in Edmonton. 
+    </p>
+  </subsection>
+</section>
+

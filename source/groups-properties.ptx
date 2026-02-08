@@ -467,7 +467,7 @@
       is conjugate to the identity. 
     </p>
   </example>
-  <example>
+  <example xml:id="example-d4-conjugacy-classes">
     <p>
       The conjugacy classes of <m>D_4</m> are the following sets.
       <me>
