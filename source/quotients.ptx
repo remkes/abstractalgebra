@@ -249,7 +249,7 @@
       <proof>
         <p>
           Here I can use the other equivalent definition of a normal
-          subgroup. The second statment said that a group is normal if
+          subgroup. The second statment says that a group is normal if
           it is invariant under conjugation. In an abelian group,
           conjugation does nothing, so all subgroups are invariant
           under conjugation. Therefore, all subgroups are normal.
@@ -349,17 +349,16 @@
         <me>
           \left( F_2 \langle R_2 \rangle \right) 
           \left( F_1 \langle R_2 \rangle \right) =  
-          \left( F_2F_1 \langle R_2 \rangle \right) = 
-          \left( R_1 \langle R_2 \rangle \right) 
+          F_2F_1 \langle R_2 \rangle = 
+          R_1 \langle R_2 \rangle \
         </me>
         What I produce is a new group of order 4.
       </p>
       <p>
-        What is this group
-        structure, you might ask? It is isomorphic to <m>\ZZ/2\ZZ
-        \times \ZZ/2\ZZ</m>, which means it is not cyclic but it is
-        abelian. The isomorphism is given by this table, which you are
-        free to verify if you wish.
+        What is this group structure, you might ask? It is isomorphic
+        to <m>\ZZ/2\ZZ \times \ZZ/2\ZZ</m>, which means it is not
+        cyclic but it is abelian. The isomorphism is given by this
+        table, which you are free to verify if you wish.
         <me>
           \begin{array}{c|cccc}
             g \amp \Id \langle R_2 \rangle \amp R_2 \langle R_2
@@ -376,22 +375,22 @@
         as numbers modulo <m>25</m>. <m>\langle 5 \rangle = \{0, 5,
         10, 15, 20\}</m> is a subgroup. It is a normal subgroup since
         this is an abelian, where everything is normal. Therefore, the
-        cosets for a quotient group. Here are those cosets.
+        cosets form a quotient group. Here are those cosets.
         <md>
           <mrow>
-            0 + \langle r \rangle 
+            0 + \langle 5 \rangle 
           </mrow>
           <mrow>
-            1 + \langle r \rangle 
+            1 + \langle 5 \rangle 
           </mrow>
           <mrow>
-            2 + \langle r \rangle 
+            2 + \langle 5 \rangle 
           </mrow>
           <mrow>
-            3 + \langle r \rangle 
+            3 + \langle 5 \rangle 
           </mrow>
           <mrow>
-            4 + \langle r \rangle 
+            4 + \langle 5 \rangle 
           </mrow>
         </md>
         This quotient acts excatly like the integers modulo 5, even
@@ -406,7 +405,7 @@
           Then <m>\langle m \rangle</m> is a normal subgroup of
           <m>\ZZ/n\ZZ</m> and the following isormorphism exists.
           <me>
-            \left( \ZZ/nZZ \right) / \langle m \rangle \cong
+            \left( \ZZ/n\ZZ \right) / \langle m \rangle \cong
             \ZZ/\frac{n}{m}\ZZ
           </me>
         </p>
@@ -431,8 +430,8 @@
     <p>
       In <xref ref="proposition-cyclic-structure"/>, I proved a
       structure theorem for cyclic groups. I want to expand that
-      theorem to all finitely generated abelian groups. For some
-      reason, this result gets referred to as a <sq>fundamental
+      theorem to all finitely generated abelian groups.  In the
+      literature, this result gets referred to as a <sq>fundamental
       theorem</sq>. 
     </p>
     <theorem>
@@ -441,13 +440,13 @@
       <statement>
         <p>
           Let <m>G</m> be a finitely generated abelian group. Then
-          there is a natural numbers <m>d, k_i \in \NN</m> and prime
+          there are natural numbers <m>d, k_i \in \NN</m> and prime
           numbers (not necessarily distinct) <m>p_i</m> for some
           finite index set <m>i \in I</m> such that the following
           isomorphism exists. 
           <me>
             G \cong \ZZ^d \times \ZZ/p_1^{k_1} \times \ldots \times
-            \ZZ/p_n^{k_n}
+            \ZZ/p_l^{k_l}
           </me>
         </p>
       </statement>
@@ -457,13 +456,13 @@
           use induction on the number of generators. If there is one
           generator, then the group is cyclic and <xref
           ref="proposition-cyclic-structure"/> gives the required
-          structure. 
+          structure. That completes the base case.
         </p>
         <p>
           Now assume that the desired isomorphism exists for a group
           with up to <m>n</m> generators. I need to prove the
           isomorphism works for <m>n+1</m> generators. Let <m>g \in
-          G</m> be one of the generator. Then consider the subgroup
+          G</m> be one of the generators. Then consider the subgroup
           <m>\langle g \rangle</m>. This is a cyclic subgroup, either
           finite or infinite. Since <m>G</m> is abelian, all subgroups
           are normal. This means I can consider the quotient group
@@ -475,7 +474,8 @@
           Any element of <m>G</m> is a product of the generator, and
           in the quotient, all powers of <m>g</m> are sent to the
           identity; so the remaining generators create all the coset
-          representatives.
+          representatives. Therefore, the remaining generators
+          generate the quotient group.
         </p>
         <p>
           Since the qoutient group has <m>n</m> generators, I can
@@ -497,10 +497,14 @@
         </p>
         <p>
           Then I combine this isormophism with the induction
-          assumption. The quotient group is already of the desired
-          form, and the new group is a cyclic group, so it is also
-          like one of the factors of the desired form. I conclude that
-          <m>G</m> has the desired form and the proof is completed. 
+          assumption and <xref ref="proposition-cyclic-structure"/>.
+          The quotient group is already of the desired
+          form, and the new group is a cyclic group, so it also has
+          the desired form, either just as something isomorphic to
+          <m>\ZZ</m> or a product of the integers modulo powers of
+          primes. By grouping the pieces of the two products, 
+          I conclude that <m>G</m> has the desired form and the proof
+          is completed. 
         </p>
       </proof>
     </theorem>
@@ -509,7 +513,7 @@
       structure of most commonly encountered abelian groups.
       (Infinitely generated abelian groups exists, and we even know
       some of them: <m>\QQ</m>, <m>\RR</m> and most of the function
-      groups under addition qualify.) But understanding complete the
+      groups under addition qualify.) Understanding completely the
       finitely generated abelian groups is a really nice result, and a
       good example of what progress and major results look like in
       group theory.
@@ -519,9 +523,9 @@
     <title>Simple Groups</title>
     <p>
       I prove a pretty substantial structure theorem in the previous
-      section. Now let me define some terms to state (but certainly
-      not prove) a much more important and substantial structure
-      theorem. 
+      section. Now let me define a new type of group which I will use
+      to state (but certainly.  not prove) a much more important and
+      substantial structure theorem. 
     </p>
     <definition>
       <statement>
@@ -566,12 +570,13 @@
     </proposition>
     <p>
       Simple groups can't be broken apart into smaller groups. They
-      are not products of smaller group. Extensions are the general
-      way to put groups together adn the proposition shows that simple
-      groups don't have any non-trivial extensions. 
+      are not products of smaller groups. Extensions are the general
+      way to put groups together and the proposition shows that simple
+      groups don't have any non-trivial extensions. They are the
+      building blocks of groups. 
     </p>
     <p>
-      If we think about the structure of groups, we can now ask this
+      If I think about the structure of groups, I can now ask this
       question in a new way.
       <ul>
         <li>
@@ -584,10 +589,10 @@
       </ul>
       For finite groups, this is exactly how group theory developed in
       the 20th century. (For infinite groups, the classification
-      problem in general is completely intractable, but classification
-      of various types of infinite groups typically have very
-      different flavours and ideas.) I can now state the major
-      theorem. 
+      problem in general is completely intractable, but
+      classifications of various types of infinite groups typically
+      have very different flavours and ideas.) I can now state the
+      major theorem. 
     </p>
     <proposition>
       <title>The Classification of Finite Simple Groups</title>
@@ -634,8 +639,8 @@
       is a long history behind this result. I'm not going to get into
       any details, but this relates deeply to solving polynomial
       equations. You all know the quadratic equation: it solves any
-      quadratic (at least if complex numbers are allow for negative
-      discriminant). There is a similar equation for cubic and
+      quadratic (at least if complex numbers are allowed due to negative
+      discriminants). There is a similar equation for cubic and
       quartics. However, no such formula exist for polynomials of
       degree 5.
     </p>
@@ -644,16 +649,17 @@
       many ways, but one of the ways is by looking at permutations of
       the roots of a polynomial. That brings in the symmetric groups,
       and it turns out that even premutations are important. So the
-      sturcture of <m>A_n</m> is somehow important to the roots of
+      structure of <m>A_n</m> is somehow important to the roots of
       polynomials. Finally, after a bunch of very strange mathematics,
       its turns out that solving with roots (like in the quadratic
       formula) relies on normal subgroups of <m>A_n</m>. Since
       <m>A_n</m> is simple for <m>n \geq 5</m>, there are no normal
-      subgroups. This means there is not equation for polynomial
-      roots, no solution by roots. Very strange.
+      subgroups. This means there is no equation for polynomial
+      roots, no solution by roots, for any degree five or greater.
+      Very strange.
     </p>
     <p>
-      Next, let me briefly mention the <sq>groups of lie type</sq>.
+      Next, let me briefly mention the <sq>groups of Lie type</sq>.
       These families all come from Lie theory, which is a branch of
       group theory that deals with groups which are also interesting
       geometric shapes. It's a deep and complex area of mathematics in
@@ -665,8 +671,8 @@
       special groups which are simple but don't fit into any of the
       infinite families. These come from a variety of different places
       in mathematics<mdash/>there is no unifying structure of idea
-      behind all 26. Let me briefly giv you their common notations and
-      their orders. 
+      behind all 26. Let me briefly give you their common notations and
+      their orders.
       <me>
         \begin{array}{l|l}
           \text{Notation} \amp \text{Order} \\
@@ -712,34 +718,35 @@
       transformation of the vector space <m>\RR^{196883}</m>. So each
       element is a matrix with <m>196,883^2 = 38,762,915,689</m>
       coefficients. Then there are approximately <m>8 \times
-      10^{53}</m> of these matrices. This is, apparently a group and,
+      10^{53}</m> of these matrices. This is, apparently, a group and,
       even with all these elements, it has no normal subgroups. 
     </p>
     <p>
-      This is wild, but even more can be said about the monster. It
+      This is wild, but even more can be said about the Monster. It
       can be proved that <m>196,883</m> is, indeed, the smallest
       possible dimension for which you can realize the Monster group
       as a group of matrices. So this number is somehow interesting.
       Over a decade after the construction of the Monster was
-      published, other mathematician were working in a completely
+      published, other mathematicians were working in a completely
       distinct part of mathematics: modular functions. This is a part
       of (very advanced) calculus and geometry, and not at all related
       to group theory. The mathematicians were working with a
       function and, at one point, they calculated its Taylor
       expansion. This is what they wrote down.
       <me>
-        J(q) = \frac{1}{q} + 744 + 196884q + \ldots 
+        J(q) = \frac{1}{q} + 744 + 196,884q + \ldots 
       </me>
-      Now, <m>196,883</m> is only one different from <m>196,883</m>
-      and they are both large enough numbers that this might be
-      notable. After a great deal of work, a very mysterious and deep
-      connection was discovered. This was not a coincidence: there was
-      a mathematical connection between the Monster and these modular
-      functions. This is a very celebrated example of uncanny and
-      unexpected conections in mathematics. It is ofte referred to as
-      <term>monstrous moonshie</term>. You can even read the book on
-      the subject: Moonshine beyond the Monster by Terry Gannon, a
-      professor at the University of Alberta here in Edmonton. 
+      Now, <m>196,884</m> is only one different from <m>196,883</m>
+      and they are both large enough numbers that this similarity
+      might be notable. After a great deal of work, a very mysterious
+      and deep connection was discovered. This was not a coincidence:
+      there was a mathematical connection between the Monster and
+      these modular functions. This is a very celebrated example of
+      uncanny and unexpected conections in mathematics. It is ofte
+      referred to as <term>monstrous moonshine</term>. You can even
+      read a whole book on the subject, if you want: Moonshine beyond
+      the Monster by Terry Gannon, a professor at the University of
+      Alberta here in Edmonton. 
     </p>
   </subsection>
 </section>
