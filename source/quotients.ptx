@@ -74,8 +74,8 @@
               <m>G</m>. 
             </li>
             <li>
-              For all <m>n \in \NN</m> and <m>g \in G</m>, <m>gng^{-1}
-              \in \NN</m>. In this case, we say that <m>N</m> is
+              For all <m>n \in N</m> and <m>g \in G</m>, <m>gng^{-1}
+              \in N</m>. In this case, we say that <m>N</m> is
               invariant under conjugation. 
             </li>
             <li>
@@ -361,7 +361,7 @@
         table, which you are free to verify if you wish.
         <me>
           \begin{array}{c|cccc}
-            g \amp \Id \langle R_2 \rangle \amp R_2 \langle R_2
+            g \amp \Id \langle R_2 \rangle \amp R_1 \langle R_2
             \rangle \amp F_1 \langle R_2 \rangle \amp F_2 \langle R_2
             \rangle \\
             \phi(g) \amp (0,0) \amp (1,0) \amp (0,1) \amp (1,1)
