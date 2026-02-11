@@ -1,0 +1,365 @@
+<section xml:id="section-caley-tables">
+  <title>Caley Tables</title>
+  <p>
+    There is not new conceptual content in this section. It is just
+    here to gather together the Caley tables in one place. In addition
+    to the tables already expressed in the notes, I've added a number
+    of other Caley tables that will be useful for the assignments. 
+  </p>
+  <example>
+    <p>
++     The Caley table for <m>\ZZ/7\ZZ</m> under the
+      operation of addition. 
+    </p>
+    <me>
+      \begin{array}{c| c c c c c c c }
+        + \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\
+        \hline
+        0 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\
+        1 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 0 \\
+        2 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 0 \amp 1 \\
+        3 \amp 3 \amp 4 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \\
+        4 \amp 4 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \\
+        5 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \\
+        6 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \\
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>\ZZ/20\ZZ^*</m> under the
+      operation of multiplication. 
+    </p>
+    <me>
+      \begin{array}{c| c c c c c c c c }
+        \times \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
+        19  \\
+        \hline
+        1 \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
+        19 \\
+        3 \amp 3 \amp 9 \amp 1 \amp 7 \amp 13 \amp 19 \amp 11 \amp
+        17 \\
+        7 \amp 7 \amp 1 \amp 9 \amp 3 \amp 17 \amp 11 \amp 19 \amp
+        13 \\
+        9 \amp 9 \amp 7 \amp 3 \amp 1 \amp 19 \amp 17 \amp 13 \amp
+        11 \\
+        11 \amp 11 \amp 13 \amp 17 \amp 19 \amp 1 \amp 3 \amp 7 \amp
+        9 \\
+        13 \amp 13 \amp 19 \amp 11 \amp 17 \amp 3 \amp 9 \amp 1 \amp
+        7 \\
+        17 \amp 17 \amp 11 \amp 19 \amp 13 \amp 7 \amp 1 \amp 9 \amp
+        3 \\
+        19 \amp 19 \amp 17 \amp 13 \amp 11 \amp 9 \amp 7 \amp 3 \amp
+        1 \\
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>\ZZ/2\ZZ \times \ZZ/2\ZZ</m> under the
+      operation of addition.
+    </p>
+    <me>
+      \begin{array}{c|cccc}
+        + \amp (0,0) \amp (1,0) \amp (0,1) \amp (1,1) \\
+        \hline
+        (0,0) \amp (0,0) \amp (1,0) \amp (0,1) \amp (1,1) \\
+        (1,0) \amp (1,0) \amp (0,0) \amp (1,1) \amp (0,1) \\
+        (0,1) \amp (0,1) \amp (1,1) \amp (0,0) \amp (1,0) \\
+        (1,1) \amp (1,1) \amp (0,1) \amp (1,0) \amp (0,0) 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>\ZZ/3\ZZ \times \ZZ/4\ZZ</m> under the
+      operation of addition.
+    </p>
+    <me>
+      \begin{array}{c|cccc}
+        + \amp (0,0) \amp (1,0) \amp (2,0) \amp (0,1) \amp (1,1)
+        \amp (2,1) \amp (0,2) \amp (1,2) \amp (2,2) \amp (0,2) \amp
+        (1,3) \amp (2,3) \\
+        \hline
+        (0,0) \amp (0,0) \amp (1,0) \amp (2,0) \amp (0,1) \amp (1,1)
+        \amp (2,1) \amp (0,2) \amp (1,2) \amp (2,2) \amp (0,2) \amp
+        (1,3) \amp (2,3) \\
+        (1,0) \amp (1,0) \amp (2,0) \amp (0,0) \amp (1,1) \amp (2,1)
+        \amp (0,1) \amp (1,2) \amp (2,2) \amp (0,2) \amp (1,2) \amp
+        (2,3) \amp (0,3) \\
+        (2,0) \amp (2,0) \amp (0,0) \amp (1,0) \amp (2,1) \amp (0,1)
+        \amp (1,1) \amp (2,2) \amp (0,2) \amp (1,2) \amp (2,2) \amp
+        (0,3) \amp (1,3) \\
+        (0,1) \amp (0,1) \amp (1,1) \amp (2,1) \amp (0,2) \amp (0,2)
+        \amp (2,2) \amp (0,3) \amp (1,3) \amp (2,3) \amp (0,3) \amp
+        (1,0) \amp (2,0) \\
+        (1,1) \amp (1,1) \amp (2,1) \amp (0,1) \amp (1,2) \amp (1,2)
+        \amp (0,2) \amp (1,3) \amp (2,3) \amp (0,3) \amp (1,3) \amp
+        (2,0) \amp (0,0) \\
+        (2,1) \amp (2,1) \amp (0,1) \amp (1,1) \amp (2,2) \amp (2,2)
+        \amp (1,2) \amp (2,3) \amp (0,3) \amp (1,3) \amp (2,3) \amp
+        (0,0) \amp (1,0) \\
+        (0,2) \amp (0,2) \amp (1,2) \amp (2,2) \amp (0,3) \amp (1,3)
+        \amp (2,3) \amp (0,0) \amp (1,0) \amp (2,0) \amp (0,0) \amp
+        (1,1) \amp (2,1) \\
+        (1,2) \amp (1,2) \amp (2,2) \amp (0,2) \amp (1,3) \amp (2,3)
+        \amp (0,3) \amp (1,0) \amp (2,0) \amp (0,0) \amp (1,0) \amp
+        (2,1) \amp (0,1) \\
+        (2,2) \amp (2,2) \amp (0,2) \amp (1,2) \amp (2,2) \amp (0,3)
+        \amp (1,3) \amp (2,0) \amp (0,0) \amp (1,0) \amp (2,0) \amp
+        (0,1) \amp (1,1) \\
+        (0,3) \amp (0,3) \amp (1,3) \amp (2,3) \amp (0,0) \amp (2,0)
+        \amp (2,0) \amp (0,1) \amp (1,1) \amp (2,1) \amp (0,1) \amp
+        (1,2) \amp (2,2) \\
+        (1,3) \amp (1,3) \amp (2,3) \amp (0,3) \amp (1,0) \amp (0,1)
+        \amp (0,0) \amp (1,1) \amp (2,1) \amp (0,1) \amp (1,1) \amp
+        (2,2) \amp (0,2) \\
+        (2,3) \amp (2,3) \amp (0,3) \amp (1,3) \amp (2,0) \amp (1,1)
+        \amp (1,0) \amp (2,1) \amp (0,1) \amp (1,1) \amp (2,1) \amp
+        (0,2) \amp (1,2) 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>D_3</m> under the operation of
+      composition. 
+    </p>
+    <me>
+      \begin{array}{c|cccccc}
+        \circ \amp \Id \amp R_1 \amp R_2 \amp F_1 \amp F_2 \amp F_3
+        \amp \\
+        \hline
+        \Id \amp \Id \amp R_1 \amp R_2 \amp F_1 \amp F_2 \amp F_3 \amp
+        \\
+        R_1 \amp R_1 \amp R_2 \amp \Id \amp F_3 \amp F_1 \amp F_2 \amp
+        \\
+        R_2 \amp R_2 \amp \Id \amp R_1 \amp F_2 \amp F_3 \amp F_1 \amp
+        \\
+        F_1 \amp F_1 \amp F_2 \amp F_3 \amp \Id \amp F_3 \amp F_2 \amp
+        \\
+        F_2 \amp F_2 \amp F_3 \amp F_1 \amp F_3 \amp \Id \amp F_1 \amp
+        \\
+        F_3 \amp F_3 \amp F_1 \amp F_2 \amp F_2 \amp F_1 \amp \Id \amp 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>D_4</m> under the operation of
+      composition.
+    </p>
+    <me>
+      \begin{array}{c|cccccccc}
+        \circ \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp 
+                   F_1 \amp F_2 \amp F_3 \amp F_4 \\
+        \hline
+        \Id \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp 
+                 F_1 \amp F_2 \amp F_3 \amp F_4 \\
+        R_1 \amp R_1 \amp R_2 \amp R_3 \amp \Id \amp 
+                 F_2 \amp F_3 \amp F_4 \amp F_1 \\
+        R_2 \amp R_2 \amp R_3 \amp \Id \amp R_1 \amp 
+                 F_3 \amp F_4 \amp F_1 \amp F_2 \\
+        R_3 \amp R_3 \amp \Id \amp R_1 \amp R_2 \amp 
+                 F_4 \amp F_1 \amp F_2 \amp F_3 \\
+        F_1 \amp F_1 \amp F_4 \amp F_3 \amp F_2 \amp 
+                 \Id \amp R_3 \amp R_2 \amp R_1 \\
+        F_2 \amp F_2 \amp F_1 \amp F_4 \amp F_3 \amp 
+                 R_1 \amp \Id \amp R_3 \amp R_2 \\
+        F_3 \amp F_3 \amp F_2 \amp F_1 \amp F_4 \amp 
+                 R_2 \amp R_2 \amp \Id \amp R_3 \\
+        F_4 \amp F_4 \amp F_3 \amp F_2 \amp F_1 \amp 
+                 R_3 \amp R_3 \amp R_1 \amp \Id 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>D_5</m> under the operation of
+      composition.
+    </p>
+    <me>
+      \begin{array}{c|cccccccccc}
+        \circ \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp 
+                    F_1 \amp F_2 \amp F_3 \amp F_4 \amp F_5 \\
+        \hline
+        \Id \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp 
+                 F_1 \amp F_2 \amp F_3 \amp F_4 \amp F_5 \\
+        R_1 \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp \Id \amp 
+                 F_4 \amp F_5 \amp F_1 \amp F_2 \amp F_3 \\
+        R_2 \amp R_2 \amp R_3 \amp R_4 \amp \Id \amp R_1 \amp 
+                 F_2 \amp F_3 \amp F_4 \amp F_5 \amp F_1 \\
+        R_3 \amp R_3 \amp R_4 \amp \Id \amp R_1 \amp R_2 \amp 
+                 F_5 \amp F_1 \amp F_2 \amp F_3 \amp F_4 \\
+        R_4 \amp R_4 \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp 
+                 F_3 \amp F_4 \amp F_5 \amp F_1 \amp F_2 \\
+        F_1 \amp F_1 \amp F_3 \amp F_5 \amp F_2 \amp F_4 \amp 
+                 \Id \amp R_3 \amp R_1 \amp R_4 \amp R_2 \\
+        F_2 \amp F_2 \amp F_4 \amp F_1 \amp F_3 \amp F_5 \amp 
+                 R_2 \amp \Id \amp R_3 \amp R_1 \amp R_4 \\
+        F_3 \amp F_3 \amp F_5 \amp F_2 \amp F_4 \amp F_1 \amp 
+                 R_4 \amp R_2 \amp \Id \amp R_3 \amp R_1 \\
+        F_4 \amp F_4 \amp F_1 \amp F_3 \amp F_5 \amp F_2 \amp 
+                 R_1 \amp R_4 \amp R_2 \amp \Id \amp R_3 \\
+        F_5 \amp F_5 \amp F_2 \amp F_4 \amp F_1 \amp F_3 \amp 
+                 R_5 \amp R_1 \amp R_4 \amp R_2 \amp \Id 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>D_6</m> under the operation of
+      composition.
+    </p>
+    <me>
+      \begin{array}{c|cccccccccccc}
+        \circ \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp R_5
+        \amp F_1 \amp F_2 \amp F_3 \amp
+        F_4 \amp F_5 \amp F_6 \\
+        \hline
+        \Id \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp R_5 \amp
+        F_1 \amp F_2 \amp F_3 \amp F_4 \amp F_5 \amp F_6 \\
+        R_1 \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp R_5 \amp \Id \amp
+        F_2 \amp F_3 \amp F_4 \amp F_5 \amp F_6 \amp F_1 \\
+        R_2 \amp R_2 \amp R_3 \amp R_4 \amp R_5 \amp \Id \amp R_1 \amp
+        F_3 \amp F_4 \amp F_5 \amp F_6 \amp F_1 \amp F_2 \\
+        R_3 \amp R_3 \amp R_4 \amp R_5 \amp \Id \amp R_1 \amp R_2 \amp
+        F_4 \amp F_5 \amp F_6 \amp F_1 \amp F_2 \amp F_3 \\
+        R_4 \amp R_4 \amp R_5 \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp
+        F_5 \amp F_6 \amp F_1 \amp F_2 \amp F_3 \amp F_4 \\
+        R_5 \amp R_5 \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp R_4 \amp
+        F_6 \amp F_1 \amp F_2 \amp F_3 \amp F_4 \amp F_5 \\
+        F_1 \amp F_1 \amp F_6 \amp F_5 \amp F_4 \amp F_3 \amp F_2 \amp
+        \Id \amp R_5 \amp R_4 \amp R_3 \amp R_2 \amp R_1 \\
+        F_2 \amp F_2 \amp F_1 \amp F_6 \amp F_5 \amp F_4 \amp F_3 \amp
+        R_1 \amp \Id \amp R_5 \amp R_4 \amp R_3 \amp R_2 \\
+        F_3 \amp F_3 \amp F_2 \amp F_1 \amp F_6 \amp F_5 \amp F_4 \amp
+        R_2 \amp R_1 \amp \Id \amp R_5 \amp R_4 \amp R_3 \\
+        F_4 \amp F_4 \amp F_3 \amp F_2 \amp F_1 \amp F_6 \amp F_5 \amp
+        R_3 \amp R_2 \amp R_1 \amp \Id \amp R_5 \amp R_4 \\
+        F_5 \amp F_5 \amp F_4 \amp F_3 \amp F_2 \amp F_1 \amp F_6 \amp
+        R_4 \amp R_3 \amp R_2 \amp R_1 \amp \Id \amp R_5 \\
+        F_6 \amp F_6 \amp F_5 \amp F_4 \amp F_3 \amp F_2 \amp F_1 \amp
+        R_5 \amp R_4 \amp R_3 \amp R_2 \amp R_1 \amp \Id 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>A_3</m> under the operation of
+      composition.
+    </p>
+    <me>
+      \begin{array}{c|ccc}
+        \circ \amp \Id \amp (123) \amp (132) \\
+        \hline
+        \Id   \amp \Id   \amp (123) \amp (132) \\
+        (123) \amp (123) \amp (132) \amp \Id \\
+        (132) \amp (132) \amp \Id \amp (123) 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>S_3</m> under the operation of
+      composition.
+    </p>
+    <me>
+      \begin{array}{c|ccc}
+        \circ \amp \Id \amp (12) \amp (13) \amp (23) \amp (123) \amp
+        (132) \\
+        \hline
+        \Id \amp \Id \amp (12) \amp (13) \amp (23) \amp (123) \amp
+        (132) \\
+        (12) \amp (12) \amp \Id \amp (132) \amp (123) \amp (23) \amp
+        (13) \\
+        (13) \amp (13) \amp (123) \amp \Id \amp (132) \amp (12) \amp
+        (23) \\
+        (23) \amp (23) \amp (132) \amp (123) \amp \Id \amp (13) \amp
+        (12) \\
+        (123) \amp (123) \amp (13) \amp (23) \amp (13) \amp (132) \amp
+        \Id \\
+        (132) \amp (132) \amp (23) \amp (12) \amp (13) \amp \Id \amp
+        (123) 
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      The Caley table for <m>A_4</m> under the operation of
+      composition.
+    </p>
+    <me>
+      \begin{array}{c|cccccccccccc}
+        \circ \amp \Id \amp (12)(34) \amp (13)(24) \amp (14)(23)
+        \amp(123) \amp (124) \amp (134) \amp (234) \amp (132) \amp
+        (142) \amp (143) \amp (243) \\
+        \hline
+        \Id \amp \Id \amp (12)(34) \amp (13)(24) \amp (14)(23) \amp (123)
+        \amp (124) \amp (134) \amp (234) \amp (132) \amp (142) \amp (143)
+        \amp (243) \\
+        (12)(34) \amp (12)(34) \amp \Id \amp (14)(23) \amp (13)(24)
+        \amp (243) \amp (234) \amp (142) \amp (124) \amp (143) \amp
+        (134) \amp (132  \amp (123)\\
+        (13)(24) \amp (13)(24) \amp (14)(23) \amp \Id \amp (12)(34)
+        \amp (142) \amp (143) \amp (243) \amp (132) \amp (234) \amp
+        (123) \amp (124) \amp (134) \\
+        (14)(23) \amp (14)(23) \amp (13)(24) \amp (12)(34) \amp \Id
+        \amp(134) \amp (132) \amp (123) \amp (143) \amp (124) \amp
+        (243) \amp (234) \amp (142) \\
+        (123) \amp (123) \amp (134) \amp (243) \amp (142) \amp (132)
+        \amp (13)(24) \amp (234) \amp (12)(34) \amp \Id \amp (143)
+        \amp (14)(23) \amp (124) \\
+        (124) \amp (124) \amp (143) \amp (132) \amp (234) \amp
+        (14)(23) \amp (142) \amp (13)(24) \amp (123) \amp (134)
+        \amp \Id \amp (243) \amp (12)(34) \\
+        (134) \amp (134) \amp (123) \amp (142) \amp (243) \amp (124)
+        \amp (12)(34) \amp (143) \amp (13)(24) \amp (14)(23) \amp
+        (234) \amp \Id \amp (132) \\
+        (234) \amp (234) \amp (132) \amp (143) \amp (124) \amp
+        (13)(24) \amp (134) \amp (14)(23) \amp (243) \amp (142)
+        \amp(12)(34) \amp (123) \amp \Id \\
+        (132) \amp (132) \amp (234) \amp (124) \amp (143) \amp \Id
+        \amp (243) \amp (12)(34) \amp (134) \amp (123) \amp (14)(23)
+        \amp (142) \amp (13)(24) \\
+        (142) \amp (142) \amp (243) \amp (134) \amp (123) \amp (234)
+        \amp \Id \amp (132) \amp (14)(23) \amp (13)(24) \amp (124)
+        \amp(12)(34) \amp (143) \\
+        (143) \amp (143) \amp (124) \amp (234) \amp (132) \amp
+        (12)(34) \amp (123) \amp \Id \amp (142) \amp (243)
+        \amp(13)(24) \amp (134) \amp (14)(23) \\
+        (243) \amp (243) \amp (142) \amp (123) \amp (134) \amp (143)
+        \amp (14)(23) \amp (124) \amp \Id \amp (12)(34) \amp (132)
+        \amp (13)(24) \amp (234)
+      \end{array}
+    </me>
+  </example>
+  <example>
+    <p>
+      This is the Caley table for <m>Q</m>, the quaternion group. 
+    </p>
+    <me>
+      \begin{array}{c|cccccccc}
+        \cdot \amp 1 \amp -1 \amp i \amp -i \amp j \amp -j \amp k
+        \amp -k \\
+        \hline
+        1 \amp 1 \amp -1 \amp i \amp -i \amp j \amp -j \amp k \amp
+        -k \\[0.2em]
+        -1 \amp -1 \amp 1 \amp -i \amp i \amp -j \amp j \amp -k \amp 
+        k \\[0.2em]
+        i \amp i \amp -i \amp -1 \amp 1 \amp k \amp -k \amp -j \amp 
+        j \\[0.2em]
+        -i \amp -i \amp i \amp 1 \amp -1 \amp -k \amp k \amp j \amp 
+        -j \\[0.2em]
+        j \amp j \amp -j \amp -k \amp k \amp -1 \amp 1 \amp i \amp 
+        -i \\[0.2em]
+        -j \amp -j \amp j \amp k \amp -k \amp 1 \amp -1 \amp -i \amp 
+        i \\[0.2em]
+        k \amp k \amp -k \amp j \amp -j \amp -i \amp i \amp -1 \amp 
+        1 \\[0.2em]
+        -k \amp -k \amp k \amp -j \amp j \amp i \amp -i \amp 1 \amp 
+        -1
+      \end{array}
+    </me>
+  </example>
+</section>

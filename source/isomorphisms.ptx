@@ -69,7 +69,7 @@
       <p>
         This is homomorphism. I'm not going to prove it, but you can
         check all the pairs explicitly to verify it if you wish. It is
-        not an isomorphism because <m>D_4</m> has eight element snad
+        not an isomorphism because <m>D_4</m> has eight elements nad
         <m>S_4</m> has twenty-four; no bijecton can exist between
         these two sets. However, it is a bijection onto the subgroup
         <m>\langle (1234), (13) \rangle</m>. Again, I'm not going to
@@ -77,7 +77,7 @@
         these two elements generate exactly the eight elements which
         are the image of this function. Then <m>\phi</m> is a
         homomorhpism which is also a bijection, so it is an
-        isomophisnm. I can write <m>D_4 \cong \langle (1234), (12)
+        isomophisnm. I can write <m>D_4 \cong \langle (1234), (13)
         \rangle</m>, and I can say that <m>D_4</m> is isomorphic to a
         subgroup of <m>S_4</m>
       </p>
@@ -161,7 +161,7 @@
         For injectivity, I'll use <xref
         ref="proposition-injective-kernel"/>. The identity element of
         <m>\RR^*</m> is 1. What matrices are sent to this identity?
-        Well, to be sent to 1, the upper right corner of the matrix
+        Well, to be sent to 1, the upper left corner of the matrix
         must be 1, which means that only the identity matrix is sent
         to 1. This means the kernel is only the identity in <m>G</m>,
         proving the function is injective. Since it is both injective
@@ -727,7 +727,7 @@
           </me>
           First, this is a homomorphism. 
           <me>
-            \phi(g^k g^l) = kl = \phi(g^k) \phi(g^l)
+            \phi(g^k g^l) = k + l = \phi(g^k) + \phi(g^l)
           </me>
           Second, the exponents in the group are <m>0</m> to
           <m>(p-1)</m>. These exponents perfectly match up with the
@@ -772,7 +772,7 @@
           is not allowed in the definition of a function. So assume
           <m>g^k = g^l</m>. Without loss of generality assume <m>k
           \geq l</m>.  The previous equation is equivalent to
-          <m>g^{k-l} = g^0 \Id</m>. But I know the order of <m>g</m>
+          <m>g^{k-l} = g^0 = e</m>. But I know the order of <m>g</m>
           is infinite, which means that no positive exponent gives the
           identity.  This exponent is either zero or positive. I
           conclude <m>k-l =0</m> or <m>k=l</m>.  Therefore, each group

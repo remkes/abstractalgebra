@@ -240,7 +240,7 @@
         </mrow>
       </md>
       This can be verified, again, from the Caley table <xref
-      ref="table-d4-multiplication"/>. Doing so is a fair bit of work
+      ref="example-d4"/>. Doing so is a fair bit of work
       (to do this the most naive way would be to test all <m>2^8 =
       256</m> possible subsets to see which satisfied the subgroup
       properties), but for finite groups, it is nice to at least have

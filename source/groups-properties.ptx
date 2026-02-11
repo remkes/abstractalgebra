@@ -130,8 +130,8 @@
     <me>
       F_3 R_3 = R_1 F_3 
     </me>
-    From <xref ref="table-d4-multiplication"/>, I can check that both
-    of these product are equal fo <m>F_4</m>. However, if I could
+    From <xref ref="example-d4"/>, I can check that both
+    of these product are equal to <m>F_4</m>. However, if I could
     cancel <m>F_3</m>, I would produce the false equality <m>R_3 =
     R_1</m>. So care is required for non-abelian groups and
     cancellation. (If the group is abelian, of course,

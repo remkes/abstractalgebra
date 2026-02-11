@@ -421,9 +421,14 @@
         </p>
       </proof>
     </proposition>
+    <p>
+      ADD: normal subgroups and extensions. An extension is equivalent
+      to an injective homomorphisms: the the group is an extension of
+      the image by the kernel. 
+    </p>
   </subsection>
   <subsection>
-    <title>Properties of Quotient</title>
+    <title>Properties of Quotients</title>
   </subsection>
   <subsection>
     <title>Structure of Abelian Groups</title>
@@ -517,6 +522,10 @@
       finitely generated abelian groups is a really nice result, and a
       good example of what progress and major results look like in
       group theory.
+    </p>
+    <p>
+      ADD: repeat the table of small groups, but now all abelian
+      groups of order 12 or less
     </p>
   </subsection>
   <subsection>

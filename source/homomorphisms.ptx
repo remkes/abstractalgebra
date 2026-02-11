@@ -344,8 +344,7 @@
     <proof>
       <p>
         Let <m>e_g</m> be the identity of <m>G</m>, let <m>e_h</m> be
-        the identity of <m>H</m> and let <m>g \in
-        G</m> be any element. Then consider this calculation.
+        the identity of <m>H</m>. Then consider this calculation.
         <me>
           e_h \phi(e_g) = \phi(e_g) = \phi(e_g e_g) = \phi(e_g)
           \phi(e_g) 
