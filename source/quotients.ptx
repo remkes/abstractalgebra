@@ -421,14 +421,6 @@
         </p>
       </proof>
     </proposition>
-    <p>
-      ADD: normal subgroups and extensions. An extension is equivalent
-      to an injective homomorphisms: the the group is an extension of
-      the image by the kernel. 
-    </p>
-  </subsection>
-  <subsection>
-    <title>Properties of Quotients</title>
   </subsection>
   <subsection>
     <title>Structure of Abelian Groups</title>
@@ -756,6 +748,229 @@
       read a whole book on the subject, if you want: Moonshine beyond
       the Monster by Terry Gannon, a professor at the University of
       Alberta here in Edmonton. 
+    </p>
+  </subsection>
+  <subsection>
+    <title>Quotients and Extensions</title>
+    <p>
+      In <xref ref="definition-extension"/>, I defined extensions
+      and talked about how extensions were a general way, using
+      homomorphisms, to talk about putting two groups together to make
+      a larger group. Now I want to relate quotients to extension.
+      First, I need an important property of quotients.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>\phi:K \rightarrow H</m> be a surjective homomorphism
+          of groups. There there exists the following isormorphism
+          <me>
+            K/\Ker(\phi) \cong H
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I define the homomorphisms this way. Take a coset <m>k
+          \Ker(\phi) \in K/\Ker(\phi)</m>. The function is defined as 
+          <me>
+            \eta(k \Ker(\phi)) = \phi(k) 
+          </me>
+          I need to prove several things: this is well-defined, the
+          homomorhpisms property, and bijectivity
+        </p>
+        <p>
+          First, well-defined. Cosets can have multiple
+          representatives. If <m>k_1 \Ker(\phi)</m> and <m>k_2
+          \Ker(\phi)</m> are two representatives of the same coset,
+          then there eixsts some element <m>g</m> in the kernel such
+          that <m>k_1 = k_2g</m>. Then I apply the function and use
+          this identity.
+          <me>
+            \eta(k_1 \Ker(\phi)) = \phi(k_1) = \phi(k_2g)
+          </me>
+          Then I use the homomorphism property of <m>\phi</m>
+          <me>
+            \phi(k_2g) = \phi(k_2) \phi(g) 
+          </me>
+          But <m>g</m> is in the kernel, so it is sent to the identity
+          <me>
+            \phi(k_2) \phi(g) = \phi(k_2) = \eta(k_2 \Ker(\phi))
+          </me>
+          This proves that the function is well defined<mdash/>no
+          matter what coset representative I use, the output is the
+          same. 
+        </p>
+        <p>
+          The other properties are a bit more immediate. Since
+          <m>\eta</m> is defined by another homomorphism, I get the
+          homomorphism property pretty easily. 
+          <me>
+            \eta(k_1 \Ker(\phi) k_2 (\Ker(\phi)) = \eta(k_1k_2
+            \Ker(\phi) = \phi(k_1k_2) = \phi(k_1) \phi(k_2) = \eta(k_1
+            \Ker(\phi)) \eta(k_2 \Ker(\phi))
+          </me>
+        </p>
+        <p>
+          <m>\eta</m> is surjective by construction: every value of
+          <m>K</m> can show up as a coset representative, so <m>\eta(k
+          \Ker(\phi)) = \phi(k)</m> is in the image for any <m>k</m>.
+          Since <m>\phi</m> is surjective, <m>\eta</m> is also
+          surjective.
+        </p>
+        <p>
+          Lastly, what is the kernel of <m>\eta</m>? Well, to be sent
+          to the identity, <m>\eta(k \Ker(\phi)) = \phi(k)</m> must be
+          the identity. This means that <m>k \in \Ker (\phi)</m>, so
+          <m>k \Ker(\phi)</m> must be the trivial coset, which is the
+          identity in the quotient groups. Therefore, the kernel is
+          just the identity and <m>\eta</m> is injetive. 
+        </p>
+        <p>
+          Having proved all the conditions, I conlude that the desired
+          isomorphism exists. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      With that technical detail finished, I can move on to the main
+      idea of this section.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          There is a perfect matching (up to isormorphism) between
+          extensions where (<m>K</m> is an extension of <m>H</m> by
+          <m>G</m> and quotients of the group <m>K</m>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Assume that I have an extension with the notation from the
+          statement of the theorem. Well then, by the definition of an
+          extension, I have a surjective homomorphism <m>\pi: K
+          \rightarrow H</m>. The kernel <m>\pi
+        </p>
+        <p>
+          For the alternative, assume I have a surjective homomorphism
+          <m>\pi: K \rightarrow H</m>. The <m>\Ker(\pi)</m> is a
+          subgroup of <m>K</m>. I can define the inclusion map 
+          <me>
+            i: \Ker(\pi) \rightarrow K
+          </me>
+          which is just the identity on <m>\Ker(\pi)</m>. The image of
+          this map is exactly <m>\Ker(\pi)</m> and the map, since it
+          is the identity on the subgroup is injective. Therefore, I
+          have an injective map 
+          <me>
+            i: \Ker(\pi) \rightarrow K
+          </me>
+          with image the same as the kernel of <m>\pi</m>. Therefore,
+          these two maps defined <m>K</m> as an extension of <m>H</m>
+          by <m>\Ker(\pi)</m>. 
+        </p>
+        <p>
+          This defines a matching. The matching is up to isormorphism
+          since the injection <m>i: G \rightarrow K</m> doesn't
+          require that <m>G</m> is exactly the kernel of <m>\pi</m>,
+          but just that it is isomorphic to that kernel. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      I defined products and extensions as a way of putting groups
+      together. With this proposition, I can use the language of
+      quotients to talk about how to break down a group into smaller
+      pieces. Anytime a group has a normal subgroup, I can break the
+      group down into an extension: the group can be decomposed into a
+      normal subgroup and a quotient group by that normal subgroup.
+      Normal subgroups break down groups into smaller pieces (which
+      are then put back togehter using the language of group
+      extensions.)
+    </p>
+    <p>
+      This also lets me state a final theorem relating to the
+      classification of finite simple groups. I need a technical
+      result again first. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>G</m> be a finite group and let <m>N \triangleleft
+          G</m> be a maximal normal subgroup. (Maximal here means that
+          there is no larger normal subgroup which contains <m>N</m>.
+          Then <m>G/N</m> is a simple group. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          For contradition, assume that <m>M \triangleleft G/N</m> is
+          a non-trivial normal subgroup (not the identity or the whole
+          group). The notation <m>\pi_N^{-1}(M)</m> is the pre-image
+          of <m>M</m>. This is a subgroup of <m>G</m>: I can basically
+          pull back all the group properties from <m>M</m>. (I'm being
+          a bit informal here, but feel free to verify the details if
+          you wish.) 
+        </p>
+        <p>
+          Now I have two homomorphisms: <m>\pi_N G \righatrow G/N</m>
+          and <m>\pi_M: G/N \rightarrow (G/N)/M</m>. I can compose
+          these to get <m>\pi_M \circ \pi_N: G \rightarrow
+          (G/N)/M</m>. The kernel of this composition are those things
+          in <m>G</m> which gets set to <m>M \subset G/N</m>, since
+          <m>M</m> is sent to the identity in the second quotients.
+          Therefor <m>\pi_N^{-1}(M)</m> is precisely the kernel. (This
+          also proves the subgroup property, since a kernel is always
+          a subgroup.) 
+        </p>
+        <p>
+          Therefore <m>\pi_n^{-1}(M)</m> is a normal subgroup og
+          <m>G</m> which is not all of <m>G</m> but which is larger
+          than <m>N</m>. This is a contradiction to <m>N</m> being
+          maximal. Therefore, I conclude, by contradiction that
+          <m>G/N</m> must be simple.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      Now here is the final classification result here: a scheme that
+      can, in principle at least, decribe how all finite groups are
+      constructed.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>G</m> be a finite groups. Then <m>G</m> can be
+          entirely constructed by finite simple groups and group
+          extensions. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If <m>G</m> is already simple, then I am done. Otherwise, I
+          choose a maximal normal subgroup <m>N \triangleleft G</m>
+          and make the quotient <m>G/N</m>. Then I know that <m>G</m>
+          is an extension of <m>G/N</m> by <m>N</m>. I also know that
+          <m>G/N</m> is a simple group. 
+        </p>
+        <p>
+          Now I iterate using <m>N</m> instead of <m>G</m>. I look for
+          a maximal normal subgroup, take the quotient, and get an
+          extension where the quotient is simple. I repeat the
+          iteration until I get an extension where both parts are
+          simple; this will always happen since the original group is
+          finite and the quotients keep getting smaller. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      So there you have it: a way to understand all finite groups. You
+      can start with simple groups and keep making extensions using
+      more simple groups. In this way, you can build any groups.
+      Equivalently, you can start with a finite groups, take quotients
+      that are simple, and keep repeating until you just have a
+      complete sequence of simple quotients. In this way, all finite
+      groups are constructed from the simple groups. 
     </p>
   </subsection>
 </section>

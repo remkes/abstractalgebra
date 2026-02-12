@@ -510,4 +510,63 @@
       </p>
     </statement>
   </definition>
+  <p>
+    There is three more definition and notations for functions that will
+    be useful. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>f: A \rightarrow B</m> be a function and let <m>C
+        \subset A<m>. The <term>image</term> of the subset <m>C</m> is
+        the set of all outputs of <m>f</m> which result from inputs in
+        <m>C</m>. It is written <m>f(C)</m>. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    There is one annoying piece of language here. The term
+    <sq>image</sq> is overloaded here. The image of the function is
+    the range<mdash/>all possible outputs. It is written <m>f(A)</m>
+    where <m>A</m> is the domain. But for a subset of the domain, the
+    image of that subset is <m>f(C)</m>: all output that originate in
+    that subset. The difference is in the proposition: the first is
+    the image of <emph>the function</emph>; the second is the image of
+    <emph>a subset</emph>. 
+  </p>
+  <p>
+    The next definition is very closely related. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>f: A \rightarrow B</m> be a function and let <m>C
+        \subset A<m>. The <term>restricton</term> of <m>f</m> to
+        <m>C</m> is the function <m>f \Big|_C: C \rightarrow B</m>
+        which is the same function where I forget all of <m>A</m>
+        except for <m>C</m>. I just declare a new domain which is a
+        subset of the old domain.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    I can do something similar with subsets of the codomain as well. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>f: A \rightarrow B</m> be a function and let <m>D
+        \subset B</m> be a subset of the codomain. The
+        <term>pre-image</term> of <m>D</m> is the set of all elements
+        of <m>A</m> which are set to <m>D</m> by the function. It is
+        written <m>f^{-1}(D)</m>. 
+      </p>
+    </statement>
+    <p>
+      The notation deserves a comment here again. This notation exists
+      regardless of whether or not <m>f</m> has an inverse: <m>f</m>
+      does not need to be bijective for this notation. This is a bit
+      strange, but it is standard. 
+    </p>
+  </definition>
 </section>

@@ -536,7 +536,7 @@
       (Since this is mostly a glimpse into the rest of group theory, I
       won't ask you to work with this construction on assignments.) 
     </p>
-    <definition>
+    <definition xmd:id="definition-extension">
       <statement>
         <p>
           Let <m>G</m> and <m>H</m> be groups. An
