@@ -497,7 +497,7 @@
               injective homomorphism <m>i_2: H \rightarrow G \times
               H</m> defined as follows. 
               <me>
-                i_1 (h) = (e_g, h)
+                i_2 (h) = (e_g, h)
               </me>
             </li>
             <li>
@@ -536,7 +536,7 @@
       (Since this is mostly a glimpse into the rest of group theory, I
       won't ask you to work with this construction on assignments.) 
     </p>
-    <definition xmd:id="definition-extension">
+    <definition xml:id="definition-extension">
       <statement>
         <p>
           Let <m>G</m> and <m>H</m> be groups. An

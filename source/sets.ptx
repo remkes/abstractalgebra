@@ -518,7 +518,7 @@
     <statement>
       <p>
         Let <m>f: A \rightarrow B</m> be a function and let <m>C
-        \subset A<m>. The <term>image</term> of the subset <m>C</m> is
+        \subset A</m>. The <term>image</term> of the subset <m>C</m> is
         the set of all outputs of <m>f</m> which result from inputs in
         <m>C</m>. It is written <m>f(C)</m>. 
       </p>
@@ -541,7 +541,7 @@
     <statement>
       <p>
         Let <m>f: A \rightarrow B</m> be a function and let <m>C
-        \subset A<m>. The <term>restricton</term> of <m>f</m> to
+        \subset A</m>. The <term>restricton</term> of <m>f</m> to
         <m>C</m> is the function <m>f \Big|_C: C \rightarrow B</m>
         which is the same function where I forget all of <m>A</m>
         except for <m>C</m>. I just declare a new domain which is a

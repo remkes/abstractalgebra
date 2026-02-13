@@ -305,7 +305,7 @@
         <m>1</m>. I would get a circle.
       </p>
       <p>
-        And, indeed, this is called the <term>cicle group</term> in
+        And, indeed, this is called the <term>circle group</term> in
         group theory. It is the standard group structure on a circle. 
       </p>
     </example>
@@ -442,8 +442,8 @@
           finite index set <m>i \in I</m> such that the following
           isomorphism exists. 
           <me>
-            G \cong \ZZ^d \times \ZZ/p_1^{k_1} \times \ldots \times
-            \ZZ/p_l^{k_l}
+            G \cong \ZZ^d \times \ZZ/p_1^{k_1}\ZZ \times \ldots \times
+            \ZZ/p_l^{k_l}/ZZ
           </me>
         </p>
       </statement>
@@ -468,7 +468,7 @@
         <p>
           I claim that this quotient group has <m>n</m> generators,
           which are precisely the remaining generators of <m>G</m>.
-          Any element of <m>G</m> is a product of the generator, and
+          Any element of <m>G</m> is a product of the generators, and
           in the quotient, all powers of <m>g</m> are sent to the
           identity; so the remaining generators create all the coset
           representatives. Therefore, the remaining generators
@@ -516,8 +516,14 @@
       group theory.
     </p>
     <p>
-      ADD: repeat the table of small groups, but now all abelian
-      groups of order 12 or less
+      I can also now resonsider the table at the end of <xref
+      ref="subsection-cyclic-structure"/>. In that section, I
+      described the table as all possible products of cyclic groups
+      of order twelve or less (up to isomorphism, of course). Now, I
+      can state that the table list, in fact all abelian groups (up to
+      isomorphism) or oder twelve or less. The structure theorem of
+      abelian groups says that these cyclic groups and products of
+      cyclic groups are the only possibilities. 
     </p>
   </subsection>
   <subsection>
@@ -525,13 +531,13 @@
     <p>
       I prove a pretty substantial structure theorem in the previous
       section. Now let me define a new type of group which I will use
-      to state (but certainly.  not prove) a much more important and
+      to state (but certainly not prove) a much more important and
       substantial structure theorem. 
     </p>
     <definition>
       <statement>
         <p>
-          A group which contains no normal subgroup (other than the
+          A group which contains no normal subgroups (other than the
           trivial subgroup and the group itself) is called a
           <term>simple</term> group. 
         </p>
@@ -544,8 +550,9 @@
     <proposition>
       <statement>
         <p>
-          Let <m>G</m> be a simple group. Then the only extension of
-          <m>G</m> is the extension formed from the maps
+          Let <m>G</m> be a simple group. Then the only extension (up
+          to isomorphis) of <m>G</m> is the extension formed from the
+          maps
           <md>
             <mrow>
               \Id: G \rightarrow G
@@ -563,9 +570,10 @@
           been a normal subgroup. But normal subgroups don't exist in
           simple groups, so the kernel must be all of <m>G</m> or the
           trivial subgroup. This means that the only maps that can
-          exist are the two that I have stated. (Technically, this is
-          only true up to isomorphism, but that is enough for the
-          result to make sense.) 
+          exist are the two that I have stated. This is only true up
+          to isomorphism, since I can replace <m>G</m> and
+          <m>\{e_g}</m> with any group isomorphis to <m>G</m> and any
+          singleton, respectively. 
         </p>
       </proof>
     </proposition>
@@ -577,7 +585,7 @@
       building blocks of groups. 
     </p>
     <p>
-      If I think about the structure of groups, I can now ask this
+      If I think about the structure of groups, I can now ask the
       question in a new way.
       <ul>
         <li>
@@ -590,7 +598,7 @@
       </ul>
       For finite groups, this is exactly how group theory developed in
       the 20th century. (For infinite groups, the classification
-      problem in general is completely intractable, but
+      problem, in general, is completely intractable, but
       classifications of various types of infinite groups typically
       have very different flavours and ideas.) I can now state the
       major theorem. 
@@ -646,13 +654,13 @@
       degree 5.
     </p>
     <p>
-      How to mathematicians find these general formulae? There are
+      How do mathematicians find these general formulae? There are
       many ways, but one of the ways is by looking at permutations of
       the roots of a polynomial. That brings in the symmetric groups,
       and it turns out that even premutations are important. So the
       structure of <m>A_n</m> is somehow important to the roots of
       polynomials. Finally, after a bunch of very strange mathematics,
-      its turns out that solving with roots (like in the quadratic
+      it turns out that solving with roots (like in the quadratic
       formula) relies on normal subgroups of <m>A_n</m>. Since
       <m>A_n</m> is simple for <m>n \geq 5</m>, there are no normal
       subgroups. This means there is no equation for polynomial
@@ -671,7 +679,7 @@
       Finally, we have the sporadic groups. These are fascinating: 26
       special groups which are simple but don't fit into any of the
       infinite families. These come from a variety of different places
-      in mathematics<mdash/>there is no unifying structure of idea
+      in mathematics<mdash/>there is no unifying structure or idea
       behind all 26. Let me briefly give you their common notations and
       their orders.
       <me>
@@ -743,7 +751,7 @@
       and deep connection was discovered. This was not a coincidence:
       there was a mathematical connection between the Monster and
       these modular functions. This is a very celebrated example of
-      uncanny and unexpected conections in mathematics. It is ofte
+      uncanny and unexpected conections in mathematics. It is often
       referred to as <term>monstrous moonshine</term>. You can even
       read a whole book on the subject, if you want: Moonshine beyond
       the Monster by Terry Gannon, a professor at the University of
@@ -756,7 +764,7 @@
       In <xref ref="definition-extension"/>, I defined extensions
       and talked about how extensions were a general way, using
       homomorphisms, to talk about putting two groups together to make
-      a larger group. Now I want to relate quotients to extension.
+      a larger group. Now I want to relate quotients to extensions.
       First, I need an important property of quotients.
     </p>
     <proposition>
@@ -771,8 +779,9 @@
       </statement>
       <proof>
         <p>
-          I define the homomorphisms this way. Take a coset <m>k
-          \Ker(\phi) \in K/\Ker(\phi)</m>. The function is defined as 
+          Take a coset <m>k \Ker(\phi) \in K/\Ker(\phi)</m>. I will
+          defined a function <m>\eta: K/\Ker(\phi) \rightarrow H</m>
+          as follows.
           <me>
             \eta(k \Ker(\phi)) = \phi(k) 
           </me>
@@ -783,33 +792,40 @@
           First, well-defined. Cosets can have multiple
           representatives. If <m>k_1 \Ker(\phi)</m> and <m>k_2
           \Ker(\phi)</m> are two representatives of the same coset,
-          then there eixsts some element <m>g</m> in the kernel such
-          that <m>k_1 = k_2g</m>. Then I apply the function and use
-          this identity.
+          then there eixsts some element <m>g</m> in <m>\Ker(\phi)</m>
+          such that <m>k_1 = k_2g</m>. Then I apply the function and
+          use this identity.
           <me>
             \eta(k_1 \Ker(\phi)) = \phi(k_1) = \phi(k_2g)
           </me>
-          Then I use the homomorphism property of <m>\phi</m>
+          Then I use the homomorphism property of <m>\phi</m>.
           <me>
             \phi(k_2g) = \phi(k_2) \phi(g) 
           </me>
-          But <m>g</m> is in the kernel, so it is sent to the identity
+          But <m>g</m> is in the kernel, so it is sent to the
+          identity, which lets me continue the calcluation. 
           <me>
             \phi(k_2) \phi(g) = \phi(k_2) = \eta(k_2 \Ker(\phi))
           </me>
-          This proves that the function is well defined<mdash/>no
-          matter what coset representative I use, the output is the
-          same. 
+          I have shown that the output of the function <m>eta</m> is
+          the same even for different coset representatives. This
+          proves that the function is well defined<mdash/>no matter
+          what coset representative I use, the output is the same. 
         </p>
         <p>
           The other properties are a bit more immediate. Since
           <m>\eta</m> is defined by another homomorphism, I get the
           homomorphism property pretty easily. 
-          <me>
-            \eta(k_1 \Ker(\phi) k_2 (\Ker(\phi)) = \eta(k_1k_2
-            \Ker(\phi) = \phi(k_1k_2) = \phi(k_1) \phi(k_2) = \eta(k_1
-            \Ker(\phi)) \eta(k_2 \Ker(\phi))
-          </me>
+          <md>
+            <mrow>
+              \eta(k_1 \Ker(\phi) k_2 (\Ker(\phi)) = \eta(k_1k_2
+              \Ker(\phi) = \phi(k_1k_2) 
+            </mrow>
+            <mrow>
+              = \phi(k_1) \phi(k_2) = \eta(k_1
+              \Ker(\phi)) \eta(k_2 \Ker(\phi))
+            </mrow>
+          </md>
         </p>
         <p>
           <m>\eta</m> is surjective by construction: every value of
@@ -823,7 +839,7 @@
           to the identity, <m>\eta(k \Ker(\phi)) = \phi(k)</m> must be
           the identity. This means that <m>k \in \Ker (\phi)</m>, so
           <m>k \Ker(\phi)</m> must be the trivial coset, which is the
-          identity in the quotient groups. Therefore, the kernel is
+          identity in the quotient group. Therefore, the kernel is
           just the identity and <m>\eta</m> is injetive. 
         </p>
         <p>
@@ -839,17 +855,18 @@
     <proposition>
       <statement>
         <p>
-          There is a perfect matching (up to isormorphism) between
-          extensions where (<m>K</m> is an extension of <m>H</m> by
-          <m>G</m> and quotients of the group <m>K</m>
+          There is a perfect matching, up to isormorphism, between
+          extensions (where <m>K</m> is an extension of <m>H</m> by
+          <m>G</m> and quotients of the group <m>K</m>) and surjective
+          homomorphisms <m>K \rightarrow H</m>. 
         </p>
       </statement>
       <proof>
         <p>
           Assume that I have an extension with the notation from the
-          statement of the theorem. Well then, by the definition of an
+          statement of the theorem. Then, by the definition of an
           extension, I have a surjective homomorphism <m>\pi: K
-          \rightarrow H</m>. The kernel <m>\pi
+          \rightarrow H</m>, which completes half of the matching. 
         </p>
         <p>
           For the alternative, assume I have a surjective homomorphism
@@ -898,7 +915,7 @@
         <p>
           Let <m>G</m> be a finite group and let <m>N \triangleleft
           G</m> be a maximal normal subgroup. (Maximal here means that
-          there is no larger normal subgroup which contains <m>N</m>.
+          there is no larger normal subgroup which contains <m>N</m>.)
           Then <m>G/N</m> is a simple group. 
         </p>
       </statement>
@@ -913,7 +930,7 @@
           you wish.) 
         </p>
         <p>
-          Now I have two homomorphisms: <m>\pi_N G \righatrow G/N</m>
+          Now I have two homomorphisms: <m>\pi_N G \rightarrow G/N</m>
           and <m>\pi_M: G/N \rightarrow (G/N)/M</m>. I can compose
           these to get <m>\pi_M \circ \pi_N: G \rightarrow
           (G/N)/M</m>. The kernel of this composition are those things
