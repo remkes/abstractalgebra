@@ -1,0 +1,88 @@
+<section xml:id="section-representations">
+  <title>Group Actions and Representations</title>
+  <introduction>
+    <p>
+      In this last section on group theory, I want to introduce one
+      last definition that is central to group theory: groups actions.
+      I don't want to get too deeply into the technique, but I want to
+      use the idea of a group action to talk more about the
+      classification of groups and the understanding of their
+      structure. That will lead to representations, a major idea in
+      groups theory. But first the main definition.
+    </p>
+  </introduction>
+  <subsection xml:id="subsection-actions">
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> be a group and let <m>S</m> be a set. An
+          <term>action</term> of the group on the set is defined by
+          the following properties. 
+          <ul>
+            <li>
+              For all <m>g \in G</m> and for all <m>s \in S</m>, there
+              is an operation (written multiplicatively by default)
+              <m>gs</m> that produces a new element of the set. 
+            </li>
+            <li>
+              If <m>g,h \in G</m> and <m>s \in S</m>, the the
+              operation on the set satisfies this equation..
+              <me>
+                (gh)s = g(hs)
+              </me>
+            </li>
+            <li>
+              The identity elements in <m>G</m>, <m>e</m>, satisfies
+              <me>
+                es - s
+              </me>
+              for all <m>s \in S</m>
+            </li>
+          </ul>
+          <ul>
+            There is a function <m>f: G \times S \rightarrow S</m>
+            with the same properties as the operaation defined above. 
+          </ul>
+          <ul>
+            There is a homomorphism <m>:\phi G \rightarrow Sym(S)</m>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      All three versions of the definition capture the idea that the
+      group is doing something to the elements of the set: permuting
+      them, changing them, acting on them. We've already covered
+      examples of groups that have this structure by definition: the
+      dihedral groups and other geometric symmetry groups act on their
+      geometric figures, the permutation groups act as symmetries. The
+      definition here is generalizing these examples. Another groups
+      which is not necessarily defined as functions on a set maybe be
+      realized as functions on a set in this way. 
+    </p>
+    <p>
+      Let me run through some examples to make this more clear. 
+    </p>
+    <example>
+      <p>
+        As I just mentioned, any groups that is explicitly defined as
+        symmetries or permutations are already groups actions. The
+        dihedral groups are group actions on the sets of vertices of
+        polygons. The permutation groups <m>S_n</m> are group actions
+        on <m>\{1, 2, \dots, n\}</m>. 
+      </p>
+    </example>
+    <example>
+      <p>
+      </p>
+    </example>
+    <example>
+      <p>
+      </p>
+    </example>
+    <example>
+      <p>
+      </p>
+    </example>
+  </subsection>
+</section>
