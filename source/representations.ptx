@@ -74,15 +74,172 @@
     </example>
     <example>
       <p>
+        Any groups explicitly defined as a group of functions is also
+        already a group action, but only when the group operation is
+        composition. The function groups under addition, like
+        <m>C(\RR)</m>, are not naturally group actions on their
+        domains. 
       </p>
     </example>
     <example>
       <p>
+        Let <m>S</m> be the set of all circles in <m>\RR^2</m> (with
+        any centre point). I can define an action of the group
+        <m>\RR^2</m> on S: for any vector <m>(a,b) \in \RR^2</m> and
+        any circle, I can shift that using the vector. This means the
+        centre of the circle is moved <m>a</m> units in the <m>x</m>
+        direction and <m>b</m> units in the <m>y</m> direction.
+      </p>
+      <p>
+        To claim that this is a group action, I need to check the two
+        properties. The first property says that if I do two different
+        shifts, that is the same as adding the two vectors together
+        and then shifting. This work: to shift by <m>a_1</m> in the
+        <m>x</m> direction and then by <m>a_2</m> is equivalent to
+        shifting ny <m>a_1 + a_2</m>. The second property says that
+        the identity has not effect on the set. This also works: the
+        identity is <m>(0,0)</m> and to shift by <m>(0,0)</m> is to
+        leave the circle alone. This is a group action. 
       </p>
     </example>
     <example>
       <p>
+        The group <m>\RR^*</m> acts on <m>\RR^n</m> via the usual
+        scalar multiplication from linear algebra. The identity in
+        <m>\RR^*</m> is <m>1</m> and multiplication by <m>1</m>
+        doesn't change any vector. Also scaling by <m>a</m> and then
+        afterwards scaling by <m>b</m> is the same as scaling by
+        <m>ab</m>. This satisfies both conditions, so it is a group
+        action. 
       </p>
     </example>
+    <example>
+      <p>
+        The group <m>S_n</m> acts on <m>\RR^n</m> (or any other
+        product, for that matter) by permuting the entries of the
+        vectors. The identity leaves all the entries fixes, so it
+        doesn't change any vector, and doing two permutations of the
+        components is the same as first composition the permutations
+        and then acting on the vector. This is an example of a general
+        idea. We think of the permutation groups are permuting three
+        <sq>symbols</sq>. However, many other mathematical
+        constructions (not just symbols) can be permuted, like the
+        ordered elements of a vector in this example. 
+      </p>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-representations">
+    <title>Representations</title>
+    <p>
+      The third equivalent definition of a group action is a
+      homomorphism into a symmetric group of some set. This idea is
+      also capture by the main definition of this section. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>G</m> be a group. 
+          <ul>
+            <li>
+              A <term>representation</term> of the group is a
+              homomorphism <m>\phi: G \rightarrow Sym(S)</m> into a
+              symmetric group of some set <m>S</m>. 
+            </li>
+            <li>
+              If the homomorphism is injective, this is called a
+              <term>faithful representation</term>. 
+            </li>
+            <li>
+              If <m>S = V</m> is a vector space, then the homomorphism
+              is called a <term>linear representation</term> of the
+              group. Usually, at least for finite vectors spaces, a
+              linear representation is written <m>\phi: G \rightarrow
+              GL(V,n)</m>. In this later case, this can also be called
+              a <term>matrix representation</term>, since the elements
+              of <m>GL(V,n)</m> are described by matrices.
+            </li>
+            <li>
+              If <m>S</m> is a finite set, then the homomorphism is
+              called a permutation representation (usually, the term
+              permutation carries the connotation of re-arrangements
+              of a finite set). Int his case, the homomorphisms is
+              written <m>\phi: G \rightarrow S_n</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Representations are absolutely central in group theory. There is
+      even a whole sub-discipline called Representation Theory. The
+      idea is quite reasonable: permutations and linear algebra are
+      very well understood pieces of mathematics, with many
+      calculation techinques. If I discover a new group, its
+      definition may arise in an area of mathematics with far fewer
+      tools thatn permutations or linear algebra. It may be very hard
+      to study the group in the situation where it arose. Therefore, I
+      look for a representation, particularly a faithful
+      representation, where I can study the group using the
+      very well-developed tools of permutations or linear algebra. 
+    </p>
+    <p>
+      Therefore, we study groups by their representations. We find out
+      about the structure of the group by understanding the structure
+      of the representations. This was already hinted at when I talked
+      about the Monster group and its 196,883 dimensional
+      linear representation. Finding that representation means
+      something about understanding that group (though actually
+      calculating with those enormous matrices is, of course,
+      unreasonable).   
+    </p>
+    <p>
+      In the remainder of this section, I want to prove another
+      structure theory, but now phrased as represenatation. 
+    </p>
+    <proposition>
+      <title>The Regular Representation</title>
+      <statement>
+        <p>
+          Let <m>G</m> be a group. Then there is a group action of
+          <m>G</m> on itself (considered as just a set). The action is
+          defined almost tautologically as follows. Let <m>g, h \in
+          G</m>, thinking of <m>g</m> as the group element acting and
+          thinking of <m>h</m> as the set element being acted upon. 
+          <me>
+            gh \defeq gh 
+          </me>
+          This is obviously a bit silly. The notation of the left
+          means the action of <m>g</m> on the set element <m>h</m>.
+          The notation on the left means the product in the group
+          using the normal binary operation. Both are typically
+          written this way. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I need to check the two conditions. If <m>g_1, g_2 \in
+          G</m>, then <m>(g_1g_2)h = <m>g_1(g_2h)</m> by the
+          associativity of the group operation. But this is precisely
+          the condition that I need for the group operation. The
+          second condition is just <m>eh = h</m>, which is the
+          definition of the identity. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      This might seem like a silly definition, but it has some notable
+      value. It makes a really interesting observation: if we
+      want, all groups are permutation groups. Just by acting on
+      itself, every groups can be treated as a group of functions and
+      the tools of functions and permutation can be brought to bare.
+      This is useful. 
+    </p>
+    <p>
+      This also give some explanation to the rows and columns of Caley
+      tables. You may have noticed that each row and each columns has
+      all of the group elements exactly once. You can now think of
+      each row as a permutatin of the group, and it is precisely the
+      permutatino given by multiplication by the element in that row. 
+    </p>
   </subsection>
 </section>
