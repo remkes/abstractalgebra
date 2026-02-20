@@ -406,7 +406,7 @@
           <m>\ZZ/n\ZZ</m> and the following isormorphism exists.
           <me>
             \left( \ZZ/n\ZZ \right) / \langle m \rangle \cong
-            \ZZ/\frac{n}{m}\ZZ
+            \ZZ/\frac{n}{m}\/ZZ
           </me>
         </p>
       </statement>
