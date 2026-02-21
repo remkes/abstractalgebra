@@ -38,6 +38,13 @@
               </me>
               for all <m>s \in S</m>
             </li>
+          </ul>
+        </p>
+        <p>
+          There are two other equivalent versions of this definition.
+          A group action can also be defined as one of these
+          two statemetns. 
+          <ul>
             <li>
               There is a function <m>f: G \times S \rightarrow S</m>
               with the same properties as the operation defined
@@ -99,13 +106,15 @@
       <p>
         To claim that this is a group action, I need to check the two
         properties. The first property says that if I do two different
-        shifts, that is the same as adding the two vectors together
-        and then shifting. This work: to shift by <m>a_1</m> in the
+        shifts, the result is the same as adding the two vectors together
+        and then shifting. This works: to shift by <m>a_1</m> in the
         <m>x</m> direction and then by <m>a_2</m> is equivalent to
-        shifting ny <m>a_1 + a_2</m>. The second property says that
-        the identity has not effect on the set. This also works: the
-        identity is <m>(0,0)</m> and to shift by <m>(0,0)</m> is to
-        leave the circle alone. This is a group action. 
+        shifting ny <m>a_1 + a_2</m> in one step, since both shifts
+        are added to the <m>x</m> coordinates of the shape. The second
+        property says that the identity has no effect on the set.
+        This also works: the identity is <m>(0,0)</m> and to shift by
+        <m>(0,0)</m> is to leave the circle alone. This shifting by
+        vectors is a group action. 
       </p>
     </example>
     <example>

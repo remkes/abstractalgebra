@@ -406,7 +406,7 @@
           <m>\ZZ/n\ZZ</m> and the following isormorphism exists.
           <me>
             \left( \ZZ/n\ZZ \right) / \langle m \rangle \cong
-            \ZZ/\frac{n}{m}\/ZZ
+            \ZZ/\frac{n}{m}\ZZ
           </me>
         </p>
       </statement>
@@ -443,7 +443,7 @@
           isomorphism exists. 
           <me>
             G \cong \ZZ^d \times \ZZ/p_1^{k_1}\ZZ \times \ldots \times
-            \ZZ/p_l^{k_l}/ZZ
+            \ZZ/p_l^{k_l}\ZZ
           </me>
         </p>
       </statement>
@@ -572,7 +572,7 @@
           trivial subgroup. This means that the only maps that can
           exist are the two that I have stated. This is only true up
           to isomorphism, since I can replace <m>G</m> and
-          <m>\{e_g}</m> with any group isomorphis to <m>G</m> and any
+          <m>\{e_g\}</m> with any group isomorphis to <m>G</m> and any
           singleton, respectively. 
         </p>
       </proof>
