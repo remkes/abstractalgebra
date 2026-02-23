@@ -49,6 +49,7 @@
     
     <xi:include href="./preliminaries.ptx" />
     <xi:include href="./groups.ptx" />
+    <xi:include href="./rings.ptx" />
 
   </book>
 </pretext>

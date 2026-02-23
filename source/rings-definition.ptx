@@ -1,0 +1,529 @@
+<section xml:id="section-rings-definition">
+  <title>The Definition of a Ring</title>
+  <p>
+    We started the course talking about groups. Groups are 
+    fundamental to  abstract mathematics and we've now worked
+    with many interesting examples. But a group is far from the only
+    structure defined in abstract algebra. We're moving on to the next
+    structure: a ring. 
+  </p>
+  <p>
+    Before we get to the definition, the main idea behind a ring is
+    the presence of two binary operations which interact. A group only
+    had one operation, at least by definition. But many mathematical
+    structures have two, often some kind of addition and some kind of
+    multiplication. A ring is the way to try to understand these
+    structure. Let me move on to the formal definition.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        A set <m>R</m> is a <term>ring</term> if it satisfies the
+        following properties. 
+        <ul>
+          <li>
+            There is a binary operation, written as additively by
+            default, such that <m>(R,+)</m> is an abelian group. 
+          </li>
+          <li>
+            There is a second associative binary operation, written
+            multiplicatively by default. 
+          </li>
+          <li>
+            The distributive law holds for the two operations. That
+            is, if <m>a,b,c \in R</m>, the following equations are
+            always true. (I have to state both because multiplication
+            may not be commutative.) 
+            <md>
+              <mrow>
+                a(b+c) = ab + ac 
+              </mrow>
+              <mrow>
+                (b+c)a = ba + ca 
+              </mrow>
+            </md>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <p>
+      I must start with the most important example: the integers. In
+      many ways, the integers are the archetypical ring. They are an
+      abelian group under addition. Multiplication is also defined,
+      but it is not a group structure. This is important: in a ring,
+      the multiplication can be like the integers, where inverses
+      mostly don't exist. 
+    </p>
+  </example>
+  <p>
+    I'll keep returning to the integers throughout this section.
+    Many of the structures of ring theory arise directly from
+    structure of the integers. They really are the start of ring
+    theory. For now, though, let me give some other definitions
+    relating to the properties of the second binary operation in a
+    ring. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring.
+        <ul>
+          <li>
+            The second binary operation does not need to be
+            commutative. If it is commutative, then the ring is called
+            a <term>commutative ring</term>. (Note that the term
+            <sq>abelian</sq> is not normally used for rings. For
+            whatever reason, that terms is exclusive to group theory.
+            Rings are just commutative.) 
+          </li>
+          <li>
+            The second binary operation does not need to have an
+            identity element. If it does, then the ring is called a
+            <term>ring with identity</term>. 
+          </li>
+          <li>
+            The second binary operation, even if there is an identity,
+            does not have to have inverses. If a ring with identity
+            has inverses for all elements <em>except for the
+            additive identity</em>, then it is called a
+            <term>division ring</term>. 
+          </li>
+          <li>
+            A commutative division ring is called a
+            <term>field</term>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Note that the division ring definition excludes the additive
+    identity, usually written at <m>0</m>. In ring theory, just like
+    in normal number systems, you can never divide by zero.
+  </p>
+  <example>
+    <p>
+      The integers are a commutative ring with identity. The integers
+      are not a division ring. 
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>\QQ</m>, <m>\RR</m> and <m>\CC</m> are all fields: they all
+      have commutative multiplication and all non-zero elements have
+      multiplicative inverses (reciprocals). 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>p</m> be a prime number. <m>\ZZ/p\ZZ</m> is a field. It
+      has a commutative multiplication and all non-zero elements are
+      invertible. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>n</m> be a compositve number. <m>\ZZ/n\ZZ</m> is
+      commutative ring with identity, but it is not a division ring.
+      Any element that shares a factor with <m>n</m> is not
+      multiplicatively invertible. 
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>\RR[x]</m> is a commutative ring with identity. I can add and
+      multiply polynomials. All polynomials have additive inverse,
+      <m>-p(x)</m>, but no polynomials have multiplicative inverses. 
+    </p>
+  </example>
+  <example>
+    <p>
+      In fact, if <m>R</m> is any commutative ring, then I can make
+      polynomials <m>R[x]</m> in the variable <m>x</m> over that ring.
+      The coefficients will be elements of <m>R</m>, whatever they
+      are. <m>R[x]</m> will also be a commutative ring, since it will
+      inherit the commutativity of the coefficients. 
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>2\ZZ</m> is the set of even integers. This is a commutative
+      ring without identity, since <m>1</m> is not an even integer.
+      Even though there is no multiplicative inverses, the ring
+      conditions are still satisfied. 
+    </p>
+  </example>
+  <example>
+    <p>
+      I defined the quaternions, <m>Q</m>, in <xref
+      ref="definition-quaternions"/>. Using the quaternions, I can make
+      the <term>real Hamiltonian quaternion ring</term> as follows. 
+      <me>
+        \HH = \{a + bi + cj + dk | a,b,c,d \in \RR\}
+      </me> 
+      The addition is component-wise, very much like with polynomials. 
+      <md>
+        <mrow>
+          (a_1 + b_1i + c_1j + d_1k) + (a_2 + b_2i + c_2j + d_1k) = 
+        </mrow>
+        <mrow>
+          (a_1 + b_1) + (a_2 + b_2)i + (a_3 + b_3)j+ (a_4 + b_4)k 
+        </mrow>
+      </md> 
+      This defined an abelian addition. The multiplication happens by
+      distributing out all the elements and using the rules of the
+      quaternion group or reduce all of the products down to <m>i</m>,
+      <m>j</m> and <m>k</m>. 
+    </p>
+    <p>
+      The result of this setup is a non-commutative ring. The
+      multiplication of the quaternion group is non-commutative, and
+      that non-commutativity is now inherited by this ring. This is
+      one of the most accessible examples of a non-commutative ring.
+      In this course, we will almost exclusively deal with commutative
+      rings, but the algebra of non-commutative rings is a fascinating
+      piece of mathematics itself. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Many function groups are also rings. <m>C(\RR)</m>,
+      <m>C^1(\RR)</m> and <m>C^\infty(\RR)</m> are all rings with
+      pointwise addition and multiplication. They are all commutative
+      rings, but not division rings. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>F</m> be the set of nowhere-zero continuous functions
+      <m>f: \RR \rightarrow \RR^*</m>, along with the zero function.
+      <sq>Nowhere-zero</sq> means that the output of the function
+      cannot be zero at any point; the codomain also shows this. This
+      is a commutative division ring under pointwise addition and
+      multiplication. This ring is a divsion ring because of the
+      nowhere-zero condition: any function <m>f</m> that never outputs
+      zero has a reciprocal <m>\frac{1}{f}</m> which is well-defined
+      on the same domain.  This reciprocal is the multiplicative
+      inverse. There is no multiplicative inverse for the zero
+      function, but that's fine in ring theory: we never need or want
+      to divide by the appropriate <sq>zero</sq> in any ring. 
+    </p>
+  </example>
+  <example>
+    <p>
+      A rational function is a ratio of two polynomials: <m>f(x) =
+      \frac{p(x)}{q(x)}</m>. The set of all rational functions with
+      real coefficients is written <m>\RR(x)</m>. This is a field
+      under the addition and multiplication of polynomials and the
+      rules of fractions. Since we allow polynomials in the
+      denominator, any rational function which is not the zero
+      function has a reciprocal, which is its multiplicative inverse.
+      The domains of these functions vary depending on the zeros of
+      the denominator, but that's fine; this ring structure is
+      unconcerned about the specific domains. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>M_n(\RR)</m> be the set of all <m>n \times n</m> matrices
+      with real coefficients. This is a non-commuatitive ring with
+      identity under the operations of matrix addition and matrix
+      multiplication. (Matrix addition is componentwise: each
+      component of the matrix is added to the appropriate component of
+      the other matrix. The zero matrix is the additive inverse.)
+      Matrix addition may be unfamiliar, but you can prove that the
+      distributive law does, in fact, work for these operations. 
+    </p>
+    <p>
+      This is a ring with identity because of the identity matrix. It
+      is not a commutative ring because matrix multiplication is not
+      commutative. It is not a division ring because not all matrices
+      are invertible. 
+    </p>
+  </example>
+  <p>
+    Now we have a bunch of rings to talk about. You may have noticed
+    that, compared with groups theory, almost all of these are
+    infinite sets. This is an important observation. Our investigation
+    of group theory primarily focused on finite groups and, indeed,
+    finite non-abelian groups are fascinating. Finite rings, though
+    useful, are not as rich. As groups, they are all abelian, so just
+    products of groups isomorphic to <m>\ZZ/p^r\ZZ</m>. It is
+    worthwhile to know the rings structurs on these sets, but they
+    are only a tiny piece of ring theory. We will mostly be concerned
+    with infinite rings. 
+  </p>
+  <p>
+    Let me now state some of the first properties of rings. These are
+    all algebraic tricks that we are very used to using for normal
+    numbers. It's very nice to know that they still work for general
+    rings. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring and let <m>a,b, \in R</m>. Write
+        <m>0</m> for the additive identity and write <m>-a</m> for the
+        additive inverse of <m>a</m>.
+        <ul>
+          <li>
+            <m>0a = a0 = 0</m>
+          </li>
+          <li>
+            <m>(-a)b = a(-b) = -(ab)</m>
+          </li>
+          <li>
+            <m>(-a)(-b) = ab</m>
+          </li>
+          <li>
+            If this is a ring with identity and the multiplicative
+            identity is written <m>1</m>, then <m>-a = (-1)a</m>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        <ul>
+          <li>
+            Here is a calculation.
+            <me>
+              0 + 0a = 0a = (0 + 0)a = 0a + 0a 
+            </me>
+            By cancelation (which I know I can do in the abelian
+            group), I can conclude <m>0 = 0a</m>, finishing this part
+            of the proof. 
+          </li>
+          <li>
+            Again, here is a calculation.
+            <me>
+              (-a)b + ab = (-a + a)b = 0 b = 0 
+            </me>
+            This proves that <m>(-a)b</m> is the additive inverse to
+            <m>ab</m>, which means it must equal <m>-(ab)</m>. A
+            similar calcluation works for <m>a(-b)</m><mdash/>please
+            feel free to verify for yourself. 
+          </li>
+          <li>
+            I can use the previous result twice. 
+            <me>
+              (-a)(-b) = -(a)(-b) = -(-(ab)) = ab
+            </me>
+            This last step is true since, in any group, taking an
+            inverse twice returns the original element. 
+          </li>
+          <li>
+            Again, I can calculate. 
+            <me>
+              (-1)(a) + a = (-1) a + (1) a = (-1 + 1)a = 0a = 0 
+            </me>
+            This show that <m>(-1)(a)</m> is the additive inverse to
+            <m>a</m>, so <m>(-1)(a) = - a</m>. 
+          </li>
+        </ul>
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    I've often said that mathematicians love their trivial cases, so
+    let me use a proposition to talk about more example.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring with identity where the same element is
+        both the additive and multiplicative inverse. (That is, where
+        <m>0 = 1</m>.) Then this ring has only one element and is
+        called the <term>trivial ring</term> or the <term>zero
+        ring</term>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Writing <m>0</m> for the additive inverse and <m>1</m> for the
+        multiplicative inverse, assume that <m>0=1</m>. Then let
+        <m>a \in R</m> be any ring element. I can make this very short
+        calculation.
+        <me>
+          a = 1a = 0a = 0 
+        </me>
+        This calculate shows that all the ring elements are equal to
+        0. Therefore, the ring must only be <m>\{0\}</m>. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    It's going to be a bit annoying to always state <m>1 \neq 0</m> in
+    every defition. From now on, in all discussion about rings, I will
+    simply assume that the additive and multiplicative identity are
+    not the same. When I want to talk about this trivial ring, I'll
+    mention it explicitly. (Some historical definitions of a ring
+    include <m>1 \neq 0</m> as part of the definition to avoid this
+    entirely.)
+  </p>
+  <p>
+    I have some more fundamental ring theory definitions and
+    properties to cover before I finish this section. Let me talk
+    about the elements of a ring. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring. As usual, we use <sq>zero</sq> to
+        refer to the additive inverse in the ring.
+        <ul>
+          <li>
+            A non-zero element of the ring is called a
+            <term>unit</term> if is has a multiplicative inverse. The
+            set of all unit is written <m>R^*</m>. 
+          </li>
+          <li>
+            The units in a ring with identity always form a group under
+            multiplication. This is called the <term>unit group</term>
+            of the ring. 
+          </li>
+          <li>
+            A non-zero element of the ring <m>a</m> is called a
+            <term>zero-divisor</term> if there is another non-zero
+            element <m>b</m> such that <m>ab = 0</m>. (For
+            non-commutative rings, this is technically a left-zero
+            divisor, but I'll ignore that subtlety in these notes.) 
+          </li>
+          <li>
+            A ring with no zero divisors if called an <term>integral
+            domain</term> or often more succintly, a <term>domain</term>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    This notation for units matches what we did in group theory, where
+    <m>\RR^*</m>, <m>\QQ^*</m> and <m>\ZZ/n\ZZ^*</m> were all groups
+    under multiplication. The units are precisely those elements which
+    are invertible, so they do form unit groups. We have now
+    generalized this star-notation to any ring. 
+  </p>
+  <p>
+    Let me demonstrate more about the definitions though some examples. 
+  </p>
+  <example>
+    <p>
+      Consider <m>\ZZ/10\ZZ</m>. The units in this ring are 1, 3, 7
+      and 9, which we already new studying the group
+      <m>\ZZ/10\ZZ^*</m>. The zero divisors are 2, 4, 5, 6, and 8. I
+      can demonstrate this explicity. 
+      <md>
+        <mrow>
+          2 \cdot 5 = 0 \mod 10 
+        </mrow>
+        <mrow>
+          4 \cdot 5 = 0 \mod 10 
+        </mrow>
+        <mrow>
+          6 \cdot 5 = 0 \mod 10 
+        </mrow>
+        <mrow>
+          8 \cdot 5 = 0 \mod 10 
+        </mrow>
+      </md>
+      This calculation shows all five of these elemenets are zero
+      divisors. 
+    </p>
+    <p>
+      Generalizing this leads to the following observation: in
+      <m>\ZZ/n\ZZ</m>, non-zero elements are either units or zero
+      divisors. The units represented by numbers coprime to <m>n</m>,
+      and the zero-divisors by numbers which share a factor with
+      <m>n</m>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The units in <m>\ZZ</m> are <m>1</m> and <m>-1</m>. There are no
+      units in <m>2\ZZ</m>. (In general, there are no units in any
+      ring without identity, since an identity is required to define
+      multiplicative inverses.) 
+    </p>
+  </example>
+  <example>
+    <p>
+      The units in <m>M_n(\RR)</m> are exactly the group <m>GL(n)</m>
+      of invertible matrices. 
+    </p>
+  </example>
+  <example>
+    <p>
+      In a field or a division ring, everything other than zero has a
+      multiplicative inverse. Therefore, the unit groups <m>\RR^*</m>,
+      <m>\QQ^*</m>, <m>\CC^*</m>, <m>\ZZ/p\ZZ^*</m>, <m>\HH^*</m> and
+      <m>\RR(x)^*</m> are all elements other than zero. 
+    </p>
+  </example>
+  <example>
+    <p>
+      The units in <m>\RR[x]</m> are just <m>\RR^*</m>. No
+      non-constant polynomial has a multiplicative inverses, so only
+      the non-zero constants can be inverted. 
+    </p>
+  </example>
+  <p>
+    Groups had subgroups. The same general idea works for rings. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring. A subset <m>S \subset R</m> is a
+        <term>subring</term> if <m>S</m> is also a ring the same two
+        binary operations as <m>R</m>. This means, in particular, that
+        <m>S</m> is closed under both operations. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    <m>\ZZ</m> is a subring of <m>\QQ</m>, which is a subring of
+    <m>\RR</m>.  Subrings can have different properties than the whole
+    ring. For example, <m>2\ZZ</m> is a subring of <m>\ZZ</m>, but it
+    lacks identity. 
+  </p>
+  <p>
+    Subgroups, and particularly normal subgroups, are completely
+    central to group theory. It turns out that subrings are much less
+    important to ring theory. In a later section, I'll define a new
+    subobject which will play the role of a normal subgroup in ring
+    theory. 
+  </p>
+  <p>
+    Finally, here are two more useful properties for the algebra of
+    rings. I'll state these without proof. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring and let <m>a,b,c \in R</m> be non-zero
+        elements. 
+        <ul>
+          <li>
+            Multiplicative cancellation only works with units. That
+            is, if <m>c</m> is a unit, then the following implication
+            is true. 
+            <me>
+              ac = bc \implies a = b 
+            </me>
+            A similar statement is true for multiplication on the
+            left. In a group, cancellation was always possible. Now I
+            have to be careful and only cancel when the cancelled
+            element is a unit. 
+          </li>
+          <li>
+            Most exponent laws still hold. However, like with groups,
+            I can only distribute exponents if the multiplication is
+            commutative. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </proposition>
+</section>
