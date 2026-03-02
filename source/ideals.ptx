@@ -1,0 +1,468 @@
+<section xml:id="section-ideals">
+  <title>Ring Homomorphisms and Ideasl</title>
+  <subsection xml:id="subsection-commutative-algebra">
+    <title>Commutative Algebra</title>
+    <p>
+      The ring theory of non-commutative rings is a fascinating part
+      of abstract algebra. But using non-commutative rings makes many
+      of the definitions of ring theory more complciated. Therefore,
+      to present a cleaner development, I'm going to assume from now
+      on that all rings are commutative. 
+    </p>
+    <p>
+      This means that what we are doing now is <term>commutative
+      algebra</term>. Even though the general term <sq>algebra</sq> is
+      being used, <sq>commutative algebra</sq> means commutative ring
+      theory. Commutative algebra is the basis of many applications of
+      ring theory, mostly notably algebraic geometry. Many ring-theory
+      textbooks are just called things like <sq>An Introduction to
+      Commutative Algebra</sq>, since commutative rings are so central
+      to many uses of ring theory. All this to say there is pretty
+      good justification for us, in an introductory course, to
+      restrict to commutative rings. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-ring-homomorphisms">
+    <title>Ring Homomorphisms</title>
+    <p>
+      In the group theory section, I mentioned several times the
+      importance of the functions between groups. We understand groups
+      by the functions between them. This becomes even more obvious at
+      the end of that chapter, where representations where
+      homomorphisms that allowed the study of strange and difficult
+      groups. Homomorphisms are central. 
+    </p>
+    <p>
+      The same attitude holds throughout abstract algebra, including
+      rings. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>R</m> and <m>S</m> be rings. A <term>ring
+          homomorphism</term> is a function <m>\phi: R \rightarrow
+          S</m> such that these two properties hold for all <m>r_1,
+          r_2 \in R</m>. 
+          <ul>
+            <li>
+              <me>\phi(r_1 + r_2) = \phi(r_1) + \phi(r_2)</me>
+            </li>
+            <li>
+              <me>\phi(r_1r_2) = \phi(r_1) \phi(r_2)</me>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This is very much like a group homomorphism. However, now that a
+      ring has two binary operations, a ring homomorphism has to
+      cooperate with both operations. To verify that something is a
+      ring homomorphism, I would have to check both cooperations. 
+    </p>
+    <example>
+      <p>
+        Let <m>\pi_n: \ZZ \rightarrow \ZZ/n\ZZ</m> be the map that sents
+        each integer to its class modulo <m>n</m>. I claim this is a
+        ring homomorphism. There is actually very little here to
+        check: all of the arithmetic of the integers still works
+        modulo <m>n</m>, and it doesn't matter if I reduce modulo
+        <m>n</m> before or after multiplication or addition. This
+        means that both operations cooperate with the function, so
+        it is a ring homomorphism. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Let <m>a \in \RR</m>. Define a map <m>\phi_a: \RR[x]
+        \rightarrow \RR</m> which takes any polynomial <m>p(x)</m> and
+        evaluates the polymomial at <m>x = a</m>. 
+        <me>
+          \phi_a(p(x)) = p(a) 
+        </me>
+        This is called the <term>evaluation map</term> at the real number
+        <m>a</m>. I claim that this is an homomorphism. I can check
+        both conditions. 
+        <md>
+          <mrow>
+            \phi_a(p(x) + q(x)) = p(a) + q(a) = \phi_a(p(x)) +
+            \phi_a(q(x))
+          </mrow>
+          <mrow>
+            \phi_a(p(x)q(x)) = p(a)q(a) = \phi_a(p(x)) \phi_b(q(x))
+          </mrow>
+        </md>
+        There isn't again much to check here. Evaluation of polyomials
+        can happen before or after addition or multiplication, so this
+        is a ring homomorphism. 
+      </p>
+    </example>
+    <example>
+      <p>
+        There is a function <m>\det: M_n(\RR) \rightarrow \RR</m>
+        which evaluates the determinant of any matrix. Is this a ring
+        homomorphism? From linear algebra, I know it cooperates with
+        multiplication.
+        <me>
+          \det(AB) = \det(A) \det (B) 
+        </me>
+        However, if does not cooperate with addition. I can see this
+        using the identity matrix. If I do the addition first, I get a
+        matrix with <m>2</m> on each diagonal entry. The determinant
+        of a diagonal matrix is the product of its diagonal entries. 
+        <me>
+          \det(\Id + \Id) = 2^n
+        </me>
+        But if I do the determinant first, I get this sum. 
+        <me>
+          \det(\Id) + \det(\Id) = 1 + 1 = 2 
+        </me>
+        Assumine <m>n \geq 2</m>, these are not the same. Therefore,
+        the determinant is not a ring homomorphism. 
+      </p>
+    </example>
+    <p>
+      This situation with the determinant is a common one: many
+      algebraic operations can fit with one of the two operations, but
+      not the other. Therefore, in some sense, ring homomorphisms are a
+      bit more restrictive than group homomorphisms. I won't be
+      able to make ring homomorphisms out of most group homomorphisms.
+      The map <m>\ZZ \rightarrow \ZZ</m> which is multiplication by
+      <m>3</m> agrees with addition (due to distribution), but does
+      not multiplication. The absolute value function <m>\RR
+      \rightarrow \RR</m> agrees with multiplication but not addition.
+      I could go on: finding something that actually works with both
+      operations is pretty tricky. 
+    </p>
+    <p>
+      That said, ring homomorphisms certainly do exists and certainly
+      are important. Let me move of to some properties. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>\phi: R \rightarrow S</m> be a ring homomorphism.
+          Then the following properties are true. 
+          <ul>
+            <li>
+              <m>\phi(0) = 0</m>
+            </li>
+            <li>
+              If both rings are rings with unity, then <m>\phi(1) =
+              1</m>. 
+            </li>
+            <li>
+              <m>\phi(-r) = -\phi(r)</m>
+            </li>
+            <li>
+              If both rings are rings with unity and if <m>r</m> is a
+              unit, then <m>\phi(r^{-1}) = (\phi(r))^{-1}</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      These last two properties mean that a ring homomorphism must be
+      a group homomorphism for the unit group (at least when the ring
+      has identity and, therefore, the unit group is actually
+      defined.) 
+    </p>
+    <p>
+      Several important definitions that we know from group
+      homomorphism still hold. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\phi:R \rightarrow S</m> be  ring homomorphism. 
+          <ul>
+            <li>
+              The <term>kernel</term> of <m>\phi</m> is the set of all
+              elements of <m>R</m> which are sent to <m>0 \in S</m>.
+              (Note the kernel is defined by the <em>additive</em>
+              inverse.) The kernel is a subring of <m>R</m>.
+            </li>
+            <li>
+              The <term>image</term> of <m>\phi</m> is the set of all
+              output of <m>\phi</m>. The image is a subring of
+              <m>S</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The definition of a ring isomorphism is also in parallel with
+      group theory.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A bijective ring homomorphisms is called a <term>ring
+          isomorphism</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Isomorphisms again carry the idea of two rings having exactly
+      the same structure. If there is an isomorphism between two
+      rings, then we say those two rings are <term>isomorphic</term>
+      to each other and we treat them as the same ring with
+      potentially different superficial presentation. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-ideals">
+    <title>Ideals</title>
+    <p>
+      In group theory, normal subgroups were the kernels of
+      homomorphisms, and quotients were formed only with normal
+      subgroups. The same holds in ring theory, which leads to this
+      definition. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>R</m> be a ring. A subset <m>I \subset R</m> is
+          called an <term>ideal</term> if is it the kernel of some
+          homorphism with domain <m>R</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For group theory, this was equivalent to a condition on the
+      cosets of a normal subgroup. Here, similarly, there is a
+      condition, though it is quite different from the group theory
+      condition. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A subring <m>I \subset R</m> of a ring is an ideal if the
+          additional property holds.
+          <me>
+            \forall r \in R \forall a \in I,  ra \in I 
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The subring condition for multiplication is just closure: if
+      <m>a,b, \in S</m> the <m>ab \in S</m>. The condition for an ideal
+      is stronger here: only one of the element needs to be in the
+      subgring. The other factor can be literally any other ring
+      element but the product still needs to be in the ideal. It's
+      a stronger kind of closure under multiplication: for any ideal
+      element, any product with any other ring element remains in the
+      ideal. 
+    </p>
+    <p>
+      Of course, some examples can help to understand this new strange
+      condition. 
+    </p>
+    <example>
+      <p>
+        I said at the start that the integers are the archtypical
+        ring, and the same holds for ideals. I already said that
+        <m>n\ZZ</m> is always a subring. I now claim that this is an
+        ideal. Why? Well, take <m>7\ZZ</m>, which is the subring of
+        multiples of <m>7</m>. An element of this subring is a
+        multiple of <m>7</m>: call it <m>7k</m>. Then I can take any
+        other integer <m>m</m>. If I multiply the two, I get <m>m(7k)
+        = 7(km)</m><mdash/>this is still a multiple of <m>7</m>. This
+        subring is closed under multiplication by any ring element. It
+        is an ideal.
+      </p>
+      <p>
+        I recommend using <m>n\ZZ</m> as your first mental model of an
+        ideal. All multiples of an integer have exactly the right
+        property: any other products will remain multiples. This
+        example can give grounding to the new property. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Consider the ring <m>C(\RR)</m> of continuous functions with
+        domain <m>\RR</m>. I can defined a subring <m>S(0) \subset
+        C(\RR)</m> which consists of all functions which satisfy
+        <m>f(0) = 0</m>. This is a subring: the sum, additive inverse,
+        or product of these functions retails that property. This is
+        also an idea. If <m>f(0) = 0</m> and <m>g(x)</m> is any other
+        continuous function, I can calculate <m>f(0)g(0) = 0 g(0) = 0
+        </m>, so the product function still satisfies. 
+      </p>
+      <p>
+        Similarly, for any real number <m>a \in \RR</m>, I can define
+        <m>S(a) = \{ f \in C(\RR) | f(a) = 0\}</m> to be the ideal of
+        functions which evaluate to 0 at the special point <m>a</m>. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Let <m>S \subset \RR[x]</m> be the set of all real polynomials
+        for which the constant term is zero. I claim this an ideal. It
+        is a subring: if I add two polyomials without a constant term,
+        the constant term in the sum is just <m>0 + 0 = 0</m>.
+        Similarly, if I distribute all of the terms when multiplying
+        two such polynomials, I can only make non-constant terms. But
+        then even more. If <m>p(x)</m> has a zero constant term and I
+        multiply it by any other polynomial <m>q(x)</m>, then every
+        term in <m>p(x)</m> will have <m>x^r</m> for some <m>r \geq
+        1</m>. In the distribution of the multiplication, all those
+        terms involve one term from <m>p(x)</m>, so I can never create
+        a non-zero constant term. This is also an ideal. 
+      </p>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-ring-quotients">
+    <title>Ring Quotients</title>
+    <p>
+      I said that a ring ideal would be the equivalent to a normal
+      subgroup. Let me now justify this claim.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>I \subset R</m> be an ideal in a ring. Then the
+          quotient <m>R/I</m> also has the structure of a ring under
+          the induced two binary operations.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I can make use of the group theory I already know. An
+          ideal <m>I</m> is a subring, which means that it is a
+          subgroup for the additive binary operation. Since the
+          underlying additive group of a ring is abelian, all
+          subgroups are normal. Therefore, <m>R/I</m> is already a
+          well-defined quotient group. 
+        </p>
+        <p>
+          The elements of the quotient group <m>R/I</m> are cosets,
+          which can be written as <m>r + I</m> for <m>r \in R</m> some
+          ring element. The multiplicative operation on the ring leads
+          pretty naturally to the following operation on these cosets. 
+          <me>
+            (r + I)(s + I) = rs + I
+          </me>
+          To prove that the quotient is a ring, I need to prove that
+          this is a well-defined associative binary operation and that
+          it distributes over the addition. 
+        </p>
+        <p>
+          The multiplication of the cosets is the multiplication
+          <m>(r + i_1)(s + i_2)</m> for elements <m>i_1, i_2 \in
+          I</m>. As these are all actual elements of the original
+          ring, I can distribute everything. 
+          <me>
+            (r + i_i)(s + i_2) = rs + si_i + ri_2 + i_1i_2
+          </me>
+          I want this to be a the coset <m>(rs +
+          I)</m>, but the distribution makes this tricky.
+          <m>i_2i_2</m> is certainly in the idea, but what about
+          <m>si_1</m> and <m>ri_2</m>? Well, this is where the
+          definition of an ideal is important. In an ideal,
+          multiplication by any other ring element remains in the
+          idea. Therefore, <m>si_1</m> and <m>ri_2</m> are both in the
+          ideal. This means that the sum <m>(si_2 + ri_2 + i_1i_2)</m>
+          is in the ideal, so <m>rs + (si_2 + ri_2 +i_1i_2) \in rs
+          + I</m>. This makes the multiplication work: it is
+          well-defined. 
+        </p>
+        <p>
+          Then I need to check distribution, but I actually get this
+          almost for free from the known ring operations. Here is the
+          calculation.
+          <md>
+            <mrow>
+              (r + I) \left[ (s + I) + (t + I) \right] \amp = 
+              (r + I) ((s + t) + I) = r(s + t) + I 
+            </mrow>
+            <mrow>
+              \amp = (rs + rt) + I = (rs + I) + (rt + I) 
+            </mrow>
+            <mrow>
+              \amp = (r + I)(s + I) + (r + I)(t + I)
+            </mrow>
+          </md>
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      So the quotient by an ideal works as a ring, and the proof shows
+      that if I just tried to use any subring, the quotient would
+      have failed in the multiplication step. The ideal is the
+      equivalent to a normal subgroup. 
+    </p>
+    <p>
+      As with group theory, there is an important and deep connection
+      between quotients, homomorphisms and kernels. An ideal is the
+      kernel of a homomorphism and produces a quotient; and any
+      quotient leads to a homorphism.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>I \subset R</m> be an idea of a ring. Then <m>\pi_I:
+          R \rightarrow R/I</m> is the <term>projection
+          homomorphism</term>. It sends any ring element <m>r \in
+          R</m> to its coset <m>r + I</m>. By construction, the kernel
+          of this homomorphism is exactly the  ideal <m>I</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Now I can state the equivalent versions to some of the important
+      proporisions from group theory, kernels and quotients. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>\phi: R \rightarrow S</m> be a ring homomorphism.
+          Then <m>\phi</m> is injective if an only if <m>\Ker(\phi) =
+          \{0\}</m>. 
+        </p>
+      </statement>
+    </proposition>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>\phi: R \rightarrow S</m> be a surjective ring
+          homomorphism. Then there exists a homomorphism. 
+          <me>
+            R / \Ker (\phi) \cong S 
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Finally, let me end with some important types of ideals. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>r \in R</m> be the element of a ring. Then
+          <m>rR = \{ rs | s \in R\}</m> is called <term>the ideal
+          generated by <m>r</m></term>. Any idea generated by an
+          element this way is called a <term>principal ideal</term>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A principal ideal generalizes the ideals <m>n\ZZ</m> that we
+      have seen from the integers. It is infact true that all ideals
+      of the integers have this form, but in other rings, there are
+      ideals which are not principal. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>I \subset R</m> be an ideal in a ring. If any other
+          ideal <m>J</m> such that <m>I \subset J \subset R</m> must
+          be either <m>J = I</m> or <m>J = R</m>, then <m>I</m> is
+          called a <term>maximal ideal</term>. 
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+</section>
