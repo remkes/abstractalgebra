@@ -1,0 +1,368 @@
+<section xml:id="section-polynomial-rings">
+  <title>Polynomial Rings</title>
+  <p>
+    In <xref ref="example-poly-ring"/>, I mentioned that polynomials
+    can be made ourt of any commutative ring. Let me expand on that
+    with a restated complete definition of a polynomial ring. (As
+    mentioned in the last section, for this and the rest of our tour
+    of ring theory, I will be assuming commutativity throughout). 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>R</m> be a ring and let <m>x</m> be a symbol unrelated
+        to that ring. Then the set of all polynomials with
+        coefficients in <m>R</m> and using <m>x</m> as the variable is
+        a ring with notation <m>R[x]</m>.
+      </p>
+      <p>
+        Similarly, if <m>y</m> is another symbol unrelated to that
+        ring, I can also make the two-variable polynomial ring
+        <m>R[x,y]</m>. 
+      </p>
+      <p>
+        This can be iterated as often as you want. If the variables
+        are <m>x_1, x_2, \ldots, x_k</m> then <m>R[x_1, x_2, \dots
+        x_k]</m> is the <m>k</m>-variable polynomial ring. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    I've defined multi-variable polynomials and they are a pretty
+    important class of rings in mathematics. However, in this course,
+    I'll stick to single-variable polynomial rings, since all of the
+    constructions that I want to demonstrate can happen in those rings. 
+  </p>
+  <p>
+    The standard operations and definitions of polynomials apply
+    regardless of the ring <m>R</m>. In particular, let me remind you
+    of the most commonly used terms.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        <ul>
+          <li>
+            The highest power of the variable is the
+            <term>degree</term> of the polynomial. 
+          </li>
+          <li>
+            If <m>p(a) = 0</m> for some ring element <m>a \in R</m>,
+            the <m>a</m> is called a <term>root</term> of the
+            polynomial. 
+          </li>
+          <li>
+            A polymomial of degree <m>d</m> has at most <m>d</m> roots. 
+          </li>
+          <li>
+            If <m>p(x) = q(x)r(x)</m>, then <m>q</m> and <m>r</m> are
+            <term>factors</term> of <m>p</m> and <m>p</m> is a
+            <term>multiple</term> of both <m>q</m> and <m>r</m>.
+          </li>
+          <li>
+            An element <m>a \in R</m> is a root of a polynomial if
+            and only if <m>(x-a)</m> is a factor of the polynomial. If
+            <m>(x-a)^k</m> is a factor of the polynomial and <m>k</m>
+            is the largest exponent for which this is true, then
+            <m>k</m> is the <term>multiplicity</term> of the root. 
+          </li>
+          <li>
+            Each expression <m>p_ix^i</m> is a <term>term</term> of the
+            polynomial. The base ring element <m>p_i</m> is a
+            coefficient. 
+          </li>
+          <li>
+            If <m>p_dx^d</m> is the term with the higest exponent in the
+            polynomial, then <m>r</m> is called the <term>leading
+            coefficcient</term>. The leading coefficient is always
+            non-zero. If the leading coefficient is <m>1</m>, then the
+            polynomial is a <term>monic</term> polynomial. 
+          </li>
+          <li>
+            A <term>constant polynomial</term> is an element <m>a</m>
+            of the base ring thought of as a polynomial with no other
+            terms.  Equivalently, it is a polynomial of degree 0. As a
+            particular case, <m>0</m> is the zero polynomial. 
+          </li>
+          <li>
+            If <m>a \in R</m>, then taking a polynomial <m>p(x)</m>
+            and replacing <m>x</m> with <m>a</m> produces <m>p(a)</m>,
+            an element of the base ring. This is called the
+            <term>evaluation</term> of the polynomial at <m>a</m>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Let me state some of the first properties of general polynomial
+    rings. I'm going to restrict a little again here and only talk
+    about polynomials over domains; again, all of the deveopment that I
+    want to do can take place in this situation and the definitions
+    can be stated more clearly when I don't have to worry about zero
+    divisors. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>R[x]</m> be a polynomial ring over a base ring <m>R</m>
+        which is a domain. 
+        <ul>
+          <li>
+            The units of <m>R[x]</m> are the units of the base
+            ring: <m>R^*</m>. 
+          </li>
+          <li>
+            <m>R[x]</m> is also a domain.          
+          </li>
+          <li>
+            There is always an injective ring homomorphism <m>i: R
+            \rightarrow R[x]</m> which sends a ring element to itself
+            considered as a constant polynomial. 
+          </li>
+          <li>
+            For every <m>a \in R</m>, there is a surjective evaluation
+            homomorphism <m>\pi_a: R[x] \rightarrow R</m> which sends
+            all polynomials to their evaluation at <m>a</m>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    These definitions and results means that working with
+    polynomials over a domain feels pretty familiar. Most of what
+    you are accustomed to for real polynomials still works, and I'll
+    try to carefully point out what is different. 
+  </p>
+  <p>
+    In ring theory, I am concerned about factoring. This leads me to
+    one of the most important definitions for polynomial rings. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>R[x]</m> be a polynomial ring over a domain. A
+        polynomial <m>p(x)</m> is called <term>irreducible</term> if, 
+        in any product of factors <m>p(x) = q(x)r(x)</m>, at least one
+        of the factors is a constant polynoial. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    You may have used this term already to talk about real
+    polynomials. Let me review that in an example. 
+  </p>
+  <example>
+    <p>
+      In <m>\RR[x]</m>, there are two types of irreducible
+      polynomials. 
+      <ul>
+        <li>
+          All polynomiials <m>(ax + b)</m> at irreducible. (This is
+          true of any polynomial ring over a domain.) 
+        </li>
+        <li>
+          All polynomials <m>(ax^2 + bx + c)</m> such that <m>b^2 -
+          4ac \lt 0</m> are irreducible. these are the degree two
+          polynomial without real roots. 
+        </li>
+      </ul>
+    </p>
+    <p>
+      In <m>\RR[x]</m>, there are no irreducible polynomials of degree
+      three or higher. Any such polynomials will have either a linear
+      of a quadratic irreducible factor. This is not true in general. 
+    </p>
+  </example>
+  <p>
+    Let me do some examples which show how this can vary in other
+    polynomial rings. 
+  </p>
+  <example>
+    <p>
+      The polynomial <m>x^2 - 2</m> is irreducible in <m>\QQ[x]</m>.
+      If this were a real polynomial, it would factor as
+      <m>(x-\sqrt{2})(x + \sqrt{2})</m>. Such a factorization is
+      impossible in <m>\QQ[x]</m>, since <m>\sqrt{2}</m> not a
+      rational number. 
+    </p>
+    <p>
+      Similar, the polynomial <m>x^4 - 2</m>, as a real polynomial,
+      would factor as follows. 
+      <me>
+        x^4 - 2 = (x - \sqrt[4]{2})(x + \sqrt[4]{2}) (x^2 + \sqrt{2})
+      </me>
+      This factorization cannot be done in <m>\QQ</m>, so this is,
+      again, an irreducible polynomial over <m>\QQ</m>. This shows
+      <m>\QQ[x]</m>, unlike <m>\RR[x]</m> can have irreducibe
+      polynomials of degree higher than two. 
+    </p>
+  </example>
+  <p>
+    There is, then, a substantial difference in irreduble
+    polynomials between <m>\RR[x]</m> and <m>\QQ[x]</m>. What about
+    <m>\ZZ[x]</m>? Here, there is surprisingly little difference. To
+    demonstrate, first a need a definition.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>p(x) \in \ZZ[x]</m> be a polynomial. I'll write its
+        expansion with terms and coefficients. 
+        <me>
+          p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
+        </me>
+        If the greatest common divisor of all the <m>p_i</m> is 1,
+        then the polynomial is called <term>primitive</term>. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    If a polynomial isn't primitive, then a factor can be pulled out
+    of all the coefficients and the remaining polynomials will be
+    primitive. For example, <m>3x^2 + 12 x + 15</m> is not primitive,
+    but can be written as <m>3(x^2 + 4x + 5)</m> and <m>x^2 + 4x +
+    5</m> is primitive. For the sake of factoring and irreducibility,
+    then, we often just care about primitive polynomials, even over
+    <m>\ZZ</m> where I cannot technically remove the three by dividing
+    by it. 
+  </p>
+  <proposition>
+    <title>Gauss' Lemma</title>
+    <statement>
+      <p>
+        Let <m>p(x) \in \ZZ[x]</m> be a primitive polynomial. Then
+        <m>p(x)</m> is irreducible in <m>\ZZ[x]</m> if and only if it
+        is irreducible in <m>\QQ[x]</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        One direction here is easy: if a polynomial is irreducible in
+        the larger ring <m>\QQ[x]</m>, it cannot factor in the smaller
+        ring either, so it is irreducible in <m>\ZZ[x]</m>. 
+      </p>
+      <p>
+        For the other direction, assume that the polynomial is
+        irreducible in <m>\ZZ[x]</m>. For the sake of contradiciton,
+        assume it is not irreducible in <m>\QQ[x]</m>. That means
+        there are rational non-constant polynomails <m>q(x)</m> and
+        <m>r(x)</m> such that this factorization is true. 
+        <me>
+          p(x) = q(x) r(x)
+        </me>
+        Now let <m>a</m> be the lcm of the denominators of the
+        coefficients of <m>q(x)</m>, and likewise <m>b</m> for
+        <m>r(x)</m>. This means <m>aq(x)</m> and <m>br(x)</m> are
+        integral polynomials, since I have cleared all denominators.
+        Then I can rewrite the equation.
+        <me>
+          ab p(x) = (aq(x)) (br(x))
+        </me>
+        It looks like I am almost done this proof, since all the
+        polynomials here are integral. There is a subtlety here, which
+        I'm going to skip in this proof, about common factors of the
+        coefficients of integral polynomials. (The proof usual
+        involved reductions modulo primes, which is a neat and fairly
+        common technique for statements about the integers.) The
+        subtlety allows me to say that, since <m>p(x)</m> is
+        primitive, the product <m>ab</m> must actually be <m>\pm
+        1</m>, and I can divide by it. 
+        <me>
+          p(x) = \pm 1(aq(x)) (br(x))
+        </me>
+        The result is a decomposition in <m>\ZZ[x]</m>. This
+        contradicts the irreducibility of <m>p(x)</m> in the integers.
+        By contradiction, I conclude that irreducibility over the
+        integers implies irreducibility over the rationals. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    For degree two and three polynomials, the polynomial is
+    irreducible if and only if it has a linear factor, which means it
+    has a root. Outside of this observation, though, it's pretty
+    difficult to tell when a polynomial is irreducible. Therefore, we
+    have some criteria to help. I'll state these criteria here for
+    integral polynomails, but I'll extend them to other rings in a
+    future section.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>p(x) \in \ZZ[x]</m>. 
+        <me>
+          p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
+        </me>
+        I've written <m>p(x)</m> in its expansion with <m>p_d \neq
+        0</m>. I'll also assume <m>p_0 \neq 0</m> (since otherwise
+        <m>x</m> is a factor and the polynomial is immediately
+        reducible).  Then there following are useful criteria about
+        roots and irreducibility.
+        <ul>
+          <li>
+            If <m>a \in \ZZ</m> is a root of <m>p(x)</m>, then
+            <m>a</m> is a factor of <m>p_0</m>. As noted above, a
+            polynomial of degree three or less is irreducible if and
+            only it has no roots. 
+          </li>
+          <li>
+            <p>
+            If there exists a prime number <m>j</m>  with these two
+            conditions:
+            <ul>
+              <li>
+                <m>j</m> is a factor of all of the <m>p_i</m> except
+                <m>p_d</m>; and
+              </li>
+              <li>
+                <m>j^2</m> is not a factor of <m>p_0</m>;
+              </li>
+            </ul>
+            then the polynomial is irreducible. This is called
+            Eisensten's Criterion. 
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </proposition>
+  <p> 
+    This gives some tools to check the irreducibility of polynomials
+    over the integer. Here are some examples, consider entirely in
+    <m>\ZZ[x]</m> (or in <m>\QQ[x]</m>, since all examples are
+    primitive). 
+  </p>
+  <example>
+    <p>
+      <ul>
+        <li>
+          <m>x^d - p</m> for <m>p</m> a prime number satisfies
+          Eisensten's criterion, so this is always irreducible for
+          <m>d \geq 1</m>.
+        </li>
+        <li>
+          <m>x^3 + 6x^2 - 7x + 4</m>. This is a degree three
+          polynomial, so it irreducible only it is does not have a
+          root. The only possible roots are <m>\pm 1, \pm 2, \pm
+          4</m>, since the root has to define the constant
+          coefficient. By exhaustive check, none of these are roots,
+          so this is irreducible. 
+        </li>
+        <li>
+          <m>x^7 + 4x^5 + 12x^3 + 16x^2 + 2</m> is irreducible by
+          Eisenstein's criterion using the prime number 2. 
+        </li>
+      </ul>
+    </p>
+  </example>
+  <p>
+    Why do we care so much about irreducible polynomials? Well,
+    irreducible polynomials are something that cannot be factored in
+    to smaller pieces, in a way. This is something like the prime
+    numbers, and indeed, the irreducible polynomials will end up
+    playing a very similar role. The next section of these notes will
+    develop the idea further. 
+  </p>
+</section>

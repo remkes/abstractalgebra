@@ -138,7 +138,7 @@
       <m>-p(x)</m>, but no polynomials have multiplicative inverses. 
     </p>
   </example>
-  <example>
+  <example xml:id="example-poly-ring">
     <p>
       In fact, if <m>R</m> is any commutative ring, then I can make
       polynomials <m>R[x]</m> in the variable <m>x</m> over that ring.

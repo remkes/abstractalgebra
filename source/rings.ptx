@@ -2,4 +2,5 @@
   <title>Rings</title>
   <xi:include href="rings-definition.ptx" />
   <xi:include href="ideals.ptx" />
+  <xi:include href="polynomial-rings.ptx" />
 </chapter>
