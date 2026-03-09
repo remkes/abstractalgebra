@@ -154,14 +154,7 @@
       which domains have unique factorizations? This turns out to be a
       pretty interesting question. I want to give you a bunch of
       examples to demonstrate rings which do and do not have unique
-      factorization, but I need to take a detour first. 
-    </p>
-  </subsection>
-  <subsection xml:id="subsection-polynoial-quotients">
-    <title>Quotients of Polynomial Rings</title>
-    <p>
-      I'm going to back to polynomial rings to build the examples I
-      need for rings with and without unique factorization. 
+      factorization.
     </p>
   </subsection>
 </section>

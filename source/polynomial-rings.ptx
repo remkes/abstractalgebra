@@ -1,368 +1,675 @@
 <section xml:id="section-polynomial-rings">
   <title>Polynomial Rings</title>
-  <p>
-    In <xref ref="example-poly-ring"/>, I mentioned that polynomials
-    can be made ourt of any commutative ring. Let me expand on that
-    with a restated complete definition of a polynomial ring. (As
-    mentioned in the last section, for this and the rest of our tour
-    of ring theory, I will be assuming commutativity throughout). 
-  </p>
-  <definition>
-    <statement>
+  <subsection xml:id="subsection-polynomial-rings-definition">
+    <title>Definition</title>
+    <p>
+      In <xref ref="example-poly-ring"/>, I mentioned that polynomials
+      can be made out of any commutative ring. Let me expand on that
+      with a restated complete definition of a polynomial ring. (As
+      mentioned in the last section, for this and the rest of our
+      tour of ring theory, I will be assuming commutativity
+      throughout).
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>R</m> be a ring and let <m>x</m> be a symbol
+          unrelated to that ring. Then the set of all polynomials with
+          coefficients in <m>R</m> and using <m>x</m> as the variable
+          is a ring with notation <m>R[x]</m>.
+        </p>
+        <p>
+          Similarly, if <m>y</m> is another symbol unrelated to that
+          ring, I can also make the two-variable polynomial ring
+          <m>R[x,y]</m>. 
+        </p>
+        <p>
+          This can be iterated as often as you want. If the variables
+          are <m>x_1, x_2, \ldots, x_k</m> then <m>R[x_1, x_2, \dots
+          x_k]</m> is the <m>k</m>-variable polynomial ring. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I've defined multi-variable polynomials and they are a pretty
+      important class of rings in mathematics. However, in this
+      course, I'll stick to single-variable polynomial rings, since
+      all of the constructions that I want to demonstrate can happen
+      in those rings. 
+    </p>
+    <p>
+      The standard operations and definitions of polynomials apply
+      regardless of the ring <m>R</m>. In particular, let me remind you
+      of the most commonly used terms.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              The highest power of the variable is the
+              <term>degree</term> of the polynomial. 
+            </li>
+            <li>
+              If <m>p(a) = 0</m> for some ring element <m>a \in R</m>,
+              the <m>a</m> is called a <term>root</term> of the
+              polynomial. 
+            </li>
+            <li>
+              A polymomial of degree <m>d</m> has at most <m>d</m> roots. 
+            </li>
+            <li>
+              If <m>p(x) = q(x)r(x)</m>, then <m>q</m> and <m>r</m>
+              are <term>factors</term> of <m>p</m> and <m>p</m> is a
+              <term>multiple</term> of both <m>q</m> and <m>r</m>.
+            </li>
+            <li>
+              An element <m>a \in R</m> is a root of a polynomial if
+              and only if <m>(x-a)</m> is a factor of the polynomial.
+              If <m>(x-a)^k</m> is a factor of the polynomial and
+              <m>k</m> is the largest exponent for which this is true,
+              then <m>k</m> is the <term>multiplicity</term> of the
+              root. 
+            </li>
+            <li>
+              Each expression <m>p_ix^i</m> is a <term>term</term> of
+              the polynomial. The base ring element <m>p_i</m> is a
+              coefficient. 
+            </li>
+            <li>
+              If <m>p_dx^d</m> is the term with the highest exponent in
+              the polynomial, then <m>p_d</m> is called the
+              <term>leading coefficient</term>. The leading
+              coefficient is always non-zero. If the leading
+              coefficient is <m>1</m>, then the polynomial is a
+              <term>monic</term> polynomial. 
+            </li>
+            <li>
+              A <term>constant polynomial</term> is an element
+              <m>a</m> of the base ring thought of as a polynomial
+              with no other terms.  Equivalently, it is a polynomial
+              of degree 0. As a particular case, <m>0</m> is the zero
+              polynomial. 
+            </li>
+            <li>
+              If <m>a \in R</m>, then taking a polynomial <m>p(x)</m>
+              and replacing <m>x</m> with <m>a</m> produces
+              <m>p(a)</m>, an element of the base ring. This is called
+              the <term>evaluation</term> of the polynomial at
+              <m>a</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Let me state some of the first properties of general polynomial
+      rings. I'm going to restrict a little again here and only talk
+      about polynomials over domains; again, all of the deveopment
+      that I want to do can take place in this situation and the
+      definitions can be stated more clearly when I don't have to
+      worry about zero divisors. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>R[x]</m> be a polynomial ring over a base ring
+          <m>R</m> which is a domain. 
+          <ul>
+            <li>
+              The units of <m>R[x]</m> are the units of the base
+              ring: <m>R^*</m>. 
+            </li>
+            <li>
+              <m>R[x]</m> is also a domain.          
+            </li>
+            <li>
+              There is always an injective ring homomorphism <m>i: R
+              \rightarrow R[x]</m> which sends a ring element to
+              itself considered as a constant polynomial. 
+            </li>
+            <li>
+              For every <m>a \in R</m>, there is a surjective
+              evaluation homomorphism <m>\pi_a: R[x] \rightarrow R</m>
+              which sends all polynomials to their evaluation at
+              <m>a</m>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      These definitions and results means that working with
+      polynomials over a domain feels pretty familiar. Most of what
+      you are accustomed to for real polynomials still works, and I'll
+      try to carefully point out what is different. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsecdtion-poly-rings-irreducible">
+    <title>Irreducible Polynomials</title>
+    <p>
+      In ring theory, I am concerned about factoring. This leads me to
+      one of the most important definitions for polynomial rings. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>R[x]</m> be a polynomial ring over a domain. A
+          polynomial <m>p(x)</m> is called <term>irreducible</term> if, 
+          in any product of factors <m>p(x) = q(x)r(x)</m>, at least one
+          of the factors is a constant polynomial. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      You may have used this term already to talk about real
+      polynomials. Let me review that in an example. 
+    </p>
+    <example>
       <p>
-        Let <m>R</m> be a ring and let <m>x</m> be a symbol unrelated
-        to that ring. Then the set of all polynomials with
-        coefficients in <m>R</m> and using <m>x</m> as the variable is
-        a ring with notation <m>R[x]</m>.
-      </p>
-      <p>
-        Similarly, if <m>y</m> is another symbol unrelated to that
-        ring, I can also make the two-variable polynomial ring
-        <m>R[x,y]</m>. 
-      </p>
-      <p>
-        This can be iterated as often as you want. If the variables
-        are <m>x_1, x_2, \ldots, x_k</m> then <m>R[x_1, x_2, \dots
-        x_k]</m> is the <m>k</m>-variable polynomial ring. 
-      </p>
-    </statement>
-  </definition>
-  <p>
-    I've defined multi-variable polynomials and they are a pretty
-    important class of rings in mathematics. However, in this course,
-    I'll stick to single-variable polynomial rings, since all of the
-    constructions that I want to demonstrate can happen in those rings. 
-  </p>
-  <p>
-    The standard operations and definitions of polynomials apply
-    regardless of the ring <m>R</m>. In particular, let me remind you
-    of the most commonly used terms.
-  </p>
-  <definition>
-    <statement>
-      <p>
+        In <m>\RR[x]</m>, there are two types of irreducible
+        polynomials. 
         <ul>
           <li>
-            The highest power of the variable is the
-            <term>degree</term> of the polynomial. 
+            All polynomials <m>(ax + b)</m> at irreducible. (This is
+            true of any polynomial ring over a domain.) 
           </li>
           <li>
-            If <m>p(a) = 0</m> for some ring element <m>a \in R</m>,
-            the <m>a</m> is called a <term>root</term> of the
-            polynomial. 
-          </li>
-          <li>
-            A polymomial of degree <m>d</m> has at most <m>d</m> roots. 
-          </li>
-          <li>
-            If <m>p(x) = q(x)r(x)</m>, then <m>q</m> and <m>r</m> are
-            <term>factors</term> of <m>p</m> and <m>p</m> is a
-            <term>multiple</term> of both <m>q</m> and <m>r</m>.
-          </li>
-          <li>
-            An element <m>a \in R</m> is a root of a polynomial if
-            and only if <m>(x-a)</m> is a factor of the polynomial. If
-            <m>(x-a)^k</m> is a factor of the polynomial and <m>k</m>
-            is the largest exponent for which this is true, then
-            <m>k</m> is the <term>multiplicity</term> of the root. 
-          </li>
-          <li>
-            Each expression <m>p_ix^i</m> is a <term>term</term> of the
-            polynomial. The base ring element <m>p_i</m> is a
-            coefficient. 
-          </li>
-          <li>
-            If <m>p_dx^d</m> is the term with the higest exponent in the
-            polynomial, then <m>r</m> is called the <term>leading
-            coefficcient</term>. The leading coefficient is always
-            non-zero. If the leading coefficient is <m>1</m>, then the
-            polynomial is a <term>monic</term> polynomial. 
-          </li>
-          <li>
-            A <term>constant polynomial</term> is an element <m>a</m>
-            of the base ring thought of as a polynomial with no other
-            terms.  Equivalently, it is a polynomial of degree 0. As a
-            particular case, <m>0</m> is the zero polynomial. 
-          </li>
-          <li>
-            If <m>a \in R</m>, then taking a polynomial <m>p(x)</m>
-            and replacing <m>x</m> with <m>a</m> produces <m>p(a)</m>,
-            an element of the base ring. This is called the
-            <term>evaluation</term> of the polynomial at <m>a</m>. 
+            All polynomials <m>(ax^2 + bx + c)</m> such that <m>b^2 -
+            4ac \lt 0</m> are irreducible. these are the degree two
+            polynomial without real roots. 
           </li>
         </ul>
       </p>
-    </statement>
-  </definition>
-  <p>
-    Let me state some of the first properties of general polynomial
-    rings. I'm going to restrict a little again here and only talk
-    about polynomials over domains; again, all of the deveopment that I
-    want to do can take place in this situation and the definitions
-    can be stated more clearly when I don't have to worry about zero
-    divisors. 
-  </p>
-  <proposition>
-    <statement>
       <p>
-        Let <m>R[x]</m> be a polynomial ring over a base ring <m>R</m>
-        which is a domain. 
+        In <m>\RR[x]</m>, there are no irreducible polynomials of degree
+        three or higher. Any such polynomials will have either a linear
+        of a quadratic irreducible factor. This is not true in general. 
+      </p>
+    </example>
+    <p>
+      Let me do some examples which show how this can vary in other
+      polynomial rings. 
+    </p>
+    <example>
+      <p>
+        The polynomial <m>x^2 - 2</m> is irreducible in <m>\QQ[x]</m>.
+        If this were a real polynomial, it would factor as
+        <m>(x-\sqrt{2})(x + \sqrt{2})</m>. Such a factorization is
+        impossible in <m>\QQ[x]</m>, since <m>\sqrt{2}</m> not a
+        rational number. 
+      </p>
+      <p>
+        Similar, the polynomial <m>x^4 - 2</m>, as a real polynomial,
+        would factor as follows. 
+        <me>
+          x^4 - 2 = (x - \sqrt[4]{2})(x + \sqrt[4]{2}) (x^2 + \sqrt{2})
+        </me>
+        This factorization cannot be done in <m>\QQ</m>, so this is,
+        again, an irreducible polynomial over <m>\QQ</m>. This shows
+        <m>\QQ[x]</m>, unlike <m>\RR[x]</m> can have irreducibe
+        polynomials of degree higher than two. 
+      </p>
+    </example>
+    <p>
+      There is, then, a substantial difference in irreduble
+      polynomials between <m>\RR[x]</m> and <m>\QQ[x]</m>. What about
+      <m>\ZZ[x]</m>? Here, there is surprisingly little difference. To
+      demonstrate, first a need a definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>p(x) \in \ZZ[x]</m> be a polynomial. I'll write its
+          expansion with terms and coefficients. 
+          <me>
+            p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
+          </me>
+          If the greatest common divisor of all the <m>p_i</m> is 1,
+          then the polynomial is called <term>primitive</term>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If a polynomial isn't primitive, then a factor can be pulled out
+      of all the coefficients and the remaining polynomials will be
+      primitive. For example, <m>3x^2 + 12 x + 15</m> is not
+      primitive, but can be written as <m>3(x^2 + 4x + 5)</m> and
+      <m>x^2 + 4x + 5</m> is primitive. For the sake of factoring and
+      irreducibility, then, we often just care about primitive
+      polynomials, even over <m>\ZZ</m> where I cannot technically
+      remove the three by dividing by it. 
+    </p>
+    <proposition>
+      <title>Gauss' Lemma</title>
+      <statement>
+        <p>
+          Let <m>p(x) \in \ZZ[x]</m> be a primitive polynomial. Then
+          <m>p(x)</m> is irreducible in <m>\ZZ[x]</m> if and only if it
+          is irreducible in <m>\QQ[x]</m>. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          One direction here is easy: if a polynomial is irreducible in
+          the larger ring <m>\QQ[x]</m>, it cannot factor in the smaller
+          ring either, so it is irreducible in <m>\ZZ[x]</m>. 
+        </p>
+        <p>
+          For the other direction, assume that the polynomial is
+          irreducible in <m>\ZZ[x]</m>. For the sake of contradiciton,
+          assume it is not irreducible in <m>\QQ[x]</m>. That means
+          there are rational non-constant polynomails <m>q(x)</m> and
+          <m>r(x)</m> such that this factorization is true. 
+          <me>
+            p(x) = q(x) r(x)
+          </me>
+          Now let <m>a</m> be the lcm of the denominators of the
+          coefficients of <m>q(x)</m>, and likewise <m>b</m> for
+          <m>r(x)</m>. This means <m>aq(x)</m> and <m>br(x)</m> are
+          integral polynomials, since I have cleared all denominators.
+          Then I can rewrite the equation.
+          <me>
+            ab p(x) = (aq(x)) (br(x))
+          </me>
+          It looks like I am almost done this proof, since all the
+          polynomials here are integral. There is a subtlety here,
+          which I'm going to skip in this proof, about common factors
+          of the coefficients of integral polynomials. (The proof
+          usual involved reductions modulo primes, which is a neat and
+          fairly common technique for statements about the integers.)
+          The subtlety allows me to say that, since <m>p(x)</m> is
+          primitive, the product <m>ab</m> must actually be <m>\pm
+          1</m>, and I can divide by it. 
+          <me>
+            p(x) = \pm 1(aq(x)) (br(x))
+          </me>
+          The result is a decomposition in <m>\ZZ[x]</m>. This
+          contradicts the irreducibility of <m>p(x)</m> in the
+          integers.  By contradiction, I conclude that irreducibility
+          over the integers implies irreducibility over the rationals.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      For degree two and three polynomials, the polynomial is
+      irreducible if and only if it has a linear factor, which means
+      it has a root. Outside of this observation, though, it's pretty
+      difficult to tell when a polynomial is irreducible. Therefore,
+      we have some criteria to help. I'll state these criteria here
+      for integral polynomails, but I'll extend them to other rings in
+      a future section.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>p(x) \in \ZZ[x]</m>. 
+          <me>
+            p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
+          </me>
+          I've written <m>p(x)</m> in its expansion with <m>p_d \neq
+          0</m>. I'll also assume <m>p_0 \neq 0</m> (since otherwise
+          <m>x</m> is a factor and the polynomial is immediately
+          reducible).  Then there following are useful criteria about
+          roots and irreducibility.
+          <ul>
+            <li>
+              If <m>a \in \ZZ</m> is a root of <m>p(x)</m>, then
+              <m>a</m> is a factor of <m>p_0</m>. As noted above, a
+              polynomial of degree three or less is irreducible if and
+              only it has no roots. 
+            </li>
+            <li>
+              <p>
+              If there exists a prime number <m>j</m>  with these two
+              conditions:
+              <ul>
+                <li>
+                  <m>j</m> is a factor of all of the <m>p_i</m> except
+                  <m>p_d</m>; and
+                </li>
+                <li>
+                  <m>j^2</m> is not a factor of <m>p_0</m>;
+                </li>
+              </ul>
+              then the polynomial is irreducible. This is called
+              Eisensten's Criterion. 
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p> 
+      This gives some tools to check the irreducibility of polynomials
+      over the integer. Here are some examples, consider entirely in
+      <m>\ZZ[x]</m> (or in <m>\QQ[x]</m>, since all examples are
+      primitive). 
+    </p>
+    <example>
+      <p>
         <ul>
           <li>
-            The units of <m>R[x]</m> are the units of the base
-            ring: <m>R^*</m>. 
+            <m>x^d - p</m> for <m>p</m> a prime number satisfies
+            Eisensten's criterion, so this is always irreducible for
+            <m>d \geq 1</m>.
           </li>
           <li>
-            <m>R[x]</m> is also a domain.          
+            <m>x^3 + 6x^2 - 7x + 4</m>. This is a degree three
+            polynomial, so it is irreducible only if it does not have a
+            root. The only possible roots are <m>\pm 1, \pm 2, \pm
+            4</m>, since the root has to define the constant
+            coefficient. By exhaustive check, none of these are roots,
+            so this is irreducible. 
           </li>
           <li>
-            There is always an injective ring homomorphism <m>i: R
-            \rightarrow R[x]</m> which sends a ring element to itself
-            considered as a constant polynomial. 
-          </li>
-          <li>
-            For every <m>a \in R</m>, there is a surjective evaluation
-            homomorphism <m>\pi_a: R[x] \rightarrow R</m> which sends
-            all polynomials to their evaluation at <m>a</m>. 
+            <m>x^7 + 4x^5 + 12x^3 + 16x^2 + 2</m> is irreducible by
+            Eisenstein's criterion using the prime number 2. 
           </li>
         </ul>
       </p>
-    </statement>
-  </proposition>
-  <p>
-    These definitions and results means that working with
-    polynomials over a domain feels pretty familiar. Most of what
-    you are accustomed to for real polynomials still works, and I'll
-    try to carefully point out what is different. 
-  </p>
-  <p>
-    In ring theory, I am concerned about factoring. This leads me to
-    one of the most important definitions for polynomial rings. 
-  </p>
-  <definition>
-    <statement>
-      <p>
-        Let <m>R[x]</m> be a polynomial ring over a domain. A
-        polynomial <m>p(x)</m> is called <term>irreducible</term> if, 
-        in any product of factors <m>p(x) = q(x)r(x)</m>, at least one
-        of the factors is a constant polynoial. 
-      </p>
-    </statement>
-  </definition>
-  <p>
-    You may have used this term already to talk about real
-    polynomials. Let me review that in an example. 
-  </p>
-  <example>
+    </example>
     <p>
-      In <m>\RR[x]</m>, there are two types of irreducible
-      polynomials. 
-      <ul>
-        <li>
-          All polynomiials <m>(ax + b)</m> at irreducible. (This is
-          true of any polynomial ring over a domain.) 
-        </li>
-        <li>
-          All polynomials <m>(ax^2 + bx + c)</m> such that <m>b^2 -
-          4ac \lt 0</m> are irreducible. these are the degree two
-          polynomial without real roots. 
-        </li>
-      </ul>
+      Why do we care so much about irreducible polynomials? Well,
+      irreducible polynomials are something that cannot be factored in
+      to smaller pieces, in a way. This is something like the prime
+      numbers, and indeed, the irreducible polynomials will end up
+      playing a very similar role. The next section of these notes will
+      develop the idea further. 
     </p>
+  </subsection>
+  <subsection xml:id="subsection-polynomial-quotients">
+    <title>Quotients of Polynomial Rings</title>
     <p>
-      In <m>\RR[x]</m>, there are no irreducible polynomials of degree
-      three or higher. Any such polynomials will have either a linear
-      of a quadratic irreducible factor. This is not true in general. 
+      If <m>p(x)</m> is an irreducible polynomial, then I can think
+      about the ideal that it generates: <m>\langle p(x) \rangle</m>.
+      Since I have an ideal, I can look at the ring quotient. Here is
+      the first important fact about such quotients.  
     </p>
-  </example>
-  <p>
-    Let me do some examples which show how this can vary in other
-    polynomial rings. 
-  </p>
-  <example>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>R[x]</m> be a polynomial ring over a domain and let
+          <m>p(x)</m> be an irreducible polynomial. Then the quotient
+          <m>R[x]/\langle p(x) \rangle</m> is also a domain. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I'll prove this by contradiction. Assume that the quotient
+          is not a domain. This means that there are non-zero elements
+          in the quotient whose product is zero. Elements in the
+          quotient are cosets of the ideal, so I can write this fact
+          as the following equation. 
+          <me>
+            (r(x) + I) (s(x) + I) = (r(x)s(x)) + I = 0 + I = I 
+          </me>
+          But <m>(r(x)s(x)) + I = I</m> is only true if <m>r(x)s(x)
+          \in I</m>.  This means that <m>r(x)s(x)</m> is a multiple of
+          the irreducible polynomial: <m>r(x)s(x) = q(x)p(x)</m>. But
+          since the original cosets are non zero, I know that <m>r
+          \notin I</m> and <m>s \notin I</m>. But <m>p(x)</m> is a
+          factor of <m>r(x)s(x)</m> by this equation. Since
+          <m>p(x)</m> is irreducible, it must be a factor of
+          <m>r(x)</m> or <m>s(x)</m>, at least up to a constant
+          (otherwise, the non-constant pieces in <m>r(x)</m> and
+          <m>s(x)</m> would provide a factorization of the irreducible
+          polynomial). Therefore, at least one of <m>r</m> and
+          <m>s(x)</m> is a muptiple of <m>p(x)</m>. This is a
+          contradiction, since both <m>r(x)</m> and <m>s(x)</m> are
+          not in the ideal generated by <m>p(x)</m>. Therefore, the
+          contradiction proof is complete and I have proved that the
+          quotient is an integeral domain. 
+        </p>
+      </proof>
+    </proposition>
     <p>
-      The polynomial <m>x^2 - 2</m> is irreducible in <m>\QQ[x]</m>.
-      If this were a real polynomial, it would factor as
-      <m>(x-\sqrt{2})(x + \sqrt{2})</m>. Such a factorization is
-      impossible in <m>\QQ[x]</m>, since <m>\sqrt{2}</m> not a
-      rational number. 
+      This is good: I can make quotients of polynomials rings which
+      remain domains, where I don't have to worry about zero divisors.
+      I want to give some interpretation to these quotient rings, and
+      I'll start doing so with an example. 
     </p>
+    <example>
+      <p>
+        Consider this quotient.
+        <me>
+          \ZZ[x]/\langle x^2 + 1 \rangle
+        </me>
+        The polynomial <m>x^2 + 1</m> is irreducible since it is of
+        degree 2 and has no integer roots. This is a new domain. What
+        is the structure of this ring? We'll, I can write an element
+        as a coset. 
+        <me>
+          p(x) + \langle x^2 + 1 \rangle
+        </me>
+        Now, I can adjust the representative of the coset by adding
+        any element of the idea. Take this coset. 
+        <me>
+          (x^5 + 3x^2 - x - 4)  + \langle x^2 + 1 \rangle
+        </me>
+        The element <m>x^3(x^2 + 1) = x^5 + x^3</m> is in the ideal, so
+        I can subtract that from the representative. 
+        <me>
+          (-x^3 + 3x^2 - x - 4)  + \langle x^2 + 1 \rangle
+        </me>
+        Then <m>-x(x^2 + 1) = -x^3 - x </m> is in the ideal, so it can
+        also be subtracted from the representative. 
+        <me>
+          (3x^2 - 4)  + \langle x^2 + 1 \rangle
+        </me>
+        Finally, <m>3(x^2 + 1) = 3x^2 + 3</m> is in the ideal, so it
+        can also be subtracted. 
+        <me>
+          -7  + \langle x^2 + 1 \rangle
+        </me>
+        I have reduced the representative to a constant. Using this
+        same method, I can reduce any representative to either a
+        constant or a linear polynomial. Moreover, any such
+        representative is unique, since two representatives have to
+        differ by an element of the ideal and the elements of the
+        ideal have degree at least two. 
+      </p>
+      <p>
+        Therefore, I can think of this quotient ring as the elements
+        <m>a + bx</m>. The addition is usual, but what is the
+        multiplication? If I multiply two such elements, I get this.
+        <me>
+          (a + bx)(c + dx) = ac + (ad + bc)x + bdx^2 
+        </me>
+        But I can reduce this by subtracting the ideal element
+        <m>bd(x^2 + 1)</m>. 
+        <me>
+          (a + bx)(c + dx) = ac + (ad + bc)x + bdx^2 - bdx^2 - bd =
+          (ac - bd) + (ad + bc)x
+        </me>
+        This is a well-defined multiplication, and it is the
+        multiplication on the quotient ring. 
+      </p>
+      <p>
+        Finally, using this multiplication, what is the square of
+        <m>x</m> in the quotient ring? <m>x^2 = x^2 - (x^2 +1) =
+        -1</m>. <m>x</m> is a square root of <m>-1</m>. Which is
+        precisely the same thing as saying that <m>x</m> is a root of
+        the polynomial <m>x^2 + 1</m>. 
+      </p>
+      <p> 
+        So what I have done here? The quotient ring produces a new
+        ring whose elements are <m>a + bx</m>, whose multiplication is
+        calculated by using the polynomial <m>x^2 + 1</m> to replace
+        the <m>x^2</m> with <m>-1</m>. This new ring has the integers
+        as well as some new element <m>x</m> which is a square root of
+        negative one.
+      </p>
+      <p>
+        This ring is called the <term>Guassian integers</term> and
+        usually written <m>\ZZ[i]</m>, since <m>i</m> is a usual
+        symbol for the square root of negative one. 
+      </p>
+    </example>
     <p>
-      Similar, the polynomial <m>x^4 - 2</m>, as a real polynomial,
-      would factor as follows. 
-      <me>
-        x^4 - 2 = (x - \sqrt[4]{2})(x + \sqrt[4]{2}) (x^2 + \sqrt{2})
-      </me>
-      This factorization cannot be done in <m>\QQ</m>, so this is,
-      again, an irreducible polynomial over <m>\QQ</m>. This shows
-      <m>\QQ[x]</m>, unlike <m>\RR[x]</m> can have irreducibe
-      polynomials of degree higher than two. 
+      The Gaussian integers are formed by attaching the square root of
+      negative one to the integers in the smallest possible ring
+      structure that allows such an attachment. I find an irreducible
+      polynomial whose roots is the desired new number. In the
+      quotient, I make a new symbol which is the new number. This can
+      be generalized. 
     </p>
-  </example>
-  <p>
-    There is, then, a substantial difference in irreduble
-    polynomials between <m>\RR[x]</m> and <m>\QQ[x]</m>. What about
-    <m>\ZZ[x]</m>? Here, there is surprisingly little difference. To
-    demonstrate, first a need a definition.
-  </p>
-  <definition>
-    <statement>
-      <p>
-        Let <m>p(x) \in \ZZ[x]</m> be a polynomial. I'll write its
-        expansion with terms and coefficients. 
-        <me>
-          p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
-        </me>
-        If the greatest common divisor of all the <m>p_i</m> is 1,
-        then the polynomial is called <term>primitive</term>. 
-      </p>
-    </statement>
-  </definition>
-  <p>
-    If a polynomial isn't primitive, then a factor can be pulled out
-    of all the coefficients and the remaining polynomials will be
-    primitive. For example, <m>3x^2 + 12 x + 15</m> is not primitive,
-    but can be written as <m>3(x^2 + 4x + 5)</m> and <m>x^2 + 4x +
-    5</m> is primitive. For the sake of factoring and irreducibility,
-    then, we often just care about primitive polynomials, even over
-    <m>\ZZ</m> where I cannot technically remove the three by dividing
-    by it. 
-  </p>
-  <proposition>
-    <title>Gauss' Lemma</title>
-    <statement>
-      <p>
-        Let <m>p(x) \in \ZZ[x]</m> be a primitive polynomial. Then
-        <m>p(x)</m> is irreducible in <m>\ZZ[x]</m> if and only if it
-        is irreducible in <m>\QQ[x]</m>. 
-      </p>
-    </statement>
-    <proof>
-      <p>
-        One direction here is easy: if a polynomial is irreducible in
-        the larger ring <m>\QQ[x]</m>, it cannot factor in the smaller
-        ring either, so it is irreducible in <m>\ZZ[x]</m>. 
-      </p>
-      <p>
-        For the other direction, assume that the polynomial is
-        irreducible in <m>\ZZ[x]</m>. For the sake of contradiciton,
-        assume it is not irreducible in <m>\QQ[x]</m>. That means
-        there are rational non-constant polynomails <m>q(x)</m> and
-        <m>r(x)</m> such that this factorization is true. 
-        <me>
-          p(x) = q(x) r(x)
-        </me>
-        Now let <m>a</m> be the lcm of the denominators of the
-        coefficients of <m>q(x)</m>, and likewise <m>b</m> for
-        <m>r(x)</m>. This means <m>aq(x)</m> and <m>br(x)</m> are
-        integral polynomials, since I have cleared all denominators.
-        Then I can rewrite the equation.
-        <me>
-          ab p(x) = (aq(x)) (br(x))
-        </me>
-        It looks like I am almost done this proof, since all the
-        polynomials here are integral. There is a subtlety here, which
-        I'm going to skip in this proof, about common factors of the
-        coefficients of integral polynomials. (The proof usual
-        involved reductions modulo primes, which is a neat and fairly
-        common technique for statements about the integers.) The
-        subtlety allows me to say that, since <m>p(x)</m> is
-        primitive, the product <m>ab</m> must actually be <m>\pm
-        1</m>, and I can divide by it. 
-        <me>
-          p(x) = \pm 1(aq(x)) (br(x))
-        </me>
-        The result is a decomposition in <m>\ZZ[x]</m>. This
-        contradicts the irreducibility of <m>p(x)</m> in the integers.
-        By contradiction, I conclude that irreducibility over the
-        integers implies irreducibility over the rationals. 
-      </p>
-    </proof>
-  </proposition>
-  <p>
-    For degree two and three polynomials, the polynomial is
-    irreducible if and only if it has a linear factor, which means it
-    has a root. Outside of this observation, though, it's pretty
-    difficult to tell when a polynomial is irreducible. Therefore, we
-    have some criteria to help. I'll state these criteria here for
-    integral polynomails, but I'll extend them to other rings in a
-    future section.
-  </p>
-  <proposition>
-    <statement>
-      <p>
-        Let <m>p(x) \in \ZZ[x]</m>. 
-        <me>
-          p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
-        </me>
-        I've written <m>p(x)</m> in its expansion with <m>p_d \neq
-        0</m>. I'll also assume <m>p_0 \neq 0</m> (since otherwise
-        <m>x</m> is a factor and the polynomial is immediately
-        reducible).  Then there following are useful criteria about
-        roots and irreducibility.
-        <ul>
-          <li>
-            If <m>a \in \ZZ</m> is a root of <m>p(x)</m>, then
-            <m>a</m> is a factor of <m>p_0</m>. As noted above, a
-            polynomial of degree three or less is irreducible if and
-            only it has no roots. 
-          </li>
-          <li>
-            <p>
-            If there exists a prime number <m>j</m>  with these two
-            conditions:
-            <ul>
-              <li>
-                <m>j</m> is a factor of all of the <m>p_i</m> except
-                <m>p_d</m>; and
-              </li>
-              <li>
-                <m>j^2</m> is not a factor of <m>p_0</m>;
-              </li>
-            </ul>
-            then the polynomial is irreducible. This is called
-            Eisensten's Criterion. 
-            </p>
-          </li>
-        </ul>
-      </p>
-    </statement>
-  </proposition>
-  <p> 
-    This gives some tools to check the irreducibility of polynomials
-    over the integer. Here are some examples, consider entirely in
-    <m>\ZZ[x]</m> (or in <m>\QQ[x]</m>, since all examples are
-    primitive). 
-  </p>
-  <example>
+    <proposition>
+      <statement>
+        <p>
+          Consider an irreducible polynomial written as follows.
+          <me>
+            x^d - p(x)
+          </me>
+          where <m>p(x)</m> is a polynomial of degree less than
+          <m>d</m>. Then the quotient ring <m>\ZZ[x]/\langle x^d -
+          p(x) \rangle</m> can be expressed as the following set. 
+          <me>
+            \left\{ a_0 + a_1 x + a_2 x^2 + \ldots + a_{d-1}x^{d-1} |
+            a_i \in \ZZ \right\}
+          </me>
+          The addition in this set is normal component-wise addition.
+          The multiplication is given by distribution where <m>x^d</m>
+          is replaced by <m>p(x)</m> as often as necessary to make an
+          expression of the same form. In the new ring, the element
+          <m>x</m> will be a root of the polynomial <m>x^d - p(x)</m>. 
+        </p>
+      </statement>
+    </proposition>
     <p>
-      <ul>
-        <li>
-          <m>x^d - p</m> for <m>p</m> a prime number satisfies
-          Eisensten's criterion, so this is always irreducible for
-          <m>d \geq 1</m>.
-        </li>
-        <li>
-          <m>x^3 + 6x^2 - 7x + 4</m>. This is a degree three
-          polynomial, so it irreducible only it is does not have a
-          root. The only possible roots are <m>\pm 1, \pm 2, \pm
-          4</m>, since the root has to define the constant
-          coefficient. By exhaustive check, none of these are roots,
-          so this is irreducible. 
-        </li>
-        <li>
-          <m>x^7 + 4x^5 + 12x^3 + 16x^2 + 2</m> is irreducible by
-          Eisenstein's criterion using the prime number 2. 
-        </li>
-      </ul>
+      I've stated this for the integers, but this works in general for
+      a polynomial ring over a domain. This construction gives a very
+      nice interpretation for quotients of polynomial rings: I am
+      attaching a root of an irreducible polynomial to the original
+      base ring. 
     </p>
-  </example>
-  <p>
-    Why do we care so much about irreducible polynomials? Well,
-    irreducible polynomials are something that cannot be factored in
-    to smaller pieces, in a way. This is something like the prime
-    numbers, and indeed, the irreducible polynomials will end up
-    playing a very similar role. The next section of these notes will
-    develop the idea further. 
-  </p>
+    <example>
+      <p>
+        The quotient ring 
+        <me>
+          \ZZ[x] / \langle x^2 - 2 \rangle 
+        </me>
+        is the ring <m>\ZZ[\sqrt{2}]</m> I get by attaching a square
+        root of 2 to the integers. It's elements have the form <m>(a +
+        b \sqrt{2})</m>. The multiplication is calculated this way.
+        <me>
+          (a + b\sqrt{2}) (c + d\sqrt{2}) = ac + (ad + bc) \sqrt{2} +
+          bd\sqrt{2}^2 = (ac + 2bd) + (ad + bc) \sqrt{2} 
+        </me>
+      </p>
+    </example>
+    <example>
+      <p>
+        I can repeat this construction for any other similar roots.
+        Let <m>n \in \NN</m> be any number which is not a perfect
+        square. Then the quotient ring 
+        <me>
+          \ZZ[x] / \langle x^2 - n \rangle 
+        </me>
+        is the ring <m>\ZZ[\sqrt{n}]</m>. Again, it has elements of
+        the form <m>(a + b\sqrt{n})</m>. (I have to assume that the
+        number is not a perfect square; if it were a perfect square,
+        the polynomial is not irreducible and its square root is still
+        just an integer). 
+      </p>
+      <p>
+        The rings constructed in this example are called
+        <term>quadratic integer rings</term>. 
+      </p>
+    </example>
+    <example>
+      <p>
+        Let <m>n \geq 3</m> be an odd integer. The notation
+        <m>\zeta_n</m> is conventional for a root of this irreducible
+        (over the integers) polynomial.
+        <me>
+          x^{n-1} + x^{n-2} + \ldots + x^2 + x + 1
+        </me>
+        These numbers <m>\zeta_n</m> are called <m>n</m>th <term>roots of
+        unity</term>. The term comes from the fact that they are also
+        roots of the polynomial <m>x^n - 1</m>, so that satisfy <m>x^n
+        = 1</m> or <m>x = \sqrt[n]{1}</m>: they are the <m>n</m>th
+        roots of <sq>unity</sq>, which is just the number one. But
+        <m>x^n - 1</m> is not irreducible: it factors. 
+        <me>
+          x^n - 1 = (x-1)(x^{n-1} + x^{n-2} + \ldots + x^2 + x + 1)
+        </me>
+        When <m>n</m> is odd, the remaining polynomial is irreducible
+        over the integers. (When <m>n</m> is even, the roots of unit
+        are still defined, but another factor must be removed to make
+        the polynomial irreducible since <m>x = -1</m> is also a
+        root). 
+      </p>
+      <p>
+        Then I can make <m>\ZZ[\zeta_n]</m>: a ring attaching a root
+        of unity. 
+      </p>
+    </example>
+    <example>
+      <p> 
+        The polynomial <m>x^7 + 9x^5 - 15x^2 + 93</m> is irreducible by
+        Eisenstein's criterion. Therefore, the quotient ring 
+        <me>
+          \ZZ[x] / \langle x^7 + 9x^5 - 12x^2 + 93 \rangle 
+        </me>
+        is the ring <m>\ZZ[\alpha]</m> I get by attaching some symbol
+        <m>\alpha</m> which is a root of this polynomial. The elements
+        of the ring are sums of the form 
+        <me>
+          a_0 + a_1 \alpha + a_2 \alpha^2 + a_3 \alpha^3 + a_4
+          \alpha^4 + a_5 \alpha^5 + a_6 \alpha^6
+        </me>
+        and in the multiplication, any instance of <m>\alpha^7</m> is
+        replace by <m>(-9\alpha^5 + 12\alpha^2 - 93)</m>. I don't know
+        much about this root and the new ring I have made without
+        further investigation, but I certainly can construct the ring.
+      </p>
+    </example>
+    <example>
+      <p>
+        I can iterate this process. Say I have already build
+        <m>\ZZ[\sqrt{2}]</m>. This ring is still a domain, so I can
+        make the polynomial ring <m>\ZZ[\sqrt{2}]</m> and quotient by
+        the irreducible polynomial <m>x^2 - 3</m>. The result is
+        <m>\ZZ[\sqrt{2}, \sqrt{3}]</m>: the integers with square roots
+        of both two and three attached. Elements of this ring are sum
+        of the following form. 
+        <me>
+          a + b\sqrt{2} + c \sqrt{3} + d \sqrt{6} 
+        </me>
+        I need the <m>\sqrt{6}</m> terms to make this work, since I
+        can't get back to an integer unless either <m>\sqrt{2}</m> or
+        <m>\sqrt{3}</m> is squared. Their product needs to be in the
+        ring. 
+      </p>
+    </example>
+    <example>
+      <p>
+        As noted, this can be done with any domain. I'm particular, I
+        can build rings like <m>\QQ[i]</m>, <m>\QQ[\sqrt{7}]</m> and
+        <m>\QQ[\sqrt{2}, \sqrt{3}, \sqrt{5}]</m> over the rational
+        numbers. 
+      </p>
+      <p>
+        Over the reals, all these square roots already exist. But I can
+        form <m>\RR[i]</m>, attaching the square root of negative one.
+        This is a way to construct <m>\CC</m>, which is precisely the
+        real numbers attaching a square root of negative one. 
+      </p>
+      <p>
+        Over <m>\CC</m>, all polynomials factor into linear
+        components, so there are no irreducible polynomials of degree
+        higher than one. This means that there are no new rings to
+        make here. <m>\CC[x]/\langle x-a\rangle</m> is the only
+        quotient by an irreducible polynomial, and it just relaces
+        <m>x</m> with the complex number <m>a</m>, resulting in a new
+        isomorphic copy of <m>\CC</m>.
+      </p>
+      <p>
+        The examples here all have base rings which are fields, which
+        make these <term>field extensions</term>. I'll talk about
+        field extensions later in the course. 
+      </p>
+    </example>
+  </subsection>
 </section>
