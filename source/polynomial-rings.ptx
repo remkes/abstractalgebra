@@ -572,33 +572,76 @@
         the polynomial is not irreducible and its square root is still
         just an integer). 
       </p>
-      <p>
-        The rings constructed in this example are called
-        <term>quadratic integer rings</term>. 
-      </p>
     </example>
+    <p>
+      The last example is close not, but not quite the definition of a
+      very important collection of rings. Let me define them here. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>D</m> be a square-free integer. (This means that
+          <m>D</m> has no factors which are squares.) I'm going to
+          define <m>\calO_D</m>, which is called a <term>quadratic
+          integer ring</term>. There are two cases. 
+          <ul>
+            <li>
+              If <m>D \cong 2,3,4 \mod 4</m>, then 
+              <me>
+                \calO_D = \ZZ[\sqrt{D}]
+              </me>
+            </li>
+            <li>
+              If <m>D \cong 1\mod 4</m>, then 
+              <me>
+                \calO_D = \ZZ\left[\frac{1 + \sqrt{D}}{2} \right]
+              </me>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This strange adjustment will be justified in future sections. It
+      would be nice just to talk about <m>\ZZ[\sqrt{D}]</m>, but it
+      turns out that the constructions and proofs for these rings have
+      different behaviour in the <m>D \cong 1 \mod 4</m>. 
+    </p>
+    <p>
+      After that definition, I have yet more examples of rings formed
+      by extending 
+    </p>
     <example>
       <p>
-        Let <m>n \geq 3</m> be an odd integer. The notation
-        <m>\zeta_n</m> is conventional for a root of this irreducible
-        (over the integers) polynomial.
+        Let <m>n \geq 3</m> be an integer. The notation
+        <m>\zeta_n</m> is conventional for a root of one of these two
+        irreducible (over the integers) polynomials. If <m>n</m> is
+        odd, this is the polynomial.
         <me>
           x^{n-1} + x^{n-2} + \ldots + x^2 + x + 1
+        </me>
+        If <m>n</m> is even, this is the polynomial. 
+        <me>
+          x^{n-2} - x^{n-3} + x^{n-4} - x^{n-5} +  \ldots + x^2 - x + 1
         </me>
         These numbers <m>\zeta_n</m> are called <m>n</m>th <term>roots of
         unity</term>. The term comes from the fact that they are also
         roots of the polynomial <m>x^n - 1</m>, so that satisfy <m>x^n
         = 1</m> or <m>x = \sqrt[n]{1}</m>: they are the <m>n</m>th
         roots of <sq>unity</sq>, which is just the number one. But
-        <m>x^n - 1</m> is not irreducible: it factors. 
+        <m>x^n - 1</m> is not irreducible: it factors. For odd
+        <m>n</m>, it factors this way. 
         <me>
           x^n - 1 = (x-1)(x^{n-1} + x^{n-2} + \ldots + x^2 + x + 1)
         </me>
-        When <m>n</m> is odd, the remaining polynomial is irreducible
-        over the integers. (When <m>n</m> is even, the roots of unit
-        are still defined, but another factor must be removed to make
-        the polynomial irreducible since <m>x = -1</m> is also a
-        root). 
+        For even <m>n</m>, one more factor can be taken out of the
+        polynomial. 
+        <me>
+          x^n - 1 = (x-1)(x+1)(x^{n-2} - x^{n-3} + x^{n-4} - x^{n-5}+
+          \ldots + x^2 - x + 1)
+        </me>
+        In either case, the remaining polynomial is irreducible
+        over the integers. 
       </p>
       <p>
         Then I can make <m>\ZZ[\zeta_n]</m>: a ring attaching a root
