@@ -179,22 +179,22 @@
     <p>
       Before figuring out unique factorization, I have to have a sense
       of how to find prime number in one of these new rings. This is
-      easier said than done. How do I find the prime in the integers?
-      I know the prime are the positive number with no non-trivial
+      easier said than done. How do I find the primes in the integers?
+      I know the primes are the positive numbers with no non-trivial
       factors, but other than that fact, the primes don't have any
       other pattern. This is, famously, what makes the primes so
       difficult and so interesting. To find primes, you have to
-      calculate factors. We don't have a formula for all the prime: we
+      calculate factors. We don't have a formula for all the primes: we
       find them by factoring (along with various related tricks that
       can limit the search of factors). 
     </p>
     <p>
       Notably, we look for them in order, starting with the smallest
       primes: <m>2, 3, 5, 7, 11, 13, \ldots </m>. For this to
-      generalizz, I need a sense of order: which are the smallest
+      generalize, I need some kind of  order: which are the smallest
       elements of a ring. In full generality, this is very hard to do.
       But I can give you a definition for a set of rings that I have
-      already define, which are the rings that we will work with for
+      already defined, which are the rings that we will work with for
       all the examples. 
     </p>
     <definition>
@@ -215,9 +215,10 @@
       In some sense, it generalizes the absolute value on the ordinary
       integers. It is a multiplicative function: the norm of a product
       is the product of the two norms (a property also shared by
-      absolute value.) This is important, since is means that the norm
+      absolute value.) This is important, since it means that the norm
       of elements of a product cannot exceed (in absolute value) the
-      norm of the product. 
+      norm of the product. To look for factors of an element, I only
+      need to check factors which have a smaller norm. 
     </p>
     <p>
       There is another property of this norm, which I won't prove
@@ -233,7 +234,7 @@
     </proposition>
   </subsection>
   <subsection xml:id="subsection-guassian-integerss">
-    <title>Primes in the Guassian Integers</title>
+    <title>Primes in the Gaussian Integers</title>
     <p>
       So I want to start calculating the primes in <m>\ZZ[i]</m>.
       First, what is the norm? Here <m>D = -1</m>, so the normal is 
@@ -248,8 +249,8 @@
     </p>
     <p>
       Now I can talk about primes. I'm going to talk about prime
-      number here (for reasons I'll prove later) instead of the more
-      general prime ideals. The elements of norm 2 must be primes.
+      numbers here (for reasons I'll prove later) instead of the more
+      general prime ideals. The elements of norm two must be primes.
       What are these elements? I can get a norm two by having the
       coefficients both be <m>\pm 1</m> and that is the only way. I
       get this set. 
@@ -270,11 +271,11 @@
           -i(1 + i) = -i - (-1) = 1 - i
         </mrow>
       </md>
-      One I have the prime <m>(1 + i)</m>, all three other
+      Once I have the prime <m>(1 + i)</m>, all three other
       <sq>primes</sq> can be constructed by multiplication up to
       units. Primes are only unique up to units (in the usual
-      integers, <m>7</m> and <m>-7</m> are considered the same prime
-      number.) More importantly, multiplication by a unit doesn't
+      integers, <m>7</m> and <m>-7</m> are considered the same prime.)
+      More importantly, multiplication by a unit doesn't
       change the principal ideal: all four of these generate exactly
       the same prime ideal. Therefore, there is only really one prime
       of norm 1, it just can vary up to units. 
@@ -292,13 +293,13 @@
       smaller primes. If I investigate the products of the smaller
       primes, I can find the following identity. 
       <me>
-        2 = (1+i)(1-i) = -i(1+i)(1+i)
+        2 = (1+i)(1-i) = -i(1+i)(1+i) = -i (1+i)^2
       </me>
       This is a factorization of the number 2 (more formally, the
-      Guassian integer <m>(2 + 0i)</m> into primes. In the Guassian
+      Gaussian integer <m>(2 + 0i)</m>) into primes. In the Gaussian
       integers, 2 is no longer a prime. When a prime from <m>\ZZ</m>
       is no longer prime in a larger ring, we say that the prime
-      <term>splits</term> in the larger ring. In the Guassian
+      <term>splits</term> in the larger ring. In the Gaussian
       integers, 2 splits. 
     </p>
     <p>
@@ -315,24 +316,26 @@
       </me>
       Up to multiplication by units, there are only two elements here. 
       <me>
-        \{1 + 2i, 1 - 2i}
+        \{1 + 2i, 1 - 2i\}
       </me>
       I claim that both of these are prime. Why? Well, I only have one
       prime so far, which has norm 2. The square of that prime has
       norm 4, and its cube has norm 8. I can never get a norm of 5
       this way, so an element of norm 5 cannot be the product of
-      smaller non-units. They must both be prime. 
+      smaller non-units. Therefore, these two elements of norm 5 must
+      both be prime. 
     </p>
     <p>
       There are no elements of norm 6 or 7: these numbers cannot be
       produced by the norm formul <m>a^2 + b^2</m>. So the next norm
       is norm 8. Up to units there is only one element of norm 8. 
       <me>
-        \{2 + 2i}
+        \{2 + 2i\}
       </me>
       This factors pretty clearly: <m>2 + 2i = 2(1 + i)</m>, and I
-      already know now 2 factors. Therefore <m>2 + 2i = -i(1 +
-      i)^3</m>. This is not a prime.
+      already know how 2 factors. Therefore I have a prime
+      factorization of this element: <m>2 + 2i = -i(1 + i)^3</m>. This
+      is not a prime.
     </p>
     <p>
       I can keep doing this for a while. Here is a table of the
@@ -344,7 +347,7 @@
     </p>
     <me>
       \begin{array}{c| c c c c c c c }
-        \text{Norm} \amp \text{Elements} \amp \text{Prime?} \\
+        \text{Norm} \amp \text{Element} \amp \text{Prime?} \\
         \hline
         9 \amp 3 + 0i \amp \text{Yes} \\
         10 \amp 3 + i \amp \text{No} \\
@@ -365,7 +368,7 @@
     <p>
       Note that we get another split prime: 5 is no longer prime. Here
       is the factorization: <m>5 = (2 + i)(2 - i)</m>. I could keep
-      going, but hopefully there is enough here. If there is enoguh, I
+      going, but hopefully there is enough here. If there is enough, I
       could start to ask: is there some pattern here? If you stare
       long enough, perhaps after calcluating a bit more, you may be
       able to guess the following proposition. 
@@ -373,7 +376,7 @@
     <proposition>
       <statement>
         <p>
-          Up to multiplication by units, the primes in the Guassian
+          Up to multiplication by units, the primes in the Gaussian
           integers fit one of the two following patterns. 
           <ul>
             <li>
@@ -381,8 +384,9 @@
               in the integers which is congruent to 3 modulo 4.   
             </li>
             <li>
-              <m>a^2 + b^2</m> is prime as an element of the normal
-              integers.  
+              <m>a^2 + b^2 = p</m> where <m>p</m> is prime as an
+              element of the normal integers. (It will turn out that
+              this prime can never be congruent to 3 modulo 4.) 
             </li>
           </ul>
         </p>
