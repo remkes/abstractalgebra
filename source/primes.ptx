@@ -96,9 +96,25 @@
       </proof>
     </proposition>
     <p>
-      So, instead of prime numbers, I have prime ideals. The important
-      fact about prime number is that other numbers can be factored
-      using the prime numbers. The same should be true for ideals. 
+      So, instead of prime numbers, I have prime ideals. For full
+      generality, I will work with ideals, and there will be examples
+      where I need ideals to capture all the primes. However,
+      sometimes I can still talk about <sq>prime number</sq> in a
+      ring. Here is that definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>p \in R</m>. The elemtn <m>p</m> is called
+          <term>prime</term> if the principle idea <m>\langle p
+          \rangle</m> is a prime ideal. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The important fact about prime number is that other numbers can
+      be factored using the prime numbers. The same should be true for
+      ideals.
     </p>
     <definition>
       <statement>
@@ -152,9 +168,225 @@
     <p>
       With this definition, we get to a major problem in ring theory:
       which domains have unique factorizations? This turns out to be a
-      pretty interesting question. I want to give you a bunch of
-      examples to demonstrate rings which do and do not have unique
-      factorization.
+      pretty interesting question. I eventually want to give you a
+      bunch of examples to demonstrate rings which do and do not have
+      unique factorization. But there is a bit of work to do before we
+      get there. 
     </p>
+  </subsection>
+  <subsection xml:id="subsection-norms">
+    <title>Norms</title>
+    <p>
+      Before figuring out unique factorization, I have to have a sense
+      of how to find prime number in one of these new rings. This is
+      easier said than done. How do I find the prime in the integers?
+      I know the prime are the positive number with no non-trivial
+      factors, but other than that fact, the primes don't have any
+      other pattern. This is, famously, what makes the primes so
+      difficult and so interesting. To find primes, you have to
+      calculate factors. We don't have a formula for all the prime: we
+      find them by factoring (along with various related tricks that
+      can limit the search of factors). 
+    </p>
+    <p>
+      Notably, we look for them in order, starting with the smallest
+      primes: <m>2, 3, 5, 7, 11, 13, \ldots </m>. For this to
+      generalizz, I need a sense of order: which are the smallest
+      elements of a ring. In full generality, this is very hard to do.
+      But I can give you a definition for a set of rings that I have
+      already define, which are the rings that we will work with for
+      all the examples. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>D</m> b a square-free integer and consider the ring
+          <m>\ZZ[\sqrt{D}]</m>. The <term>norm</term> on this ring is
+          the following function. 
+          <me>
+            N(a + \sqrt{D}) = a^2 - Db^2
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The norm is a function that can be used to determine which are
+      the <sq>smallest</sq> elements of the ring <m>\ZZ[\sqrt{D}]</m>.
+      In some sense, it generalizes the absolute value on the ordinary
+      integers. It is a multiplicative function: the norm of a product
+      is the product of the two norms (a property also shared by
+      absolute value.) This is important, since is means that the norm
+      of elements of a product cannot exceed (in absolute value) the
+      norm of the product. 
+    </p>
+    <p>
+      There is another property of this norm, which I won't prove
+      here, but which is very useul. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          The units in <m>\ZZ[\sqrt{D}]</m> are precisely the elements
+          that have norm <m>\pm 1</m> 
+        </p>
+      </statement>
+    </proposition>
+  </subsection>
+  <subsection xml:id="subsection-guassian-integerss">
+    <title>Primes in the Guassian Integers</title>
+    <p>
+      So I want to start calculating the primes in <m>\ZZ[i]</m>.
+      First, what is the norm? Here <m>D = -1</m>, so the normal is 
+      <me>
+        N(a + bi) = a^2 + b^2
+      </me>
+      Note that this norm is always positive, which simplifies the
+      investigation. Only <m>0</m> has norm 0, which is always true.
+      Next, the units will have norm 1. The only way to get norm 1 is
+      to have one of <m>a</m> and <m>b</m> be 0 and the other 1.
+      Therefore, the units are just <m>\ZZ[i]^* = \{1, -1, i, -i\}</m>
+    </p>
+    <p>
+      Now I can talk about primes. I'm going to talk about prime
+      number here (for reasons I'll prove later) instead of the more
+      general prime ideals. The elements of norm 2 must be primes.
+      What are these elements? I can get a norm two by having the
+      coefficients both be <m>\pm 1</m> and that is the only way. I
+      get this set. 
+      <me>  
+        \{1 + i, 1 - i, -1 + i, -1 - i \} 
+      </me>
+      These are all prime, and they are the first four primes.
+      However, they aren't really <sq>four</sq> primes. Here are three
+      calculations.
+      <md>
+        <mrow>
+          -1(1 + i) = - 1 - i 
+        </mrow>
+        <mrow>
+          i(1 + i) = i - 1 = -1 + i 
+        </mrow>
+        <mrow>
+          -i(1 + i) = -i - (-1) = 1 - i
+        </mrow>
+      </md>
+      One I have the prime <m>(1 + i)</m>, all three other
+      <sq>primes</sq> can be constructed by multiplication up to
+      units. Primes are only unique up to units (in the usual
+      integers, <m>7</m> and <m>-7</m> are considered the same prime
+      number.) More importantly, multiplication by a unit doesn't
+      change the principal ideal: all four of these generate exactly
+      the same prime ideal. Therefore, there is only really one prime
+      of norm 1, it just can vary up to units. 
+    </p>
+    <p>
+      I move on to higher norms. Norm three is impossible: <m>a^2 +
+      b^2 = 3</m> is not true for any integer inputs. So the next norm
+      to consider is four. Here are all the elements of norm four.
+      <me>
+        \{2, -2, 2i, -2i\}
+      </me>
+      Some of these might be prime and some might be products of the
+      previous primes. How do I check? Well, the most obvious way is
+      the same way I check for the integers: look at the products of
+      smaller primes. If I investigate the products of the smaller
+      primes, I can find the following identity. 
+      <me>
+        2 = (1+i)(1-i) = -i(1+i)(1+i)
+      </me>
+      This is a factorization of the number 2 (more formally, the
+      Guassian integer <m>(2 + 0i)</m> into primes. In the Guassian
+      integers, 2 is no longer a prime. When a prime from <m>\ZZ</m>
+      is no longer prime in a larger ring, we say that the prime
+      <term>splits</term> in the larger ring. In the Guassian
+      integers, 2 splits. 
+    </p>
+    <p>
+      What about the other three? Well, the other three are all 2
+      multiplied by a unit and primes are only unique up to units. So
+      none of the elements of norm 4 are prime: they all factor as the
+      square of the prime <m>(1 + i)</m>, up to multiplication by
+      units. 
+    </p>
+    <p>
+      The next norm is five. There are eight elements of norm five. 
+      <me>
+        \{\pm 1 \pm 2i, \pm 2 \pm i\}
+      </me>
+      Up to multiplication by units, there are only two elements here. 
+      <me>
+        \{1 + 2i, 1 - 2i}
+      </me>
+      I claim that both of these are prime. Why? Well, I only have one
+      prime so far, which has norm 2. The square of that prime has
+      norm 4, and its cube has norm 8. I can never get a norm of 5
+      this way, so an element of norm 5 cannot be the product of
+      smaller non-units. They must both be prime. 
+    </p>
+    <p>
+      There are no elements of norm 6 or 7: these numbers cannot be
+      produced by the norm formul <m>a^2 + b^2</m>. So the next norm
+      is norm 8. Up to units there is only one element of norm 8. 
+      <me>
+        \{2 + 2i}
+      </me>
+      This factors pretty clearly: <m>2 + 2i = 2(1 + i)</m>, and I
+      already know now 2 factors. Therefore <m>2 + 2i = -i(1 +
+      i)^3</m>. This is not a prime.
+    </p>
+    <p>
+      I can keep doing this for a while. Here is a table of the
+      progress through the next few norms. Everything is unique up to
+      multiplication by units. I skip over the norms which have no
+      elements. Note that any compositie integer, such as 4, cannot be
+      prime in any larger ring since the factorization in the integers
+      still holds. 
+    </p>
+    <me>
+      \begin{array}{c| c c c c c c c }
+        \text{Norm} \amp \text{Elements} \amp \text{Prime?} \\
+        \hline
+        9 \amp 3 + 0i \amp \text{Yes} \\
+        10 \amp 3 + i \amp \text{No} \\
+        10 \amp 3 - i \amp \text{No} \\
+        13 \amp 3 + 2i \amp \text{Yes} \\
+        13 \amp 3 - 2i \amp \text{Yes} \\
+        16 \amp 4 + 0i \amp \text{No} \\
+        17 \amp 4 + i \amp \text{Yes} \\
+        17 \amp 4 - i \amp \text{Yes} \\
+        18 \amp 3 + 3i \amp \text{No} \\
+        20 \amp 4 + 2i \amp \text{No} \\ 
+        20 \amp 4 - 2i \amp \text{No} \\ 
+        25 \amp 5 + 0i \amp \text{No} \\
+        25 \amp 4 + 3i \amp \text{No} \\
+        25 \amp 4 - 3i \amp \text{No} 
+      \end{array}
+    </me>
+    <p>
+      Note that we get another split prime: 5 is no longer prime. Here
+      is the factorization: <m>5 = (2 + i)(2 - i)</m>. I could keep
+      going, but hopefully there is enough here. If there is enoguh, I
+      could start to ask: is there some pattern here? If you stare
+      long enough, perhaps after calcluating a bit more, you may be
+      able to guess the following proposition. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Up to multiplication by units, the primes in the Guassian
+          integers fit one of the two following patterns. 
+          <ul>
+            <li>
+              <m>a + bi = p + 0i</m> where <m>p</m> is a usual prime
+              in the integers which is congruent to 3 modulo 4.   
+            </li>
+            <li>
+              <m>a^2 + b^2</m> is prime as an element of the normal
+              integers.  
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
   </subsection>
 </section>
