@@ -4,4 +4,6 @@
   <xi:include href="ideals.ptx" />
   <xi:include href="polynomial-rings.ptx" />
   <xi:include href="primes.ptx" />
+  <xi:include href="gaussian.ptx" />
+  <xi:include href="domain-hierarchy.ptx" />
 </chapter>

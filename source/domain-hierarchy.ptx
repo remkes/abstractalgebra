@@ -1,0 +1,162 @@
+<section xml:id="section-domain-hierarcy">
+  <title>The Hierarchy of Domains</title>
+  <subsection xml:id="subsection-euclidean-domain">
+    <p>
+      I ended the last section knowing that the Gaussian integers have a
+      division algorithm. How does this help? In this section, I want to
+      prove two results that show now useful a division algorithm can
+      be. First, however, a definition.
+    </p>
+    <definition>
+      <statement>
+        <p> 
+          Let <m>R</m> be a domain. If <m>R</m> possess a norm
+          <m>N</m> and a division algorithm (in the sense of <xref
+          ref="theorem-division-algorithm"/>, then <m>R</m> is called
+          a <term>Euclidean domain</term>. (A division algorithm is
+          often also called a <sq>Euclidean algorithm</sq>, explaining
+          the term.) 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For our purposes, the most important property of the Euclidean
+      algorithm is this proposition.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>R</m> be an Euclidean domain. Then every ideal in
+          <m>R</m> is principal. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>N</m> be the norm associated with the division
+          algorithm in <m>R</m>. Then take any ideal <m>I \subset
+          R</m>. If <m>I</m> contains a unit <m>u</m>, then <m>I = R</m> and
+          can be written as <m>I = \langle u \rangle</m>, since any
+          unit generates the whole ring. Therefore, I'll assume
+          <m>I</m> is a proper ideal.
+        </p>
+        <p>
+          Let <m>a, b \in I</m>. I can apply the division algorithm to
+          produce <m>r = a - bq</m>. Since <m>a, b \in I</m>, I know
+          that <m>pq</m> is also an ideal element (by the ideal
+          property that all multiples of any ideal element stay in the
+          ideal). Therefore <m>r</m> is also in the ideal and is a
+          smaller element in the idea: <m>N(r) \leq N(b)</m>. In this
+          way, by repeating the division algorithm, I can get a
+          sequence of elements of the ideal all of which have smaller
+          norms than the previous. Eventually this has to stop (any
+          sequence of decreasing integers eventually reaches zero).
+          Let <m>p</m> be the smallest norm element (non-zero)
+          in this sequence. 
+        </p>
+        <p>
+          Now I claim that <m>I = \langle p \rangle</m>. Take any
+          other element <m>c \in I</m>. I can again apply the division
+          algorith to get <m>c = pq + r</m> with <m>N(r) \lt N(p)</m>.
+          But since the norm of <m>p</m> is minimal (and since the
+          ideal is proper and I cannot generate a unit), I conclude that 
+          <m>N(r) = 0</m>. Only zero has a zero norm, so I conclude
+          <m>c = pq</m> and <m>c</m> is a multiple of <m>p</m>. This
+          shows that any ideal element is a multiple of <m>p</m>,
+          which means the ideal is principle with generator <m>p</m>.
+          This completes the proof. 
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+  <subsection xml:id="subsection-pids">
+    <title>Prinical Ideal Domains</title>
+    <p>
+      There is a name for this kind of domain as well. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>R</m> be a domain where all ideals are principal.
+          Then <m>R</m> is called a <term>principal ideal
+          domain</term>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I've talked about the relationship between prime numbers and
+      prime ideals. Now that can be formalized. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>R</m> be a principal ideal domain. An element <m>p
+          \in R</m> is called <term>prime</term> if <m>\langle p
+          \rangle</m> is a prime ideal 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In principal ideal domains, ideals match up with elements (at
+      least up to multiplication by units, that is). Talking about
+      prime <sq>numbers</sq> makes sense here, since going between
+      those elements and their ideals is seamless. This is why, in the
+      Gaussian integers, I talked about prime elements. The Gaussian
+      integers are a Eucidean domain, so they are also a principal
+      ideal domain, so prime elements makes sense. I will show you
+      examples where this fails and we do actually need to talk about
+      prime ideas instead of prime elements. 
+    </p>
+    <p>
+      For our purposes, the main reason to care about principal ideal
+      domains (other than the convenience of having prime element make
+      sense) is the following proposition. I'm not going to prove this
+      proposition, since that would involve some technical details
+      which we haven't set up in this course. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Every principle ideal domain is also a unique factorization
+          domain. 
+        </p>
+      </statement>
+    </proposition>
+  </subsection>
+  <subsection>
+    <title>The Hierarchy</title>
+    <p>
+      I can summarize what is going on in this section with a
+      hierarchy of domains. Here is a list, from the most restrictive
+      condition to the least.
+      <ul>
+        <li>
+          The most restrictive class is fields. In these rings,
+          everything (other than zero) is invertible. There are no
+          ideals, hence no primes and factoring questions at all. 
+        </li>
+        <li>
+          All fields are Euclidean domains, which have a division
+          algorithm. In these rings, gcd and lcms can be calculated
+          with the algorithm, as can prime decompositions.
+        </li>
+        <li>
+          All Euclidean domains are principal ideals domains. In these
+          domains, prime elements and prime ideals match up.
+          Factorization into prime elements makes sense. However,
+          calculating factors can be difficult, since the ring may
+          lack a division algorithm. 
+        </li>
+        <li>
+          All principal ideal domains are unique factorization
+          domains. Having principal ideals is enough to guarantee that
+          if an element factors into primes, there is only one way to
+          do so. 
+        </li>
+        <li>
+          Not all domains are unique factorization domain. Again, we
+          will see an example shortly. 
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>
