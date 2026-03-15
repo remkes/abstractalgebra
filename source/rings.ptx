@@ -6,4 +6,5 @@
   <xi:include href="primes.ptx" />
   <xi:include href="gaussian.ptx" />
   <xi:include href="domain-hierarchy.ptx" />
+  <xi:include href="quadratic.ptx" />
 </chapter>

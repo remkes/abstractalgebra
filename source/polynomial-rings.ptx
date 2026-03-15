@@ -577,7 +577,7 @@
       The last example is close not, but not quite the definition of a
       very important collection of rings. Let me define them here. 
     </p>
-    <definition>
+    <definition xml:id="def-quadratic-integer-ring">
       <statement>
         <p>
           Let <m>D</m> be a square-free integer. (This means that

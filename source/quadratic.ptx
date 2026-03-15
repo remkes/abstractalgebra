@@ -1,0 +1,326 @@
+<section xml:id="section-quadratic">
+  <title>Other Interesting Quadratic Integer Rings</title>
+  <subsection xml:id="subsection-root-negative-five">
+    <title>The Ring <m>\ZZ[\sqrt{-5}]</m></title>
+    <p>
+      Having defined the hierarchy of domains, I want to go through
+      some interesting quadratic integer rings to give examples that
+      fall at various places in the domain. I'll start with
+      <m>\ZZ[\sqrt{-5}]</m>. 
+    </p>
+    <p>
+      I'll start as I did with the Gaussian integers, by looking at
+      elements of small norm. The norm here is <m>N(a + \sqrt{-5}b) =
+      a^2 + 5b^2</m>. Here is a table of the elements of small norm,
+      with comments on whether or not they factor into smaller
+      non-unit elements. I check this using the multiplicative
+      property of the norm: factors would need to be elements of
+      smaller norm, so I can exhaustively check all the possibilities.
+      (I'm not saying prime here for reasons that I'll explain later.)
+      Any norms that don't show up on this list are not possible to
+      produce. 
+    </p>
+    <me>
+      \begin{array}{c| c c c c c c c }
+        \text{Norm} \amp \text{Element} \amp \text{Factorizable?} \\
+        \hline
+         0 \amp 0 + 0\sqrt{-5} \amp \text{Only 0 has norm 0} \\
+         1 \amp \pm 1 + 0\sqrt{-5} \amp \text{Unit} \\
+         4 \amp \pm 2 + 0\sqrt{-5} \amp \text{No} \\
+         5 \amp 0 + \pm 1\sqrt{-5} \amp \text{No} \\
+         6 \amp \pm 1 + \pm 1\sqrt{-5} \amp \text{No} \\
+         9 \amp \pm 3 + 0\sqrt{-5} \amp \text{No} \\
+         10 \amp \pm 2 + \pm 1\sqrt{-5} \amp \text{No} \\
+         14 \amp \pm 3 + \pm 1\sqrt{-5} \amp \text{No} \\
+         16 \amp \pm 4 + 0\sqrt{-5} \amp 4 = 2 \cdot 2 \\
+         20 \amp 0 + \pm 2\sqrt{-5} \amp 
+          2 \sqrt{-5} = 2 \cdot \sqrt{-5} \\
+         21 \amp \pm 1 + \pm 2 \sqrt{-5} \amp \text{No} \\
+         24 \amp \pm 2  + \pm 2\sqrt{-5} \amp
+          2 + 2 \sqrt{-5} = 2 \cdot (1 + \sqrt{-5}) \\
+         25 \amp \pm 5 + 0\sqrt{-5} \amp 
+          5 = (-1) \sqrt{-5} \cdot \sqrt{-5} \\
+         29 \amp \pm 3 + \pm 2\sqrt{-5} \amp \text{No} \\
+         34 \amp \pm 4 + \pm 2\sqrt{-5} \amp 
+          4 + 2 \sqrt{-5} = 2 \cdot (2 + \sqrt{-5})  
+      \end{array}
+    </me>
+    <p>
+      This doesn't look unreasonable so far. If you continue, you
+      might assume that things work out just as nicely as the Gaussian
+      integers. However, now consider the number <m>6</m> in this
+      ring. Obviously, <m>6</m> is composite: <m>6 = 2\cdot 3</m>.
+      However, in this ring, the following is also true. 
+      <me>
+        6 = (1 + \sqrt{-5})(1 - \sqrt{-5}) 
+      </me>
+      So this is another way to factor <m>6</m>. From the list above,
+      all of <m>2</m>, <m>3</m>, <m>1 + \sqrt{-5}</m> and <m>1 -
+      \sqrt{-5}</m> are elements which have no other non-unit factors.
+      If I were trying to build a normal set of primes with normal
+      factorization, this would be a big problem. <m>6</m> factors
+      into <sq>primes</sq> in two different ways. 
+    </p>
+    <p>
+      Indeed, the ring <m>\ZZ[\sqrt{-5}]</m> is not a unique
+      factorization ring. But there is yet more going on. Let me go
+      back to some of the elements in the table. Consider this
+      calculation.
+      <me>
+        3 = 9 - 6 = (3)(3) - (1 + \sqrt{-5})(1 - \sqrt{-5})
+      </me>
+      Since any multiple of <m>3</m> can be made a multiple of the
+      right side, this calclution shows that the idea <m>\langle 3
+      \rangle</m> is contained in the product idea.
+      <me>
+        \langle 3 \rangle \subset (\langle 3, 1 + \sqrt{-5} \rangle)
+        (\langle 3, 1 - \sqrt{-5} \rangle) 
+      </me>
+      But let me thing about this product ideal. It is the sum of
+      elements of the first ideal multiplied by elements of the second
+      ideas. Using the generators, this means that everything in the
+      product ideal is a sum of multiples of one of these four
+      elements: <m>3 \cdot 3 = 9</m>; <m>3 \cdot (1 + \sqrt{-5}) = 3 +
+      3 \sqrt{5}</m>; <m>3 \cdot (1 - \sqrt{-5}) = 3 - 3 \sqrt{5}</m>;
+      and <m>(1 + \sqrt{-5}) \cdot (1 + \sqrt{-5}) = 6</m>. But all of
+      these are divisibe by <m>3</m>, so any sum of these is also
+      divisible by <m>3</m>. Therefore, the reverse inclusion is also
+      true: anything in the product idea is also a multiple of
+      <m>3</m>. I have now shown equality. 
+      <me>
+        \langle 3 \rangle = (\langle 3, 1 + \sqrt{-5} \rangle)
+        (\langle 3, 1 - \sqrt{-5} \rangle) 
+      </me>
+    </p>
+    <p>
+      What does this mean? Well, it means that <m>\langle 3
+      \rangle</m> is not a prime ideal!. I have a factorization of
+      this ideal into two other ideals, neither of which are the whole
+      ring. Moreover, it can be proved (I will not do it here for lack
+      of technical tools) that both of these ideals <m>\langle 3, 1  
+      + \sqrt{-5} \rangle</m> and <m>\langle 3, 1 - \sqrt{-5}
+      \rangle</m>, are prime ideals. These are prime ideal which are
+      not principal. This is the whole point of moving to primes as
+      ideals instead of elements. If I tried to extend primes as
+      elements to <m>\ZZ[\sqrt{-5}]</m>, I would fail to understand
+      how things actually factor in this ring. The number <m>3</m> is
+      not a prime number in this idea because its principal idea
+      factors into two other prime, non-principal ideals. 
+    </p>
+    <p>
+      The difference between the Gaussian integers, where I attach
+      <m>\sqrt{-1}</m>, and this ring, where I attach <m>\sqrt{-5}</m>
+      doesn't really seem like that much of a difference. But the
+      structures of the two rings are quite distinct, which I find
+      pretty interesting. The Gaussian integers are well up the
+      hierarchy: they are an Euclidean domain, a prinipal ideal
+      domain, and a unique factorization domain. The ring
+      <m>\ZZ[\sqrt{-5}]</m> satisfies none of these three conditions. 
+    </p>
+    <p>
+      This is the kind of question that has historically driven the
+      development of ring theory. For what negative values of <m>D \in
+      \ZZ</m> is <m>\ZZ[\sqrt{D}]</m> are unique factorization domain?
+      Here is a relatively famous theorem on this from the mid 20th
+      century.  This theorem uses <xref
+      ref="def-quadratic-integer-ring"/>,
+      since there are strange subtleties when <m>D \equiv 1 \mod 4</m>.
+      
+    </p>
+    <theorem>
+      <title>Heegner Numbers</title>
+      <statement>
+        <p>
+          Let <m>D \lt 0</m>. The quadratic integer ring
+          <m>\calO_D</m> is a unique factorization domain only for
+          these values of <m>D</m> (which are called the Heegner
+          numbers).
+          <me>
+            D \in \{-1, -2, -3, -7, -11, -19, -43, -67, -163\}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      What a strange result: a set of nine special values for which I
+      get unique factorizaton in the ring. For all other
+      possibilities, unique factorization fails. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-positive-roots">
+    <title>Quadratic Integers Rings with Real Square Roots</title>
+    <p>
+      So now I know something conclusive about the case when the
+      attached root is a negative root. What about attaching positive
+      square roots? Let me look at <m>\ZZ[\sqrt{10}]</m>. The norm
+      here is <m>N(a + b \sqrt{10} = a^2 - 10b^2</m>; note that the
+      norm can now be negative, so I'll order the elements by the
+      absolute value of the norm. However, something strange happens
+      when I start trying to create the table. <m>0</m> is the only
+      thing that has norm 1. <m>\pm 1</m> hasnorm <m>1</m>, but it is
+      possible there are other units. A unit would be something <m>a +
+      b \sqrt{10}</m> that satisfies this equation.
+      <me>
+        a^2 - 10b^2 = \pm1 
+      </me>
+      These numbers exist. If you look for positive solution, the
+      first you might find is <m>19 + 6 \sqrt{10}</m>. You can even
+      check explicitly that this number has an inverse. 
+      <me>
+        (19 + 6 \sqrt{10})(19 - 6 \sqrt{10}) = 361 - 360 = 1
+      </me>
+      If you looked for the negative solution, you'd find one even
+      faster: <m>3 + \sqrt{10}</m>. Again, you can check this inverse
+      explicitly. 
+      <me>
+        (3 + \sqrt{10})(3 - \sqrt{10}) = 9 - 10 = -1
+      </me>
+      Then you would have to wonder how many more such unit exists?
+      And, fairly immediately, there is a problem. Any positive whole
+      exponent of this first unit is also a unit: <m>(19 + 6
+      \sqrt{10})^2</m> is a unit, <m>(19 6 \sqrt{10})^3</m> is a unit,
+      and so on. There are infinitely many units! You'd also discover
+      something else.
+      <me>
+        (3 + \sqrt{10})^2 = 9 + 6 \sqrt{10}
+      </me>
+      The second unit we found was actually aready an exponent of the
+      first. 
+    </p>
+    <p>
+      This arrangement of unit holds in general for
+      <m>\ZZ[\sqrt{D}]</m> when <m>D > 0 </m>. Here is another
+      important historical theorem from ring theory that summarized
+      the units situations for quadratic integer rings. 
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>\calO_D</m> be a quadratic integer ring. Then the
+          units are classified as follows.
+          <ul>
+            <li>
+              If <m>D = -1</m>, there are four units: <m>\{1, -1, i,
+              -i\{</m>. 
+            </li>
+            <li>
+              If <m>D = -3</m>, there are six units:
+              <me>
+                \left{1, -1, \frac{1 + \sqrt{-3}}{2} \frac{1 -
+                \sqrt{-3}}{2} \frac{-1 + \sqrt{-3}}{2} \frac{-1 -
+                \sqrt{-3}}{2} \right\}
+              </me>
+            </li>
+            <li>
+              For other <m>D \lt 0</m>, the only units are
+              <m>\{1,-1\}</m>
+            </li>
+            <li>
+              If <m>D \geq 2</m>, then <m>\ZZ[\sqrt{D}]</m> has
+              infinitely many units. Moreover all of these units are
+              of the form <m>\pm u^i</m> for <m>i \in \NN</m>: they
+              are all exponents (up to a sign) of one minimal unit.
+              This minimal unit is called the <term>fundamental
+              unit</term>. 
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The first result of this is that working in rings where I attach
+      a positive square root to the integers is much more difficult
+      than when attaching a negative square root. With infinitely many
+      units, my exhaustive searches through elements of small order
+      now fail entirely: I;d have to check the possibility of
+      multiplication by infinitely many units each time. There are, of
+      course, other techniques, but we're not going to get into them
+      in this course. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-results-quadratic-rings">
+    <title>Classification Results for Quadratic Integer Rings</title>
+    <p>
+      But I would still like to state some results for you. I'm not
+      going to prove any of these result, and for some of them, I
+      haven't actually read the proof and may not understand it
+      myself. But these results show some of the historical
+      accomplishment of ring theories and how they classify these
+      quadratic integer rings. 
+    </p>
+    <p>
+      I already know when <m>\calO_D</m> is a unique
+      factorization domain for negative <m>D</m>. Here is a relted result
+      for positive <m>D</m>.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          If <m>D \geq 2</m>, then <m>\calO_D</m> is a principal ideal
+          domain (and hence a unique factorization domain) if <m>D</m>
+          is on this list of numbers. 
+          <me>
+            2, 3, 5, 6, 7, 11, 13, 14, 17, 19, 21, 22, 23, 29, 31, 33,
+            37, 38, \ldots
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Many cases on this list are known. In the original paper on the
+      topic by Borevich and Safarevich in 1966, the list extended to
+      497. The Online Encyclopedia of Integer Sequences gives a list
+      that extends past 10,000. However, the general case is open. It
+      is conjectured that there are infinitely many <m>D</m> for which
+      <m>\calO_D</m> is a PID, but it is still an open question, as far
+      as I am aware. 
+    </p>
+    <p>
+      This covers which quadratic integer rings are principal ideal
+      domains. But the Gaussian integers were also a Euclidean domain:
+      they had a division algorithm. Figuring out which other
+      quadratic integer rings are Euclidean is pretty tricky. However,
+      it is clear that some are and some are not. The Gaussian
+      integers are a Euclidean domain. The first quadratic integer
+      ring proved to be a principal ideal domain but not a Euclidean
+      domain is <m>\calO_{-19}</m>. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-hierarchy-reprise">
+    <title>Domain Hierarchy Reprise</title>
+    <p>
+      Let me finish this section by returning to the hierachy. I can
+      now demonstrate that all levels of the hierarchy describe actual
+      rings, mostly using the quadratic integer rings we've talked
+      about. 
+      <ul>
+        <li>
+          <m>\QQ</m> is a field. 
+        </li>
+        <li>
+          <m>\ZZ[i]</m> is a Euclidean domain which is not a field. 
+        </li>
+        <li>
+          <m>\calO_{-19}</m> is a principal ideal domain which is not
+          a Euclidean domain.
+        </li>
+        <li>
+          I'm actually not sure whether all quadratic integer rings
+          which are UFDs are also PIDs. But I can construct another
+          example. The ring <m>\ZZ[x]</m> is a unique factorization
+          domain (all polynomials factor uniquely into irreducible
+          polynomials and integer constants), but not a principal
+          ideal domain. For any prime number <m>p</m>, the ideal
+          <m>\langle p, x \rangle</m> is not principal. (This idea is
+          the set of polynomial where the constant term is divisible
+          by <m>p</m>. Feel free to check that it is, indeed, an
+          ideal.) 
+        </li>
+        <li>
+          <m>\calO_{-5}</m> is a domain which is not a unique
+          factorization domain. 
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>
