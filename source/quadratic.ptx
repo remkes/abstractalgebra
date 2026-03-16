@@ -206,7 +206,7 @@
             <li>
               If <m>D = -3</m>, there are six units:
               <me>
-                \left{1, -1, \frac{1 + \sqrt{-3}}{2} \frac{1 -
+                \left\{  1, -1, \frac{1 + \sqrt{-3}}{2} \frac{1 -
                 \sqrt{-3}}{2} \frac{-1 + \sqrt{-3}}{2} \frac{-1 -
                 \sqrt{-3}}{2} \right\}
               </me>

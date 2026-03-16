@@ -49,7 +49,7 @@
     <proposition>
       <statement>
         <p>
-          An ideal <m>I</m> in <m>\ZZ</m> is prime if and ony if <m>I =
+          An ideal <m>I</m> in <m>\ZZ</m> is prime if and only if <m>I =
           \langle p \rangle</m> for some prime number <m>p</m>. 
         </p>
       </statement>
@@ -105,8 +105,8 @@
     <definition>
       <statement>
         <p>
-          Let <m>p \in R</m>. The elemtn <m>p</m> is called
-          <term>prime</term> if the principle idea <m>\langle p
+          Let <m>p \in R</m>. The element <m>p</m> is called
+          <term>prime</term> if the principal idea <m>\langle p
           \rangle</m> is a prime ideal. 
         </p>
       </statement>
@@ -127,7 +127,7 @@
             IJ = \left\{ \sum_k i_k j_k | i_k \in I, j_k \in J \right\}
           </me>
           Having defined a product, <term>factors</term> and
-          <term>multiples</term> make for ideals and carry their usual
+          <term>multiples</term> make sense for ideals and carry their usual
           sense using this definition of product. 
         </p>
       </statement>
@@ -200,7 +200,7 @@
     <definition>
       <statement>
         <p>
-          Let <m>D</m> b a square-free integer and consider the ring
+          Let <m>D</m> be a square-free integer and consider the ring
           <m>\ZZ[\sqrt{D}]</m>. The <term>norm</term> on this ring is
           the following function. 
           <me>

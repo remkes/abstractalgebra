@@ -94,7 +94,7 @@
     </p>
     <p>
       There are no elements of norm 6 or 7: these numbers cannot be
-      produced by the norm formul <m>a^2 + b^2</m>. So the next norm
+      produced by the norm formula <m>a^2 + b^2</m>. So the next norm
       is norm 8. Up to units there is only one element of norm 8. 
       <me>
         \{2 + 2i\}
@@ -108,7 +108,7 @@
       I can keep doing this for a while. Here is a table of the
       progress through the next few norms. Everything is unique up to
       multiplication by units. I skip over the norms which have no
-      elements. Note that any compositie integer, such as 4, cannot be
+      elements. Note that any composite integer, such as 4, cannot be
       prime in any larger ring since the factorization in the integers
       still holds. 
     </p>
