@@ -586,13 +586,13 @@
           integer ring</term>. There are two cases. 
           <ul>
             <li>
-              If <m>D \cong 2,3,4 \mod 4</m>, then 
+              If <m>D \equiv 2,3,4 \mod 4</m>, then 
               <me>
                 \calO_D = \ZZ[\sqrt{D}]
               </me>
             </li>
             <li>
-              If <m>D \cong 1\mod 4</m>, then 
+              If <m>D \equiv 1\mod 4</m>, then 
               <me>
                 \calO_D = \ZZ\left[\frac{1 + \sqrt{D}}{2} \right]
               </me>

@@ -33,7 +33,7 @@
         injective ring homomorphism <m>R \rightarrow F</m>. (Minimal
         means that <m>F</m> is the smallest field for which such an
         injection exist.) <m>F</m> is called the <term>field of
-        fractions<term> of <m>R</m>. 
+        fractions</term> of <m>R</m>. 
       </p>
     </statement>
     <proof>
@@ -41,7 +41,7 @@
         The proof works by actually constructing the field. As a set,
         I define <m>F</m> in two steps. First I define a set <m>A</m>
         <me>
-          A = \{ \frac{a}{b} | a \in R \text{ and } b \in R\{0\} \}</m>
+          A = \{ \frac{a}{b} | a \in R \text{ and } b \in R\{0\} \}
         </me>
         This the set of fractions formed from the elements of the
         ring, with zero explicitly excluded from the denominator. But
@@ -143,7 +143,7 @@
         injective. 
       </p>
       <p>
-        Finally, the minimality. Assume that <m>G<m> is any other
+        Finally, the minimality. Assume that <m>G</m> is any other
         field such that there is an injective homomorphism <m>\phi: R
         \rightarrow G</m>. I can then define a homomorphism <m>\psi: F
         \rightarrow F</m> as follows.
@@ -157,7 +157,7 @@
         The output is zero only is <m>\phi(a) = 0</m>. But <m>\phi</m>
         is injective, so it has a trivial kernel, which means that
         <m>a = 0</m>. The input is then <m>\frac{0}{b}</m> which is
-        equivalent to <m>\farc{0}{1}</m>. This shows that the kernel
+        equivalent to <m>\frac{0}{1}</m>. This shows that the kernel
         of <m>\psi</m> is also trivial. 
       </p>
       <p>
@@ -168,8 +168,111 @@
         field. The fraction field is minimal: any other field that
         makes all elements of <m>R</m> invertible contains an
         isomorphism copy of the field of fractions as a subring.
-
       </p>
     </proof>
   </proposition>
+  <p>
+    Let me show you some examples. 
+  </p>
+  <example>
+    <p>
+      For <m>\ZZ</m>, the field of fractions is, indeed, <m>\QQ</m>.
+      I was trying to replicate this process, so I would hope that the
+      original idea is still preserved. 
+    </p>
+  </example>
+  <example>
+    <p>
+      For <m>\ZZ[i]</m>, the Gaussian integers, the field of fractions
+      is <m>\QQ(i)</m>: the field I get by adding the square root of
+      negative one to the rational number. Every element of this field
+      is a complex number with rational coefficients. The inverse of <m>a +
+      bi</m> is <m>\frac{a - bi}{a^2 + b^2}</m>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      In general, the field of fractions of <m>\ZZ[\sqrt{D}]</m> (for
+      <m>D</m> a square-free integer) is likewise
+      <m>\QQ(\sqrt{D})</m>. Following <xref
+      ref="def-quadratic-integer-ring"/>, there are some subtleties
+      when <m>D \equiv 1 \mod 4</m>, but this doesn't change the fact
+      that the field of fractions construction still works. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>F</m> be a field. Then the field of fractions of
+      <m>F[x]</m> is <m>F(x)</m>: the field of rational functions over
+      <m>F</m>. Its elements are fractions <m>\frac{p(x)}{q(x)</m>
+      where <m>q(x)</m> is not exactly the zero polynomial, subject to
+      the normal equivalence of polynomials. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Now consider the ring <m>\ZZ[x]</m>. What is its field of
+      fractions? You might thing that it is ratios of polynomials with
+      integer coefficients, and in a sense you would be correct.
+      However, that ring is actually <m>\QQ(x)</m>: all rational
+      functions with rational coefficients. There are two reasons for
+      this fact. 
+      <ul>
+        <li>
+          First, ratios of polynomials include constant polynomials,
+          so <m>\frac{a}{b}</m> is in this field. This means all
+          rational numbers are in the field; from that fact, I can
+          construct all ratios of polynomials with rational
+          coefficient using the usual field operations. 
+        </li>
+        <li>
+          Second, say I have a fraction formed of rational polynomials
+          <m>\frac{p(x)}{q(x)}</m>. Then I can let <m>k</m> be the lcm
+          of the denominators of the coefficients of both <m>p(x)</m>
+          and <m>q(x)</m>. With this number, I can make the new
+          fraction <m>\frac{kp(x)}{kq(x)}</m>. In this new fraction,
+          muliplying by <m>k</m> will remove all the denominators:
+          this is a ratio of polynomials with integer coefficients.
+          Therefore, rational functions over the rational numbers are
+          equivalent to rational function over the integers.
+        </li>
+      </ul>
+      This generalizes: if <m>R</m> is a domain and <m>F</m> is its
+      field of fractions, then the field of fractions of <m>R[x]</m>
+      is actually <m>F(x)</m>: everything in <m>R</m> also gets an
+      inverse, extending the coefficients to <m>F</m>. 
+    </p>
+  </example>
+  <example>
+    <p>
+      Let <m>F</m> be a field. Then <m>F[[X]]</m> is the notation for
+      the ring of formal power series over <m>F</m>. An element of
+      this series is a power series (centred at zero). 
+      <me>
+        \sum_{n=0}^\infty a_i x^i
+      </me>
+      In this sum, all the coefficient <m>a_i</m> are in the base
+      field. In this power series, I simply don't care about
+      convergence (which might not even be defined, depending on the
+      field). That's what <sq>formal</sq> means in this definition:
+      convergence is not an issue. This is a ring under the addition
+      and multiplication of power series. It is also a domain, since
+      the product of two power series will never produce the zero
+      series unless one of the two products was originally the zero
+      series. 
+    </p>
+    <p>
+      I can form the field of fractions for this ring. It requires a
+      bit of work, but you can prove that the resulting field is
+      <m>F((x))</m>: the ring of formal Laurent series? What is a
+      Laurent series? Well, it's a power series where I also have
+      negative exponents. 
+      <me>
+        \sum_{n=-\infty}^\infty a_i x^i
+      </me>
+      Again, I don't care about convergence, nor I do care about
+      domains if I were to consider this as a function on the field. I
+      just care about the patterns and, on that level, this works. 
+    </p>
+  </example>
 </section>
