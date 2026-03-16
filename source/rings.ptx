@@ -7,4 +7,5 @@
   <xi:include href="gaussian.ptx" />
   <xi:include href="domain-hierarchy.ptx" />
   <xi:include href="quadratic.ptx" />
+  <xi:include href="fractions.ptx" />
 </chapter>

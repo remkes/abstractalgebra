@@ -1,0 +1,175 @@
+<section xml:id="section-fractions">
+  <title>Fields of Fractions</title>
+  <p>
+    We've completed the main piece of ring theory for the course:
+    understanding how primes and divisibility extend to rings other
+    than the integers. However, I have a few more topics in ring
+    theory that I want to cover before. The first is the idea of a
+    field of fractions.
+  </p>
+  <p>
+    The motivation here is the relationship between <m>\ZZ</m> and
+    <m>\QQ</m>. As a ring, <m>\ZZ</m> has very few units: only
+    <m>1</m> and <m>-1</m>. However, the larger ring <m>\QQ</m> is a
+    field where everything is invertible. By moving from the integers
+    to the rational numbers, it's reasonable to say that all of the
+    integers become invertible. 
+  </p>
+  <p>
+    I can think of this relationship as a construction. What is a
+    rational number? It's ratio of integers with a non-zero
+    denominator, with addition and multiplication defined for
+    fractions. It also comes with some identifications:
+    <m>\frac{1}{2}</m> is the same number as <m>\frac{2}{4}</m> or
+    <m>\sqrt{3}{6}</m> and so on. In this way, the rational are build
+    out of the integers by making fractions. Can this process be
+    generalized? It can!
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>R</m> be a domain (commutative and with unity by
+        default). There exists a minimal field <m>F</m> along with an
+        injective ring homomorphism <m>R \rightarrow F</m>. (Minimal
+        means that <m>F</m> is the smallest field for which such an
+        injection exist.) <m>F</m> is called the <term>field of
+        fractions<term> of <m>R</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The proof works by actually constructing the field. As a set,
+        I define <m>F</m> in two steps. First I define a set <m>A</m>
+        <me>
+          A = \{ \frac{a}{b} | a \in R \text{ and } b \in R\{0\} \}</m>
+        </me>
+        This the set of fractions formed from the elements of the
+        ring, with zero explicitly excluded from the denominator. But
+        fractions are not enough: I know from the rational numbers
+        that different fractions can represent the same numbers.
+        Therefore, I define an equivalence relation on this set. 
+        <me>
+          \frac{a}{b} \sim \frac{c}{d} \iff ad = bc
+        </me>
+      </p>
+      <p>
+        I need to prove that this is an equivalence relation, so I go
+        through the properties. First, reflextive. <m>\frac{a}{b} \sim
+        \frac{a}{b}</m> because <m>ab = ab</m>. That works.
+      </p>
+      <p>
+        Next, symmetric. This follows from the commutativity of
+        multiplication. The condition for <m>\frac{a}{b} \sim
+        \frac{c}{d}</m> is <m>ad = bc</m>. The condition for
+        <m>\frac{c}{d} \sim \frac{a}{b}</m> is <m>da = cb</m>. Since
+        multiplication is commutative, these two conditions are
+        equivalent.
+      </p>
+      <p>
+        Finally, transitivity. Assume <m>\frac{a}{b} \sim
+        \frac{c}{d}</m> and <m>\frac{c}{d} \sim \frac{e}{f}</m>. This
+        means that I know two equations: <m>ad = bc</m> and <m>cf =
+        de</m>. Then consider this expression.
+        <me>
+          adf
+        </me>
+        In this expression, I can use the first equation to replace
+        <m>ad</m>. 
+        <me>
+          adf = bcf
+        </me>
+        Similarly, I can use the second equation to replace <m>cf</m>.
+        <me>
+          adf = bcf = bde
+        </me>
+        Now I have <m>d</m> in the first and third expressions. Since
+        this is a domain (there are no zero divisors), cancellation is
+        valid even though <m>d</m> may not be a unit. 
+        <me>
+          adf = bde \implies af = be 
+        </me>
+        This is precisely the expression that proves <m>\frac{ab} \sim
+        \frac{e}{f}</m>. I have satisfied all three properties, so
+        this is an equivalent relation.
+      </p>
+      <p>
+        Then I define <m>F</m> to be the set quotient of <m>A</m>
+        under this equivalence relation: <m>F</m> is the set of
+        fractions where <sq>similar fractions</sq> are treated as the
+        same number. That's all good, but I still need to prove that
+        <m>F</m> is a field, has the necessary injection, and is
+        minimal. 
+      </p>
+      <p>
+        The ring operations defined on <m>F</m> are as follows. First,
+        <me>
+          \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \hspace{1cm} 
+          \frac{a}{b} \frac{c}{d} = \frac{ac}{bd} 
+        </me>
+        I'll leave it to you to verify that these are well-define on
+        equivalence classes<mdash/>the proofs here are basically a
+        review of grade-school fractions and the fact that they work
+        properly. The element <m>\frac{0}{1}</m> is the additive
+        identity. Simiarly, the distribution property hold for these
+        two opeartions.
+      </p>
+      <p>
+        The element <m>\frac{1}{1}</m> is the identity for
+        multiplication in this ring, and the inverse of
+        <m>\frac{a}{b}</m> is <m>\frac{b}{a}</m>. Both of these are
+        immediate to verify. 
+      </p>
+      <p>
+        For this to be a field, all non-zero elements have to have an
+        inverse. This is, again, almost immediate. If <m>a \neq 0</m>,
+        then <m>\frac{b}{a}</m> is in the ring and is an inverse to
+        <m>\frac{a}{b}</m>. This shows that all non-zero elements of
+        this ring are invertible: this is a field.
+      </p>
+      <p>
+        Next, the injective homomorphism: <m>i: R \rightarrow F</m>.
+        Here is the definition.
+        <me>
+          i(r) = \frac{r}{1}
+        </me>
+        I'll leave it to you to verify the homomorphism
+        properties, which are again just ordinary fraction arithmetic.
+        To determine injectivitiy, I calculate the kernel. Assume that
+        <m>\frac{r}{1} \sim \frac{0}{1}</m>; that is, the image of
+        <m>r</m> is in the same equivalence class as the additive
+        identity. This equation for this equivalence is <m>r1 = 1\cdot
+        0</m> which means <m>r = 0</m>. Therefore, the kernel is only
+        the zero element in <m>R</m>, which means the map is
+        injective. 
+      </p>
+      <p>
+        Finally, the minimality. Assume that <m>G<m> is any other
+        field such that there is an injective homomorphism <m>\phi: R
+        \rightarrow G</m>. I can then define a homomorphism <m>\psi: F
+        \rightarrow F</m> as follows.
+        <me>
+          \psi \left( \frac{a}{b} \right) = \phi(a) \left( \phi(b)
+          \right)^{-1}
+        </me>
+        Again, I'll leave it to you to verify the homomorphism
+        properties and the fact that this is well-defined on
+        equivalence classes. I want to know the kernel of this map.
+        The output is zero only is <m>\phi(a) = 0</m>. But <m>\phi</m>
+        is injective, so it has a trivial kernel, which means that
+        <m>a = 0</m>. The input is then <m>\frac{0}{b}</m> which is
+        equivalent to <m>\farc{0}{1}</m>. This shows that the kernel
+        of <m>\psi</m> is also trivial. 
+      </p>
+      <p>
+        I have shown that any other injective map to a field can be
+        realized as an injection to the fraction field and then
+        another injection to the new field. This means that there is
+        an isomorphic copy of the fraction field inside the other
+        field. The fraction field is minimal: any other field that
+        makes all elements of <m>R</m> invertible contains an
+        isomorphism copy of the field of fractions as a subring.
+
+      </p>
+    </proof>
+  </proposition>
+</section>
