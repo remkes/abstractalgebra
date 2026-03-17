@@ -12,7 +12,8 @@
     <m>\QQ</m>. As a ring, <m>\ZZ</m> has very few units: only
     <m>1</m> and <m>-1</m>. However, the larger ring <m>\QQ</m> is a
     field where everything is invertible. By moving from the integers
-    to the rational numbers, it's reasonable to say that all of the
+    to the rational numbers, it's reasonable to describe that
+    transation by saying that all of the
     integers become invertible. 
   </p>
   <p>
@@ -21,7 +22,7 @@
     denominator, with addition and multiplication defined for
     fractions. It also comes with some identifications:
     <m>\frac{1}{2}</m> is the same number as <m>\frac{2}{4}</m> or
-    <m>\sqrt{3}{6}</m> and so on. In this way, the rational are build
+    <m>\frac{3}{6}</m> and so on. In this way, the rational are built
     out of the integers by making fractions. Can this process be
     generalized? It can!
   </p>
@@ -39,9 +40,10 @@
     <proof>
       <p>
         The proof works by actually constructing the field. As a set,
-        I define <m>F</m> in two steps. First I define a set <m>A</m>
+        I define <m>F</m> in two steps. First I define a set <m>A</m>.
         <me>
-          A = \{ \frac{a}{b} | a \in R \text{ and } b \in R\{0\} \}
+          A = \left\{ \frac{a}{b} | a,b \in R \text{ and } b \neq 0
+          \right\}
         </me>
         This the set of fractions formed from the elements of the
         ring, with zero explicitly excluded from the denominator. But
@@ -88,7 +90,7 @@
         <me>
           adf = bde \implies af = be 
         </me>
-        This is precisely the expression that proves <m>\frac{ab} \sim
+        This is precisely the expression that proves <m>\frac{a}{b} \sim
         \frac{e}{f}</m>. I have satisfied all three properties, so
         this is an equivalent relation.
       </p>
@@ -101,17 +103,18 @@
         minimal. 
       </p>
       <p>
-        The ring operations defined on <m>F</m> are as follows. First,
+        The ring operations defined on <m>F</m> are as the normal
+        addition and multiplication of fractions. 
         <me>
           \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \hspace{1cm} 
           \frac{a}{b} \frac{c}{d} = \frac{ac}{bd} 
         </me>
-        I'll leave it to you to verify that these are well-define on
+        I'll leave it to you to verify that these are well-defined on
         equivalence classes<mdash/>the proofs here are basically a
         review of grade-school fractions and the fact that they work
         properly. The element <m>\frac{0}{1}</m> is the additive
-        identity. Simiarly, the distribution property hold for these
-        two opeartions.
+        identity. Simiarly, the distributive property holds for these
+        two operations.
       </p>
       <p>
         The element <m>\frac{1}{1}</m> is the identity for
@@ -146,7 +149,7 @@
         Finally, the minimality. Assume that <m>G</m> is any other
         field such that there is an injective homomorphism <m>\phi: R
         \rightarrow G</m>. I can then define a homomorphism <m>\psi: F
-        \rightarrow F</m> as follows.
+        \rightarrow G</m> as follows.
         <me>
           \psi \left( \frac{a}{b} \right) = \phi(a) \left( \phi(b)
           \right)^{-1}
@@ -185,7 +188,7 @@
     <p>
       For <m>\ZZ[i]</m>, the Gaussian integers, the field of fractions
       is <m>\QQ(i)</m>: the field I get by adding the square root of
-      negative one to the rational number. Every element of this field
+      negative one to the rational numbers. Every element of this field
       is a complex number with rational coefficients. The inverse of <m>a +
       bi</m> is <m>\frac{a - bi}{a^2 + b^2}</m>. 
     </p>
@@ -204,8 +207,8 @@
     <p>
       Let <m>F</m> be a field. Then the field of fractions of
       <m>F[x]</m> is <m>F(x)</m>: the field of rational functions over
-      <m>F</m>. Its elements are fractions <m>\frac{p(x)}{q(x)</m>
-      where <m>q(x)</m> is not exactly the zero polynomial, subject to
+      <m>F</m>. Its elements are fractions <m>\frac{p(x)}{q(x)}</m>
+      where <m>q(x)</m> is not the zero polynomial, subject to
       the normal equivalence of polynomials. 
     </p>
   </example>
@@ -221,7 +224,7 @@
         <li>
           First, ratios of polynomials include constant polynomials,
           so <m>\frac{a}{b}</m> is in this field. This means all
-          rational numbers are in the field; from that fact, I can
+          rational numbers are in the field; from this fact, I can
           construct all ratios of polynomials with rational
           coefficient using the usual field operations. 
         </li>
@@ -245,13 +248,13 @@
   </example>
   <example>
     <p>
-      Let <m>F</m> be a field. Then <m>F[[X]]</m> is the notation for
+      Let <m>F</m> be a field. Then <m>F[[x]]</m> is the notation for
       the ring of formal power series over <m>F</m>. An element of
       this series is a power series (centred at zero). 
       <me>
         \sum_{n=0}^\infty a_i x^i
       </me>
-      In this sum, all the coefficient <m>a_i</m> are in the base
+      In this sum, all the coefficients <m>a_i</m> are in the base
       field. In this power series, I simply don't care about
       convergence (which might not even be defined, depending on the
       field). That's what <sq>formal</sq> means in this definition:
@@ -264,7 +267,7 @@
     <p>
       I can form the field of fractions for this ring. It requires a
       bit of work, but you can prove that the resulting field is
-      <m>F((x))</m>: the ring of formal Laurent series? What is a
+      <m>F((x))</m>: the ring of formal Laurent series. What is a
       Laurent series? Well, it's a power series where I also have
       negative exponents. 
       <me>
