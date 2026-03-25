@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
+xml:id="chapter-fields">
+  <title>Rings</title>
+  <xi:include href="fields-definition.ptx" />
+  <xi:include href="finite-fields.ptx" />
+</chapter>

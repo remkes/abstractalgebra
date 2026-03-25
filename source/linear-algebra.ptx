@@ -14,7 +14,7 @@
     scalars for a vector space? That is again an important question in
     abstract algebra which we will try to answer later in the course.
   </p>
-  <definition>
+  <definition xml:id="definition-vector-space-informal">
     <statement>
       <p>
         A set <m>V</m> is a <term>vector space</term> if it satisfied

@@ -1,0 +1,333 @@
+<section xml:id="section-fields-definition">
+  <title>Definitions Concerning Fields</title>
+  <p>
+    I defined a field way back in <xref ref="definition-rings-types"/>
+    and we talked about fields all through the ring theory section of
+    these notes. Therefore, I'm not starting from scratch here. We
+    already know a fair bit about fields: everything is invertible,
+    there are no interesting ideals, we can make fraction fields from
+    domains, and so on. Field homomorphism are just ring
+    homomorphisms, so we already know about homomorphisms as well. 
+  </p>
+  <p>
+    I also can draw some conclusion based on what we already know. For
+    example, the fact that ideals are not interesting. Here are the
+    most important implications.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>K</m> and <m>L</m> be a fields. The following facts are
+        true. 
+        <ul>
+          <li>
+            There are no field quotients of <m>K</m> over than
+            <m>K</m> itself or the zero ring. 
+          </li>
+          <li>
+            Let <m>\phi: K \rightarrow L</m> be a homomorphism. Then
+            either <m>\phi</m> is the zero map (sending everything in
+            <m>K</m> to <m>0 \in L</m>), or <m>\phi</m> is injective. 
+          </li>
+          <li>
+            The notions of prime ideals and factoring don't apply in
+            fields. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        All of these follow, more or less directly, from the fact that
+        fields don't have non-trivial ideals. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    The fact that all field maps are injections leads to the following
+    definition.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>\phi: K \rightarrow L</m> be a field map which is not
+        the zero map (and therefore is injective). Then this map is
+        called a <term>field extension</term> or, alternatively,
+        <m>L</m> is called a field extension of <m>K</m>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    This definition really indicates the direction of field theory. We
+    start will relatively small fields and look at how their
+    extensions work. We already know have a good source of extension
+    from ring theory. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>K</m> be a field and let <m>p(x) \in K[x]</m> be an
+        irreducible polynomial. Then the ring quotient <m>K[x]/\langle
+        p(x) \rangle</m> is a field extension of <m>K</m>. Moreover,
+        this is equivalent to attaching a new element <m>\alpha</m> to
+        <m>K</m> where <m>\alpha</m> is a root of the polynomial. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        More of this is already from ring theory, where we understand
+        this quotient ring. I'll leave the rest for you to figure out
+        if you wish (like the fact that this is a field). 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    The notation here is a little different from the extensions of the
+    integers. <m>K(\alpha)</m> is the extenion made by attaching the
+    root of an irreducible polynomial to a field. If the irreducible
+    polynomial had degree <m>d</m>, then elements of <m>K(\alpha)</m>
+    can be written as follows for <m>c_i \in K</m>. 
+    <me>
+      c_0 + c_1 \alpha + c_2 \alpha^2 + \ldots + c_{d-1} \alpha^{d-1}
+    </me>
+    This form is justified by the replacement of <m>\alpha^d</m> using
+    the polynomial. For example, if the polynomial <m>x^2 + x + 8</m>
+    is irreducible, then a root satisfies <m>\alpha^2 + \alpha + 8 =
+    0</m> which is equivalent to <m>\alpha^2 = - \alpha - 8</m>. This
+    form lets me replace <m>\alpha^2</m> whenever I find it. 
+  </p>
+  <p>
+    All this leads into the discussion of vector space. In <xref
+    ref="definition-vector-space-informal"/>, I gave an informal
+    definition of a vector space. Now that we have a much of new
+    language, let me give a formal version now.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>K</m> be a field. A <term>vector space</term> over
+        <m>K</m> is a set <m>V</m> with the following properties. 
+        <ul>
+          <li>
+            <m>V</m> is an abelian group. 
+          </li>
+          <li>
+            For all <m>k \in K</m> and <n>v \in V</m>, there is an
+            operation called scalar multiplication for which <m> kv
+            \in V</m>. This operation has three properties. 
+            <md>
+              <mrow>
+                k(v + u) = kv + ku 
+              </mrow>
+              <mrow>
+                (k + l) v = kv + lv 
+              </mrow>
+              <mrow>
+                (kl) v = k(lv) 
+              </mrow>
+            </md>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    A vector space is an object of abstract algebra: it is an abelian
+    group with scalar multiplication by a field. I left the
+    <sq>scalars</sq> vague earlier, but here they are specific. The
+    scalar must belong to a field. From this definition, all of the
+    tools of linear algebra will apply: linear combinations,
+    dimension, basis, linear transformations, linear subspaces, and so
+    on. It just now happens over an arbitrary field. 
+  </p>
+  <p>
+    Vector spaces help me understand field extensions. Here is an
+    important proposition.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        All field extensions are vector spaces over the smaller field. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        This is pretty easy to check. The scalar multiplication comes
+        just from the field arithmetic, since the smaller field is
+        (isomorphic to) a subset of the larger field. The rules are
+        all from the basic ring theory of a field. 
+      </p>
+    </proof>
+  </proposition>
+  <p>
+    With this, I can start to use the language of vector spaces to
+    understand field extensions. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>\phi: K \rightarrow L</m> be a field extension. The
+        dimension of <m>L</m> as a <m>K</m>-vector space is called the
+        <term>degree</term> of the field extension an written
+        <m>[L:K]</m>. Here are some related terms. 
+        <ul>
+          <li>
+            A degree 2 extension is a <term>quadratic
+            extension</term>.
+          </li>
+          <li>
+            A degree 3 extension is a <term>cubic
+            extension</term>.
+          </li>
+          <li>
+            Higher degree extensions are numbered likewise. 
+          </li>
+          <li>
+            A finite degree extension is a <term>finite
+            extension</term>. Otherwise, it is an <term>infinite
+            extension</term>. 
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Let me think about <m>K(\alpha)</m> again using this language. 
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>K(a)</m> be a field extension formed by attaching one
+        new element to the field. This kind of extension is called a
+        <term>simple extension</term>. If the extension is finite,
+        then <m>\alpha</m> must be the root of some irreducible
+        polynomial <m>p(x)</m> and the extension must be isomorphic to
+        <m>K[x]/\langle p(x) \rangle</m>. In this case, the degree of
+        the extension is equal to the degree of the polynomial. If the
+        extension is infinite, then <m>\alpha</m> cannot be the root
+        of any polynomial over <m>K</m>. Such an <m>\alpha</m> is
+        called a <term>transcendental element</term>
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    This gives us a lot of information. Let me not prove but at least
+    explain the dimension. Again, consider <m>K[x]/langle p(x)
+    \rangle</m>. As before, the form of elements is as follows, where
+    <m>d</m> is the degree of the polynomial. 
+    <me>
+      c_0 + c_1 \alpha + c_2 \alpha^2 + \ldots + c_{d-1} \alpha^{d-1}
+    </me>
+    In the vector space, I just care about the coefficients. These
+    coefficients are equivalent to a vector.
+    <me>
+      (c_0, c_1, c_2, \ldots, c_{d-1}) 
+    </me>
+    The set of all vectors like this is a vector space of dimension
+    <m>d</m>, justifying the degree claim for the extension. With this
+    perspective, here is a basis for the field <m>K(\alpha)</m> as a
+    vector space. 
+    <me>
+      \{1, \alpha, \alpha^2, \ldots, \alpha^{d-1} \{
+    </me>
+    There are <m>d</m> elements in this basis, again matching the
+    degree <m>d</m> of the extension.
+  </p>
+  <p>
+    What do the elements of a transcnendental extension look like?
+    Well, let <m>K(\alpha)</m> be a transcendental extension. Since
+    <m>\alpha</m> is not the root of any polynomial, no powers of it
+    can be replace. If <m>c \in K</m>, then I can consider element
+    like <m>c\alpha^i</m> for <m>i \in \ZZ</m> (including negative
+    exponents). All of these are distinct. These form a basis for this
+    infinite vector space. 
+    <me>
+      \left\{ \ldots \frac{1}{\alpha^3}, \frac{1}{\alpha^2}
+      \frac{1}{\alpha}, 1 , \alpha, \alpha^2, \alpha^3, \ldots
+      \right\}
+    </me>
+    This is an infinite basis. I haven't talked about infinite vector
+    spaces that must so far, but let me state one important notion
+    here: the basis might be infinite, but the element of the vector
+    space are <em>finite</em> sums taken from this infinite basis.
+    Therefor, element of the transcendental extension look like this
+    example. 
+    <me>
+      c_{-7} \frac{1}{\alpha^7} + c_{-2} \frac{1}{\alpha^2} + c_0 +
+      c_2 \alpha^2 + c_{105} \alpha^{105}
+    </me>
+    However, infinite sums are not element of this vector space, not
+    even if they would otherwise converge. 
+    <me>
+      \sum_{n=0}^\infty c_n \alpha^n \notin K(\alpha) 
+    </me>
+  </p>
+  <p>
+    Let me focus on extension of <m>\QQ</m> for some examples. 
+  </p>
+  <example>
+    <p>
+      <m>\QQ(\sqrt{2})</m> is a quadratic extenion of <m>\QQ</m>.
+      Element have the forn <m>a + b \sqrt{2}</m> with rational
+      coefficients. The inverse of a non-zero element is defined as
+      follows. 
+      <me>
+        (a + b \sqrt{2})^{-1} = \frac{a - b \sqrt{2}}{a^2 + 2b^2} 
+      </me>
+      Feel free to check that this is, in fact, a multiplicative
+      inverse. The ring <m>\ZZ[\sqrt{2}]</m> is a subring of this
+      field. (This field is, indeed, the field of fractions of this
+      subring.) 
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>\QQ(\sqrt[3]{7})</m> is a cubic extension of <m>\QQ</m>.
+      Elements have the form <m>a + b\sqrt[3]{7} + c \sqrt[3]{49}</m>.
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>\QQ(i)</m> is a quadratic extension of <m>\QQ</m>.
+      <m>\ZZ[i]</m> is a subring and, again, this field is the field
+      of fractions of the subring. 
+    </p>
+  </example>
+  <example>
+    <p>
+      <m>\QQ(\pi)</m> is a transcendental infinite extension of
+      <m>\QQ</m>. Elements are finite sums or integer powers of
+      <m>\pi<m> with rational coefficient. 
+    </p>
+  </example>
+  <p>
+    All of these field extensions sit between <m>\QQ</m> and
+    <m>\CC</m>. The study of field <m>K</m> such that <m>\QQ \subset K
+    \subset \CC</m> is, in fact, a major piece of field theory in
+    mathematics. Let me finish this section with two definitions. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>K</m> be a finite extension of <m>\QQ</m>. Then
+        <m>K</m> is called a <term>number field</term>. 
+      </p>
+    </statement>
+  </definition>
+  <definition>
+    <statement>
+      <p>
+        Let <m>\overline{\QQ}</m> consist of the field generated by
+        all elements which are algebraic over <m>\QQ</m>: that is, all
+        roots of any possible polynomials over <m>\QQ</m>. This is an
+        infinite extension of <m>\QQ</m>, but still a proper subset of
+        <m>\CC</m>, since it does not contain any transcendental
+        elements. <m>\overline{Q}</m> is called the <term>algebraic
+        closure</m> of <m>\QQ</m>. This term can be generalized to any
+        field: its algebraic closure is the field which contains all
+        elements which are algebraic over the field (and the sums of
+        all such elements). 
+      </p>
+    </statement>
+  </definition>
+</section>

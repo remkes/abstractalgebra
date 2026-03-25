@@ -65,7 +65,7 @@
     relating to the properties of the second binary operation in a
     ring. 
   </p>
-  <definition>
+  <definition xml:id="definition-rings-types">
     <statement>
       <p>
         Let <m>R</m> be a ring.
