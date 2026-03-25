@@ -1,0 +1,19 @@
+<section xml:id="section-finite-fields">
+  <title>Finite Fields</title>
+  <p>
+    I've left out one important definition for fields. I'll state it
+    now, as it serves as good introduction to finite fields.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>K</m> be a field. Let <m>p</m> be the smallest positive
+        integer such that <m>p1 = 0</m> in <m>K</m>, if it exists.
+        (That is, 1 added to itself <m>p</m> times is 0). This number
+        is called the <term>characteristic</term> of the field. If no
+        such number exists, the characteristic of the field is
+        infinity. 
+      </p>
+    </statement>
+  </definition>
+</section>

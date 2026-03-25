@@ -6,13 +6,13 @@
     these notes. Therefore, I'm not starting from scratch here. We
     already know a fair bit about fields: everything is invertible,
     there are no interesting ideals, we can make fraction fields from
-    domains, and so on. Field homomorphism are just ring
+    domains, and so on. Field homomorphisms are just ring
     homomorphisms, so we already know about homomorphisms as well. 
   </p>
   <p>
     I also can draw some conclusion based on what we already know. For
-    example, the fact that ideals are not interesting. Here are the
-    most important implications.
+    example, the fact that ideals are not interesting is quite useful.
+    Here are the most important implications.
   </p>
   <proposition>
     <statement>
@@ -97,10 +97,10 @@
     form lets me replace <m>\alpha^2</m> whenever I find it. 
   </p>
   <p>
-    All this leads into the discussion of vector space. In <xref
+    All this leads into the discussion of vector spaces. In <xref
     ref="definition-vector-space-informal"/>, I gave an informal
-    definition of a vector space. Now that we have a much of new
-    language, let me give a formal version now.
+    definition of a vector space. Now that we have the language of
+    abstract algebra, let me give a formal version.
   </p>
   <definition>
     <statement>
@@ -112,7 +112,7 @@
             <m>V</m> is an abelian group. 
           </li>
           <li>
-            For all <m>k \in K</m> and <n>v \in V</m>, there is an
+            For all <m>k \in K</m> and <m>v \in V</m>, there is an
             operation called scalar multiplication for which <m> kv
             \in V</m>. This operation has three properties. 
             <md>
@@ -135,7 +135,7 @@
     A vector space is an object of abstract algebra: it is an abelian
     group with scalar multiplication by a field. I left the
     <sq>scalars</sq> vague earlier, but here they are specific. The
-    scalar must belong to a field. From this definition, all of the
+    scalars must belong to a field. From this definition, all of the
     tools of linear algebra will apply: linear combinations,
     dimension, basis, linear transformations, linear subspaces, and so
     on. It just now happens over an arbitrary field. 
@@ -206,13 +206,13 @@
         the extension is equal to the degree of the polynomial. If the
         extension is infinite, then <m>\alpha</m> cannot be the root
         of any polynomial over <m>K</m>. Such an <m>\alpha</m> is
-        called a <term>transcendental element</term>
+        called a <term>transcendental element</term>.
       </p>
     </statement>
   </proposition>
   <p>
     This gives us a lot of information. Let me not prove but at least
-    explain the dimension. Again, consider <m>K[x]/langle p(x)
+    explain the dimension statement. Again, consider <m>K[x]/\langle p(x)
     \rangle</m>. As before, the form of elements is as follows, where
     <m>d</m> is the degree of the polynomial. 
     <me>
@@ -228,7 +228,7 @@
     perspective, here is a basis for the field <m>K(\alpha)</m> as a
     vector space. 
     <me>
-      \{1, \alpha, \alpha^2, \ldots, \alpha^{d-1} \{
+      \{1, \alpha, \alpha^2, \ldots, \alpha^{d-1} \}
     </me>
     There are <m>d</m> elements in this basis, again matching the
     degree <m>d</m> of the extension.
@@ -237,7 +237,7 @@
     What do the elements of a transcnendental extension look like?
     Well, let <m>K(\alpha)</m> be a transcendental extension. Since
     <m>\alpha</m> is not the root of any polynomial, no powers of it
-    can be replace. If <m>c \in K</m>, then I can consider element
+    can be replaced. If <m>c \in K</m>, then I can consider element
     like <m>c\alpha^i</m> for <m>i \in \ZZ</m> (including negative
     exponents). All of these are distinct. These form a basis for this
     infinite vector space. 
@@ -248,22 +248,22 @@
     </me>
     This is an infinite basis. I haven't talked about infinite vector
     spaces that must so far, but let me state one important notion
-    here: the basis might be infinite, but the element of the vector
+    here: the basis might be infinite, but the elements of the vector
     space are <em>finite</em> sums taken from this infinite basis.
-    Therefor, element of the transcendental extension look like this
+    Therefore, elements of the transcendental extension look like this
     example. 
     <me>
       c_{-7} \frac{1}{\alpha^7} + c_{-2} \frac{1}{\alpha^2} + c_0 +
       c_2 \alpha^2 + c_{105} \alpha^{105}
     </me>
-    However, infinite sums are not element of this vector space, not
+    However, infinite sums are not elements of this vector space, not
     even if they would otherwise converge. 
     <me>
       \sum_{n=0}^\infty c_n \alpha^n \notin K(\alpha) 
     </me>
   </p>
   <p>
-    Let me focus on extension of <m>\QQ</m> for some examples. 
+    Let me focus on extensions of <m>\QQ</m> for some examples. 
   </p>
   <example>
     <p>
@@ -296,13 +296,13 @@
   <example>
     <p>
       <m>\QQ(\pi)</m> is a transcendental infinite extension of
-      <m>\QQ</m>. Elements are finite sums or integer powers of
-      <m>\pi<m> with rational coefficient. 
+      <m>\QQ</m>. Elements are finite sums of integer powers of
+      <m>\pi</m> with rational coefficient. 
     </p>
   </example>
   <p>
     All of these field extensions sit between <m>\QQ</m> and
-    <m>\CC</m>. The study of field <m>K</m> such that <m>\QQ \subset K
+    <m>\CC</m>. The study of fields <m>K</m> such that <m>\QQ \subset K
     \subset \CC</m> is, in fact, a major piece of field theory in
     mathematics. Let me finish this section with two definitions. 
   </p>
@@ -323,7 +323,7 @@
         infinite extension of <m>\QQ</m>, but still a proper subset of
         <m>\CC</m>, since it does not contain any transcendental
         elements. <m>\overline{Q}</m> is called the <term>algebraic
-        closure</m> of <m>\QQ</m>. This term can be generalized to any
+        closure</term> of <m>\QQ</m>. This term can be generalized to any
         field: its algebraic closure is the field which contains all
         elements which are algebraic over the field (and the sums of
         all such elements). 
