@@ -19,13 +19,13 @@
       </statement>
     </definition>
     <p>
-      Characteristic is a very strange definition. It feels like a zero
-      divisor: an equation written <m>p1 = 0</m>, which doesn't make
-      much sense. Fields don't have zero divisors. But this isn't
-      actually a zero divisor: in a field of characteristic p, there is
-      no element <sq><m>q</m></sq>. This notation really does mean
-      adding 1 to itself <m>p</m> times, not multiplying by some other
-      element. 
+      Characteristic is a very strange definition. It feels like a
+      zero divisor: an equation written <m>p1 = 0</m>. This doesn't
+      seem to make much sense<mdash/>fields don't have zero divisors.
+      But this isn't actually a zero divisor. In a field of
+      characteristic p, there is actually no element
+      <sq><m>q</m></sq>. This notation really does mean adding 1 to
+      itself <m>p</m> times, not multiplying by some other element. 
     </p>
     <p>
       This is best illustrated by the most important example of a field
@@ -43,7 +43,7 @@
     </definition>
     <p>
       In <m>\FF_p</m>, it's explicitly true that <m> p = 0 \mod p</m>.
-      Therefore, the equation <m>p1=0</m> make sense. This is a field of
+      Therefore, the equation <m>p1=0</m> makes sense. This is a field of
       characteristic <m>p</m>. You can use this a more general sense
       of characterstic: a field of finite characteristic <m>p</m> has
       some version of arithmetic <sq>modulo <m>p</m></sq> in its
@@ -58,7 +58,7 @@
       <statement>
         <p>
           Let <m>K</m> be a field of characteristic <m>p</m>. Let
-          <m>a, b, \K</m>. Then the following equation is true.
+          <m>a, b, \in K</m>. Then the following equation is true.
           <me>
             (a + b)^p = a^p + b^p 
           </me>
@@ -76,7 +76,7 @@
           binomial coefficients.
           <me>
             {n \choose k} = \frac{n!}{k!(k-1)!}
-          <me>
+          </me>
           If the <m>n = p</m> in this coefficient is prime and
           <m>k</m> is neither <m>n</m> or <m>0</m>, then <m>p</m>
           divides the numerator but not the denominator, since all the
@@ -101,7 +101,7 @@
       <statement>
         <p>
           Let <m>K</m> be a field of characteristic <m>p</m>. Then the
-          <term>Forbenius endomorphism<term> is the homorphism
+          <term>Forbenius automorphism</term> is the homorphism
           <m>\phi: K \rightarrow K</m> defined as follows.
           <me>
             \phi(a) = a^p
@@ -124,23 +124,267 @@
       characteristic, let me state and prove one of the basic truths
       of field theory. 
     </p>
-    <proposition>
+    <proposition xml:id="prop-prime-field">
       <statement>
         <p>
           Let <m>K</m> be field. Then there exists a unique minimal
           subfield of <m>K</m> called the <term>prime subfield</term>. 
           <ul>
             <li>
-              
+              If <m>K</m> has characteristic <m>p</m>, then the prime
+              subfield is isomorphic to <m>\FF_p</m>. 
             </li>
             <li>
+              If <m>K</m> has characteristic <m>\infty</m>, then the
+              prime subfield is isomorphic to <m>\QQ</m>.
             </li>
           </ul>
         </p>
       </statement>
       <proof>
         <p>
+          There proof here is actually pretty simple. As a field,
+          <m>K</m> has a multiplicative identity, which I can write as
+          <m>1</m>. Then I can apply the field operations to this
+          elements: make all possible sums, products and quotients
+          just starting from one. I start with addition, since
+          products and quotients of <m>1</m> by itself don't introduce
+          anything new.
+          <me>
+            1, 1 + 1, 1 + 1 + 1, 1 + 1 + 1 + 1
+          </me>
+          If <m>K</m> has characteristic <m>p</m>, then this procees
+          stops after <m>p</m> steps. Then, if I apply multiplication
+          to these sums, what I get is precisely a copy of
+          <m>\FF_p</m>. This set is closed under multiplication,
+          addition, subtraction and division -- it is a subring. 
+        </p>
+        <p>
+          Otherwise, if <m>K</m> has characteristic <m>\infty</m>,
+          then this process never stops. It produces a copy og
+          <m>\NN</m> in the field. Applying subtraction to these
+          elements produces a copy of <m>\ZZ</m>, and applying
+          division produces a copy of <m>\QQ</m>. 
+        </p>
+        <p>
+          The fields I construct this way are minimal. Why? Well, I
+          only started with <m>1</m>, and <m>1</m> needs to be
+          included in any subfield. Since all I did was apply the
+          field operations to <m>1</m>, any subfield will also include
+          the subfield I have just constructed. This completes the
+          proof.
         </p>
       </proof>
     </proposition>
+    <p>
+      I've already said that the study of fields is, in many ways, the
+      study of field extensions. Now I can rephrase characterstic in
+      the language of fields extensions. There are two types of
+      smallest field: <m>\FF_p</m> and <m>\QQ</m>. Based on these
+      smallest fields, there are two types which all other fields all
+      into. 
+      <ul>
+        <li>
+          There are fields which are (up to isomorphism) extension of
+          <m>\FF_p</m>. These are the fields of characteristic
+          <m>p</m>.
+        </li>
+        <li>
+          There are fields which are (up to ismomorphism) extensions
+          of <m>\QQ</m>. These are the fields of characteristic
+          <m>\infty</m>.
+        </li>
+      </ul>
+    </p>
+    <p>
+      So, for finite fields, I have to start with <m>\FF_p</m> and look
+      at finite extensions. There are two important results on these
+      extensions. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          The cardinaly of any finite field is <m>p^d</m> for some
+          prime <m>p</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>K</m> be a finite field. Then <xref
+          ref="prop-prime-field"/> says that the minimal subfield of
+          <m>K</m> is <m>\FF_p</m> for some prime <m>p</m> (and
+          <m>K</m> must have characteristic <m>p</m> as well.) But
+          this means that <m>K</m> is a finite extension of
+          <m>\FF_p</m>. <xref ref="prop-field-extension-vector-space"/> 
+          tells me that <m>K</m> is a vector space of some dimension
+          <m>d</m> over <m>\FF_p</m>. That means it is isomorphism, as
+          a vector space, to the set of vectors of length <m>d</m>
+          over <m>\FF_p</m>. 
+        </p>
+        <p>
+          How many vectors are in such a vector space? There is a free
+          choice in each component, and <m>p</m> choices to choose
+          from. This means there are <m>p^d</m> vector. Since an
+          isomorphism is a bijection, I can conlucde that the
+          cardinality of <m>K</m> is <m>p^d</m>. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      So now I know the size of any finite field. However, I'd like to
+      actually have some more information about these finite field and
+      how to construct them. I need a definition here to state the
+      classification result. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>K</m> be a field and <m>p(x)</m> be an 
+          polynomial in <m>K[x]</m>. Then the <term>splitting
+          field</term> for <m>p(x)</m> is the smallest field extension
+          of <m>K</m> such that <m>p(x)</m> completely factors into
+          linear factors. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Splitting fields are tricky things to work with, involving a
+      fair bit of subtlety. (The whole field of Galois theory exists
+      to describe these fields and similar fields involving various
+      roots of polynomials.) The maximum degree of the extension of a
+      splitting field is <m>d!</m> where <m>d</m> is the degree of the
+      polynomial. But for most polynomials, the splitting field will
+      have an extension degree quite a bit smaller, and figuring it
+      out is trickly. 
+    </p>
+    <p>
+      That said, I can use splitting fields to give the classification
+      of all finite fields, which is the main goal of this section.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>F_{p^d}</m> be the splitting field of the polynomial
+          <m>x^{p^d} - x</m> over the base field <m>F_p</m>. Then
+          <m>|F_{p^d}| = p^d</m> and every other finite field is
+          isomorphic for one of these fields. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I can't give the whole proof here, since we haven't build
+          all of the necessarily technical tools to complete the
+          proof. However, I can use the language of prime subfields to
+          start the proof. The field <m>K</m> has a prime subfield
+          isomorphic to <m>\FF_p</m>. In the way, I can reconstruct
+          the polynomial <m>x^{p^d} - x</m> in <m>\FF_p[x]</m>. From
+          here, the proof uses other tools to argue that all of the
+          roots of this polynomial already exist in the field
+          <m>K</m>: in fact, <m>K</m> is exactly the list of roots:
+          there are exactly <m>p^d</m> distinct roots and they match
+          up precisely with the <m>p^d</m> elements of <m>K</m>. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      This gives a complete picture of finite fields: they are all
+      <m>\FF_{p^d}</m>. They are all collections of roots of some
+      polyonmial <m>x^{p^d} - x</m>. This is a pretty useful
+      description: it is concrete enough that it can be encoded into
+      data structures as vectors of numbers modulo <m>p</m> and the
+      field operations on those vectors is again reasonably
+      computable. As something that can be complete computed, finite
+      fields end up having many implications in computing science.
+      Notably, they are important in cryptography, where the
+      arithemtic of finite fields is used for a wide variety of
+      encryption schemes. 
+    </p>
+    <p>
+      The Frobenius automorphsim turns out be particularly important
+      in all of this arithmetic. In any <m>\FF_{p^d}</m>, the
+      Frobenius automorphism is a permutation of the finite field. The
+      prime subfield, <m>\FF_p</m>, is precisely the set of points
+      which are not moved (the fixed point) by the Frobenius map. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-infinite-finite-extensions">
+    <title>Ininite Extensions of Finite Fields</title>
+    <p>
+      I've stated a classification result for finite fields where
+      they all are finite extensions of a base field <m>\FF_p</m>.
+      But infinite extension of <m>\FF_p</m> are also possible. In
+      this brief section, I want to talk about this. 
+    </p>
+    <p>
+      First, like any field, I can always just create a new
+      transcendental element an attach it to the field. Let
+      <m>\alpha</m> be notation for a new element which is
+      transcendental over <m>\FF_p</m>. Then <m>\FF_p(\alpha)</m> is a
+      new infinite field of characteristic <m>p</m>. Elements of this
+      field are finite sums of powers of <m>\alpha</m>, both positive
+      and negative. The coefficients are integers modulo <m>p</m>. 
+    </p>
+    <p>
+      This arithmetic has some strangeness to is. Here is an example
+      calculation in this field assuming <m>p = 7</m>. 
+      <me>
+        (3\frac{1}{\alpha^2} + 5 + 4 \alpha^3) + 
+        (4\frac{1}{\alpha^3} + 2 + 3 \alpha^3) = 
+        4\frac{1}{\alpha^3} + 3 \frac{1}{\alpha^2} + 7 + 7 \alpha^3) = 
+        4\frac{1}{\alpha^3} + 3 \frac{1}{\alpha^2}
+      </me>
+      This is in characteristic <m>p</m>, so anything that adds to
+      <m>7</m> disappears due to multiplication by zero. Again, this
+      is not a problem to the field structure: everything still has a
+      multiplicative inverse, but some elements still add up to zero. 
+    </p>
+    <p>
+      I can also make polynomials over <m>\FF_p</m>: <m>\FF_p[x]</m>.
+      These are polynomials where the coefficients are integers modulo
+      <m>p</m>. This might be a bit strange, but it's mathematically
+      pretty reasonable to define. Addition and multiplication of
+      polynomials still works just fine with coefficients that use
+      modular arithmetic. 
+    </p>
+    <p>
+      <m>\FF_p[x]</m> is a ring, but it is a domain. Even with
+      reduction modulo <m>p</m>, I still don't get zero divisors.
+      Therefore, I can make a field of fractions. <m>\FF_p(x)</m> is
+      the field of rational functions with coefficients in
+      <m>\FF_p</m>. It's elements are ratios of polynomials, like all
+      fields of rational functions. 
+    </p>
+    <p>
+      This does again lead to some interesting arithmetic. Here is an
+      example in <m>\FF_2(x)</m>. 
+      <me>
+        \frac{x^3 + 1}{x} + \frac{x^7 + x^4 + 1}{x^5} = \frac{(x^4)(x^3 +
+        1)}{x^5} + \frac{x^7 + x^4 + 1}{x^5} = \frac{x^7 + x^4 + x^7
+        + x^4 + 1}{x^5} = \frac{1}{x^5}
+      </me>
+    </p>
+    <p>
+      There are yet other ways to build infinite fields with finite
+      characteristic. One very intersting fields is
+      <m>\overline{\FF}_p</m>: the algebraic closure of <m>\FF_p</m>.
+      There are infinitely many distinct irreducible polynomials over
+      <m>\FF_p</m>. We have already seens many of these: each
+      polynomail <m>x^{p^d}-x</m> leads to its splitting field
+      <m>\FF_{p^d}</m>. The polynomial <m>x^{p^d}-x</m> is not
+      irreducible, but it has unique irreducible factors for every
+      <m>d</m>. Indeed, for each <m>d</m> the algebraic closure
+      contains a copy of every splitting field.
+      <me>
+        \FF_{p^d} \subset \overline{\FF}_p
+      </me>
+      In fact, there is a lovely result describing this relationship.  
+      <me>
+        \bigcup_{d \in \NN} \FF_{p^d} =  \overline{\FF}_p
+      </me>
+      The algebraic closure is, in fact, exactly the infinite union of
+      all of these finite extensions. It's another infinite field of
+      finite characteristic, and one with a very interesting
+      structure. 
+    </p>
+  </subsection>
 </section>

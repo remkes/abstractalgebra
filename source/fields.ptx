@@ -3,4 +3,5 @@ xml:id="chapter-fields">
   <title>Fields</title>
   <xi:include href="fields-definition.ptx" />
   <xi:include href="finite-fields.ptx" />
+  <xi:include href="galois.ptx" />
 </chapter>

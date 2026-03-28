@@ -1,0 +1,137 @@
+<section xml:id="section-galois">
+  <title>Basic Ideas of Galois Theory</title>
+    <p>
+      In this last section of these notes, I want to give you just a
+      slimpse of some of the major directions in the theory of fields.
+      I'm going to start with Galois theory, which is a celebrated
+      piece of mathematics whose development is deeply embedded in the
+      whole history of abstract algebra. 
+    </p>
+    <p>
+      Galois theory is a theory of field extensions. I need a few
+      definitions to give an outline of the ideas that go into Galois
+      theory. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A field extension <m>K \rightarrow L</m> is called a
+          <term>normal extension</term> if it is the splitting field
+          of finitely many polynomials over <m>K</m>. Equivalently,
+          if a polynomial in <m>K[x]</m> has a root in <m>L</m>, then
+          it must factor completely into linear factors in
+          <m>L[x]</m>.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          Let <m>K</m> be a field. A polynomials <m>p(x) \in K[x]</m>
+          is called <term>separable</term> is it has no repeated roots
+          in any field extension of <m>K</m>. 
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          A field extension <m>K \rightarrow </m> is called a
+          <term>separable extension</term> if it isomorphic to
+          <m>K[x]/\langle p(x) \rangle</m> for <m>p(x)</m> an
+          irreducible separable polynomial.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          A isormophism from a field to itself is called an
+          <term>automorphism</term> of the field. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This is the setup. Basically, we are figuring out a nice set of
+      polynomials and finite extension that behaviour reasonable well.
+      We are particularly avoiding polynomials with repeated factors,
+      since extensions with repeated factors are a bit strange:
+      attaching one root is sufficient to factor the repeated factor.
+      The extra repeated factors don't really add much to the field
+      extension and confuse the technical details. 
+    </p>
+    <p>
+      Then here is the main definition.  
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A field extension <m>K \rightarrow L</m> is a <term>Galois
+          extension</term> if it the splitting field of a separable
+          polynomial. This is equivalent to it being both normal and
+          separable. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Alright, what is interesting about Galois extension? The
+      automorphisms are interesting. Galois theory is all about
+      understanding field extensions by their automorphisms. In a
+      Galois extension, various roots have been attached to the field:
+      all of roots of the separable polynomial. I can identify a set
+      of these new roots added to the field. 
+      <me>
+        \{\alpha_1, \alpha_2, \ldots, \alpha_n\}
+      </me>
+      The key idea of Galois theory is that the automorphisms of a
+      Galois extension <m>L</m> which preserve <m>K</m> are entirely
+      determined by permutations of this set of roots. This is encoded
+      as a group. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>K \rightarrow L</m> be a Galois extension. Then the
+          Galois group <m>\text{Gal}(L/K)</m> is the group of automorphism
+          of <m>L</m> which act trivially on <m>K</m>. It is a finite
+          group and can be realized as a subgroup of <m>S_n</m> by
+          consider the premutations of the roots of the separable
+          polynomial which defines the extension. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Galois theory takes something complicated and usually infinite
+      (a bunch of field extensions) and assigns a finite permutation
+      group to is (the Galois group). Then it proceeds to prove that
+      the Galois groups has all of the possible information about all
+      fields that sit between <m>K</m> and <m>L</m>. The complicated
+      structure of all these fields is reduced to the structure of one
+      finite group. 
+    </p>
+    <p>
+      Galois theory is famous for precisely this reasons: it's of the
+      earliest examples of a powerful reduction in complexity. There
+      is a clear, finite, calculatable and understandable entity which
+      completely classifying a much more complicated situation. You
+      want to understand these fields? All you need is the Galois
+      group. 
+    </p>
+    <p>
+      It's also a powerful relationship between field theory and group
+      theory. It changes problems in field theory to problems in group
+      theory in a way that doesn't lose any information. As such, it
+      is also the archetype of a common pattern in modern mathematics:
+      of uncovering deep and powerful connections between branches of
+      mathematics. There is a deep and important theory that proves
+      that all finite group actually show up as Galois groups of some
+      field extension. Therefore, you can do all of finite groups
+      theory in the context of field extensions if you wish, in
+      addition to studying any Galois extension via group theory. This
+      way of connecting disparate piece of mathematics eventually gets
+      encoded into the extremely abstract but amazing branch of
+      mathematics called Category Theory. Finite groups and field
+      extensions are both <sq>categories</sq> and Galois theory is a
+      perfect matching between these two categories. 
+    </p>
+</section>

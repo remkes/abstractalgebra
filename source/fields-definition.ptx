@@ -144,7 +144,7 @@
     Vector spaces help me understand field extensions. Here is an
     important proposition.
   </p>
-  <proposition>
+  <proposition xml:id="prop-field-extension-vector-space">
     <statement>
       <p>
         All field extensions are vector spaces over the smaller field. 
