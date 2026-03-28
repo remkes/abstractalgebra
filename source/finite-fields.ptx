@@ -1,19 +1,146 @@
 <section xml:id="section-finite-fields">
   <title>Finite Fields</title>
-  <p>
-    I've left out one important definition for fields. I'll state it
-    now, as it serves as good introduction to finite fields.
-  </p>
-  <definition>
-    <statement>
-      <p>
-        Let <m>K</m> be a field. Let <m>p</m> be the smallest positive
-        integer such that <m>p1 = 0</m> in <m>K</m>, if it exists.
-        (That is, 1 added to itself <m>p</m> times is 0). This number
-        is called the <term>characteristic</term> of the field. If no
-        such number exists, the characteristic of the field is
-        infinity. 
-      </p>
-    </statement>
-  </definition>
+  <subsection xml:id="subsection-characteristic">
+    <title>Characteristic of a Field</title>
+    <p>
+      I've left out one important definition for fields. I'll state it
+      now, as it serves as good introduction to finite fields.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>K</m> be a field. Let <m>p</m> be the smallest positive
+          integer such that <m>p1 = 0</m> in <m>K</m>, if it exists.
+          (That is, 1 added to itself <m>p</m> times is 0). This number
+          is called the <term>characteristic</term> of the field. If no
+          such number exists, the characteristic of the field is
+          infinity. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Characteristic is a very strange definition. It feels like a zero
+      divisor: an equation written <m>p1 = 0</m>, which doesn't make
+      much sense. Fields don't have zero divisors. But this isn't
+      actually a zero divisor: in a field of characteristic p, there is
+      no element <sq><m>q</m></sq>. This notation really does mean
+      adding 1 to itself <m>p</m> times, not multiplying by some other
+      element. 
+    </p>
+    <p>
+      This is best illustrated by the most important example of a field
+      of characteristic <m>p</m>. Here is a new definition of a very
+      familiar object. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>p</m> be a prime number. The field <m>\FF_p</m> is
+          the new notation for the familiar algebraic object
+          <m>\ZZ/p\ZZ</m> when considered as a field. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In <m>\FF_p</m>, it's explicitly true that <m> p = 0 \mod p</m>.
+      Therefore, the equation <m>p1=0</m> make sense. This is a field of
+      characteristic <m>p</m>. You can use this a more general sense
+      of characterstic: a field of finite characteristic <m>p</m> has
+      some version of arithmetic <sq>modulo <m>p</m></sq> in its
+      strucutre. Hopefully this makes the notion of characteristic
+      feel a bit less bizzare. 
+    </p>
+    <p>
+      Fields of finite characteristic have some interesting and useful
+      properties. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>K</m> be a field of characteristic <m>p</m>. Let
+          <m>a, b, \K</m>. Then the following equation is true.
+          <me>
+            (a + b)^p = a^p + b^p 
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          I can prove this with the binomial theorem. Let me expand
+          the binomial on the left. 
+          <me>
+            (a + b)^p = a^p + pa^{p-1}b + {p\choose 2} a^{p-2}b^2 +
+            \ldots + {p \choose p-2} a^2 b^{p-2} + p ab^{p-1} + b^p
+          </me>
+          Let me also remind you of the factorial description of the
+          binomial coefficients.
+          <me>
+            {n \choose k} = \frac{n!}{k!(k-1)!}
+          <me>
+          If the <m>n = p</m> in this coefficient is prime and
+          <m>k</m> is neither <m>n</m> or <m>0</m>, then <m>p</m>
+          divides the numerator but not the denominator, since all the
+          factors in the denominator are whole numbers strictly less
+          than the prime. Therefore, in the expansion I wrote earlier,
+          all of the middle binomial coefficients are multiples of
+          <m>p</m>. But in a field of characteristic <m>p</m>, <m>p =
+          0</m>. Therefore, all the middle binomial coefficients
+          disappear. 
+          <me>
+            (a + b)^p = a^p + 0 + 0 + \ldots + 0 + 0 + b^p
+          </me>
+          This completes the proof. 
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      I can use the previous proposition to make the following
+      definition.  
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>K</m> be a field of characteristic <m>p</m>. Then the
+          <term>Forbenius endomorphism<term> is the homorphism
+          <m>\phi: K \rightarrow K</m> defined as follows.
+          <me>
+            \phi(a) = a^p
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The Frobenius map is a field homomorphism because of the
+      property <m>(a + b)^p = a^p + b^p</m>: this property shows that
+      the function does, in fact, cooperate with addition. This is
+      obviously not true unless the field has precisely the right
+      characteristic. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-prime-subfields">
+    <title>Prime Subfields</title>
+    <p>
+      Having defined characteristic and some of implications of finite
+      characteristic, let me state and prove one of the basic truths
+      of field theory. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>K</m> be field. Then there exists a unique minimal
+          subfield of <m>K</m> called the <term>prime subfield</term>. 
+          <ul>
+            <li>
+              
+            </li>
+            <li>
+            </li>
+          </ul>
+        </p>
+      </statement>
+      <proof>
+        <p>
+        </p>
+      </proof>
+    </proposition>
 </section>
