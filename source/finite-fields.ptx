@@ -204,7 +204,7 @@
     <proposition>
       <statement>
         <p>
-          The cardinaly of any finite field is <m>p^d</m> for some
+          The cardinality of any finite field is <m>p^d</m> for some
           prime <m>p</m>.
         </p>
       </statement>
