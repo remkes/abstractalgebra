@@ -89,9 +89,9 @@
         Let <m>n \in \ZZ</m> be non-zero and not a unit. Then there
         exists a list of positive prime integers <m>p_1, p_2, \ldots
         p_k</m> and a unit <m>u</m> such that this equation holds.
-        <me>
+        <md>
           n = up_1p_2 \ldots p_k
-        </me>  
+        </md>  
         This list is called the <term>prime factors</term> of
         <m>n</m>. The primes in the list are not necessarily distinct;
         indeed, the number of times any prime shows up in the list
@@ -144,16 +144,16 @@
         Use the division algorithm to calculate the quotient and
         remainder <m>q_1</m> and <m>r_1</m>. That gives this
         equation
-        <me>
+        <md>
           a_1 = q_1 b_1 + r_1 
-        </me>
+        </md>
       </p>
       <p>
         Then set <m>a_2 = b_1</m> and <m>b_2 = r_1</m>. Then
         repeat, calculating <m>q_2</m> and <m>r_2</m>. 
-        <me>
+        <md>
           a_2 = q_2 b_2 + r_2 
-        </me>
+        </md>
       </p>
       <p>
         Then keep repeating. Each time this repeats, the next
@@ -166,9 +166,9 @@
         \lt b_{i-1}</m>.  The sequence of <m>b_i</m> is a sequence of
         positive decreasing numbers. It eventually must reach  0. If the
         last step has index <m>k</m>, it looks like this:
-        <me>
+        <md>
           a_k = q_k b_k + 0 
-        </me>
+        </md>
         From this, you can prove that <m>b_k</m> is actually the
         greatest common disivor. Just iterating the division algorith
         accomplishes this fact. 
@@ -187,9 +187,9 @@
         <m>n</m>, then we say that <m>a</m> and <m>b</m> are
         <term>congruence modulo </term> <m>n</m>. This is written as
         follows. 
-        <me>
+        <md>
           a \equiv b \mod n
-        </me>
+        </md>
       </p>
     </statement>
   </definition>
@@ -201,9 +201,9 @@
     equivalence classes. Since elements in each equivalence class
     differ by multiples of <m>n</m>, I can write these classes as
     follows.
-    <me>
+    <md>
       \{ \bar{0}, \bar{1}, \bar{2}, \ldots, \overline{n-1} \}
-    </me>
+    </md>
   </p>
   <definition xml:id="definition-integers-mod">
     <statement>

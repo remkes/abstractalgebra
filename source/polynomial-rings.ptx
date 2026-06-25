@@ -202,9 +202,9 @@
       <p>
         Similar, the polynomial <m>x^4 - 2</m>, as a real polynomial,
         would factor as follows. 
-        <me>
+        <md>
           x^4 - 2 = (x - \sqrt[4]{2})(x + \sqrt[4]{2}) (x^2 + \sqrt{2})
-        </me>
+        </md>
         This factorization cannot be done in <m>\QQ</m>, so this is,
         again, an irreducible polynomial over <m>\QQ</m>. This shows
         <m>\QQ[x]</m>, unlike <m>\RR[x]</m> can have irreducibe
@@ -222,9 +222,9 @@
         <p>
           Let <m>p(x) \in \ZZ[x]</m> be a polynomial. I'll write its
           expansion with terms and coefficients. 
-          <me>
+          <md>
             p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
-          </me>
+          </md>
           If the greatest common divisor of all the <m>p_i</m> is 1,
           then the polynomial is called <term>primitive</term>. 
         </p>
@@ -261,17 +261,17 @@
           assume it is not irreducible in <m>\QQ[x]</m>. That means
           there are rational non-constant polynomails <m>q(x)</m> and
           <m>r(x)</m> such that this factorization is true. 
-          <me>
+          <md>
             p(x) = q(x) r(x)
-          </me>
+          </md>
           Now let <m>a</m> be the lcm of the denominators of the
           coefficients of <m>q(x)</m>, and likewise <m>b</m> for
           <m>r(x)</m>. This means <m>aq(x)</m> and <m>br(x)</m> are
           integral polynomials, since I have cleared all denominators.
           Then I can rewrite the equation.
-          <me>
+          <md>
             ab p(x) = (aq(x)) (br(x))
-          </me>
+          </md>
           It looks like I am almost done this proof, since all the
           polynomials here are integral. There is a subtlety here,
           which I'm going to skip in this proof, about common factors
@@ -281,9 +281,9 @@
           The subtlety allows me to say that, since <m>p(x)</m> is
           primitive, the product <m>ab</m> must actually be <m>\pm
           1</m>, and I can divide by it. 
-          <me>
+          <md>
             p(x) = \pm 1(aq(x)) (br(x))
-          </me>
+          </md>
           The result is a decomposition in <m>\ZZ[x]</m>. This
           contradicts the irreducibility of <m>p(x)</m> in the
           integers.  By contradiction, I conclude that irreducibility
@@ -304,9 +304,9 @@
       <statement>
         <p>
           Let <m>p(x) \in \ZZ[x]</m>. 
-          <me>
+          <md>
             p(x) = p_0 + p_1 x + p_2 x^2 + \ldots + p_d x^d
-          </me>
+          </md>
           I've written <m>p(x)</m> in its expansion with <m>p_d \neq
           0</m>. I'll also assume <m>p_0 \neq 0</m> (since otherwise
           <m>x</m> is a factor and the polynomial is immediately
@@ -401,9 +401,9 @@
           in the quotient whose product is zero. Elements in the
           quotient are cosets of the ideal, so I can write this fact
           as the following equation. 
-          <me>
+          <md>
             (r(x) + I) (s(x) + I) = (r(x)s(x)) + I = 0 + I = I 
-          </me>
+          </md>
           But <m>(r(x)s(x)) + I = I</m> is only true if <m>r(x)s(x)
           \in I</m>.  This means that <m>r(x)s(x)</m> is a multiple of
           the irreducible polynomial: <m>r(x)s(x) = q(x)p(x)</m>. But
@@ -432,36 +432,36 @@
     <example>
       <p>
         Consider this quotient.
-        <me>
+        <md>
           \ZZ[x]/\langle x^2 + 1 \rangle
-        </me>
+        </md>
         The polynomial <m>x^2 + 1</m> is irreducible since it is of
         degree 2 and has no integer roots. This is a new domain. What
         is the structure of this ring? We'll, I can write an element
         as a coset. 
-        <me>
+        <md>
           p(x) + \langle x^2 + 1 \rangle
-        </me>
+        </md>
         Now, I can adjust the representative of the coset by adding
         any element of the idea. Take this coset. 
-        <me>
+        <md>
           (x^5 + 3x^2 - x - 4)  + \langle x^2 + 1 \rangle
-        </me>
+        </md>
         The element <m>x^3(x^2 + 1) = x^5 + x^3</m> is in the ideal, so
         I can subtract that from the representative. 
-        <me>
+        <md>
           (-x^3 + 3x^2 - x - 4)  + \langle x^2 + 1 \rangle
-        </me>
+        </md>
         Then <m>-x(x^2 + 1) = -x^3 - x </m> is in the ideal, so it can
         also be subtracted from the representative. 
-        <me>
+        <md>
           (3x^2 - 4)  + \langle x^2 + 1 \rangle
-        </me>
+        </md>
         Finally, <m>3(x^2 + 1) = 3x^2 + 3</m> is in the ideal, so it
         can also be subtracted. 
-        <me>
+        <md>
           -7  + \langle x^2 + 1 \rangle
-        </me>
+        </md>
         I have reduced the representative to a constant. Using this
         same method, I can reduce any representative to either a
         constant or a linear polynomial. Moreover, any such
@@ -473,15 +473,15 @@
         Therefore, I can think of this quotient ring as the elements
         <m>a + bx</m>. The addition is usual, but what is the
         multiplication? If I multiply two such elements, I get this.
-        <me>
+        <md>
           (a + bx)(c + dx) = ac + (ad + bc)x + bdx^2 
-        </me>
+        </md>
         But I can reduce this by subtracting the ideal element
         <m>bd(x^2 + 1)</m>. 
-        <me>
+        <md>
           (a + bx)(c + dx) = ac + (ad + bc)x + bdx^2 - bdx^2 - bd =
           (ac - bd) + (ad + bc)x
-        </me>
+        </md>
         This is a well-defined multiplication, and it is the
         multiplication on the quotient ring. 
       </p>
@@ -518,16 +518,16 @@
       <statement>
         <p>
           Consider an irreducible polynomial written as follows.
-          <me>
+          <md>
             x^d - p(x)
-          </me>
+          </md>
           where <m>p(x)</m> is a polynomial of degree less than
           <m>d</m>. Then the quotient ring <m>\ZZ[x]/\langle x^d -
           p(x) \rangle</m> can be expressed as the following set. 
-          <me>
+          <md>
             \left\{ a_0 + a_1 x + a_2 x^2 + \ldots + a_{d-1}x^{d-1} |
             a_i \in \ZZ \right\}
-          </me>
+          </md>
           The addition in this set is normal component-wise addition.
           The multiplication is given by distribution where <m>x^d</m>
           is replaced by <m>p(x)</m> as often as necessary to make an
@@ -546,16 +546,16 @@
     <example>
       <p>
         The quotient ring 
-        <me>
+        <md>
           \ZZ[x] / \langle x^2 - 2 \rangle 
-        </me>
+        </md>
         is the ring <m>\ZZ[\sqrt{2}]</m> I get by attaching a square
         root of 2 to the integers. It's elements have the form <m>(a +
         b \sqrt{2})</m>. The multiplication is calculated this way.
-        <me>
+        <md>
           (a + b\sqrt{2}) (c + d\sqrt{2}) = ac + (ad + bc) \sqrt{2} +
           bd\sqrt{2}^2 = (ac + 2bd) + (ad + bc) \sqrt{2} 
-        </me>
+        </md>
       </p>
     </example>
     <example>
@@ -563,9 +563,9 @@
         I can repeat this construction for any other similar roots.
         Let <m>n \in \NN</m> be any number which is not a perfect
         square. Then the quotient ring 
-        <me>
+        <md>
           \ZZ[x] / \langle x^2 - n \rangle 
-        </me>
+        </md>
         is the ring <m>\ZZ[\sqrt{n}]</m>. Again, it has elements of
         the form <m>(a + b\sqrt{n})</m>. (I have to assume that the
         number is not a perfect square; if it were a perfect square,
@@ -587,15 +587,15 @@
           <ul>
             <li>
               If <m>D \equiv 2,3,4 \mod 4</m>, then 
-              <me>
+              <md>
                 \calO_D = \ZZ[\sqrt{D}]
-              </me>
+              </md>
             </li>
             <li>
               If <m>D \equiv 1\mod 4</m>, then 
-              <me>
+              <md>
                 \calO_D = \ZZ\left[\frac{1 + \sqrt{D}}{2} \right]
-              </me>
+              </md>
             </li>
           </ul>
         </p>
@@ -617,13 +617,13 @@
         <m>\zeta_n</m> is conventional for a root of one of these two
         irreducible (over the integers) polynomials. If <m>n</m> is
         odd, this is the polynomial.
-        <me>
+        <md>
           x^{n-1} + x^{n-2} + \ldots + x^2 + x + 1
-        </me>
+        </md>
         If <m>n</m> is even, this is the polynomial. 
-        <me>
+        <md>
           x^{n-2} - x^{n-3} + x^{n-4} - x^{n-5} +  \ldots + x^2 - x + 1
-        </me>
+        </md>
         These numbers <m>\zeta_n</m> are called <m>n</m>th <term>roots of
         unity</term>. The term comes from the fact that they are also
         roots of the polynomial <m>x^n - 1</m>, so that satisfy <m>x^n
@@ -631,15 +631,15 @@
         roots of <sq>unity</sq>, which is just the number one. But
         <m>x^n - 1</m> is not irreducible: it factors. For odd
         <m>n</m>, it factors this way. 
-        <me>
+        <md>
           x^n - 1 = (x-1)(x^{n-1} + x^{n-2} + \ldots + x^2 + x + 1)
-        </me>
+        </md>
         For even <m>n</m>, one more factor can be taken out of the
         polynomial. 
-        <me>
+        <md>
           x^n - 1 = (x-1)(x+1)(x^{n-2} - x^{n-3} + x^{n-4} - x^{n-5}+
           \ldots + x^2 - x + 1)
-        </me>
+        </md>
         In either case, the remaining polynomial is irreducible
         over the integers. 
       </p>
@@ -652,16 +652,16 @@
       <p> 
         The polynomial <m>x^7 + 9x^5 - 15x^2 + 93</m> is irreducible by
         Eisenstein's criterion. Therefore, the quotient ring 
-        <me>
+        <md>
           \ZZ[x] / \langle x^7 + 9x^5 - 12x^2 + 93 \rangle 
-        </me>
+        </md>
         is the ring <m>\ZZ[\alpha]</m> I get by attaching some symbol
         <m>\alpha</m> which is a root of this polynomial. The elements
         of the ring are sums of the form 
-        <me>
+        <md>
           a_0 + a_1 \alpha + a_2 \alpha^2 + a_3 \alpha^3 + a_4
           \alpha^4 + a_5 \alpha^5 + a_6 \alpha^6
-        </me>
+        </md>
         and in the multiplication, any instance of <m>\alpha^7</m> is
         replace by <m>(-9\alpha^5 + 12\alpha^2 - 93)</m>. I don't know
         much about this root and the new ring I have made without
@@ -677,9 +677,9 @@
         <m>\ZZ[\sqrt{2}, \sqrt{3}]</m>: the integers with square roots
         of both two and three attached. Elements of this ring are sum
         of the following form. 
-        <me>
+        <md>
           a + b\sqrt{2} + c \sqrt{3} + d \sqrt{6} 
-        </me>
+        </md>
         I need the <m>\sqrt{6}</m> terms to make this work, since I
         can't get back to an integer unless either <m>\sqrt{2}</m> or
         <m>\sqrt{3}</m> is squared. Their product needs to be in the

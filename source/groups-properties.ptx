@@ -30,9 +30,9 @@
         multiplication by either has no effect: this is the definition
         of an identity. This observation allows me to write the
         following equation.
-        <me>
+        <md>
           e = ef = f 
-        </me>
+        </md>
           The first equality recognizes that multiplication by
           <m>f</m> has no effect, and the second equality recognizes
           that multiplication by <m>e</m> has no effect. Together, the
@@ -54,9 +54,9 @@
         definition, this means that multiplying <m>g</m> by either
         element (in either order) produces the identity. Using this
         fact, I can write the following equation. 
-        <me>
+        <md>
           h = h \Id = h(gk) = (hg)k = \Id k = k 
-        </me>
+        </md>
         I'm using the assumption of the proof (that both of these are
         inverses). I'm also using the associativity of the binary
         operation in the middle step. I conclude that the two inverses
@@ -82,14 +82,14 @@
       <p>
         The cancellation law holds in groups. Specifically, consider
         this equation of elements of some group. 
-        <me>
+        <md>
           gh = gk
-        </me>
+        </md>
         Then I can cancel <m>g</m> and conclude that <m>h = k</m>. The
         same is true for the following equation.
-        <me>
+        <md>
           hg = kg
-        </me>
+        </md>
       </p>
     </statement>
     <proof>
@@ -122,14 +122,14 @@
     cancellation only works if the cancelled element is on the same
     side of both products. Consider this equation of elements of some
     group. 
-    <me>
+    <md>
       gh = kg
-    </me>
+    </md>
     In general, this <m>g</m> cannot be cancelled. For an example,
     consider this equation in <m>D_4</m>.
-    <me>
+    <md>
       F_3 R_3 = R_1 F_3 
-    </me>
+    </md>
     From <xref ref="example-d4"/>, I can check that both
     of these product are equal to <m>F_4</m>. However, if I could
     cancel <m>F_3</m>, I would produce the false equality <m>R_3 =
@@ -144,14 +144,14 @@
         Let <m>g,h \in G</m> and let <m>x</m> be a variable that
         stands for an unknown element of the same group. Then the
         equation
-        <me>
+        <md>
           gx = h
-        </me>
+        </md>
         always has a unique solution in the group <m>G</m>. Likewise,
         the equation 
-        <me>
+        <md>
           xg = h
-        </me>
+        </md>
         also has a unique solution. 
       </p>
     </statement>
@@ -192,9 +192,9 @@
         This proposition say that the inverse of <m>g^{-1}</m> is g. I
         alreay know that the inverse of <m>g</m> is <m>g^{-1}</m>,
         which, by definition, means the following. 
-        <me>
+        <md>
          g g^{-1} = g^{-1}g = \Id 
-        </me>
+        </md>
         However, the same equation reinterpreted means exactly that
         <m>g</m> is the inverse of <m>g^{-1}</m>, which proves the
         claim. 
@@ -215,13 +215,13 @@
         multiplication by the potential inverse, on both sides,
         produces the identity. I'll first do multiplication on the
         left. 
-        <me>
+        <md>
           h^{-1}g^{-1}gh = h^{-1}\Id h = h^{-1}h = \Id 
-        </me>
+        </md>
         Similarly, I can do multiplication on the right.
-        <me>
+        <md>
           ghh^{-1}g^{-1} = g \Id g^{-1} = gg^{-1} = \Id 
-        </me>
+        </md>
         In both equations, I have used the fact that the inverses of
         <m>g</m> and <m>h</m> produce the identity. Both equations
         together justify the proposition. 
@@ -250,9 +250,9 @@
         </md>
         In addition, if <m>G</m> is an abelian group, the following
         equation is true. 
-        <me>
+        <md>
           (gh)^n = g^n h^n 
-        </me>
+        </md>
       </p>
     </statement>
     <proof>
@@ -264,14 +264,14 @@
       <p>
         For the third equation, I can expand the left side as <m>n</m>
         iterated multiplications. 
-        <me>
+        <md>
           (gh)(gh)(gh) \ldots (gh)
-        </me>
+        </md>
         If <m>G</m> is abelian, then I can rearrange this product,
         grouping all the <m>g</m>`s together at the start. 
-        <me>
+        <md>
           (gh)(gh)(gh) \ldots (gh) = g^nh^h
-        </me>
+        </md>
         The abelian assumption is important: in general, this exponent
         law is not true for non-abelian groups. 
       </p>
@@ -369,9 +369,9 @@
         I need to prove the three properties of an equivalent
         relation. Let me start with reflexive: elements need to be
         conjugate to themselves. Consider this equation.
-        <me>
+        <md>
           h = h\Id = h(hh^{-1}) = hhh^{-1}
-        </me>
+        </md>
         This equations shows that <m>h</m> is conjugate to itself (via
         conjugation by <m>h</m>), so reflexivity is proved. 
       </p>
@@ -380,9 +380,9 @@
         to also prove that <m>k</m> is conjugate to <m>h</m>. The
         assumption here means that there exists <m>g</m> such that
         this equation holds. 
-        <me>
+        <md>
           h = gkg^{-1}
-        </me>
+        </md>
         Now I'll multiply by <m>g</m> on the right and by
         <m>g^{-1}</m> on the left and simplify. 
         <md>
@@ -414,15 +414,15 @@
         </md>
         Then I replace <m>k</m> in the first equation with its
         expression from the second. 
-        <me>
+        <md>
           h = g_1(g_2 l g_2^{-1}) g_1^{-1} = g_1 g_2 l g_2^{-1}
           g_1^{-1} 
-        </me>
+        </md>
         Then I use <xref ref="proposition-inverse-product"/>, which I
         can apply to the last two elements of this equation.
-        <me>
+        <md>
           h = g_1 g_2 l (g_1g_2)^{-1} 
-        </me>
+        </md>
         This prove that <m>h</m> is conjugate to <m>l</m>, via
         conjugation of <m>l</m> by the group element <m>(g_1g_2)</m>. 
       </p>
@@ -456,13 +456,13 @@
       this so? Well, assume that some other <m>h</m> is conjugate to
       the identity. That would mean the following equation holds for
       some other group element <m>g</m>.
-      <me>
+      <md>
         h = g\Id g^{-1}
-      </me>
+      </md>
       But I can simplify this. 
-      <me>
+      <md>
         h = g\Id g^{-1} = gg^{-1} = \Id 
-      </me>
+      </md>
       This means <m>h</m> is also the identity, so only the identity
       is conjugate to the identity. 
     </p>
@@ -470,13 +470,13 @@
   <example xml:id="example-d4-conjugacy-classes">
     <p>
       The conjugacy classes of <m>D_4</m> are the following sets.
-      <me>
+      <md>
         \{\Id\}, \quad 
         \{R_1, R_3\}, \quad 
         \{R_2\}, \quad 
         \{F_1, F_3\}, \quad 
         \{F_2, F_4\}
-      </me>
+      </md>
       Feel free to verify this: doing so consists of a lot of
       calculations, either directly or by using the Caley table. For
       example, taking all the conjugates of <m>R_1</m> (that is,
@@ -558,18 +558,18 @@
         be a smaller number <m>c</m> such that <m>(ghg^{-1})^c =
         \Id</m>? We'll, let me use <m>c</m> and repeat the first three
         steps of the previous calculation to get this equation.
-        <me>
+        <md>
           \Id = (ghg^{-1})^c = g h^c g^{-1} 
-        </me>
+        </md>
         Then I can multiply by <m>g</m> on the left and <m>g^{-1}</m>
         on the right. 
-        <me>
+        <md>
           g^{-1} \Id  g = g^{-1} g h^c g^{-1} g 
-        </me>
+        </md>
         After cancelling, I get this. 
-        <me>
+        <md>
           \Id = h^c 
-        </me>
+        </md>
         If <m>c \lt d</m>, this contradicts that <m>d</m> is the order
         of <m>h</m>, which cannot be true. (This is, yet again,
         another mini-use of proof by contradiction.) Therefore,
@@ -614,9 +614,9 @@
       <p>
         The <sq>more specifically</sq> is, indeed, the way to to prove
         the general proposition. Consider the conjugation in question.
-        <me>
+        <md>
           g (a_1 a_2 \ldots a_k) g^{-1}
-        </me>
+        </md>
         I'm going to specifically determing what this product does, as
         a permutation, to each element of <m>\{1, 2, 3, \ldots n\}</m>
         I work in two cases.
@@ -648,9 +648,9 @@
         So what have I done here? Only the elements <m>g(a_i)</m> show
         up, and they are sent one step down the index. This is exactly
         a new cycle: 
-        <me>
+        <md>
           (g(a_1) g(a_2) \ldots g(a_k)) 
-        </me>
+        </md>
         I conclude that the conjugate of the cycle is just another
         cycle of length <m>k</m>. I even know how to calculate
         this new cycle, using the argument of this proof. 
@@ -692,23 +692,23 @@
       <p>
         I start with a permutation that is a product of disjoint cycles
         <m>c_i</m>. 
-        <me>
+        <md>
           \sigma = c_1 c_2 \ldots c_k
-        </me>
+        </md>
         Then I apply conjugation by any permutation <m>g</m>.
-        <me>
+        <md>
           g \sigma g^{-1} = g c_1 c_2 \ldots c_k g^{-1} 
-        </me>
+        </md>
         Then, since <m>g^{-1}g = \Id</m>, I can squeeze that
         expression betweeen any two cycles without changing anything. 
-        <me>
+        <md>
           g \sigma g^{-1} = g c_1 g^{-1} g c_2 g^{-1} \ldots g c_k g^{-1} 
-        </me>
+        </md>
         Then I can change the grouping by associativity. 
-        <me>
+        <md>
           g \sigma g^{-1} = (g c_1 g^{-1}) (g c_2 g^{-1}) \ldots (g
           c_k g^{-1} )
-        </me>
+        </md>
         Now the right side is a bunch of conjugations of cycles. Using
         <xref ref="proposition-conjugate-cycles"/>, the result of
         these conjugations is another product of cycles, all of which

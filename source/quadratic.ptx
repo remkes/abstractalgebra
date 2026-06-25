@@ -20,7 +20,7 @@
       Any norms that don't show up on this list are not possible to
       produce. 
     </p>
-    <me>
+    <md>
       \begin{array}{c| c c c c c c c }
         \text{Norm} \amp \text{Element} \amp \text{Factorizable?} \\
         \hline
@@ -44,16 +44,16 @@
          34 \amp \pm 4 + \pm 2\sqrt{-5} \amp 
           4 + 2 \sqrt{-5} = 2 \cdot (2 + \sqrt{-5})  
       \end{array}
-    </me>
+    </md>
     <p>
       This doesn't look unreasonable so far. If you continue, you
       might assume that things work out just as nicely as the Gaussian
       integers. However, now consider the number <m>6</m> in this
       ring. Obviously, <m>6</m> is composite: <m>6 = 2\cdot 3</m>.
       However, in this ring, the following is also true. 
-      <me>
+      <md>
         6 = (1 + \sqrt{-5})(1 - \sqrt{-5}) 
-      </me>
+      </md>
       So this is another way to factor <m>6</m>. From the list above,
       all of <m>2</m>, <m>3</m>, <m>1 + \sqrt{-5}</m> and <m>1 -
       \sqrt{-5}</m> are elements which have no other non-unit factors.
@@ -66,16 +66,16 @@
       factorization ring. But there is yet more going on. Let me go
       back to some of the elements in the table. Consider this
       calculation.
-      <me>
+      <md>
         3 = 9 - 6 = (3)(3) - (1 + \sqrt{-5})(1 - \sqrt{-5})
-      </me>
+      </md>
       Since any multiple of <m>3</m> can be made a multiple of the
       right side, this calclution shows that the idea <m>\langle 3
       \rangle</m> is contained in the product idea.
-      <me>
+      <md>
         \langle 3 \rangle \subset (\langle 3, 1 + \sqrt{-5} \rangle)
         (\langle 3, 1 - \sqrt{-5} \rangle) 
-      </me>
+      </md>
       But let me thing about this product ideal. It is the sum of
       elements of the first ideal multiplied by elements of the second
       ideas. Using the generators, this means that everything in the
@@ -87,10 +87,10 @@
       divisible by <m>3</m>. Therefore, the reverse inclusion is also
       true: anything in the product idea is also a multiple of
       <m>3</m>. I have now shown equality. 
-      <me>
+      <md>
         \langle 3 \rangle = (\langle 3, 1 + \sqrt{-5} \rangle)
         (\langle 3, 1 - \sqrt{-5} \rangle) 
-      </me>
+      </md>
     </p>
     <p>
       What does this mean? Well, it means that <m>\langle 3
@@ -135,9 +135,9 @@
           <m>\calO_D</m> is a unique factorization domain only for
           these values of <m>D</m> (which are called the Heegner
           numbers).
-          <me>
+          <md>
             D \in \{-1, -2, -3, -7, -11, -19, -43, -67, -163\}
-          </me>
+          </md>
         </p>
       </statement>
     </theorem>
@@ -160,30 +160,30 @@
       thing that has norm 1. <m>\pm 1</m> hasnorm <m>1</m>, but it is
       possible there are other units. A unit would be something <m>a +
       b \sqrt{10}</m> that satisfies this equation.
-      <me>
+      <md>
         a^2 - 10b^2 = \pm1 
-      </me>
+      </md>
       These numbers exist. If you look for positive solution, the
       first you might find is <m>19 + 6 \sqrt{10}</m>. You can even
       check explicitly that this number has an inverse. 
-      <me>
+      <md>
         (19 + 6 \sqrt{10})(19 - 6 \sqrt{10}) = 361 - 360 = 1
-      </me>
+      </md>
       If you looked for the negative solution, you'd find one even
       faster: <m>3 + \sqrt{10}</m>. Again, you can check this inverse
       explicitly. 
-      <me>
+      <md>
         (3 + \sqrt{10})(3 - \sqrt{10}) = 9 - 10 = -1
-      </me>
+      </md>
       Then you would have to wonder how many more such unit exists?
       And, fairly immediately, there is a problem. Any positive whole
       exponent of this first unit is also a unit: <m>(19 + 6
       \sqrt{10})^2</m> is a unit, <m>(19 6 \sqrt{10})^3</m> is a unit,
       and so on. There are infinitely many units! You'd also discover
       something else.
-      <me>
+      <md>
         (3 + \sqrt{10})^2 = 9 + 6 \sqrt{10}
-      </me>
+      </md>
       The second unit we found was actually aready an exponent of the
       first. 
     </p>
@@ -205,11 +205,11 @@
             </li>
             <li>
               If <m>D = -3</m>, there are six units:
-              <me>
+              <md>
                 \left\{  1, -1, \frac{1 + \sqrt{-3}}{2} \frac{1 -
                 \sqrt{-3}}{2} \frac{-1 + \sqrt{-3}}{2} \frac{-1 -
                 \sqrt{-3}}{2} \right\}
-              </me>
+              </md>
             </li>
             <li>
               For other <m>D \lt 0</m>, the only units are
@@ -259,10 +259,10 @@
           If <m>D \geq 2</m>, then <m>\calO_D</m> is a principal ideal
           domain (and hence a unique factorization domain) if <m>D</m>
           is on this list of numbers. 
-          <me>
+          <md>
             2, 3, 5, 6, 7, 11, 13, 14, 17, 19, 21, 22, 23, 29, 31, 33,
             37, 38, \ldots
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>

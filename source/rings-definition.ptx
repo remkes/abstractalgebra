@@ -160,9 +160,9 @@
       I defined the quaternions, <m>Q</m>, in <xref
       ref="definition-quaternions"/>. Using the quaternions, I can make
       the <term>real Hamiltonian quaternion ring</term> as follows. 
-      <me>
+      <md>
         \HH = \{a + bi + cj + dk | a,b,c,d \in \RR\}
-      </me> 
+      </md> 
       The addition is component-wise, very much like with polynomials. 
       <md>
         <mrow>
@@ -289,18 +289,18 @@
         <ul>
           <li>
             Here is a calculation.
-            <me>
+            <md>
               0 + 0a = 0a = (0 + 0)a = 0a + 0a 
-            </me>
+            </md>
             By cancelation (which I know I can do in the abelian
             group), I can conclude <m>0 = 0a</m>, finishing this part
             of the proof. 
           </li>
           <li>
             Again, here is a calculation.
-            <me>
+            <md>
               (-a)b + ab = (-a + a)b = 0 b = 0 
-            </me>
+            </md>
             This proves that <m>(-a)b</m> is the additive inverse to
             <m>ab</m>, which means it must equal <m>-(ab)</m>. A
             similar calcluation works for <m>a(-b)</m><mdash/>please
@@ -308,17 +308,17 @@
           </li>
           <li>
             I can use the previous result twice. 
-            <me>
+            <md>
               (-a)(-b) = -(a)(-b) = -(-(ab)) = ab
-            </me>
+            </md>
             This last step is true since, in any group, taking an
             inverse twice returns the original element. 
           </li>
           <li>
             Again, I can calculate. 
-            <me>
+            <md>
               (-1)(a) + a = (-1) a + (1) a = (-1 + 1)a = 0a = 0 
-            </me>
+            </md>
             This show that <m>(-1)(a)</m> is the additive inverse to
             <m>a</m>, so <m>(-1)(a) = - a</m>. 
           </li>
@@ -346,9 +346,9 @@
         multiplicative inverse, assume that <m>0=1</m>. Then let
         <m>a \in R</m> be any ring element. I can make this very short
         calculation.
-        <me>
+        <md>
           a = 1a = 0a = 0 
-        </me>
+        </md>
         This calculate shows that all the ring elements are equal to
         0. Therefore, the ring must only be <m>\{0\}</m>. 
       </p>
@@ -509,9 +509,9 @@
             Multiplicative cancellation only works with units. That
             is, if <m>c</m> is a unit, then the following implication
             is true. 
-            <me>
+            <md>
               ac = bc \implies a = b 
-            </me>
+            </md>
             A similar statement is true for multiplication on the
             left. In a group, cancellation was always possible. Now I
             have to be careful and only cancel when the cancelled

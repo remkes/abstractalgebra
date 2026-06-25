@@ -43,10 +43,10 @@
     new one. Let <m>f</m> be a function and let <m>a</m> be a point in
     its domain. Then the function is continuous at <m>a</m> if the
     following is true. 
-    <me>
+    <md>
       \lim_{x \rightarrow a} f(x) = f \left( \lim_{x \rightarrow a} x
       \right)
-    </me>
+    </md>
     A function is continuous if it cooperates with limits, if it
     preserves limits. The important operation here, the limit, can be
     done either before or after the function.
@@ -63,9 +63,9 @@
         beteween them. Then <m>\phi</m> is a <term>homomorphism</term>
         if, for all <m>g_1, g_2 \in G</m>, the following equation
         holds.
-        <me>
+        <md>
           \phi(g_1g_2) = \phi(g_1) \phi(g_2)
-        </me>
+        </md>
       </p>
     </statement>
   </definition>
@@ -88,9 +88,9 @@
       <m>\RR^n</m> and <m>\RR^m</m> are groups
       under addition. A matrix, acting as a linear transformation,
       satisfies this equation.
-      <me>
+      <md>
         M(u+v) = M(u) + M(v)
-      </me>
+      </md>
       This is precisely the definition of a homomorphism between these
       two groups.
     </p>
@@ -102,9 +102,9 @@
       that two negative signs cancel and that <m>-0 = 0</m>). Let me
       verify the condition; to that end, let <m>n</m> and <m>m</m> be
       integers.  
-      <me>
+      <md>
         \phi(n+m) = -(n+m) = (-n) + (-m) = \phi(n) + \phi(m) 
-      </me>
+      </md>
       Here, the fact that a negative sign distributes (or,
       equivalently, multiplying by <m>-1</m> distributes) proves that
       this function is a homomorphism. 
@@ -115,9 +115,9 @@
       The function <m>\phi: \QQ^* \rightarrow \QQ^*</m> defined by
       <m>\phi(r) = r^2</m> is a homomorphism. Again, I will verify the
       required identity. Let <m>r, s, \in \QQ^*</m>.
-      <me>
+      <md>
         \phi (rs) = (rs)^2 = r^2 s^2 = \phi(r) \phi(s) 
-      </me>
+      </md>
       This time, the rules of exponents prove that this is a homomorphism. 
     </p>
   </example>
@@ -127,9 +127,9 @@
       homomorphism. This one is more interesting: the domain is a
       group under addition and the codomain is a group under
       multiplciation. Let me verify the required identity.
-      <me>
+      <md>
         e^{(x+y)} = e^x e^y
-      </me>
+      </md>
       There's not much to actually do here: this equation is a law of
       exponent. This law of exponents gives me exactly what I need:
       addition before and multiplication after. The function
@@ -150,9 +150,9 @@
       group homomorphism (<m>\ln: (0, \infty) \rightarrow \RR</m>) from
       a multiplicative group to an addative group. Again, I verify the
       required equation.
-      <me>
+      <md>
         \ln(ab) = \ln a + \ln b 
-      </me>
+      </md>
       Again, there isn't much to do here: the equation I need is
       already just a law of logarithms. It's multiplication before and
       addition afterwards. 
@@ -165,9 +165,9 @@
       coefficients) to the group of non-zero real numbers under
       multiplication. Why is this true?  Well, here is one of the
       rules of determinants, where <m>M</m> and <m>N</m> are matrices.
-      <me>
+      <md>
         \det(MN) = \det(M)\det(N)
-      </me>
+      </md>
       This rule is precisely what is needed for the definition. On the
       left, I have matrix multiplication. On the right I have the
       ordinary real number multiplication of the two determinants. 
@@ -188,9 +188,9 @@
       polynomials under addition to the group of real number under
       addition. Let me verify the required equation, using <m>p</m>
       and <m>q</m> as two polynomials. 
-      <me>
+      <md>
         f_a(p + q) = (p + q)(a) = p(a) + q(a) = f_a(p) + f_a(q)
-      </me>
+      </md>
       What does this mean? Well, if I add two polynomials and
       evaluate, the result is the same as evaluting and adding them.
       This is certainly true for polynomials, making the evaluation
@@ -210,9 +210,9 @@
       sends every integer to its class modulo n. The equation I want
       is essentially the following statement, where the bar indicated
       reduction modulo n. 
-      <me>
+      <md>
         \overline{a+b} = \overline{a} + \overline{b}
-      </me>
+      </md>
       This is true of the integers, basically due to the simple fact
       that arithmetic works modulo n. 
     </p>
@@ -261,9 +261,9 @@
       <m>\frac{d}{dx}: C^1(\RR) \rightarrow C(\RR)</m> is a
       homomorphism to the set of continuous function on <m>\RR</m>.
       Why? Well, I have the linearity of the derivative.
-      <me>
+      <md>
         \frac{d}{dx} (f + g) = \frac{df}{dx} + \frac{dg}{dx} 
-      </me>
+      </md>
       This derivative rule is exactly the rule needed to show that
       this is a homomorphism between two groups that use addition as
       the binary operation. 
@@ -287,9 +287,9 @@
         </mrow>
       </md>
       Then I have the linearity rule for the integral. 
-      <me>
+      <md>
         \int f(x) + g(x) dx = \int f(x) dx + \int g(x) dx 
-      </me>
+      </md>
       Again, this rule precisely shows that <m>\phi</m> is a
       homomorphism. 
     </p>
@@ -345,17 +345,17 @@
       <p>
         Let <m>e_g</m> be the identity of <m>G</m>, let <m>e_h</m> be
         the identity of <m>H</m>. Then consider this calculation.
-        <me>
+        <md>
           e_h \phi(e_g) = \phi(e_g) = \phi(e_g e_g) = \phi(e_g)
           \phi(e_g) 
-        </me>
+        </md>
         The first equality is the definition of the identity in
         <m>H</m>, the second equality is the definition of the
         identity in <m>G</m>, and the third is the group homomorphism
         property. Then I can apply cancellation on the right. 
-        <me>
+        <md>
           e_h = \phi(e_g)
-        </me>
+        </md>
         This completes the proof. 
       </p>
     </proof>
@@ -371,13 +371,13 @@
     <proof>
       <p>
         Consider this calculation.
-        <me>
+        <md>
           \phi(g^{-1}) \phi (g) = \phi(gg^{-1}) = \phi(e_g) = e_h
-        </me>
+        </md>
         I can repeat this calculation in the opposite order.
-        <me>
+        <md>
           \phi(g) \phi(g^{-1}) = \phi(g^{-1}g) = \phi(e_g) = e_h
-        </me>
+        </md>
         These two calculations are the definition of an inverse
         element: <m>\phi(g^{-1})</m> is the inverse of
         <m>\phi(g)</m> in the group <m>H</m>. This observation proves
@@ -416,15 +416,15 @@
         ref="proposition-identity-to-identity"/> that the identity is
         sent to the identity, so <m>e_g</m> is in the kernel. Then if
         <m>g_1, g_2</m> are both in the kernel, I can calculate
-        <me>
+        <md>
           \phi(g_1 g_2) = \phi(g_1) \phi(g_2) = e_h e_h =e_h 
-        </me> 
+        </md> 
         showing that the product is also in the kernel.
         Finally, if <m>g</m> is in the kernel, then using <xref
         ref="proposition-homomorphism-inverse"/>, I can calculate
-        <me>
+        <md>
           \phi(g^{-1}) = \left( \phi(g) \right)^{-1} = e_h^{-1} = e_h 
-        </me>
+        </md>
         showing that the inverse is also in the kernel. This proves
         that the kernel is a group. 
       </p>
@@ -434,15 +434,15 @@
         If <m>h_1, h_2</m> are in the image, then there exist <m>g_1,
         g_2</m> such that <m>\phi(g_1) = h_2</m> and <m>\phi(g_2) =
         h_2</m>. Then I can calculate
-        <me>
+        <md>
           h_1h_2 = \phi(g_1) \phi(g_2) = \phi(g_1 g_2)
-        </me>
+        </md>
         showing that the product is in the image. Finally, using <xref
         ref="proposition-homomorphism-inverse"/> I can also
         calculate
-        <me>
+        <md>
           h_1^{-1} = \left( \phi(g_1) \right)^1 = \phi(g_1^{-1})
-        </me>
+        </md>
         showing that inverses are also in the image. I conclude that
         the image is a subgroup. 
       </p>
@@ -474,21 +474,21 @@
         proof, assume that <m>\phi(g_1) = \phi(g_2)</m>. I can do the
         following calculation, using the homomorphism property and
         <xref ref="proposition-homomorphism-inverse"/>. 
-        <me>
+        <md>
           \phi(g_1g_2^{-1}) = \phi(g_1) \left(\phi(g_2) \right)^{-1} =
           \phi(g_2) \left( \phi(g_2) \right)^{-1} = e_h
-        </me>
+        </md>
         The kernel is only <m>e_g</m>, by assumption. The calculation
         shows an element which is sent to <m>e_h</m>, so that element
         is in the kernel, meaning that the element must be the
         identity of <m>G</m>. 
-        <me>
+        <md>
           g_1 g_2^{-1} = e_g 
-        </me>
+        </md>
         and by multiplying on the right by <m>g_2</m>, I conclude
-        <me>
+        <md>
           g_1 = g_2
-        </me>
+        </md>
         This shows that the function is injective, completing the
         second implication of the if-and-only-if proof. 
       </p>

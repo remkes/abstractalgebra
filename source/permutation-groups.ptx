@@ -45,12 +45,12 @@
       some more succint standard notations. The first is Cauchy's
       notation. Here is a permutation in <m>S_7</m>. (Lower case greek
       letters are pretty common for permutations.) 
-      <me>
+      <md>
         \sigma = \begin{pmatrix} 
           1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \\
           2 \amp 7 \amp 1 \amp 4 \amp 6 \amp 5 \amp 3 
         \end{pmatrix} 
-      </me>
+      </md>
       This is the permutation that sends 1 to 2, 2 to 7, 3 to 1, 4 to
       itself, 5 to 6, 6 to 5 and 7 to 3. (Feel free to check that this
       is, indeed, bijective.) To speak generally, in Cauchy's
@@ -66,9 +66,9 @@
       loop of length 2: 5 and 6 switch with each other. These loops
       are called cycles and written as ordered lists between
       paratheses. Here is the cycle notation for this permutation.
-      <me>
+      <md>
         (1273)(4)(56)
-      </me>
+      </md>
       
       A fixed point is its own cycle, so just a single number in its
       own brackets, like <m>(4)</m>. (Often, fixed points just ommited
@@ -86,18 +86,18 @@
     <example>
       <p>
         The identity can be write in cycle notation as follows. 
-        <me>
+        <md>
           \Id = (1)(2)(3)(4)(5)(6)(7)
-        </me>
+        </md>
         Again, usually fixed points are not written at all, and the
         symbol <m>\Id</m> is used for the identity. 
       </p>
       <p>
         Consider the permutation that fixes 1, 3 and 7; switches 4 and
         6; and switches 2 and 5. It has this cycle representation.
-        <me>
+        <md>
           \sigma = (25)(46) 
-        </me>
+        </md>
         I am now ommiting the fixed points: since they don't show up in
         the cycle representation, 1, 3 and 7 all don't change, which is
         understood by their absence here. 
@@ -105,9 +105,9 @@
       <p>
         Finally, consider the permutation that increases each number
         by one, and loops around for 7. It is described by this cycle. 
-        <me>
+        <md>
           \sigma = (1234567)
-        </me>
+        </md>
       </p>
     </example>
     <example>
@@ -120,9 +120,9 @@
         right-most permutation happens first. Let's say that <m>\sigma =
         (15)(263)</m> and <m>\tau = (234)(57)</m>. Then I want to
         calculate this product.
-        <me>
+        <md>
           \sigma \tau = (15)(263)(234)(57)
-        </me>
+        </md>
         How do I do this? We'll, I'll work step by step. 
         <ul>
           <li>
@@ -167,16 +167,16 @@
         I have a cycle <m>(157)</m>. 2 is fixed, so it doesn't show up.
         3 goes to 4, 4 to 6, and 6 to 3, so I have a cycle <m>(346)</m>.
         That's everything. here is the result. 
-        <me>
+        <md>
           \sigma \tau = (15)(263)(234)(57) = (157)(346) 
-        </me>
+        </md>
       </p>
       <p> 
         I could also calculate the reverse composition, <m>\tau
         \sigma</m>.
-        <me>
+        <md>
           \tau \sigma = (234)(57)(15)(263) 
-        </me>
+        </md>
         Let me run through the pieces, with a little less commentary this
         time. 
         <ul>
@@ -206,9 +206,9 @@
         and then 5 to 1, so I have a cycle (175). 2 goes to 6, 6 to 4,
         and then 4 to 2, so I have a cycle (264). 3 is fixed. Putting
         these cycles together gives me the composition. 
-        <me>
+        <md>
           \tau \sigma = (234)(57)(15)(263) = (175)(264) 
-        </me>
+        </md>
       </p>
       <p>
         I see, in this process, that <m>\tau \sigma \neq \sigma
@@ -380,42 +380,42 @@
         <p>
           So let <m>(a_1 a_2 \ldots a_k)</m> be a cycle. I claim that
           this equation is true. 
-          <me>
+          <md>
             (a_1 a_2 \ldots a_k) = (a_1 a_k) (a_1 a_{k-1} ) \ldots
             (a_1 a_2) 
-          </me>
+          </md>
           I'll prove this by induction on <m>k</m>. 
         </p>
         <p>
           The first step is the base case, which in this proof is
           <m>k=2</m>. For <m>k=2</m>, the equation I want to prove
           simply states 
-          <me>
+          <md>
             (a_1 a_2) = (a_1 a_2) 
-          </me>
+          </md>
           This two sides are exactly the same, so this is true. 
         </p>
         <p>
           Then I make the induction assumption. I assume this
           statement is true:
-          <me>
+          <md>
             (a_1 a_2 \ldots a_k) = (a_1 a_k) (a_1 a_{k-1} ) \ldots
             (a_1 a_2) 
-          </me>
+          </md>
           Then I want to prove the statement for <m>k+1</m>. I'll
           start with the right side of the previous equation.
-          <me>
+          <md>
             (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
-          </me>
+          </md>
           Then I multiply by <m>(a_1 a_{k+1})</m> on the left. 
-          <me>
+          <md>
             (a_1 a_{k+1}) (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
-          </me>
+          </md>
           Then I use the induction assumption, replacing all but the
           first cycle with the left side of the assumption equation. 
-          <me>
+          <md>
             = (a_1 a_{k+1}) (a_1 a_2 \ldots a_k) 
-          </me>
+          </md>
           Then I need to analyze this cycle as I did in the example
           previously. 
           <ul>
@@ -452,10 +452,10 @@
           </ul>
           This list of actions is simply the cycle <m>(a_1 a_2 \ldots
           a_{k+1})</m>. Therefore, I can conclude that 
-          <me>
+          <md>
             (a_1 a_{k+1}) (a_1 a_k) (a_1 a_{k-1} ) \ldots (a_1 a_2) 
             = (a_1 a_2 \ldots a_{k+1})
-          </me>
+          </md>
           This is the induction step completed. I conclude, by
           induction, that the proposition holds for all <m>k \geq
           2</m>. This means that every cycle can be decomposed into
@@ -503,9 +503,9 @@
         <p>
           Assume the identity permutation in <m>S_n</m> is written as
           a product of transpositions.
-          <me>
+          <md>
             \Id = \tau_1 \tau_2 \ldots \tau_k
-          </me>
+          </md>
           Then <m>k</m> must be an even number 
         </p>
       </statement>
@@ -526,9 +526,9 @@
         </p>
         <p>
           Now I take the induction assumption. I assume if 
-          <me>
+          <md>
             \Id = \tau_1 \tau_2 \ldots \tau_l
-          </me>
+          </md>
           for any <m>l \leq k</m>, then <m>l</m> must be even. To
           finish the induction, I need to prove that this is true for
           <m>l \leq k+1</m>.
@@ -557,9 +557,9 @@
         <p>
           In Case 1, since these two transposition are the same, they
           cancel each other out in the product. I can then write:
-          <me>
+          <md>
             \Id = \tau_1 \tau_2 \ldots \tau_{l-2}
-          </me>
+          </md>
           The induction assumption now applies to this shorter
           product, so <m>l-2</m> must be even, implying that <m>l</m>
           is even as well. 
@@ -625,9 +625,9 @@
           loop and never reach two identical transposition? Well, if I
           do that, I will reach the left-most transposition. I'll have
           an equation like this. 
-          <me>
+          <md>
             \Id = (ab)  \tau_2 \ldots \tau_{l}
-          </me>
+          </md>
           I will also know that the letter <m>a</m> doesn't show up in
           any of the other transpositions: the loop moves <m>a</m> to
           the left, leaving transpositions without <m>a</m> behind at
@@ -660,10 +660,10 @@
         <p>
           Suppose that there are two ways to write the same
           permutation as a product of cycles. 
-          <me>
+          <md>
             \sigma_1 \sigma_2 \ldots \sigma_m = \tau_1 \tau_2 \ldots
             \tau_n
-          </me>
+          </md>
           I have to prove that <m>m</m> and <m>n</m> have the same
           parity: both are even or both are odd. 
         </p>
@@ -674,10 +674,10 @@
           can invert the left side of the previous equation, which
           then can act as the inverse of the right side. Multiplying
           by an inverse produced the identity. 
-          <me>
+          <md>
             \Id = \sigma_m \sigma_{m-1} \ldots \sigma_2 \sigma_1
             \tau_1 \tau_2 \ldots \tau_n
-          </me>
+          </md>
           Then I can use <xref ref="lemma-identity-cycles"/>. The left
           side is the identity, so the lemma says that this product on
           the right must contain an even number of transposition. That

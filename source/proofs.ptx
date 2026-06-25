@@ -103,9 +103,9 @@
       <statement>
         <p>
           The following statement is true for all <m>n \in \NN</m>. 
-          <me>
+          <md>
             \sum_{i=1}^n i = \frac{n(n+1)}{2} 
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>

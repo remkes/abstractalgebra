@@ -41,18 +41,18 @@
       <p>
         The proof works by actually constructing the field. As a set,
         I define <m>F</m> in two steps. First I define a set <m>A</m>.
-        <me>
+        <md>
           A = \left\{ \frac{a}{b} | a,b \in R \text{ and } b \neq 0
           \right\}
-        </me>
+        </md>
         This the set of fractions formed from the elements of the
         ring, with zero explicitly excluded from the denominator. But
         fractions are not enough: I know from the rational numbers
         that different fractions can represent the same numbers.
         Therefore, I define an equivalence relation on this set. 
-        <me>
+        <md>
           \frac{a}{b} \sim \frac{c}{d} \iff ad = bc
-        </me>
+        </md>
       </p>
       <p>
         I need to prove that this is an equivalence relation, so I go
@@ -72,24 +72,24 @@
         \frac{c}{d}</m> and <m>\frac{c}{d} \sim \frac{e}{f}</m>. This
         means that I know two equations: <m>ad = bc</m> and <m>cf =
         de</m>. Then consider this expression.
-        <me>
+        <md>
           adf
-        </me>
+        </md>
         In this expression, I can use the first equation to replace
         <m>ad</m>. 
-        <me>
+        <md>
           adf = bcf
-        </me>
+        </md>
         Similarly, I can use the second equation to replace <m>cf</m>.
-        <me>
+        <md>
           adf = bcf = bde
-        </me>
+        </md>
         Now I have <m>d</m> in the first and third expressions. Since
         this is a domain (there are no zero divisors), cancellation is
         valid even though <m>d</m> may not be a unit. 
-        <me>
+        <md>
           adf = bde \implies af = be 
-        </me>
+        </md>
         This is precisely the expression that proves <m>\frac{a}{b} \sim
         \frac{e}{f}</m>. I have satisfied all three properties, so
         this is an equivalent relation.
@@ -105,10 +105,10 @@
       <p>
         The ring operations defined on <m>F</m> are as the normal
         addition and multiplication of fractions. 
-        <me>
+        <md>
           \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \hspace{1cm} 
           \frac{a}{b} \frac{c}{d} = \frac{ac}{bd} 
-        </me>
+        </md>
         I'll leave it to you to verify that these are well-defined on
         equivalence classes<mdash/>the proofs here are basically a
         review of grade-school fractions and the fact that they work
@@ -132,9 +132,9 @@
       <p>
         Next, the injective homomorphism: <m>i: R \rightarrow F</m>.
         Here is the definition.
-        <me>
+        <md>
           i(r) = \frac{r}{1}
-        </me>
+        </md>
         I'll leave it to you to verify the homomorphism
         properties, which are again just ordinary fraction arithmetic.
         To determine injectivitiy, I calculate the kernel. Assume that
@@ -150,10 +150,10 @@
         field such that there is an injective homomorphism <m>\phi: R
         \rightarrow G</m>. I can then define a homomorphism <m>\psi: F
         \rightarrow G</m> as follows.
-        <me>
+        <md>
           \psi \left( \frac{a}{b} \right) = \phi(a) \left( \phi(b)
           \right)^{-1}
-        </me>
+        </md>
         Again, I'll leave it to you to verify the homomorphism
         properties and the fact that this is well-defined on
         equivalence classes. I want to know the kernel of this map.
@@ -251,9 +251,9 @@
       Let <m>F</m> be a field. Then <m>F[[x]]</m> is the notation for
       the ring of formal power series over <m>F</m>. An element of
       this series is a power series (centred at zero). 
-      <me>
+      <md>
         \sum_{n=0}^\infty a_i x^i
-      </me>
+      </md>
       In this sum, all the coefficients <m>a_i</m> are in the base
       field. In this power series, I simply don't care about
       convergence (which might not even be defined, depending on the
@@ -270,9 +270,9 @@
       <m>F((x))</m>: the ring of formal Laurent series. What is a
       Laurent series? Well, it's a power series where I also have
       negative exponents. 
-      <me>
+      <md>
         \sum_{n=-\infty}^\infty a_i x^i
-      </me>
+      </md>
       Again, I don't care about convergence, nor I do care about
       domains if I were to consider this as a function on the field. I
       just care about the patterns and, on that level, this works. 

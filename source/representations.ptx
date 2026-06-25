@@ -27,15 +27,15 @@
             <li>
               If <m>g,h \in G</m> and <m>s \in S</m>, the the
               operation on the set satisfies this equation..
-              <me>
+              <md>
                 (gh)s = g(hs)
-              </me>
+              </md>
             </li>
             <li>
               The identity element in <m>G</m>, <m>e</m>, satisfies
-              <me>
+              <md>
                 es = s
-              </me>
+              </md>
               for all <m>s \in S</m>
             </li>
           </ul>
@@ -220,9 +220,9 @@
           defined almost tautologically as follows. Let <m>g, h \in
           G</m>, thinking of <m>g</m> as the group element acting and
           thinking of <m>h</m> as the set element being acted upon. 
-          <me>
+          <md>
             gh \defeq gh 
-          </me>
+          </md>
           This is obviously a bit silly. The notation of the left
           means the action of <m>g</m> on the set element <m>h</m>.
           The notation on the left means the product in the group

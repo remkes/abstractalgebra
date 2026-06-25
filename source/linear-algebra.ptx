@@ -65,26 +65,26 @@
             Likewise, the linear combination of any finite set of
             vector <m>\{u_i | i \in I\}</m> is any vector of this
             form.
-            <me>
+            <md>
               \sum_{i \in I} a_i u_i 
-            </me>
+            </md>
           </li>
           <li>
             The <term>span</term> of a finite set of vectors is the
             set of all linear combinations of those vectors. If
             <m>u_i, i \in I</m> is a finite set of vectors, the span
             is written
-            <me>
+            <md>
               \Span \{ u_i | i \in I \} 
-            </me>
+            </md>
           </li>
           <li>
             A set of vectors <m>\{u_i | i \in I\}</m> is called
             <term>linearly independent</term> if the only solution
             to the equation
-            <me>
+            <md>
               \sum_{i \in I} a_i u_i = 0 
-            </me>
+            </md>
             is the trivial solution where <m>\forall i \in I, a_i =
             0</m>. A set which is not linearly independent is called
             <term>linearly dependent</term>. 

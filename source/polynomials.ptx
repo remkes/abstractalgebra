@@ -13,9 +13,9 @@
             Often, the best way to write a general polynomial is using
             sigma notation. Let <m>c_i</m> be numbers, with <m>c_d
             \neq 0</m>. Then this is a polynomial:
-            <me>
+            <md>
               p(x) = \sum_{i=1}^d c_i x^i
-            </me>
+            </md>
             The numbers <m>c_i</m> are the <term>coefficients</term>
             of the polynomial; the expressions <m>c_i x^i</m> are the
             <term>terms</term> of the polynomial; the number
@@ -93,10 +93,10 @@
         into linear factors. That is, there exist complex numbers
         <m>\alpha_i</m>, not necessarily distinct, such that this
         equation holds. 
-        <me>
+        <md>
           p(x) = (x-\alpha_1)(x-\alpha_2)(x - \alpha_3) \ldots (x -
           \alpha_d)
-        </me>
+        </md>
       </p>
     </statement>
   </theorem>
@@ -151,14 +151,14 @@
       <p>
         Let <m>p(x)</m> be a polymial, which I can write in sigma
         notaton. 
-        <me>
+        <md>
           p(x) = \sum_{i=0}^d c_i x^i
-        </me>
+        </md>
         The derivative of the polynomial is written <m>p^\prime(x)</m>
         and defined to be this polynomial. 
-        <me>
+        <md>
           p^\prime(x) = \sum_{i=1}^d i c_i x^{i-1}
-        </me>
+        </md>
       </p>
     </statement>
   </definition>

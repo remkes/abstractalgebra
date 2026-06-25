@@ -59,24 +59,24 @@
         <p>
           Let <m>K</m> be a field of characteristic <m>p</m>. Let
           <m>a, b, \in K</m>. Then the following equation is true.
-          <me>
+          <md>
             (a + b)^p = a^p + b^p 
-          </me>
+          </md>
         </p>
       </statement>
       <proof>
         <p>
           I can prove this with the binomial theorem. Let me expand
           the binomial on the left. 
-          <me>
+          <md>
             (a + b)^p = a^p + pa^{p-1}b + {p\choose 2} a^{p-2}b^2 +
             \ldots + {p \choose p-2} a^2 b^{p-2} + p ab^{p-1} + b^p
-          </me>
+          </md>
           Let me also remind you of the factorial description of the
           binomial coefficients.
-          <me>
+          <md>
             {n \choose k} = \frac{n!}{k!(k-1)!}
-          </me>
+          </md>
           If the <m>n = p</m> in this coefficient is prime and
           <m>k</m> is neither <m>n</m> or <m>0</m>, then <m>p</m>
           divides the numerator but not the denominator, since all the
@@ -86,9 +86,9 @@
           <m>p</m>. But in a field of characteristic <m>p</m>, <m>p =
           0</m>. Therefore, all the middle binomial coefficients
           disappear. 
-          <me>
+          <md>
             (a + b)^p = a^p + 0 + 0 + \ldots + 0 + 0 + b^p
-          </me>
+          </md>
           This completes the proof. 
         </p>
       </proof>
@@ -103,9 +103,9 @@
           Let <m>K</m> be a field of characteristic <m>p</m>. Then the
           <term>Forbenius automorphism</term> is the homorphism
           <m>\phi: K \rightarrow K</m> defined as follows.
-          <me>
+          <md>
             \phi(a) = a^p
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -150,9 +150,9 @@
           just starting from one. I start with addition, since
           products and quotients of <m>1</m> by itself don't introduce
           anything new.
-          <me>
+          <md>
             1, 1 + 1, 1 + 1 + 1, 1 + 1 + 1 + 1
-          </me>
+          </md>
           If <m>K</m> has characteristic <m>p</m>, then this procees
           stops after <m>p</m> steps. Then, if I apply multiplication
           to these sums, what I get is precisely a copy of
@@ -327,12 +327,12 @@
     <p>
       This arithmetic has some strangeness to is. Here is an example
       calculation in this field assuming <m>p = 7</m>. 
-      <me>
+      <md>
         (3\frac{1}{\alpha^2} + 5 + 4 \alpha^3) + 
         (4\frac{1}{\alpha^3} + 2 + 3 \alpha^3) = 
         4\frac{1}{\alpha^3} + 3 \frac{1}{\alpha^2} + 7 + 7 \alpha^3) = 
         4\frac{1}{\alpha^3} + 3 \frac{1}{\alpha^2}
-      </me>
+      </md>
       This is in characteristic <m>p</m>, so anything that adds to
       <m>7</m> disappears due to multiplication by zero. Again, this
       is not a problem to the field structure: everything still has a
@@ -357,11 +357,11 @@
     <p>
       This does again lead to some interesting arithmetic. Here is an
       example in <m>\FF_2(x)</m>. 
-      <me>
+      <md>
         \frac{x^3 + 1}{x} + \frac{x^7 + x^4 + 1}{x^5} = \frac{(x^4)(x^3 +
         1)}{x^5} + \frac{x^7 + x^4 + 1}{x^5} = \frac{x^7 + x^4 + x^7
         + x^4 + 1}{x^5} = \frac{1}{x^5}
-      </me>
+      </md>
     </p>
     <p>
       There are yet other ways to build infinite fields with finite
@@ -374,13 +374,13 @@
       irreducible, but it has unique irreducible factors for every
       <m>d</m>. Indeed, for each <m>d</m> the algebraic closure
       contains a copy of every splitting field.
-      <me>
+      <md>
         \FF_{p^d} \subset \overline{\FF}_p
-      </me>
+      </md>
       In fact, there is a lovely result describing this relationship.  
-      <me>
+      <md>
         \bigcup_{d \in \NN} \FF_{p^d} =  \overline{\FF}_p
-      </me>
+      </md>
       The algebraic closure is, in fact, exactly the infinite union of
       all of these finite extensions. It's another infinite field of
       finite characteristic, and one with a very interesting

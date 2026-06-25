@@ -80,9 +80,9 @@
       Galois extension, various roots have been attached to the field:
       all of roots of the separable polynomial. I can identify a set
       of these new roots added to the field. 
-      <me>
+      <md>
         \{\alpha_1, \alpha_2, \ldots, \alpha_n\}
-      </me>
+      </md>
       The key idea of Galois theory is that the automorphisms of a
       Galois extension <m>L</m> which preserve <m>K</m> are entirely
       determined by permutations of this set of roots. This is encoded

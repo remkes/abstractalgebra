@@ -18,13 +18,13 @@
       </p>
       <p>
         Sets can be defined explicitly as a list of elements.
-        <me>
+        <md>
           A = \{a_1, a_2, \ldots, a_n\}
-        </me>
+        </md>
         Sets can also be defined by a property. 
-        <me>
+        <md>
           A = \{a | a \text{ satisfies } \calP \} 
-        </me>
+        </md>
       </p>
     </statement>
   </definition>
@@ -127,15 +127,15 @@
         The <term>cartesian product</term> of two sets <m>A</m> amd
         <m>B</m> is written <m>A \times B</m>. It is the set of
         ordered pairs:
-        <me>
+        <md>
           A \times B \defeq \{(a,b) | a \in A, b \in B\}
-        </me>
+        </md>
         The cartesian product can be iterated to produce longer
         ordered lists. 
-        <me>
+        <md>
           A \times B \times C \defeq \{(a,b,c) | a \in A, b \in B, c
           \in C\}
-        </me>
+        </md>
         The cartesian product of a set with itself is writen with an
         exponent: <m>A \times A = A^2</m>, and likewise for
         iterations: <m>A^n</m>. The familiar notations for Euclidean

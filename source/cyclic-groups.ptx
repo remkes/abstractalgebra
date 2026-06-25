@@ -142,9 +142,9 @@
         Then, for any two groups elements, the can be written as
         <m>g = a^k</m> and <m>h = a^l</m> for some integers <m>k</m>
         and <m>l</m>. Then I can make this calculation.
-        <me>
+        <md>
           gh = a^k a^l = a^{k+l} = a^{l+k} = a^la^k = hg 
-        </me>
+        </md>
         This is a valid calculation because the integerchange of the
         sum is happening in the integers, where I know addition is
         commutative. The calculation shows that <m>G</m> is

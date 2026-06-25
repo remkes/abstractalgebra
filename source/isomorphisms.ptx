@@ -52,14 +52,14 @@
       <p>
         Consider the function <m>D_4 \rightarrow S_4</m> defined
         explicilty by this table. 
-        <me>
+        <md>
           \begin{array}{c|cccccccc}
             g \amp \Id \amp R_1 \amp R_2 \amp R_3 
               \amp F_1 \amp F_2 \amp F_3 \amp F_4 \\
             \phi(g) \amp \Id \amp (1234) \amp (13)(24) \amp (1432) 
               \amp (24) \amp (12)(34) \amp (13) \amp (14)(23) 
           \end{array}
-        </me>
+        </md>
         This explicit definition sends each symmetry of the square to
         the matching permutation of the vertices. For example,
         <m>F_2</m> switces vertices 1 and 2, and switches vertices 3
@@ -103,12 +103,12 @@
         <sq>ind</sq> notation, instead of the normal <sq>log</sq>
         notation, it usual for these discrete logarithms.) Explicity,
         the function is given by this table. 
-        <me>
+        <md>
           \begin{array}{c|cccc}
             n \amp 1 \amp 3 \amp 7 \amp 9 \\
             \ind_3 n \amp 0 \amp 1 \amp 3 \amp 2
           \end{array}
-        </me>
+        </md>
         This is easy to verify: <m>3^2 = 9</m> and <m>3^3 = 7 \mod 10
         </m>. This is a logarithm, which means that the rules of
         logarithms do apply. In particular, <m>\ind_3 (mn) = \ind_3 m
@@ -120,20 +120,20 @@
     <example>
       <p>
         Consider this set of matrices.
-        <me>
+        <md>
           G = \left\{ \begin{pmatrix} a \amp 0 \\ 0 \amp 1
           \end{pmatrix} \Bigg| a \in \RR^* \right\}.
-        </me>
+        </md>
         This is a group under matrix multiplication, and a subgroup of
         <m>GL(n)</m>. Then consider the function <m>\phi: G
         \rightarrow \RR^*</m> defined by 
-        <me>
+        <md>
           \phi \left( \begin{pmatrix} a \amp 0 \\ 0 \amp 1
           \end{pmatrix} \right) = a 
-        </me>
+        </md>
         I claim that this function is an isomorphism. First, I need to
         check the homomorphism condition. Let <m>a,b \in \RR^*</m>. 
-        <me>
+        <md>
           \phi \left( \begin{pmatrix} a \amp 0 \\ 0 \amp 1
           \end{pmatrix} 
           \begin{pmatrix} b \amp 0 \\ 0 \amp 1
@@ -144,7 +144,7 @@
           \end{pmatrix} \right) 
           \phi \left( \begin{pmatrix} b \amp 0 \\ 0 \amp 1
           \end{pmatrix} \right)
-        </me>
+        </md>
         The steps here are just doing the matrix multiplication in the
         first step, applying the function, and then realizing that the
         two numbers are the outputs of the function for the two
@@ -174,9 +174,9 @@
         degree at most 4. Define a function <m>\phi: G \rightarrow
         \RR^5</m> by the following equation (where I am writing
         vectors in horizontal notation).
-        <me>
+        <md>
           \phi(ax^4 + bx^3 + cx^2 + dx + e) = (a,b,c,d,e)
-        </me>
+        </md>
         I claim that this is an isomorphism. First, let me prove the
         homomorphism condition (the operation is addition for both
         grous).
@@ -239,7 +239,7 @@
       <p>
         Consider the function <m>\phi:Q \rightarrow S_8</m> defined by
         this table.
-        <me>
+        <md>
           \begin{array}{c|c}
             n \amp \phi(n) \\
             \hline
@@ -252,7 +252,7 @@
             k \amp (1728)(3546) \\
             -k \amp (1827)(3645)
           \end{array}
-        </me>
+        </md>
         The quaterions are determined by the relations between
         <m>i</m>, <m>j</m> and <m>k</m>. From <xref
         ref="definition-quaternions"/>, let me restate those
@@ -368,9 +368,9 @@
             </li>
             <li>
               The binary operation is defined componentwise. 
-              <me>
+              <md>
                 (g_1, h_1) (g_2, h_2) = (g_1g_2,h_1h_2)
-              </me>
+              </md>
             </li>
           </ul>
         </p>
@@ -395,9 +395,9 @@
             <li>
               The element <m>(e_g, e_h)</m> is the identity. I can
               check:
-              <me>
+              <md>
                 (e_g, e_h) (g,h) = (e_g g, e_h h) = (g,h)
-              </me>
+              </md>
               A similar calculation works with multiplication on the
               right as well. 
             </li>
@@ -488,33 +488,33 @@
               The inclusion on the first component, <m>i_1</m>, is an
               injective homomorphism <m>i_1: G \rightarrow G \times
               H</m> defined as follows. 
-              <me>
+              <md>
                 i_1 (g) = (g, e_h)
-              </me>
+              </md>
             </li>
             <li>
               The inclusion on the second component, <m>i_2</m>, is an
               injective homomorphism <m>i_2: H \rightarrow G \times
               H</m> defined as follows. 
-              <me>
+              <md>
                 i_2 (h) = (e_g, h)
-              </me>
+              </md>
             </li>
             <li>
               The projection onto the first component, <m>\pi_1</m>, is 
               a surjective homomorphism <m>\pi_1: G \times H
               \rightarrow G </m> defined as follows. 
-              <me>
+              <md>
                 \pi_1 (g, h) = g
-              </me>
+              </md>
             </li>
             <li>
               The projection onto the second component, <m>\pi_2</m>, is 
               a surjective homomorphism <m>\pi_2: G \times H
               \rightarrow H </m> defined as follows. 
-              <me>
+              <md>
                 \pi_2 (g, h) = h
-              </me>
+              </md>
             </li>
           </ul>
         </p>
@@ -545,15 +545,15 @@
           <ul>
             <li>
               There exist an injective homomorphism:
-              <me>
+              <md>
                 i: G \rightarrow K
-              </me>
+              </md>
             </li>
             <li>
               There exist a surjective homomorphism:
-              <me>
+              <md>
                 \pi: K \rightarrow H
-              </me>
+              </md>
             </li>
             <li>
               The kernel of <m>\pi</m> is equal to the image of
@@ -596,14 +596,14 @@
           </li>
           <li>
             Define <m>\pi: D_4 \rightarrow \ZZ/2\ZZ</m> by this table.
-            <me>
+            <md>
               \begin{array}{c|cccccccc}
                 g \amp \Id \amp R_1 \amp R_2 \amp R_3 
                 \amp F_1 \amp F_2 \amp F_3 \amp F_4 \\
                 \pi(g) \amp 0 \amp 0 \amp 0 \amp 0 
                 \amp 1 \amp 1 \amp 1 \amp 1 
               \end{array}
-            </me>
+            </md>
           </li>
           <li>
             The image of <m>i</m> is the subgroup <m>\{ \Id, R_1, R_2,
@@ -717,18 +717,18 @@
           1, and order 1 only happens for the identity, so the order
           of <m>g</m> must be <m>p</m>. This means that <m>g</m> is a
           generator, and the group can be written as follows 
-          <me>
+          <md>
             G = \{e, g, g^2, g^3, \ldots, g^{p-1} \}
-          </me>
+          </md>
           If I write <m>e = g^0</m>, then I can use this to defined a
           function <m>\phi: G \rightarrow \ZZ/p\ZZ</m>. 
-          <me>
+          <md>
             \phi(g^k) = k
-          </me>
+          </md>
           First, this is a homomorphism. 
-          <me>
+          <md>
             \phi(g^k g^l) = k + l = \phi(g^k) + \phi(g^l)
-          </me>
+          </md>
           Second, the exponents in the group are <m>0</m> to
           <m>(p-1)</m>. These exponents perfectly match up with the
           standard representations of the integers modulo <m>p</m>,
@@ -762,9 +762,9 @@
           elements can be written as <m>g^k</m> for some integer
           <m>k</m>. I work in cases. In the first case, the order of
           <m>g</m> is infinite. Then consider this function: <m>\phi: G
-          \rightarrow \ZZ</m>.  <me>
+          \rightarrow \ZZ</m>.  <md>
             \phi(g^k) = k 
-          </me>
+          </md>
           I claim this is an isomophism. Before anything else, let me
           argue that this function is well defined. A group element
           might be  expressed as two different powers<mdash/> that
@@ -781,17 +781,17 @@
         </p>
         <p>
           Now I need to prove the homomorphism property. 
-          <me>
+          <md>
             \phi(g^kg^l) = \phi(g^{k+l}) = k + l = \phi(g) + \phi(l)
-          </me>
+          </md>
           This is just using the laws of exponents and recognizing
           the individual outputs. The map is a homomorphism. Next, I
           use <xref ref="proposition-injective-kernel"/> to prove
           injectivity. The kernel consists of all groups elements that
           are sent to 0. Consider the function again. 
-          <me>
+          <md>
             \phi(g^k) = k 
-          </me>
+          </md>
           The only element that is sent to 0 is <m>g^0 = \Id</m>. The
           kernel is trivial, so this function is injective. 
         </p>
@@ -805,14 +805,14 @@
           Then I move on to the second case where <m>g</m> has finite
           order. I assume the order of <m>g</m> is <m>d</m>. Then
           the group can be expressed as follows. 
-          <me>
+          <md>
             G = \{e = g^0, g^1, g^2, \ldots g^{d-1} \}
-          </me>
+          </md>
           Then define the function <m>\phi: G \rightarrow
           \ZZ/d\ZZ</m>. 
-          <me>
+          <md>
             \phi(g^k) = k \mod d
-          </me>
+          </md>
           I need to check the conditions of an isomorphism. The
           homomorphism property calculation is identical to the
           previous case, so I won't repeat it. The bijectivity can be
@@ -855,25 +855,25 @@
           Let <m>n \in \NN</m> with <m> n \geq 2</m>. By <xref
           ref="theorem-fundamental-arithmetic"/>, I can write <m>n</m>
           as its unique prime decomposition. 
-          <me>
+          <md>
             n = p_1^{m_1} p_2^{m_2}\ldots p_k^{m_k}
-          </me>
+          </md>
           Then there exists an isomorphism of groups. 
-          <me>
+          <md>
             \ZZ/n\ZZ \cong \left( \ZZ/p_1^{m_1}\ZZ \right) \times \left(
             \ZZ p_2^{m_2}\ZZ \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
             \right) 
-          </me>
+          </md>
         </p>
       </statement>
       <proof>
         <p>
           I need to define the isomorphism
-          <me>
+          <md>
             \phi: \left( \ZZ/p_1^{m_1}\ZZ \right) \times \left(
             \ZZ p_2^{m_2} \right) \ldots \left( \ZZ/p_k^{m_k}\ZZ
             \right) \rightarrow \ZZ/n\ZZ
-          </me>
+          </md>
           In the following, I will us the symbol
           <m>\hat{p_i}</m> to stand for the product of all primes
           <m>p_1^{m_1} p_2^{m_1} \ldots p_k^{m_k}</m>
@@ -881,10 +881,10 @@
           <m>p_i^{m_k}</m>. Equivalently, <m>\hat{p_i} =
           \frac{n}{p_i^{m_i}}</m>. Then here is the definition of the
           function. 
-          <me>
+          <md>
             \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
             + \ldots + \hat{p_k} a_k \mod n
-          </me>
+          </md>
           Now I need to prove the properties. I'll start with
           homomorphism. I consider this calculation.
           <md>
@@ -910,10 +910,10 @@
           ref="proposition-injective-kernel"/>. What is the kernel of
           this homomorphism? I need to consider all elements of the
           product group which satisfy this equation.
-          <me>
+          <md>
             \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
             + \ldots + \hat{p_k} a_k = 0 \mod n
-          </me>
+          </md>
           Obviously, setting all <m>a_i = 0</m> works. But are there
           any other possibilites that also work? For the sake of
           contradiction, assume there is another combination that
@@ -921,19 +921,19 @@
           Being equal to zero modulo <m>n</m> means that, as integers,
           the left side is a positive multiple of n (which I write as
           its prime decomposition). 
-          <me>
+          <md>
             \phi(a_1, a_2, \ldots a_k) = \hat{p_1} a_1 + \hat{p_2} a_2
             + \ldots + \hat{p_k} a_k = k(p_1^{m_1} p_2^{m_2} \ldots
             p_k^{m_k}) 
-          </me>
+          </md>
           Now one of the <m>a_i</m> is non-zero. I haven't ordered the
           primes at all, so without loss of generality, I can let
           <m>a_1</m> be a non-zero element. Then I re-arrange the
           equation. 
-          <me>
+          <md>
             \hat{p_1} a_1 = - \hat{p_2} a_2 - \ldots - \hat{p_k} a_k +
             k(p_1^{m_1} p_2^{m_2} \ldots p_k^{m_k}) 
-          </me>
+          </md>
           Now think about the prime <m>p_1</m>. <m>p_1</m> does not divide
           the right side: <m>\hat{p_1}</m> explicitly excludes any
           power of <m>p_1</m>, and <m>a_1</m> is some number in
@@ -976,9 +976,9 @@
       <statement>
         <p>
           Let <m>n,m \in \NN</m>. Consider the product group
-          <me>
+          <md>
             \ZZ/n\ZZ \times \ZZ/m\ZZ
-          </me>
+          </md>
           Then this product group is cyclic and isomorphic to
           <m>\ZZ/mn\ZZ</m> if and only if <m>\gcd(m,n) = 1</m>.
         </p>
@@ -988,26 +988,26 @@
           This is an if and only if proof, so I need to prove both
           directions. For both directions, I look at the two sides of
           this potential isomorphism. 
-          <me>
+          <md>
             \ZZ/n\ZZ \times \ZZ/m\ZZ \stackrel{?}{\cong} \ZZ/mn\ZZ
-          </me>
+          </md>
           I can then apply <xref ref="proposition-cyclic-structure"/> to
           both sides. I get group products on both side. Let
           <m>p_i</m> be the prime factors of <m>n</m> and <m>q_i</m>
           be the prime factors of <m>m</m>. This is what the
           left side of the isomorphism now looks like. 
-          <me>
+          <md>
             \left( \ZZ/p_1^{r_1}\ZZ \times \ldots \ZZ/p_k^{r_k}
             \ZZ\right) \times \left( \ZZ/q_1^{s_1}\ZZ \times \ldots
             \ZZ/q_l^{s_l} \ZZ \right) 
-          </me>
+          </md>
           For one of the two directions, if I assume <m>gcd(m,n) =
           1</m>, then the two list of prime factors are distinct. This
           means the prime factors of <m>mn</m> are precisely these.
-          <me>
+          <md>
             mn = p_1^{r_1} p_2^{r_2} \ldots p_k^{r_k} q_1^{s_1}
             q_2^{s_2} \ldots q_l^{s_l}
-          </me>
+          </md>
           Then applying the structure theorem again to the right side
           produces exactly the same product of groups, proving the
           isomorphism.
@@ -1095,7 +1095,7 @@
       order up to twelve. In this table, the groups which are products
       are not cyclic and the other groups all are: I know this due to
       the corollary.
-      <me>
+      <md>
         \begin{array}{c|c}
           \text{Order} \amp \text{Groups} \\
           1 \amp \{e\} \\
@@ -1112,7 +1112,7 @@
           11 \amp \ZZ/11\ZZ \\
           12 \amp \ZZ/12\ZZ, \ZZ/6\ZZ \times \ZZ/2\ZZ
         \end{array}
-      </me>
+      </md>
     </p>
   </subsection>
 </section>

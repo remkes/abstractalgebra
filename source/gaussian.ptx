@@ -5,9 +5,9 @@
     <p>
       So I want to start calculating the primes in <m>\ZZ[i]</m>.
       First, what is the norm? Here <m>D = -1</m>, so the normal is 
-      <me>
+      <md>
         N(a + bi) = a^2 + b^2
-      </me>
+      </md>
       Note that this norm is always positive, which simplifies the
       investigation. Only <m>0</m> has norm 0, which is always true.
       Next, the units will have norm 1. The only way to get norm 1 is
@@ -21,9 +21,9 @@
       What are these elements? I can get a norm two by having the
       coefficients both be <m>\pm 1</m> and that is the only way. I
       get this set. 
-      <me>  
+      <md>  
         \{1 + i, 1 - i, -1 + i, -1 - i \} 
-      </me>
+      </md>
       These are all prime, and they are the first four primes.
       However, they aren't really <sq>four</sq> primes. Here are three
       calculations.
@@ -51,17 +51,17 @@
       I move on to higher norms. Norm three is impossible: <m>a^2 +
       b^2 = 3</m> is not true for any integer inputs. So the next norm
       to consider is four. Here are all the elements of norm four.
-      <me>
+      <md>
         \{2, -2, 2i, -2i\}
-      </me>
+      </md>
       Some of these might be prime and some might be products of the
       previous primes. How do I check? Well, the most obvious way is
       the same way I check for the integers: look at the products of
       smaller primes. If I investigate the products of the smaller
       primes, I can find the following identity. 
-      <me>
+      <md>
         2 = (1+i)(1-i) = -i(1+i)(1+i) = -i (1+i)^2
-      </me>
+      </md>
       This is a factorization of the number 2 (more formally, the
       Gaussian integer <m>(2 + 0i)</m>) into primes. In the Gaussian
       integers, 2 is no longer a prime. When a prime from <m>\ZZ</m>
@@ -78,13 +78,13 @@
     </p>
     <p>
       The next norm is five. There are eight elements of norm five. 
-      <me>
+      <md>
         \{\pm 1 \pm 2i, \pm 2 \pm i\}
-      </me>
+      </md>
       Up to multiplication by units, there are only two elements here. 
-      <me>
+      <md>
         \{1 + 2i, 1 - 2i\}
-      </me>
+      </md>
       I claim that both of these are prime. Why? Well, I only have one
       prime so far, which has norm 2. The square of that prime has
       norm 4, and its cube has norm 8. I can never get a norm of 5
@@ -96,9 +96,9 @@
       There are no elements of norm 6 or 7: these numbers cannot be
       produced by the norm formula <m>a^2 + b^2</m>. So the next norm
       is norm 8. Up to units there is only one element of norm 8. 
-      <me>
+      <md>
         \{2 + 2i\}
-      </me>
+      </md>
       This factors pretty clearly: <m>2 + 2i = 2(1 + i)</m>, and I
       already know how 2 factors. Therefore I have a prime
       factorization of this element: <m>2 + 2i = -i(1 + i)^3</m>. This
@@ -112,7 +112,7 @@
       prime in any larger ring since the factorization in the integers
       still holds. 
     </p>
-    <me>
+    <md>
       \begin{array}{c| c c c c c c c }
         \text{Norm} \amp \text{Element} \amp \text{Prime?} \\
         \hline
@@ -131,7 +131,7 @@
         25 \amp 4 + 3i \amp \text{No} \\
         25 \amp 4 - 3i \amp \text{No} 
       \end{array}
-    </me>
+    </md>
     <p>
       Note that we get another split prime: 5 is no longer prime. Here
       is the factorization: <m>5 = (2 + i)(2 - i)</m>. I could keep
@@ -233,16 +233,16 @@
           the definition of <m>r</m> rearranged already gives the
           desired equation <m>a = bq + r</m>. Now I need the norms. I
           calculate the norm of the remainder.
-          <me>
+          <md>
             N(r) = N(a - bq) = N\left( b \left( \frac{a}{b} - q
             \right) \right) = N(b) N\left( \frac{a}{b} - q \right) 
-          </me>
+          </md>
           But I choose <m>q</m> precise with the property that it
           within one unit from <m>\frac{a}{b}</m>. This means that the
           second term here is less than one. 
-          <me>
+          <md>
             N(r) = N(b) N\left( \frac{a}{b} - q \right) \lt N(b) 
-          </me>
+          </md>
           This completes the proof. 
         </p>
       </proof>

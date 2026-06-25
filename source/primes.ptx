@@ -59,9 +59,9 @@
           that this is prime, I'll assume <m>a,b \in \ZZ</m> and <m>ab
           \in \langle p \rangle</m>. This means <m>ab</m> is a multiple
           of <m>p</m>, which I can write this way. 
-          <me>
+          <md>
             ab = np 
-          </me>
+          </md>
           Now the prime divides the right of this equation, so the
           prime also divides the left. And, from the properties of the
           integer, this means that the prime must be a factor of
@@ -75,9 +75,9 @@
           Now for the other direction, I'll assume <m>I</m> is a prime
           ideal in the integers. Take any element <m>n \in I</m>. This
           element has a prime decomposition.
-          <me>
+          <md>
             n = p_1 p_2 \ldots p_j
-          </me>
+          </md>
           But I can use the property of prime ideals. Since <m>n</m> is
           this product, at least one of the factors must be in the
           ideal. So there is a prime number <m>p_i \in I</m>. This means
@@ -123,9 +123,9 @@
           <term>product of the ideals</term>, written <m>IJ</m>,
           consists of all ring elements which are sums of products of
           elements of the two elements.
-          <me>
+          <md>
             IJ = \left\{ \sum_k i_k j_k | i_k \in I, j_k \in J \right\}
-          </me>
+          </md>
           Having defined a product, <term>factors</term> and
           <term>multiples</term> make sense for ideals and carry their usual
           sense using this definition of product. 
@@ -138,9 +138,9 @@
           Let <m>I \subset R</m> be an ideal in a ring. A <term>prime
           decomposision</term> of the idea is a set of prime ideals (not
           necessarily unique) <m>P_i</m> such that 
-          <me>
+          <md>
             I = P_1 P_2 \ldots P_k 
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -203,9 +203,9 @@
           Let <m>D</m> be a square-free integer and consider the ring
           <m>\ZZ[\sqrt{D}]</m>. The <term>norm</term> on this ring is
           the following function. 
-          <me>
+          <md>
             N(a + \sqrt{D}) = a^2 - Db^2
-          </me>
+          </md>
         </p>
       </statement>
     </definition>

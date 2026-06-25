@@ -87,9 +87,9 @@
     root of an irreducible polynomial to a field. If the irreducible
     polynomial had degree <m>d</m>, then elements of <m>K(\alpha)</m>
     can be written as follows for <m>c_i \in K</m>. 
-    <me>
+    <md>
       c_0 + c_1 \alpha + c_2 \alpha^2 + \ldots + c_{d-1} \alpha^{d-1}
-    </me>
+    </md>
     This form is justified by the replacement of <m>\alpha^d</m> using
     the polynomial. For example, if the polynomial <m>x^2 + x + 8</m>
     is irreducible, then a root satisfies <m>\alpha^2 + \alpha + 8 =
@@ -215,21 +215,21 @@
     explain the dimension statement. Again, consider <m>K[x]/\langle p(x)
     \rangle</m>. As before, the form of elements is as follows, where
     <m>d</m> is the degree of the polynomial. 
-    <me>
+    <md>
       c_0 + c_1 \alpha + c_2 \alpha^2 + \ldots + c_{d-1} \alpha^{d-1}
-    </me>
+    </md>
     In the vector space, I just care about the coefficients. These
     coefficients are equivalent to a vector.
-    <me>
+    <md>
       (c_0, c_1, c_2, \ldots, c_{d-1}) 
-    </me>
+    </md>
     The set of all vectors like this is a vector space of dimension
     <m>d</m>, justifying the degree claim for the extension. With this
     perspective, here is a basis for the field <m>K(\alpha)</m> as a
     vector space. 
-    <me>
+    <md>
       \{1, \alpha, \alpha^2, \ldots, \alpha^{d-1} \}
-    </me>
+    </md>
     There are <m>d</m> elements in this basis, again matching the
     degree <m>d</m> of the extension.
   </p>
@@ -241,26 +241,26 @@
     like <m>c\alpha^i</m> for <m>i \in \ZZ</m> (including negative
     exponents). All of these are distinct. These form a basis for this
     infinite vector space. 
-    <me>
+    <md>
       \left\{ \ldots \frac{1}{\alpha^3}, \frac{1}{\alpha^2}
       \frac{1}{\alpha}, 1 , \alpha, \alpha^2, \alpha^3, \ldots
       \right\}
-    </me>
+    </md>
     This is an infinite basis. I haven't talked about infinite vector
     spaces that must so far, but let me state one important notion
     here: the basis might be infinite, but the elements of the vector
     space are <em>finite</em> sums taken from this infinite basis.
     Therefore, elements of the transcendental extension look like this
     example. 
-    <me>
+    <md>
       c_{-7} \frac{1}{\alpha^7} + c_{-2} \frac{1}{\alpha^2} + c_0 +
       c_2 \alpha^2 + c_{105} \alpha^{105}
-    </me>
+    </md>
     However, infinite sums are not elements of this vector space, not
     even if they would otherwise converge. 
-    <me>
+    <md>
       \sum_{n=0}^\infty c_n \alpha^n \notin K(\alpha) 
-    </me>
+    </md>
   </p>
   <p>
     Let me focus on extensions of <m>\QQ</m> for some examples. 
@@ -271,9 +271,9 @@
       Element have the forn <m>a + b \sqrt{2}</m> with rational
       coefficients. The inverse of a non-zero element is defined as
       follows. 
-      <me>
+      <md>
         (a + b \sqrt{2})^{-1} = \frac{a - b \sqrt{2}}{a^2 + 2b^2} 
-      </me>
+      </md>
       Feel free to check that this is, in fact, a multiplicative
       inverse. The ring <m>\ZZ[\sqrt{2}]</m> is a subring of this
       field. (This field is, indeed, the field of fractions of this

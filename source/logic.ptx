@@ -79,9 +79,9 @@
         Using sigma notation, I can take sums over any index set.
         Instead of writing a start and end to the index, I just use
         the index set as a subscript. This notation 
-        <me>
+        <md>
           \Sigma_{i \in I} a_i
-        </me>
+        </md>
         means the sum of all the <m>a_i</m> as <m>i</m> ranges over
         the entire indexing set. 
       </li>

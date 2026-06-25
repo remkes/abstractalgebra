@@ -101,9 +101,9 @@
           So assume that the left cosets of <m>N</m> form a group. A
           coset is written <m>gN</m>, so the binary operation on two
           cosets is 
-          <me>
+          <md>
             (g_1N) (g_2N) = (g_1g_2N)
-          </me>
+          </md>
           The identity elements in this group of cosets is <m>eN = N</m>
           and the inverse of a coset <m>gN</m> is <m>g^{-1}N</m>. This
           binary operation does not always produce a group, hence the
@@ -117,9 +117,9 @@
           I define a homomorphism <m>\pi_N</m> which goes from <m>G</m>
           to this new group forms of the cosets of <m>N</m>. The
           function is defined as 
-          <me>
+          <md>
             \phi(g) = gN
-          </me>
+          </md>
           The function just sends every element to its cosets. Then the
           homomorphism condition is immediate from the definition of the
           binary operation on cosets: I'm just doing the operation of
@@ -179,9 +179,9 @@
             Alternatively, I can think of modular arithmetic as
             identifying <m>k</m> with the entire set <m>\bar{k}</m> plus
             all multiples of <m>n</m>. That's the set 
-            <me>
+            <md>
               \{k + in | i \in \ZZ\}
-            </me>
+            </md>
             But this set is exactly a coset: <m>k + n\ZZ</m> (written
             with addition now since that is the group operation in the
             integers modulo n). 
@@ -189,9 +189,9 @@
           <li>
             I can understand modular arithmetic as an equivalent
             relation: two integers are equivalent if 
-            <me>
+            <md>
               k = l \mod n
-            </me>
+            </md>
             Then the intergers modulo <m>n</m> are the equivalence
             classes of this equivalence relation. The equivalence
             relation is defined by the subgroup <m>n\ZZ</m>: things are
@@ -222,9 +222,9 @@
         <p>
           Let <m>N \triangleleft G</m> be a normal subgroup. The
           projection homomorphism 
-          <me>
+          <md>
             \pi_N: G \rightarrow G/N
-          </me>
+          </md>
           is the homomorphism defined by <m>\phi(g) = gN</m>. 
         </p>
       </statement>
@@ -280,18 +280,18 @@
         a simple set of representatives. So <m>\RR/\ZZ</m> is
         something like the interval <m>[0,1)</m>. But what happens if
         I add together two of these cosets? Take this, for example.
-        <me>
+        <md>
           \left( \frac{4}{5} + \ZZ \right) + \left( \frac{5}{7} + \ZZ
           \right) = \left(\frac{4}{5} + \frac{5}{7} \right) + \ZZ =
           \left( \frac{28 + 25}{35} \right) + \ZZ = \frac{53}{35} +
           \ZZ
-        </me>
+        </md>
         Then I can reduce this by subtracting 1: any adjustment by a
         whole number doesn't change the set. 
-        <me>
+        <md>
           \frac{53}{35} + \ZZ = \frac{53 - 35}{35} + \ZZ =
           \frac{18}{35} + \ZZ
-        </me>
+        </md>
         This gives me a representative in <m>[0,1)</m>. What I have
         done here is essentially looped around: when I go past
         <m>1</m> in this inteval, I subtract <m>1</m> and start again
@@ -346,12 +346,12 @@
           </mrow>
         </md>
         I can perform arithmetic on these cosets. For example. 
-        <me>
+        <md>
           \left( F_2 \langle R_2 \rangle \right) 
           \left( F_1 \langle R_2 \rangle \right) =  
           F_2F_1 \langle R_2 \rangle = 
           R_1 \langle R_2 \rangle \
-        </me>
+        </md>
         What I produce is a new group of order 4.
       </p>
       <p>
@@ -359,14 +359,14 @@
         to <m>\ZZ/2\ZZ \times \ZZ/2\ZZ</m>, which means it is not
         cyclic but it is abelian. The isomorphism is given by this
         table, which you are free to verify if you wish.
-        <me>
+        <md>
           \begin{array}{c|cccc}
             g \amp \Id \langle R_2 \rangle \amp R_1 \langle R_2
             \rangle \amp F_1 \langle R_2 \rangle \amp F_2 \langle R_2
             \rangle \\
             \phi(g) \amp (0,0) \amp (1,0) \amp (0,1) \amp (1,1)
           \end{array}
-        </me>
+        </md>
       </p>
     </example>
     <example>
@@ -404,10 +404,10 @@
           \ZZ</m> and assume that <m>m</m> is a factor of <m>n</m>.
           Then <m>\langle m \rangle</m> is a normal subgroup of
           <m>\ZZ/n\ZZ</m> and the following isormorphism exists.
-          <me>
+          <md>
             \left( \ZZ/n\ZZ \right) / \langle m \rangle \cong
             \ZZ/\frac{n}{m}\ZZ
-          </me>
+          </md>
         </p>
       </statement>
       <proof>
@@ -441,10 +441,10 @@
           numbers (not necessarily distinct) <m>p_i</m> for some
           finite index set <m>i \in I</m> such that the following
           isomorphism exists. 
-          <me>
+          <md>
             G \cong \ZZ^d \times \ZZ/p_1^{k_1}\ZZ \times \ldots \times
             \ZZ/p_l^{k_l}\ZZ
-          </me>
+          </md>
         </p>
       </statement>
       <proof>
@@ -478,10 +478,10 @@
           Since the qoutient group has <m>n</m> generators, I can
           assume that it has the desired isomorophism by the induction
           assumption. Then I claim the following isomorphism.
-          <me>
+          <md>
             G \cong \langle g \rangle \times \left( G/\langle g
             \rangle \right) 
-          </me>
+          </md>
           Any element of <m>G</m> can be written as <m>g^r h</m> where
           <m>h</m> is generated by the remaining generators. The the
           isomorphism is <m>\phi(g^rh) = (g^r, h)</m>. This is a
@@ -682,7 +682,7 @@
       in mathematics<mdash/>there is no unifying structure or idea
       behind all 26. Let me briefly give you their common notations and
       their orders.
-      <me>
+      <md>
         \begin{array}{l|l}
           \text{Notation} \amp \text{Order} \\
           \hline
@@ -715,7 +715,7 @@
           M \amp
           808,017,424,794,512,875,886,459,904,761,710,757,004,754,368,000,000,000
         \end{array}
-      </me>
+      </md>
     </p>
     <p>
       This last group is called, rather dramatically, <term>the
@@ -742,9 +742,9 @@
       to group theory. The mathematicians were working with a
       function and, at one point, they calculated its Taylor
       expansion. This is what they wrote down.
-      <me>
+      <md>
         J(q) = \frac{1}{q} + 744 + 196,884q + \ldots 
-      </me>
+      </md>
       Now, <m>196,884</m> is only one different from <m>196,883</m>
       and they are both large enough numbers that this similarity
       might be notable. After a great deal of work, a very mysterious
@@ -772,9 +772,9 @@
         <p>
           Let <m>\phi:K \rightarrow H</m> be a surjective homomorphism
           of groups. There there exists the following isormorphism
-          <me>
+          <md>
             K/\Ker(\phi) \cong H
-          </me>
+          </md>
         </p>
       </statement>
       <proof>
@@ -782,9 +782,9 @@
           Take a coset <m>k \Ker(\phi) \in K/\Ker(\phi)</m>. I will
           defined a function <m>\eta: K/\Ker(\phi) \rightarrow H</m>
           as follows.
-          <me>
+          <md>
             \eta(k \Ker(\phi)) = \phi(k) 
-          </me>
+          </md>
           I need to prove several things: this is well-defined, the
           homomorhpisms property, and bijectivity
         </p>
@@ -795,18 +795,18 @@
           then there eixsts some element <m>g</m> in <m>\Ker(\phi)</m>
           such that <m>k_1 = k_2g</m>. Then I apply the function and
           use this identity.
-          <me>
+          <md>
             \eta(k_1 \Ker(\phi)) = \phi(k_1) = \phi(k_2g)
-          </me>
+          </md>
           Then I use the homomorphism property of <m>\phi</m>.
-          <me>
+          <md>
             \phi(k_2g) = \phi(k_2) \phi(g) 
-          </me>
+          </md>
           But <m>g</m> is in the kernel, so it is sent to the
           identity, which lets me continue the calcluation. 
-          <me>
+          <md>
             \phi(k_2) \phi(g) = \phi(k_2) = \eta(k_2 \Ker(\phi))
-          </me>
+          </md>
           I have shown that the output of the function <m>eta</m> is
           the same even for different coset representatives. This
           proves that the function is well defined<mdash/>no matter
@@ -872,16 +872,16 @@
           For the alternative, assume I have a surjective homomorphism
           <m>\pi: K \rightarrow H</m>. The <m>\Ker(\pi)</m> is a
           subgroup of <m>K</m>. I can define the inclusion map 
-          <me>
+          <md>
             i: \Ker(\pi) \rightarrow K
-          </me>
+          </md>
           which is just the identity on <m>\Ker(\pi)</m>. The image of
           this map is exactly <m>\Ker(\pi)</m> and the map, since it
           is the identity on the subgroup is injective. Therefore, I
           have an injective map 
-          <me>
+          <md>
             i: \Ker(\pi) \rightarrow K
-          </me>
+          </md>
           with image the same as the kernel of <m>\pi</m>. Therefore,
           these two maps defined <m>K</m> as an extension of <m>H</m>
           by <m>\Ker(\pi)</m>. 

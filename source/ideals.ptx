@@ -45,10 +45,10 @@
           r_2 \in R</m>. 
           <ul>
             <li>
-              <me>\phi(r_1 + r_2) = \phi(r_1) + \phi(r_2)</me>
+              <md>\phi(r_1 + r_2) = \phi(r_1) + \phi(r_2)</md>
             </li>
             <li>
-              <me>\phi(r_1r_2) = \phi(r_1) \phi(r_2)</me>
+              <md>\phi(r_1r_2) = \phi(r_1) \phi(r_2)</md>
             </li>
           </ul>
         </p>
@@ -77,9 +77,9 @@
         Let <m>a \in \RR</m>. Define a map <m>\phi_a: \RR[x]
         \rightarrow \RR</m> which takes any polynomial <m>p(x)</m> and
         evaluates the polymomial at <m>x = a</m>. 
-        <me>
+        <md>
           \phi_a(p(x)) = p(a) 
-        </me>
+        </md>
         This is called the <term>evaluation map</term> at the real number
         <m>a</m>. I claim that this is an homomorphism. I can check
         both conditions. 
@@ -103,20 +103,20 @@
         which evaluates the determinant of any matrix. Is this a ring
         homomorphism? From linear algebra, I know it cooperates with
         multiplication.
-        <me>
+        <md>
           \det(AB) = \det(A) \det (B) 
-        </me>
+        </md>
         However, if does not cooperate with addition. I can see this
         using the identity matrix. If I do the addition first, I get a
         matrix with <m>2</m> on each diagonal entry. The determinant
         of a diagonal matrix is the product of its diagonal entries. 
-        <me>
+        <md>
           \det(\Id + \Id) = 2^n
-        </me>
+        </md>
         But if I do the determinant first, I get this sum. 
-        <me>
+        <md>
           \det(\Id) + \det(\Id) = 1 + 1 = 2 
-        </me>
+        </md>
         Assumine <m>n \geq 2</m>, these are not the same. Therefore,
         the determinant is not a ring homomorphism. 
       </p>
@@ -240,9 +240,9 @@
         <p>
           A subring <m>I \subset R</m> of a ring is an ideal if the
           additional property holds.
-          <me>
+          <md>
             \forall r \in R \forall a \in I,  ra \in I 
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -342,9 +342,9 @@
           which can be written as <m>r + I</m> for <m>r \in R</m> some
           ring element. The multiplicative operation on the ring leads
           pretty naturally to the following operation on these cosets. 
-          <me>
+          <md>
             (r + I)(s + I) = rs + I
-          </me>
+          </md>
           To prove that the quotient is a ring, I need to prove that
           this is a well-defined associative binary operation and that
           it distributes over the addition. 
@@ -354,9 +354,9 @@
           <m>(r + i_1)(s + i_2)</m> for elements <m>i_1, i_2 \in
           I</m>. As these are all actual elements of the original
           ring, I can distribute everything. 
-          <me>
+          <md>
             (r + i_i)(s + i_2) = rs + si_i + ri_2 + i_1i_2
-          </me>
+          </md>
           I want this to be a the coset <m>(rs +
           I)</m>, but the distribution makes this tricky.
           <m>i_2i_2</m> is certainly in the idea, but what about
@@ -429,9 +429,9 @@
         <p>
           Let <m>\phi: R \rightarrow S</m> be a surjective ring
           homomorphism. Then there exists a homomorphism. 
-          <me>
+          <md>
             R / \Ker (\phi) \cong S 
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>

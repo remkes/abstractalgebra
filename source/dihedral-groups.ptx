@@ -199,7 +199,7 @@
         In this way, I can calculate all the compositions and put them
         into a Caley table. 
       </p>
-      <me>
+      <md>
         \begin{array}{c|cccccccc}
           \circ \amp \Id \amp R_1 \amp R_2 \amp R_3 \amp F_1 \amp F_2
           \amp F_3 \amp F_4 \\
@@ -221,7 +221,7 @@
           F_4 \amp F_4 \amp F_3 \amp F_2 \amp F_1 \amp R_3 \amp R_3
           \amp R_1 \amp \Id 
         \end{array}
-      </me>
+      </md>
       <p>
         This is the group <m>D_4</m>.
       </p>

@@ -286,7 +286,7 @@
         numbers, but these do, of course, represent equivalence
         classes modulo 7. 
       </p>
-      <me>
+      <md>
         \begin{array}{c| c c c c c c c }
           + \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\
           \hline
@@ -298,7 +298,7 @@
           5 \amp 5 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \\
           6 \amp 6 \amp 0 \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \\
         \end{array}
-      </me>
+      </md>
     </example>
     <example xml:id="example-caley-z20-units">>
       <p>
@@ -306,7 +306,7 @@
         operation of multiplication. There are eight numbers coprime
         to <m>20</m>, so those numbers are the classes in this group. 
       </p>
-      <me>
+      <md>
         \begin{array}{c| c c c c c c c c }
           \times \amp 1 \amp 3 \amp 7 \amp 9 \amp 11 \amp 13 \amp 17 \amp
           19  \\
@@ -328,7 +328,7 @@
           19 \amp 19 \amp 17 \amp 13 \amp 11 \amp 9 \amp 7 \amp 3 \amp
           1 \\
         \end{array}
-      </me>
+      </md>
     </example>
     <p>
       Before moving on, there are a couple important things to note
@@ -484,7 +484,7 @@
         Second, it is also a group under the AND operation; under this
         operation, <m>T</m> is the identity. Here are the Caley tables
         for these two groups. 
-        <me>
+        <md>
           \begin{array}{c| c c }
             OR \amp T \amp F \\
             \hline
@@ -498,7 +498,7 @@
             T \amp T \amp F\\
             F \amp F \amp F \\
           \end{array}
-        </me>
+        </md>
       </p>
     </example>
     <p>
